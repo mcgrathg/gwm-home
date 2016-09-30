@@ -317,14 +317,14 @@ ul.timeline > li:hover > .timeline-badge a {
   height:auto;
   background-color:#C5C7C5;
   float:left;
-  margin-bottom:20px;
   color:black;
-  padding:0px 20px;
+  padding:15px;
 }
 
 .timeline-heading h2 {
   color:black;
   font-size:large;
+  margin:0px;
 }
 
 .timeline li:hover .timeline-heading, .timeline li:hover .timeline-heading h2 {
@@ -334,5 +334,20 @@ ul.timeline > li:hover > .timeline-badge a {
 
 .timeline > li:hover > .timeline-panel {
   background:#F8F8F8;
+}
+
+.timeline .list-group-item {
+}
+
+.timeline-body {
+  float:left;
+}
+
+.timeline-body > ul {
+  padding:0;
+}
+
+.timeline-body > ul > li {
+  padding:7px 15px;
 }
 
