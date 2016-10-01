@@ -365,5 +365,7 @@ ul.timeline > li:hover > .timeline-badge a {
 
 .timeline > li:hover > .timeline-panel {
   border-color:#455A64;
+  webkit-box-shadow:0 1px 6px rgba(69,90,100,0.4);
+  box-shadow:0 1px 6px rgba(69,90,100,0.4);
 }
 
