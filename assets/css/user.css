@@ -195,3 +195,7 @@ div.navbar-tag {
 nav.navbar.navbar-default {
 }
 
+.resume-buttons button {
+  margin:0 20px;
+}
+
