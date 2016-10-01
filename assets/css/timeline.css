@@ -327,7 +327,7 @@ ul.timeline > li:hover > .timeline-badge a {
   margin:0px;
 }
 
-.timeline li:hover .timeline-heading, .timeline li:hover .timeline-heading h2 {
+.timeline li:hover .timeline-heading, .timeline li:hover .timeline-heading h2, .timeline li:hover .timeline-heading h5 {
   background-color:#455A64;
   color:white;
 }
@@ -346,5 +346,15 @@ ul.timeline > li:hover > .timeline-badge a {
 
 .timeline-body > ul > li {
   padding:7px 15px;
+}
+
+.timeline-heading > .row > h5 {
+  margin:5px 0;
+  padding:0;
+}
+
+.timeline-heading > .row {
+  padding-left:15px;
+  padding-right:15px;
 }
 
