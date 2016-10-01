@@ -358,3 +358,12 @@ ul.timeline > li:hover > .timeline-badge a {
   padding-right:15px;
 }
 
+.timeline > li:hover > .timeline-panel:before {
+  border-left-color:#455A64;
+  border-right-color:#455A64;
+}
+
+.timeline > li:hover > .timeline-panel {
+  border-color:#455A64;
+}
+
