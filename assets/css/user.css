@@ -1,15 +1,3 @@
-.navbar {
-  /*margin-bottom:0;*/
-  /*border:none;*/
-  /*line-height:12px;*/
-  /*padding-top:20px;*/
-  /*padding-bottom:5px;*/
-}
-
-.navbar-brand .glyphicon {
-  margin-right:6px;
-}
-
 .hero {
   background:url(../../assets/img/city_bg.jpg) no-repeat center;
   background-size:cover;
@@ -158,29 +146,9 @@ section.testimonials {
   }
 }
 
-div.row.navbar-info {
-  float:right;
-}
-
-div.navbar-name {
-  font-size:large;
-}
-
-div.navbar-tag {
-  font-size:small;
-}
-
-.navbar-brand line-height:12px; padding-top:20px; padding-bottom:5px; .navbar-brand small display:block; font-size:10px; {
-}
-
-.navbar-brand {
-  line-height:20px;
-  padding:10px 20px 20px 15px;
-}
-
 .navbar-brand small {
-  display:block;
-  font-size:10px;
+  font-size:70%;
+  padding-left:10px;
 }
 
 .col-fixed-50 {
@@ -192,10 +160,34 @@ div.navbar-tag {
   padding-left:60px;
 }
 
-nav.navbar.navbar-default {
-}
-
 .resume-buttons button {
   margin:0 20px;
+}
+
+.navbar-brand i.fa {
+  padding-right:15px;
+}
+
+@media (max-width:767px) {
+  a.navbar-brand {
+    font-size:15px;
+  }
+}
+
+body > .container h1 i, body > .container h2 i, body > .container h3 i {
+  padding-left:2vw;
+}
+
+body > .container h1 icon {
+  margin-left:15px;
+}
+
+.technical-skills li {
+  border:0;
+  padding:5px 15px;
+}
+
+.technical-skills ul {
+  margin-bottom:0;
 }
 
