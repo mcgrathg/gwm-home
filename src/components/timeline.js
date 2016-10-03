@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Timeline extends Component {
+export default class Timeline extends Component {
     renderTimelineEvents() {
         return this.props.events.map((data) => {
             return (
@@ -18,11 +18,3 @@ class Timeline extends Component {
         );
     }
 }
-
-function mapStateToProps(state) {
-    return {
-
-    }
-}
-
-export default

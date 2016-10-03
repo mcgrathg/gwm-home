@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Timeline from './timeline';
+import Timeline from '../components/timeline';
 
 class Resume extends Component {
     renderSkills() {

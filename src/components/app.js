@@ -3,11 +3,16 @@ import Navigation from './navigation';
 
 export default class App extends Component {
     render() {
+        debugger
         return (
-          <div>
-              <Navigation/>
-              {this.props.children}
-          </div>
+            <div>
+                <div>
+                    <Navigation/>
+                </div>
+                <div>
+                    {this.props.children}
+                </div>
+            </div>
         );
     }
 }

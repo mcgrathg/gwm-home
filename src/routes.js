@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
 import Home from './components/home';
-import Resume from './components/resume';
+import Resume from './containers/resume';
 import Portfolio from './components/portfolio';
 
 export default (
