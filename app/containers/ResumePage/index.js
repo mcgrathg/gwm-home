@@ -46,28 +46,23 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
           </H2>
           <Skills columns={skills} />
         </section>
-        <section className="technical-skills">
+        <section className="work-experience">
           <H2>
             Work Experience
             <i className="fa fa-briefcase text-muted" />
           </H2>
-          <Timeline markers={work} />
+          <Timeline events={work} />
         </section>
-        <section className="technical-skills">
+        <section className="education">
           <H2>
             Education
             <i className="fa fa-pencil text-muted" />
           </H2>
-          <Timeline markers={education} />
+          <Timeline events={education} />
         </section>
       </div>
     );
   }
 }
-
-// function mapStateToProps({ work, education, skills }) {
-//   debugger;
-//   return { work, education, skills };
-// }
 
 export default connect()(ResumePage);
