@@ -1,15 +1,15 @@
 {
-  "name": "react-boilerplate",
+  "name": "home",
   "version": "3.2.1",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "description": "Greg McGrath's Personal Site",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mxstbr/react-boilerplate.git"
+    "url": "git://github.com/mcgrathg/home.git"
   },
   "engines": {
     "npm": ">=3"
   },
-  "author": "Max Stoiber",
+  "author": "Greg McGrath",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
