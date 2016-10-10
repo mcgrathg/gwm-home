@@ -15,8 +15,8 @@ function Timeline({ events }) {
   return (
     <ListGroup className={styles.timeline}>
       {events.map((evtDetails, idx) => (
-        <TimelineEvent className={evtDetails.styling} key={idx} {...evtDetails} />)
-      )}
+        <TimelineEvent key={idx} {...evtDetails} />
+      ))}
     </ListGroup>
   );
 }

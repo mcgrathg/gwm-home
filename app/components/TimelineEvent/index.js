@@ -5,6 +5,7 @@
 */
 
 import React, { PropTypes } from 'react';
+import classNames from 'classnames';
 
 import styles from './styles.css';
 import textStyle from '../../responsive-text-formatting.css';
@@ -12,16 +13,17 @@ import textStyle from '../../responsive-text-formatting.css';
 import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 function TimelineEvent(props) {
-  const { title, company, location, start, end, responsibilities } = props;
+  const { title, company, location, start, end, responsibilities, styling } = props;
   const compLocDash = company && location ? ' — ' : '';
   const dateDash = start && end ? ' — ' : '';
 
+  if (styling) debugger;
   return (
-    <ListGroupItem className={styles.timelineEvent}>
-      <div className="timeline-badge primary">
+    <ListGroupItem className={classNames(styles.timelineEvent, styles[styling])}>
+      <div className={classNames('primary', styles['timeline-badge'])}>
         <a><i className="glyphicon glyphicon-record"></i></a>
       </div>
-      <div className="timeline-panel">
+      <div className={styles['timeline-panel']}>
         <div className="timeline-heading">
           <h2>{title}</h2>
           <Row>
@@ -33,7 +35,7 @@ function TimelineEvent(props) {
             </Col>
           </Row>
         </div>
-        <div className="timeline-body">
+        <div className={textStyle['timeline-body']}>
           <ListGroup>
             {responsibilities.map((task, idx) => {
               let val = task;
@@ -66,15 +68,17 @@ TimelineEvent.propTypes = {
   location: PropTypes.string,
   start: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   end: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  responsibilities: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      header: PropTypes.string.isRequired,
-      subheader: PropTypes.string,
-      description: PropTypes.string,
-    }),
-  ])
-),
+  responsibilities: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        header: PropTypes.string.isRequired,
+        subheader: PropTypes.string,
+        description: PropTypes.string,
+      }),
+    ])
+  ),
+  styling: PropTypes.string,
 };
 
 export default TimelineEvent;
