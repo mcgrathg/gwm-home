@@ -17,7 +17,6 @@ function TimelineEvent(props) {
   const compLocDash = company && location ? ' — ' : '';
   const dateDash = start && end ? ' — ' : '';
 
-  if (styling) debugger;
   return (
     <ListGroupItem className={classNames(styles.timelineEvent, styles[styling])}>
       <div className={classNames('primary', styles['timeline-badge'])}>
