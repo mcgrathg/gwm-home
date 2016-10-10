@@ -7,6 +7,7 @@
 import React, { PropTypes } from 'react';
 
 import styles from './styles.css';
+import textStyle from '../../responsive-text-formatting.css';
 
 import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 
@@ -23,18 +24,18 @@ function TimelineEvent(props) {
       <div className="timeline-panel">
         <div className="timeline-heading">
           <h2>{title}</h2>
-          <Row className="row">
+          <Row>
             <Col lg={8}>
               <h5>{company}{compLocDash}{location}</h5>
             </Col>
-            <Col lg={4} className="text-right-lg">
+            <Col lg={4} className={textStyle['text-right-lg']}>
               <h5>{start}{dateDash}{end}</h5>
             </Col>
           </Row>
         </div>
         <div className="timeline-body">
           <ListGroup>
-            {responsibilities.map((task) => {
+            {responsibilities.map((task, idx) => {
               let val = task;
               if (typeof (task) === 'object') {
                 const { header, description } = task;
@@ -49,7 +50,7 @@ function TimelineEvent(props) {
                 </span>);
               }
               return (
-                <ListGroupItem>{val}</ListGroupItem>
+                <ListGroupItem key={idx}>{val}</ListGroupItem>
               );
             })}
           </ListGroup>
@@ -61,10 +62,10 @@ function TimelineEvent(props) {
 
 TimelineEvent.propTypes = {
   title: PropTypes.string.isRequired,
-  company: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  start: PropTypes.string.isRequired,
-  end: PropTypes.string.isRequired,
+  company: PropTypes.string,
+  location: PropTypes.string,
+  start: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  end: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   responsibilities: PropTypes.arrayOf(PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.shape({

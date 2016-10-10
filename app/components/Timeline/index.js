@@ -14,8 +14,8 @@ import TimelineEvent from 'components/TimelineEvent';
 function Timeline({ events }) {
   return (
     <ListGroup className={styles.timeline}>
-      {events.map((evtDetails) => (
-        <TimelineEvent className={evtDetails.styling} {...evtDetails} />)
+      {events.map((evtDetails, idx) => (
+        <TimelineEvent className={evtDetails.styling} key={idx} {...evtDetails} />)
       )}
     </ListGroup>
   );

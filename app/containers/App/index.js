@@ -35,6 +35,10 @@ function App(props) {
       <A className={styles.logoWrapper} href="https://twitter.com/bloodbathmcgrath">
         <Img className={styles.logo} src={Banner} alt="react-boilerplate - Logo" />
       </A>
+      <h1>This is only a test....</h1>
+      <br />
+      <br />
+      <br />
       {React.Children.toArray(props.children)}
       <Footer />
     </div>
