@@ -28,7 +28,7 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
             { name: 'description', content: 'Greg McGrath\'s Resume' },
           ]}
         />
-        <H1>
+        <H1 className="page-header">
           Resume
           <i className="fa fa-file-text text-muted" />
         </H1>

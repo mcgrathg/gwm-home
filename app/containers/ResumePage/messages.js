@@ -48,7 +48,7 @@ const work = [{
   title: 'Software Developer',
   company: 'Stewart\'s Shops',
   location: 'Saratoga Springs, NY',
-  start: 'April 2010',
+  start: 'Apr 2010',
   end: 'Present',
   responsibilities: [
     'Developed enterprise web applications providing sophisticated and tailored software solutions.',
@@ -63,7 +63,7 @@ const work = [{
   title: 'Independent Web Application Developer',
   company: 'Remote Freelancing',
   location: null,
-  start: 'March 2013',
+  start: 'Mar 2013',
   end: 'Present',
   isInverted: true,
   responsibilities: [
@@ -74,10 +74,10 @@ const work = [{
   ],
 }, {
   title: 'Programmer & Development Consultant',
-  company: 'James McGuinness & Associates',
+  company: 'James McGuinness & Assoc.',
   location: 'Schenectady, NY',
-  start: 'August 2008',
-  end: 'March 2010',
+  start: 'Aug 2008',
+  end: 'Mar 2010',
   isInverted: true,
   responsibilities: [
     'Designed and developed custom software for clients in the public and private sector.',

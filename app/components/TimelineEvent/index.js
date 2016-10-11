@@ -4,7 +4,7 @@
 *
 */
 
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import classNames from 'classnames';
 
 import styles from './styles.css';
@@ -12,53 +12,95 @@ import textStyle from '../../responsive-text-formatting.css';
 
 import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 
-function TimelineEvent(props) {
-  const { title, company, location, start, end, responsibilities, isInverted } = props;
-  const compLocDash = company && location ? ' — ' : '';
-  const dateDash = start && end ? ' — ' : '';
+class TimelineEvent extends Component { // eslint-disable-line react/prefer-stateless-function
+  renderHeader() {
+    const { title, company, location, start, end } = this.props;
+    const compLocDash = company && location ? ' — ' : '';
+    const dateDash = start && end ? ' — ' : '';
+    const titleTag = <h2>{title}</h2>;
+    const dateCol = (
+      <Col lg={2} className={classNames(textStyle['text-right-lg'], styles.headingCol)}>
+        <h5>{start}{dateDash}{end}</h5>
+      </Col>
+    );
 
-  return (
-    <ListGroupItem className={classNames(styles.timelineEvent, styles[isInverted ? 'inverted' : null])}>
-      <div className={styles.badge}>
-        <a><i className="glyphicon glyphicon-record"></i></a>
-      </div>
-      <div className={styles.panel}>
-        <div className={styles.heading}>
-          <h2>{title}</h2>
-          <Row>
-            <Col lg={8}>
+    let details;
+    if (company || location) {
+      details = (
+        <div>
+          {titleTag}
+          <Row className={styles.headingRow}>
+            <Col lg={8} className={styles.headingCol}>
               <h5>{company}{compLocDash}{location}</h5>
             </Col>
-            <Col lg={4} className={textStyle['text-right-lg']}>
+            <Col lg={4} className={classNames(textStyle['text-right-lg'], styles.headingCol)}>
               <h5>{start}{dateDash}{end}</h5>
             </Col>
           </Row>
         </div>
-        <div className={styles.body}>
-          <ListGroup>
-            {responsibilities.map((task, idx) => {
-              let val = task;
-              if (typeof (task) === 'object') {
-                const { header, description } = task;
-                let { subheader } = task;
+      );
+    } else {
+      details = (
+        <Row className={styles.headingRow}>
+          <Col lg={11} className={styles.headingCol}>{titleTag}</Col>
+          <Col lg={1} className={classNames(textStyle['text-right-lg'], styles.headingCol)}>
+            <h5>{start}{dateDash}{end}</h5>
+          </Col>
+        </Row>
+      );
+    }
 
-                if (subheader) {
-                  subheader = <small>{subheader}</small>;
-                }
-                val = (<span>
-                  <h4>{header}{subheader}</h4>
-                  {description}
-                </span>);
-              }
-              return (
-                <ListGroupItem key={idx}>{val}</ListGroupItem>
-              );
-            })}
-          </ListGroup>
-        </div>
+    return (
+      <div className={styles.heading}>
+        {details}
       </div>
-    </ListGroupItem>
-  );
+    );
+  }
+
+  renderBody() {
+    const { responsibilities } = this.props;
+
+    return (
+      <div className={styles.body}>
+        <ListGroup>
+          {responsibilities.map((task, idx) => {
+            let val = task;
+            if (typeof (task) === 'object') {
+              const { header, description } = task;
+              let { subheader } = task;
+
+              if (subheader) {
+                subheader = <small>{subheader}</small>;
+              }
+              val = (<span>
+                <h4 className={styles.taskHeader}>{header}{subheader}</h4>
+                {description}
+              </span>);
+            }
+            return (
+              <ListGroupItem key={idx}>{val}</ListGroupItem>
+            );
+          })}
+        </ListGroup>
+      </div>
+    );
+  }
+
+  render() {
+    const { isInverted } = this.props;
+
+    return (
+      <ListGroupItem className={classNames(styles.timelineEvent, styles[isInverted ? 'inverted' : null])}>
+        <div className={styles.badge}>
+          <a><i className="glyphicon glyphicon-record"></i></a>
+        </div>
+        <div className={styles.panel}>
+          {this.renderHeader()}
+          {this.renderBody()}
+        </div>
+      </ListGroupItem>
+    );
+  }
 }
 
 TimelineEvent.propTypes = {

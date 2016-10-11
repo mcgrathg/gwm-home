@@ -101,20 +101,31 @@
   padding: 15px;
 }
 
+.headingRow {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.headingCol {
+  padding: 0;
+  margin: 5px 0;
+}
+
+.heading h5,
 .heading h2 {
-  color: black;
+  margin: 0;
+  display: inline-block;
+}
+
+.heading h2 {
   font-size: large;
   margin: 0px;
 }
 
-.heading > .row > h5 {
+.heading h5 {
+  color: #333;
   margin: 5px 0;
   padding: 0;
-}
-
-.heading > .row {
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 /* End Heading */
@@ -143,6 +154,10 @@
 .body > ul > li {
   padding: 7px 15px;
   /*border: 0;*/
+}
+
+.body h4 small {
+  padding-left: 1vw;
 }
 
 /* End Body */
