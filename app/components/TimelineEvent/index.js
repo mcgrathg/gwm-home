@@ -13,13 +13,12 @@ import textStyle from '../../responsive-text-formatting.css';
 import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 function TimelineEvent(props) {
-  const { title, company, location, start, end, responsibilities, styling, isInverted } = props;
+  const { title, company, location, start, end, responsibilities, isInverted } = props;
   const compLocDash = company && location ? ' — ' : '';
   const dateDash = start && end ? ' — ' : '';
 
-  if (styling) debugger;
   return (
-    <ListGroupItem className={classNames(styles.timelineEvent, styles[isInverted ? 'inverted' : ''])}>
+    <ListGroupItem className={classNames(styles.timelineEvent, styles[isInverted ? 'inverted' : null])}>
       <div className={styles.badge}>
         <a><i className="glyphicon glyphicon-record"></i></a>
       </div>
@@ -68,17 +67,17 @@ TimelineEvent.propTypes = {
   location: PropTypes.string,
   start: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   end: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  isInverted: PropTypes.bool,
   responsibilities: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.shape({
-        header: PropTypes.string.isRequired,
-        subheader: PropTypes.string,
-        description: PropTypes.string,
+        header: PropTypes.string.isRequired, // eslint-disable-line react/no-unused-prop-types
+        subheader: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
+        description: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
       }),
     ])
   ),
-  styling: PropTypes.string,
 };
 
 export default TimelineEvent;

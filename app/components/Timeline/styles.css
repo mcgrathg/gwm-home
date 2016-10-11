@@ -2,6 +2,8 @@
   list-style:none;
   padding:20px 0 20px;
   position:relative;
+
+  overflow: hidden;
 }
 
 .timeline:before {
@@ -13,4 +15,10 @@
   background-color:#eeeeee;
   left:50%;
   margin-left:-1.5px;
+}
+
+@media (max-width: 767px) {
+  .timeline:before {
+    left:40px;
+  }
 }

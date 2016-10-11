@@ -50,7 +50,6 @@ const work = [{
   location: 'Saratoga Springs, NY',
   start: 'April 2010',
   end: 'Present',
-  styling: null,
   responsibilities: [
     'Developed enterprise web applications providing sophisticated and tailored software solutions.',
     'Participated in complete development process (requirements gathering, architecture and specs design, development, testing, training, enhancements, and QA).',
@@ -94,7 +93,6 @@ const education = [{
   location: '',
   start: null,
   end: 2008,
-  styling: null,
   responsibilities: [
     {
       header: 'Capstone Project',

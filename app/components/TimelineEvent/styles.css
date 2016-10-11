@@ -7,28 +7,21 @@
   width: 50%;
   float: left;
   clear: left;
+  background:transparent;
+  border: 0;
 }
 
-.timelineEvent:before, .timelineEvent:after {
-  content: " ";
-  display: table;
-}
-
-.timelineEvent:after {
-  clear: both;
-}
-
-.timelineEvent:nth-child(2) {
-  margin-top: 60px;
+@media (min-width: 768px) {
+  .timelineEvent:nth-child(2) {
+    margin-top: 60px;
+  }
 }
 
 @media (max-width: 767px) {
   .timelineEvent {
-    margin-bottom: 20px;
-    position: relative;
+    /*margin-bottom: 20px;*/
+    /*position: relative;*/
     width: 100%;
-    float: left;
-    clear: left;
   }
 }
 
@@ -49,7 +42,7 @@
 
 .panel:before {
   position: absolute;
-  top: 26px;
+  top: 13px;
   right: -15px;
   display: inline-block;
   border-top: 15px solid transparent;
@@ -61,7 +54,7 @@
 
 .panel:after {
   position: absolute;
-  top: 27px;
+  top: 14px;
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
@@ -72,12 +65,6 @@
 }
 
 @media (max-width: 767px) {
-  .panel {
-    width: calc(100% - 90px);
-    width: -moz-calc(100% - 90px);
-    width: -webkit-calc(100% - 90px);
-    float: right;
-  }
 
   .panel:before {
     border-left-width: 0;
@@ -85,10 +72,16 @@
     left: -15px;
     right: auto;
   }
+  .panel {
+    width: calc(100% - 50px);
+    width: -moz-calc(100% - 50px);
+    width: -webkit-calc(100% - 50px);
+    float: right;
+  }
 
   .panel:after, .timelineEvent:hover > .panel:after {
-    border-left-width: 0;
-    border-right-width: 14px;
+    border-left-width: 0 !important;
+    border-right-width: 14px !important;;
     left: -14px;
     right: auto;
   }
@@ -132,6 +125,7 @@
  ************************************************/
 .body {
   float: left;
+  background-color: #fff;
 }
 
 .body > ul {
@@ -139,7 +133,6 @@
 }
 
 .body > p, .body > ul {
-  padding: 20px;
   margin-bottom: 0;
 }
 
@@ -149,6 +142,7 @@
 
 .body > ul > li {
   padding: 7px 15px;
+  /*border: 0;*/
 }
 
 /* End Body */
@@ -185,50 +179,6 @@
 /* End BADGE */
 
 /************************************************
- *               Inverted Config                *
- ************************************************/
-
-@media (min-width:768px) {
-  .inverted {
-    float: right;
-    clear: right;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-
-  .inverted > .badge {
-    left: -12px;
-  }
-
-  .inverted > .panel {
-    float: right;
-  }
-
-  .inverted > .panel:before {
-    border-left-width: 0;
-    border-right-width: 15px;
-    left: -15px;
-    right: auto;
-  }
-
-  .inverted > .panel:after, .inverted:hover > .panel:after {
-    border-left-width: 0;
-    border-right-width: 14px;
-    left: -14px;
-    right: auto;
-  }
-
-}
-
-/*@media (max-width: 767px) {
-  .inverted > .badge {
-    left: 28px;
-  }
-}*/
-
-/* End Inverted */
-
-/************************************************
  *          Event Hover Modifications           *
  ************************************************/
 
@@ -259,3 +209,44 @@
 }
 
 /* End Event Hover Mods */
+
+/************************************************
+ *               Inverted Config                *
+ ************************************************/
+
+@media (min-width:768px) {
+  .inverted {
+    float: right;
+    clear: right;
+  }
+
+  .inverted > .badge {
+    left: -12px;
+  }
+
+  .inverted > .panel {
+    float: right;
+  }
+
+  .inverted > .panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+
+  .inverted > .panel:after, .inverted:hover > .panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .inverted > .badge {
+    /*left: 28px;*/
+  }
+}
+
+/* End Inverted */
