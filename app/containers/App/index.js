@@ -20,6 +20,10 @@ import Footer from 'components/Footer';
 import Banner from './banner-metal.jpg';
 import A from 'components/A';
 
+import { Button, ButtonToolbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
+
+
 import styles from './styles.css';
 
 function App(props) {
@@ -32,13 +36,19 @@ function App(props) {
           { name: 'description', content: 'Greg McGrath\'s Site' },
         ]}
       />
-      <A className={styles.logoWrapper} href="https://twitter.com/bloodbathmcgrath">
-        <Img className={styles.logo} src={Banner} alt="react-boilerplate - Logo" />
-      </A>
-      <h1>This is only a test....</h1>
-      <br />
-      <br />
-      <br />
+      <Nav pullRight>
+        <IndexLinkContainer to="/">
+          <NavItem eventKey={1}>Home</NavItem>
+        </IndexLinkContainer>
+        <LinkContainer to="/resume">
+          <NavItem eventKey={2}>Book Inv</NavItem>
+        </LinkContainer>
+        <NavDropdown eventKey={3} title="Authorization" id="basic-nav-dropdown">
+          <LinkContainer to="/logout">
+            <MenuItem eventKey={3.1}>Logout</MenuItem>
+          </LinkContainer>
+        </NavDropdown>
+      </Nav>
       {React.Children.toArray(props.children)}
       <Footer />
     </div>
