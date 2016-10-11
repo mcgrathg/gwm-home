@@ -23,7 +23,6 @@ import A from 'components/A';
 import { Button, ButtonToolbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 
-
 import styles from './styles.css';
 
 function App(props) {
@@ -36,19 +35,21 @@ function App(props) {
           { name: 'description', content: 'Greg McGrath\'s Site' },
         ]}
       />
-      <Nav pullRight>
+      <Nav bsStyle="tabs" activeKey="1">
         <IndexLinkContainer to="/">
           <NavItem eventKey={1}>Home</NavItem>
         </IndexLinkContainer>
         <LinkContainer to="/resume">
-          <NavItem eventKey={2}>Book Inv</NavItem>
+          <NavItem eventKey={2}>Resume</NavItem>
         </LinkContainer>
-        <NavDropdown eventKey={3} title="Authorization" id="basic-nav-dropdown">
-          <LinkContainer to="/logout">
-            <MenuItem eventKey={3.1}>Logout</MenuItem>
-          </LinkContainer>
-        </NavDropdown>
+        <LinkContainer to="/portfolio">
+          <NavItem eventKey={2}>Portfolio</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/contact">
+          <NavItem eventKey={2}>Contact</NavItem>
+        </LinkContainer>
       </Nav>
+
       {React.Children.toArray(props.children)}
       <Footer />
     </div>
