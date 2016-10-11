@@ -13,17 +13,18 @@ import textStyle from '../../responsive-text-formatting.css';
 import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 function TimelineEvent(props) {
-  const { title, company, location, start, end, responsibilities, styling } = props;
+  const { title, company, location, start, end, responsibilities, styling, isInverted } = props;
   const compLocDash = company && location ? ' — ' : '';
   const dateDash = start && end ? ' — ' : '';
 
+  if (styling) debugger;
   return (
-    <ListGroupItem className={classNames(styles.timelineEvent, styles[styling])}>
-      <div className={classNames('primary', styles['timeline-badge'])}>
+    <ListGroupItem className={classNames(styles.timelineEvent, styles[isInverted ? 'inverted' : ''])}>
+      <div className={styles.badge}>
         <a><i className="glyphicon glyphicon-record"></i></a>
       </div>
-      <div className={styles['timeline-panel']}>
-        <div className="timeline-heading">
+      <div className={styles.panel}>
+        <div className={styles.heading}>
           <h2>{title}</h2>
           <Row>
             <Col lg={8}>
@@ -34,7 +35,7 @@ function TimelineEvent(props) {
             </Col>
           </Row>
         </div>
-        <div className={textStyle['timeline-body']}>
+        <div className={styles.body}>
           <ListGroup>
             {responsibilities.map((task, idx) => {
               let val = task;

@@ -136,9 +136,6 @@ ul.timeline > li:hover > .timeline-badge a {
   filter:alpha(opacity=0);
 }
 
-.tooltip.in {
-}
-
 .tooltip.top {
   margin-top:-2px;
 }

@@ -66,7 +66,7 @@ const work = [{
   location: null,
   start: 'March 2013',
   end: 'Present',
-  styling: 'timeline-inverted',
+  isInverted: true,
   responsibilities: [
     'Completed independent full stack development for remote clients using languages such as PHP, MySQL, JavaScript, and Ext JS, as well as embracing new technologies and techniques to expand toolkit and abilities.',
     'Developed responsive front end for internet startup while collaborating with 8 international employees.',
@@ -79,7 +79,7 @@ const work = [{
   location: 'Schenectady, NY',
   start: 'August 2008',
   end: 'March 2010',
-  styling: 'timeline-inverted',
+  isInverted: true,
   responsibilities: [
     'Designed and developed custom software for clients in the public and private sector.',
     'Listened attentively to enhance understanding of clients’ requirements.',
