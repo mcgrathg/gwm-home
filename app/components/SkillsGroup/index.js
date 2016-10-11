@@ -17,7 +17,7 @@ function SkillsGroup({ group }) {
         <Col {...sizes} key={idx}>
           <ListGroup>
             {items.map((skill) => (
-              <ListGroupItem key={skill}>{skill}</ListGroupItem>)
+              <ListGroupItem key={skill} className={styles.item}>{skill}</ListGroupItem>)
             )}
           </ListGroup>
         </Col>

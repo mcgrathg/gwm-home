@@ -1,3 +1,7 @@
 .skillsGroup { /* stylelint-disable */
 
 }
+
+.item {
+  border: 0;
+}
