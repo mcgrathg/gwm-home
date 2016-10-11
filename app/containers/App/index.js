@@ -17,7 +17,7 @@ import 'font-awesome/css/font-awesome.css';
 
 import Footer from 'components/Footer';
 
-import { Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 
 import styles from './styles.css';
@@ -32,20 +32,32 @@ function App(props) {
           { name: 'description', content: 'Greg McGrath\'s Site' },
         ]}
       />
-      <Nav bsStyle="tabs" activeKey="1">
-        <IndexLinkContainer to="/">
-          <NavItem eventKey={1}>Home</NavItem>
-        </IndexLinkContainer>
-        <LinkContainer to="/resume">
-          <NavItem eventKey={2}>Resume</NavItem>
-        </LinkContainer>
-        <LinkContainer to="/portfolio">
-          <NavItem eventKey={2}>Portfolio</NavItem>
-        </LinkContainer>
-        <LinkContainer to="/contact">
-          <NavItem eventKey={2}>Contact</NavItem>
-        </LinkContainer>
-      </Nav>
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <IndexLinkContainer to="/">
+              <a>React-Bootstrap</a>
+            </IndexLinkContainer>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+          <Nav pullRight bsStyle="tabs">
+            <IndexLinkContainer to="/">
+              <NavItem eventKey={1}>Home</NavItem>
+            </IndexLinkContainer>
+            <LinkContainer to="/resume">
+              <NavItem eventKey={2}>Resume</NavItem>
+            </LinkContainer>
+            <LinkContainer to="/portfolio">
+              <NavItem eventKey={2}>Portfolio</NavItem>
+            </LinkContainer>
+            <LinkContainer to="/contact">
+              <NavItem eventKey={2}>Contact</NavItem>
+            </LinkContainer>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
 
       {React.Children.toArray(props.children)}
       <Footer />
