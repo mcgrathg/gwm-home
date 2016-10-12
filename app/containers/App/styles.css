@@ -43,7 +43,8 @@ h3 i {
 }
 
 .logoWrapper {
-  padding: 2em 0;
+  /*display:flex;*/
+  margin: auto 0;
 }
 
 .logo {
@@ -51,4 +52,14 @@ h3 i {
   max-width: 25vw;
   margin: 0 auto;
   display: block;
+}
+
+.navigation {
+  width: 100%;
+  background: papayawhip;
+}
+
+.navigationRow {
+  display: flex;
+  align-items: flex-end;
 }

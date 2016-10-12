@@ -16,7 +16,6 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.css';
 
 import Footer from 'components/Footer';
-import Img from 'components/Img';
 import Logo from './logo-tall.png';
 
 import { Image, Grid, Row, Col, Nav, NavItem } from 'react-bootstrap';
@@ -34,16 +33,16 @@ function App(props) {
           { name: 'description', content: 'Greg McGrath\'s Site' },
         ]}
       />
-      <Grid>
-        <Row>
-          <Col sm={2} md={2}>
+      <Grid className={styles.navigation}>
+        <Row className={styles.navigationRow}>
+          <Col xs={4} sm={2} md={2} className={styles.logoWrapper}>
             <IndexLinkContainer to="/">
-              <a className={styles.logoWrapper}>
+              <a>
                 <Image className={styles.logo} src={Logo} alt="Greg McGrath -  Logo" />
               </a>
             </IndexLinkContainer>
           </Col>
-          <Col sm={10} md={10}>
+          <Col xs={8} sm={10} md={10}>
             <Nav pullRight justified bsStyle="tabs">
               <IndexLinkContainer to="/">
                 <NavItem eventKey={1}>Home</NavItem>
