@@ -32,28 +32,28 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
           Resume
           <i className="fa fa-file-text text-muted" />
         </H1>
-        <section className="intro">
+        <section className={styles.intro}>
           <p className="lead">{header.intro}</p>
-          <ButtonToolbar className="resume-buttons">
+          <ButtonToolbar className={styles.resumeButtons}>
             <Button bsStyle="success">Download Resume</Button>
             <Button bsStyle="success">Contact Me</Button>
           </ButtonToolbar>
         </section>
-        <section className="technical-skills">
+        <section className={styles.technicalSkills}>
           <H2>
             Technical Skills
             <i className="fa fa-wrench text-muted" />
           </H2>
           <Skills columns={skills} />
         </section>
-        <section className="work-experience">
+        <section className={styles.workExperience}>
           <H2>
             Work Experience
             <i className="fa fa-briefcase text-muted" />
           </H2>
           <Timeline events={work} />
         </section>
-        <section className="education">
+        <section className={styles.education}>
           <H2>
             Education
             <i className="fa fa-pencil text-muted" />
