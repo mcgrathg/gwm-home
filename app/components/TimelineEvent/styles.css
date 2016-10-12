@@ -49,8 +49,8 @@
   right: -15px;
   display: inline-block;
   border-top: 15px solid transparent;
-  border-left: 15px solid #ccc;
-  border-right: 0 solid #ccc;
+  border-left: 15px solid #d4d4d4;
+  border-right: 0 solid #d4d4d4;
   border-bottom: 15px solid transparent;
   content: " ";
 }
@@ -61,8 +61,8 @@
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid #C5C7C5;
-  border-right: 0 solid #C5C7C5;
+  border-left: 14px solid #455A64;
+  border-right: 0 solid #455A64;
   border-bottom: 14px solid transparent;
   content: " ";
 }
@@ -98,9 +98,9 @@
 .heading {
   width: 100%;
   height: auto;
-  background-color: #C5C7C5;
+  background-color: #455A64;
   float: left;
-  color: black;
+  color: white;
   padding: 15px;
 }
 
@@ -126,7 +126,7 @@
 }
 
 .heading h5 {
-  color: #333;
+  color: #eee;
   margin: 5px 0;
   padding: 0;
 }
@@ -215,18 +215,18 @@
  ************************************************/
 
 .timelineEvent:hover > .panel {
+  -webkit-box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.16), 0 10px 15px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.16), 0 10px 15px 0 rgba(0, 0, 0, 0.12);
-  webkit-box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.16), 0 10px 15px 0 rgba(0, 0, 0, 0.12);
 }
 
 .timelineEvent:hover > .panel:before {
-  border-left-color: #455A64;
-  border-right-color: #455A64;
+  /*border-left-color: #455A64;
+  border-right-color: #455A64;*/
 }
 
 .timelineEvent:hover > .panel:after {
-  border-left: 14px solid #455A64;
-  border-right: 0 solid #455A64;
+  /*border-left: 14px solid #455A64;
+  border-right: 0 solid #455A64;*/
 }
 
 .timelineEvent:hover > .badge a {
@@ -234,8 +234,8 @@
 }
 
 .timelineEvent:hover .heading, .timelineEvent:hover .heading h2, .timelineEvent:hover .heading h5 {
-  background-color: #455A64;
-  color: white;
+  /*background-color: #455A64;
+  color: white;*/
 }
 
 /* End Event Hover Mods */
