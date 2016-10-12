@@ -48,6 +48,7 @@ h3 i {
 
 .logo {
   width: 100%;
+  max-width: 25vw;
   margin: 0 auto;
   display: block;
 }

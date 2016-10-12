@@ -16,8 +16,10 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.css';
 
 import Footer from 'components/Footer';
+import Img from 'components/Img';
+import Logo from './logo-tall.png';
 
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Image, Grid, Row, Col, Nav, NavItem } from 'react-bootstrap';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 
 import styles from './styles.css';
@@ -32,33 +34,33 @@ function App(props) {
           { name: 'description', content: 'Greg McGrath\'s Site' },
         ]}
       />
-      <Navbar>
-        <Navbar.Header>
-          <Navbar.Brand>
+      <Grid>
+        <Row>
+          <Col sm={2} md={2}>
             <IndexLinkContainer to="/">
-              <a>React-Bootstrap</a>
+              <a className={styles.logoWrapper}>
+                <Image className={styles.logo} src={Logo} alt="Greg McGrath -  Logo" />
+              </a>
             </IndexLinkContainer>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav pullRight bsStyle="tabs">
-            <IndexLinkContainer to="/">
-              <NavItem eventKey={1}>Home</NavItem>
-            </IndexLinkContainer>
-            <LinkContainer to="/resume">
-              <NavItem eventKey={2}>Resume</NavItem>
-            </LinkContainer>
-            <LinkContainer to="/portfolio">
-              <NavItem eventKey={2}>Portfolio</NavItem>
-            </LinkContainer>
-            <LinkContainer to="/contact">
-              <NavItem eventKey={2}>Contact</NavItem>
-            </LinkContainer>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-
+          </Col>
+          <Col sm={10} md={10}>
+            <Nav pullRight justified bsStyle="tabs">
+              <IndexLinkContainer to="/">
+                <NavItem eventKey={1}>Home</NavItem>
+              </IndexLinkContainer>
+              <LinkContainer to="/resume">
+                <NavItem eventKey={2}>Resume</NavItem>
+              </LinkContainer>
+              <LinkContainer to="/portfolio">
+                <NavItem eventKey={2}>Portfolio</NavItem>
+              </LinkContainer>
+              <LinkContainer to="/contact">
+                <NavItem eventKey={2}>Contact</NavItem>
+              </LinkContainer>
+            </Nav>
+          </Col>
+        </Row>
+      </Grid>
       {React.Children.toArray(props.children)}
       <Footer />
     </div>
