@@ -12,8 +12,10 @@ import styles from './styles.css';
 
 import H1 from 'components/H1';
 import H2 from 'components/H2';
+import Card from 'components/Card';
 import Skills from 'components/Skills';
 import Timeline from 'components/Timeline';
+import SocialBar from 'components/SocialBar';
 
 
 import { Button, ButtonToolbar } from 'react-bootstrap';
@@ -32,15 +34,16 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
           Resume
           <i className="fa fa-file-text text-muted" />
         </H1>
-        <section className={styles.intro}>
+        <Card className={styles.introCard}>
+          <SocialBar className={styles.social} />
           <p className="lead">{header.intro}</p>
           <ButtonToolbar className={styles.resumeButtons}>
             <Button bsStyle="success">Download Resume</Button>
             <Button bsStyle="success">Contact Me</Button>
           </ButtonToolbar>
-        </section>
+        </Card>
         <section className={styles.technicalSkills}>
-          <H2>
+          <H2 className="text-center">
             Technical Skills
             <i className="fa fa-wrench text-muted" />
           </H2>

@@ -4,4 +4,9 @@
 
 .item {
   border: 0;
+  background-color: transparent;
+}
+
+.listGroup {
+  margin-bottom: 0;
 }
