@@ -55,6 +55,26 @@ export default function createRoutes(store) {
           .catch(errorLoading);
       },
     }, {
+      path: '/portfolio',
+      name: 'portfolioPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/PortfolioPage/reducer'),
+          System.import('containers/PortfolioPage/sagas'),
+          System.import('containers/PortfolioPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('portfolioPage', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
