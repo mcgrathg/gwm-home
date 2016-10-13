@@ -30,10 +30,12 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
             { name: 'description', content: 'Greg McGrath\'s Resume' },
           ]}
         />
+
         <H1 className="page-header">
           Resume
           <i className="fa fa-file-text text-muted" />
         </H1>
+
         <section>
           <Card className={styles.introCard}>
             <SocialBar className={styles.social} />
@@ -44,6 +46,7 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
             </ButtonToolbar>
           </Card>
         </section>
+
         <section className={styles.technicalSkills}>
           <H2 className="text-center">
             Technical Skills
@@ -51,6 +54,7 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
           </H2>
           <Skills columns={skills} />
         </section>
+
         <section className={styles.workExperience}>
           <H2 className="text-center">
             Work Experience
@@ -58,6 +62,7 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
           </H2>
           <Timeline events={work} />
         </section>
+
         <section className={styles.education}>
           <H2 className="text-center">
             Education
