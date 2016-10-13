@@ -17,7 +17,6 @@ import Skills from 'components/Skills';
 import Timeline from 'components/Timeline';
 import SocialBar from 'components/SocialBar';
 
-
 import { Button, ButtonToolbar } from 'react-bootstrap';
 
 export class ResumePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
