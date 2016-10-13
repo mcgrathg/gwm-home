@@ -10,3 +10,7 @@
 .listGroup {
   margin-bottom: 0;
 }
+
+.item:not(:first-child) {
+  border-top: 1px solid #728690;
+}
