@@ -34,14 +34,16 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
           Resume
           <i className="fa fa-file-text text-muted" />
         </H1>
-        <Card className={styles.introCard}>
-          <SocialBar className={styles.social} />
-          <p className="lead">{header.intro}</p>
-          <ButtonToolbar className={styles.resumeButtons}>
-            <Button bsStyle="success">Download Resume</Button>
-            <Button bsStyle="success">Contact Me</Button>
-          </ButtonToolbar>
-        </Card>
+        <section>
+          <Card className={styles.introCard}>
+            <SocialBar className={styles.social} />
+            <p className="lead">{header.intro}</p>
+            <ButtonToolbar className={styles.resumeButtons}>
+              <Button bsStyle="success">Download Resume</Button>
+              <Button bsStyle="success">Contact Me</Button>
+            </ButtonToolbar>
+          </Card>
+        </section>
         <section className={styles.technicalSkills}>
           <H2 className="text-center">
             Technical Skills
@@ -50,14 +52,14 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
           <Skills columns={skills} />
         </section>
         <section className={styles.workExperience}>
-          <H2>
+          <H2 className="text-center">
             Work Experience
             <i className="fa fa-briefcase text-muted" />
           </H2>
           <Timeline events={work} />
         </section>
         <section className={styles.education}>
-          <H2>
+          <H2 className="text-center">
             Education
             <i className="fa fa-pencil text-muted" />
           </H2>
