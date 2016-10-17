@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { FormattedNumber } from 'react-intl';
-import { selectCurrentUser } from 'containers/App/selectors';
+// import { selectCurrentVideo } from 'containers/App/selectors';
 import ListItem from 'components/ListItem';
 import IssueIcon from 'components/IssueIcon';
 import A from 'components/A';
@@ -60,7 +60,11 @@ RepoListItem.propTypes = {
   currentUser: React.PropTypes.string,
 };
 
+function selectCurrentVideo() {
+  return [];
+}
+
 export default connect(createSelector(
-  selectCurrentUser(),
+  selectCurrentVideo(),
   (currentUser) => ({ currentUser })
 ))(RepoListItem);

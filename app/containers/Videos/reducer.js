@@ -6,14 +6,15 @@
 
 import { fromJS } from 'immutable';
 import {
-  DEFAULT_ACTION,
+  CHANGE_VIDEO,
 } from './constants';
 
 const initialState = fromJS({});
 
 function videosReducer(state = initialState, action) {
   switch (action.type) {
-    case DEFAULT_ACTION:
+    case CHANGE_VIDEO:
+      console.log('video reducer: ', arguments);
       return state;
     default:
       return state;

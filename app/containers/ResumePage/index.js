@@ -22,7 +22,7 @@ import { Button, ButtonToolbar } from 'react-bootstrap';
 export class ResumePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div className={styles.resumePage}>
+      <article className={styles.resumePage}>
         <Helmet
           title={header.title}
           meta={[
@@ -69,7 +69,7 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
           </H2>
           <Timeline events={education} />
         </section>
-      </div>
+      </article>
     );
   }
 }

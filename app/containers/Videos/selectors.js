@@ -1,25 +1,20 @@
+/**
+ * Video Container selectors
+ */
+
 import { createSelector } from 'reselect';
 
 /**
- * Direct selector to the videos state domain
+ * Direct selector to the videos container state domain
  */
-const selectVideosDomain = () => (state) => state.get('videos');
+const selectVideosPage = () => (state) => state.get('videosContainer');
 
-/**
- * Other specific selectors
- */
-
-
-/**
- * Default selector used by Videos
- */
-
-const selectVideos = () => createSelector(
-  selectVideosDomain(),
-  (substate) => substate.toJS()
+const selectVideo = () => createSelector(
+  selectVideosPage(),
+  (portfolioPage) => portfolioPage.get('video')
 );
 
-export default selectVideos;
 export {
-  selectVideosDomain,
+  selectVideosPage,
+  selectVideo,
 };

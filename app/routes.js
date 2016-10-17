@@ -12,31 +12,18 @@ const loadModule = (cb) => (componentModule) => {
   cb(null, componentModule.default);
 };
 
-export default function createRoutes(store) {
+export default function createRoutes() {
   // create reusable async injectors using getAsyncInjectors factory
-  const { injectReducer, injectSagas } = getAsyncInjectors(store);
+  // const { injectReducer, injectSagas } = getAsyncInjectors(store);
 
   return [
     {
       path: '/',
       name: 'home',
       getComponent(nextState, cb) {
-        const importModules = Promise.all([
-          System.import('containers/HomePage/reducer'),
-          System.import('containers/HomePage/sagas'),
-          System.import('containers/HomePage'),
-        ]);
-
-        const renderRoute = loadModule(cb);
-
-        importModules.then(([reducer, sagas, component]) => {
-          injectReducer('home', reducer.default);
-          injectSagas(sagas.default);
-
-          renderRoute(component);
-        });
-
-        importModules.catch(errorLoading);
+        System.import('containers/HomePage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
       },
     }, {
       path: '/features',
@@ -58,21 +45,9 @@ export default function createRoutes(store) {
       path: '/portfolio',
       name: 'portfolioPage',
       getComponent(nextState, cb) {
-        const importModules = Promise.all([
-          System.import('containers/PortfolioPage/reducer'),
-          System.import('containers/PortfolioPage/sagas'),
-          System.import('containers/PortfolioPage'),
-        ]);
-
-        const renderRoute = loadModule(cb);
-
-        importModules.then(([reducer, sagas, component]) => {
-          injectReducer('portfolioPage', reducer.default);
-          injectSagas(sagas.default);
-          renderRoute(component);
-        });
-
-        importModules.catch(errorLoading);
+        System.import('containers/portfolioPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
       },
     }, {
       path: '*',

@@ -16,7 +16,7 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.css';
 
 import Footer from 'components/Footer';
-import Logo from './logo-tall.png';
+import Logo from './logo.png';
 
 import { Image, Grid, Row, Col, Nav, NavItem } from 'react-bootstrap';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';

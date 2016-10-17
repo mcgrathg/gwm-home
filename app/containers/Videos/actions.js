@@ -5,11 +5,12 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  CHANGE_VIDEO,
 } from './constants';
 
-export function defaultAction() {
+export function changeVideo(video) {
   return {
-    type: DEFAULT_ACTION,
+    type: CHANGE_VIDEO,
+    video,
   };
 }

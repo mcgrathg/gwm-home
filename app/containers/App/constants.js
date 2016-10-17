@@ -9,6 +9,6 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const LOAD_REPOS = 'boilerplate/App/LOAD_REPOS';
-export const LOAD_REPOS_SUCCESS = 'boilerplate/App/LOAD_REPOS_SUCCESS';
-export const LOAD_REPOS_ERROR = 'boilerplate/App/LOAD_REPOS_ERROR';
+export const LOAD_VIDEOS = 'gwm/App/LOAD_VIDEOS';
+export const LOAD_VIDEOS_SUCCESS = 'gwm/App/LOAD_VIDEOS_SUCCESS';
+export const LOAD_VIDEOS_ERROR = 'gwm/App/LOAD_VIDEOS_ERROR';
