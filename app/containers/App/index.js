@@ -36,11 +36,13 @@ function App(props) {
       <Grid className={styles.navigation}>
         <Row className={styles.navigationRow}>
           <Col xs={4} sm={2} md={2} className={styles.logoWrapper}>
-            <IndexLinkContainer to="/">
-              <a>
-                <Image className={styles.logo} src={Logo} alt="Greg McGrath -  Logo" />
-              </a>
-            </IndexLinkContainer>
+            <Nav>
+              <IndexLinkContainer to="/">
+                <NavItem>
+                  <img className={styles.logo} src={Logo} alt="Greg McGrath -  Logo" />
+                </NavItem>
+              </IndexLinkContainer>
+            </Nav>
           </Col>
           <Col xs={8} sm={10} md={10}>
             <Nav pullRight justified bsStyle="tabs">
