@@ -47,6 +47,10 @@ h3 i {
   margin: auto 0;
 }
 
+.logoWrapper li {
+  list-style: none;
+}
+
 .logo {
   width: 100%;
   max-width: 25vw;
