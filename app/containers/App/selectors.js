@@ -2,24 +2,7 @@
  * The global state selectors
  */
 
-import { createSelector } from 'reselect';
-
 const selectGlobal = () => (state) => state.get('global');
-
-const selectLoading = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.get('loading')
-);
-
-const selectError = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.get('error')
-);
-
-const selectVideos = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.getIn(['userData', 'videos'])
-);
 
 const selectLocationState = () => {
   let prevRoutingState;
@@ -39,8 +22,5 @@ const selectLocationState = () => {
 
 export {
   selectGlobal,
-  selectLoading,
-  selectError,
-  selectVideos,
   selectLocationState,
 };

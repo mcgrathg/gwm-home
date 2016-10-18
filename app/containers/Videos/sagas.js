@@ -4,9 +4,11 @@
 
 import { take, call, put, fork, cancel } from 'redux-saga/effects';
 import { LOCATION_CHANGE } from 'react-router-redux';
-import { LOAD_VIDEOS } from 'containers/App/constants';
-import { YOUTUBE_PLAYLIST_URL } from './constants';
-import { videosLoaded, videosLoadingError } from 'containers/App/actions';
+import {
+  YOUTUBE_PLAYLIST_URL,
+  LOAD_VIDEOS,
+ } from './constants';
+import { videosLoaded, videosLoadingError } from './actions';
 
 import request from 'utils/request';
 

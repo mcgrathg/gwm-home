@@ -6,16 +6,17 @@
 
 import React, { PropTypes } from 'react';
 
+import LoadingIndicator from 'components/LoadingIndicator';
 import { Col } from 'react-bootstrap';
 
 import styles from './styles.css';
 
 function VideoDetail({ video }) {
   if (!video) {
-    return <div>Loading...</div>;
+    return <LoadingIndicator />;
   }
 
-  const videoId = video.id.videoId;
+  const { videoId } = video.snippet.resourceId;
   const url = `https://www.youtube.com/embed/${videoId}`;
 
   return (

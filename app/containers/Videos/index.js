@@ -11,45 +11,46 @@ import { createStructuredSelector } from 'reselect';
 
 
 import {
+  selectCurrentVideo,
   selectVideos,
   selectLoading,
   selectError,
-} from 'containers/App/selectors';
-import { selectVideo } from './selectors';
+ } from './selectors';
 
-import { changeVideo } from './actions';
-import { loadVideos } from '../App/actions';
+import {
+  changeVideo,
+  loadVideos,
+} from './actions';
 
 import LoadingIndicator from 'components/LoadingIndicator';
+import VideoDetail from 'components/VideoDetail';
 import VideoList from 'components/VideoList';
-
-import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 import styles from './styles.css';
 
 export class Videos extends Component { // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
-    loadVideos();
+    this.props.onLoadVideos();
   }
   render() {
     let mainContent = null;
 
     // Show a loading indicator when we're loading
     if (this.props.loading) {
-      mainContent = (<ListGroup component={LoadingIndicator} />);
+      mainContent = (<LoadingIndicator />);
 
     // Show an error if there is one
     } else if (this.props.error !== false) {
-      const ErrorComponent = () => (
-        <ListGroupItem>
-          Something went wrong, please try again!
-        </ListGroupItem>
-      );
-      mainContent = (<ListGroup component={ErrorComponent} />);
+      mainContent = (<div>Something went wrong, please try again!</div>);
 
     // If we're not loading, don't have an error and there are videos, show the videos
     } else if (this.props.videos !== false) {
-      mainContent = (<VideoList videos={this.props.videos} onCurrentVideoChange={this.props.onCurrentVideoChange} />);
+      mainContent = (
+        <div>
+          <VideoDetail video={this.props.currentVideo} />
+          <VideoList videos={this.props.videos} onCurrentVideoChange={this.props.onCurrentVideoChange} />
+        </div>
+      );
     }
 
     return (
@@ -70,32 +71,28 @@ Videos.propTypes = {
     PropTypes.array,
     PropTypes.bool,
   ]),
-  // currentVideo: PropTypes.oneOfType([
-  //   PropTypes.object,
-  //   PropTypes.bool,
-  // ]),
-  loadVideos: PropTypes.func,
+  currentVideo: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.bool,
+  ]),
+  onLoadVideos: PropTypes.func,
   onCurrentVideoChange: PropTypes.func,
 };
 
 export function mapDispatchToProps(dispatch) {
   return {
-    // onChangeCurrentVideo: (evt) => dispatch(changeCurrentVideo(evt.target.value)),
-    // changeRoute: (url) => dispatch(push(url)),
     onLoadVideos: (evt) => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadVideos());
     },
-    onCurrentVideoChange: (evt) => {
-      dispatch(changeVideo(evt.target.value));
-    },
+    onCurrentVideoChange: (evt) => dispatch(changeVideo(evt)),
 
     dispatch,
   };
 }
 
 const mapStateToProps = createStructuredSelector({
-  video: selectVideo(),
+  currentVideo: selectCurrentVideo(),
   videos: selectVideos(),
   loading: selectLoading(),
   error: selectError(),
