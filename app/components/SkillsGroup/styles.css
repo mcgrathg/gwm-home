@@ -1,0 +1,16 @@
+.skillsGroup { /* stylelint-disable */
+
+}
+
+.item {
+  border: 0;
+  background-color: transparent;
+}
+
+.listGroup {
+  margin-bottom: 0;
+}
+
+.item:not(:first-child) {
+  border-top: 1px solid #728690;
+}

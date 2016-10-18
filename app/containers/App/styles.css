@@ -1,0 +1,78 @@
+/* Global styles */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body.fontLoaded {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+:global(#app) {
+  background-color: #ffffff;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+h1 i,
+h2 i,
+h3 i {
+  padding-left:2vw;
+}
+
+.wrapper {
+  /*max-width: calc(768px + 16px * 2);*/
+  margin: 0 auto;
+  display: flex;
+  min-height: 100%;
+  padding: 0 16px;
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+.logoWrapper {
+  /*display:flex;*/
+  margin: auto 0;
+}
+
+.logoWrapper li {
+  list-style: none;
+}
+
+.logo {
+  width: 100%;
+  max-width: 25vw;
+  margin: 0 auto;
+  display: block;
+}
+
+.navigation {
+  width: 100%;
+  background: #f5f5f5;
+}
+
+.navigationRow {
+  display: flex;
+  align-items: flex-end;
+}
+
+:global button {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transition: box-shadow .25s;
+}
+
+:global button:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}

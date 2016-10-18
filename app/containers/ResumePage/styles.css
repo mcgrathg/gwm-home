@@ -1,0 +1,30 @@
+.resumePage { /* stylelint-disable */
+
+}
+
+.introCard {
+  padding: 30px 0;
+}
+
+.introCard p  {
+  padding: 0 5%;
+  margin: 32px 0;
+}
+
+.workExperience {
+  margin-bottom: 20px;
+}
+
+.resumeButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialBar {
+  padding-top: 10px;
+}
+
+section:not(:first-child) {
+  padding-top: 30px;
+}

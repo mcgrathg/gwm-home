@@ -1,0 +1,25 @@
+.skills { /* stylelint-disable */
+
+}
+
+H3 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #455A64;
+  color: #ffffff;
+  padding: 15px;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
