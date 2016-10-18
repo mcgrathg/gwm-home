@@ -11,7 +11,7 @@ import Helmet from 'react-helmet';
 import H1 from 'components/H1';
 import H2 from 'components/H2';
 import Card from 'components/Card';
-// import Videos from 'containers/Videos';
+import Videos from 'containers/Videos';
 
 import { Button, ButtonToolbar } from 'react-bootstrap';
 
@@ -37,7 +37,7 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
             Video Examples
             <i className="fa fa-video text-muted" />
           </H2>
-          {/* <Videos /> */}
+          <Videos />
         </section>
         <section>
           <Card className={styles.introCard}>

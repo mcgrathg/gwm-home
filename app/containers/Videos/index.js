@@ -29,7 +29,7 @@ import styles from './styles.css';
 
 export class Videos extends Component { // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
-    this.props.loadVideos();
+    loadVideos();
   }
   render() {
     let mainContent = null;
@@ -84,11 +84,9 @@ export function mapDispatchToProps(dispatch) {
     // changeRoute: (url) => dispatch(push(url)),
     onLoadVideos: (evt) => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      debugger;
       dispatch(loadVideos());
     },
     onCurrentVideoChange: (evt) => {
-      debugger;
       dispatch(changeVideo(evt.target.value));
     },
 

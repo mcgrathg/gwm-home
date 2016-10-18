@@ -48,7 +48,7 @@ export default function createRoutes(store) {
         const importModules = Promise.all([
           System.import('containers/Videos/reducer'),
           System.import('containers/Videos/sagas'),
-          System.import('containers/portfolioPage'),
+          System.import('containers/PortfolioPage'),
         ]);
 
         const renderRoute = loadModule(cb);
