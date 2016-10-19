@@ -17,13 +17,13 @@ const skills = [
     header: 'Languages & Frameworks',
     items: [
       {
-        sizes: { sm: 4, xs: 5 },
+        sizes: { sm: 4, xs: 6 },
         items: ['JavaScript', 'Ext JS', 'React', 'jQuery'],
       }, {
-        sizes: { sm: 3, xs: 4 },
+        sizes: { sm: 2, xs: 4 },
         items: ['SQL', 'HTML', 'CSS', 'Python'],
       }, {
-        sizes: { sm: 5, xs: 8 },
+        sizes: { sm: 6, xs: 8 },
         items: ['Sencha Touch', 'Apache Ant', 'Caché ObjectScript'],
       },
     ],
@@ -34,10 +34,10 @@ const skills = [
         sizes: { sm: 3, xs: 5 },
         items: ['Git', 'Perforce', 'Webpack'],
       }, {
-        sizes: { sm: 4, xs: 6 },
+        sizes: { md: 4, sm: 4, xs: 6 },
         items: ['Compass', 'Atom', 'Office Suite'],
       }, {
-        sizes: { md: 4, sm: 3, xs: 7 },
+        sizes: { md: 5, sm: 5, xs: 8 },
         items: ['Sencha CMD', 'Sencha Architect', 'Sublime Text'],
       },
     ],

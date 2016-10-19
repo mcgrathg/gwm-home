@@ -1,5 +1,6 @@
 .cardBody {
   float: left;
+  width: 100%;
 }
 
 .cardBody > ul {
