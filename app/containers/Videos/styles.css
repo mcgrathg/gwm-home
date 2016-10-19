@@ -6,3 +6,28 @@
   margin-left: 0;
   margin-right:0;
 }
+
+.col {
+  /*padding-right: 0;*/
+}
+.col:first-child {
+  /*padding-left: 0;
+
+  background: blue;*/
+}
+
+@media (min-width: 768px) {
+  .col {
+    padding-left: 0;
+  }
+
+  .col:not(:first-child) {
+    padding-right: 0;
+  }
+}
+@media (max-width: 767px) {
+  .col {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

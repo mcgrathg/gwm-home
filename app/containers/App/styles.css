@@ -59,7 +59,7 @@ h3 i {
 }
 
 .navigation {
-  width: 100%;
+  width: 100% !important;
   background: #f5f5f5;
 }
 

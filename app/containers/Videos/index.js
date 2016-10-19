@@ -49,11 +49,15 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
     } else if (this.props.videos !== false) {
       mainContent = (
         <Row className={styles.row}>
-          <Col md={4} className={styles.col}>
-            <VideoList videos={this.props.videos} onCurrentVideoChange={this.props.onCurrentVideoChange} />
-          </Col>
           <Col md={8} className={styles.col}>
             <VideoDetail video={this.props.currentVideo} />
+          </Col>
+          <Col md={4} className={styles.col}>
+            <VideoList
+              videos={this.props.videos}
+              currentVideo={this.props.currentVideo}
+              onCurrentVideoChange={this.props.onCurrentVideoChange}
+            />
           </Col>
         </Row>
       );
