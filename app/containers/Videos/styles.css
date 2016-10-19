@@ -7,13 +7,8 @@
   margin-right:0;
 }
 
-.col {
-  /*padding-right: 0;*/
-}
-.col:first-child {
-  /*padding-left: 0;
-
-  background: blue;*/
+.card {
+  margin: 0;
 }
 
 @media (min-width: 768px) {

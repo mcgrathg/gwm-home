@@ -25,6 +25,7 @@ import {
 import LoadingIndicator from 'components/LoadingIndicator';
 import VideoDetail from 'components/VideoDetail';
 import VideoList from 'components/VideoList';
+import Card from 'components/Card';
 
 import { Row, Col } from 'react-bootstrap';
 
@@ -53,11 +54,13 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
             <VideoDetail video={this.props.currentVideo} />
           </Col>
           <Col md={4} className={styles.col}>
-            <VideoList
-              videos={this.props.videos}
-              currentVideo={this.props.currentVideo}
-              onCurrentVideoChange={this.props.onCurrentVideoChange}
-            />
+            <Card className={styles.card}>
+              <VideoList
+                videos={this.props.videos}
+                currentVideo={this.props.currentVideo}
+                onCurrentVideoChange={this.props.onCurrentVideoChange}
+              />
+            </Card>
           </Col>
         </Row>
       );
