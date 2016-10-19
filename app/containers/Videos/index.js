@@ -26,6 +26,8 @@ import LoadingIndicator from 'components/LoadingIndicator';
 import VideoDetail from 'components/VideoDetail';
 import VideoList from 'components/VideoList';
 
+import { Grid, Row, Col } from 'react-bootstrap';
+
 import styles from './styles.css';
 
 export class Videos extends Component { // eslint-disable-line react/prefer-stateless-function
@@ -46,10 +48,14 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
     // If we're not loading, don't have an error and there are videos, show the videos
     } else if (this.props.videos !== false) {
       mainContent = (
-        <div>
-          <VideoDetail video={this.props.currentVideo} />
-          <VideoList videos={this.props.videos} onCurrentVideoChange={this.props.onCurrentVideoChange} />
-        </div>
+        <Row className={styles.row}>
+          <Col md={4} className={styles.col}>
+            <VideoList videos={this.props.videos} onCurrentVideoChange={this.props.onCurrentVideoChange} />
+          </Col>
+          <Col md={8} className={styles.col}>
+            <VideoDetail video={this.props.currentVideo} />
+          </Col>
+        </Row>
       );
     }
 

@@ -1,3 +1,13 @@
 .videoListItem { /* stylelint-disable */
+  border: 0;
+  box-shadow: none;
+}
 
+.heading {
+  text-align: left;
+  white-space: initial;
+}
+
+.image {
+  max-width: 100%;
 }
