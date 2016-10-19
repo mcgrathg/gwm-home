@@ -20,7 +20,6 @@ h5 {
 }
 
 .heading {
-  /*text-align: left;*/
   white-space: initial;
 }
 
@@ -39,6 +38,4 @@ h5 {
 .isSelected {
   color: #333;
   background-color: #f5f5f5;
-  /*border-color: #adadad;*/
-  /*border: 0;*/
 }
