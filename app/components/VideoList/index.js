@@ -14,6 +14,7 @@ import VideoListItem from 'components/VideoListItem';
 function VideoList({ videos, onCurrentVideoChange, currentVideo }) {
   const videoItems = videos.map((video) => (
     <VideoListItem
+      className={styles.videoListItem}
       onVideoSelect={onCurrentVideoChange}
       key={video.etag}
       video={video}

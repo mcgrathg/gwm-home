@@ -12,11 +12,11 @@ import { Button, Row, Col, Image } from 'react-bootstrap';
 import textStyle from '../../responsive-text-formatting.css';
 import styles from './styles.css';
 
-function VideoListItem({ video, isSelected, onVideoSelect }) {
+function VideoListItem({ video, isSelected, onVideoSelect, className }) {
   const imageUrl = video.snippet.thumbnails.medium.url;
 
   return (
-    <Button onClick={() => onVideoSelect(video)} className={classNames(styles.videoListItem, isSelected ? styles.isSelected : null)}>
+    <Button onClick={() => onVideoSelect(video)} className={classNames(styles.videoListItem, className, isSelected ? styles.isSelected : null)}>
       <Row className={styles.row}>
         <Col md={5} className={styles.col}>
           <Image className={styles.image} src={imageUrl} alt="video-thumbnail" />
@@ -34,6 +34,8 @@ function VideoListItem({ video, isSelected, onVideoSelect }) {
 VideoListItem.propTypes = {
   video: PropTypes.object,
   onVideoSelect: PropTypes.func,
+  isSelected: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default VideoListItem;

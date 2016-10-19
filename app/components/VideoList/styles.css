@@ -1,3 +1,11 @@
 .videoList { /* stylelint-disable */
   width: 100%;
 }
+
+.videoListItem:not(:first-child) {
+  border-top: 1px solid #d9d9d9;
+}
+
+.videoListItem {
+  padding: 10px 0;
+}
