@@ -1,6 +1,22 @@
-.videoListItem { /* stylelint-disable */
+.videoListItem, { /* stylelint-disable */
   border: 0;
   box-shadow: none;
+  border-radius: 0;
+  transition: box-shadow 0;
+}
+
+.videoListItem:hover {
+  box-shadow: none;
+  border-color: #ccc;
+}
+
+h5 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.videoListItem:first-child:not(:last-child) {
+    border-radius: 0 !important;
 }
 
 .heading {
@@ -9,6 +25,7 @@
 }
 
 .image {
+  margin: 5px 0;
   max-width: 100%;
   max-height: 75px;
 }
@@ -22,5 +39,6 @@
 .isSelected {
   color: #333;
   background-color: #f5f5f5;
-  border-color: #adadad;
+  /*border-color: #adadad;*/
+  /*border: 0;*/
 }

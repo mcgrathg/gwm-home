@@ -7,10 +7,6 @@
   margin-right:0;
 }
 
-.card {
-  margin: 0;
-}
-
 @media (min-width: 768px) {
   .col {
     padding-left: 0;

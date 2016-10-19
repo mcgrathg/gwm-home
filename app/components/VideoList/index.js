@@ -9,6 +9,9 @@ import styles from './styles.css';
 
 import { ButtonGroup } from 'react-bootstrap';
 
+import CardHeader from 'components/CardHeader';
+import CardBody from 'components/CardBody';
+import Card from 'components/Card';
 import VideoListItem from 'components/VideoListItem';
 
 function VideoList({ videos, onCurrentVideoChange, currentVideo }) {
@@ -23,9 +26,16 @@ function VideoList({ videos, onCurrentVideoChange, currentVideo }) {
   ));
 
   return (
-    <ButtonGroup vertical className={styles.videoList}>
-      {videoItems}
-    </ButtonGroup>
+    <Card className={styles.card}>
+      <CardHeader>
+        <h4 className={styles.header}>Playlist</h4>
+      </CardHeader>
+      <CardBody>
+        <ButtonGroup vertical className={styles.videoList}>
+          {videoItems}
+        </ButtonGroup>
+      </CardBody>
+    </Card>
   );
 }
 

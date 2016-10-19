@@ -18,13 +18,13 @@ function VideoListItem({ video, isSelected, onVideoSelect, className }) {
   return (
     <Button onClick={() => onVideoSelect(video)} className={classNames(styles.videoListItem, className, isSelected ? styles.isSelected : null)}>
       <Row className={styles.row}>
-        <Col md={5} className={styles.col}>
+        <Col sm={5} className={styles.col}>
           <Image className={styles.image} src={imageUrl} alt="video-thumbnail" />
         </Col>
-        <Col md={7} className={styles.col}>
-          <div className={classNames(styles.heading, textStyle['text-left-md'], textStyle['text-left-lg'])}>
+        <Col sm={7} className={styles.col}>
+          <h5 className={classNames(styles.heading, textStyle['text-left-md'], textStyle['text-left-lg'])}>
             {video.snippet.title}
-          </div>
+          </h5>
         </Col>
       </Row>
     </Button>
