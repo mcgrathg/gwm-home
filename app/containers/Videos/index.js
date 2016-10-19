@@ -26,7 +26,7 @@ import LoadingIndicator from 'components/LoadingIndicator';
 import VideoDetail from 'components/VideoDetail';
 import VideoList from 'components/VideoList';
 
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 import styles from './styles.css';
 
@@ -85,6 +85,7 @@ Videos.propTypes = {
     PropTypes.object,
     PropTypes.bool,
   ]),
+
   onLoadVideos: PropTypes.func,
   onCurrentVideoChange: PropTypes.func,
 };
