@@ -7,6 +7,7 @@
 import React, { PropTypes } from 'react';
 
 import LoadingIndicator from 'components/LoadingIndicator';
+import H3 from 'components/H3';
 
 import styles from './styles.css';
 
@@ -24,8 +25,8 @@ function VideoDetail({ video }) {
         <iframe className="embed-responsive-item" src={url}></iframe>
       </div>
       <div className="details">
-        <div>{video.snippet.title}</div>
-        <div>{video.snippet.description}</div>
+        <H3 className={styles.header}>{video.snippet.title}</H3>
+        <p className={styles.description}>{video.snippet.description}</p>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@
   width: 50%;
   float: left;
   clear: left;
-  background:transparent;
+  background: transparent;
   border: 0;
 }
 
@@ -95,14 +95,6 @@
 /************************************************
  *               Heading Config                 *
  ************************************************/
-.heading {
-  width: 100%;
-  height: auto;
-  background-color: #455A64;
-  float: left;
-  color: white;
-  padding: 15px;
-}
 
 .headingRow {
   padding-left: 15px;
@@ -114,55 +106,7 @@
   margin: 5px 0;
 }
 
-.heading h5,
-.heading h2 {
-  margin: 0;
-  display: inline-block;
-}
-
-.heading h2 {
-  font-size: large;
-  margin: 0px;
-}
-
-.heading h5 {
-  color: #eee;
-  margin: 5px 0;
-  padding: 0;
-}
-
 /* End Heading */
-
-
-/************************************************
- *                 Body Config                  *
- ************************************************/
-.body {
-  float: left;
-}
-
-.body > ul {
-  padding: 0;
-}
-
-.body > p, .body > ul {
-  margin-bottom: 0;
-}
-
-.body > p+p {
-  margin-top: 5px;
-}
-
-.body > ul > li {
-  padding: 7px 15px;
-  /*border: 0;*/
-}
-
-.body h4 small {
-  padding-left: 1vw;
-}
-
-/* End Body */
 
 /************************************************
  *                 Badge Config                 *

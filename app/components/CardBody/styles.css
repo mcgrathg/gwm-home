@@ -1,0 +1,24 @@
+.cardBody {
+  float: left;
+}
+
+.cardBody > ul {
+  padding: 0;
+}
+
+.cardBody > p, .cardBody > ul {
+  margin-bottom: 0;
+}
+
+.cardBody > p+p {
+  margin-top: 5px;
+}
+
+.cardBody > ul > li {
+  padding: 7px 15px;
+  /*border: 0;*/
+}
+
+.cardBody h4 small {
+  padding-left: 1vw;
+}

@@ -7,82 +7,84 @@
 import React, { PropTypes, Component } from 'react';
 import classNames from 'classnames';
 
+import CardHeader from 'components/CardHeader';
+import CardBody from 'components/CardBody';
+import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
+
 import styles from './styles.css';
 import textStyle from '../../responsive-text-formatting.css';
 
-import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
-
 class TimelineEvent extends Component { // eslint-disable-line react/prefer-stateless-function
-  renderHeader() {
+  getHeaderContents() {
     const { title, company, location, start, end } = this.props;
-    const compLocDash = company && location ? ' — ' : '';
-    const dateDash = start && end ? ' — ' : '';
     const titleTag = <h2>{title}</h2>;
-    const dateCol = (
-      <Col lg={2} className={classNames(textStyle['text-right-lg'], styles.headingCol)}>
-        <h5>{start}{dateDash}{end}</h5>
-      </Col>
-    );
 
-    let details;
+    function getDateCol(lgWidth) {
+      return (
+        <Col
+          className={classNames(textStyle['text-right-lg'], styles.headingCol)}
+          lg={lgWidth}
+        >
+          <h5>
+            {start}{getDivider(start, end)}{end}
+          </h5>
+        </Col>
+      );
+    }
+
+    function getDivider(first, second) {
+      return (first && second) ? ' — ' : '';
+    }
+
+    let heading;
     if (company || location) {
-      details = (
+      heading = (
         <div>
           {titleTag}
           <Row className={styles.headingRow}>
             <Col lg={8} className={styles.headingCol}>
-              <h5>{company}{compLocDash}{location}</h5>
+              <h5>{company}{getDivider(company, location)}{location}</h5>
             </Col>
-            <Col lg={4} className={classNames(textStyle['text-right-lg'], styles.headingCol)}>
-              <h5>{start}{dateDash}{end}</h5>
-            </Col>
+            {getDateCol(4)}
           </Row>
         </div>
       );
     } else {
-      details = (
+      heading = (
         <Row className={styles.headingRow}>
           <Col lg={11} className={styles.headingCol}>{titleTag}</Col>
-          <Col lg={1} className={classNames(textStyle['text-right-lg'], styles.headingCol)}>
-            <h5>{start}{dateDash}{end}</h5>
-          </Col>
+          {getDateCol(1)}
         </Row>
       );
     }
 
-    return (
-      <div className={styles.heading}>
-        {details}
-      </div>
-    );
+    return heading;
   }
 
-  renderBody() {
+  getBodyContents() {
     const { responsibilities } = this.props;
 
     return (
-      <div className={styles.body}>
-        <ListGroup>
-          {responsibilities.map((task, idx) => {
-            let val = task;
-            if (typeof (task) === 'object') {
-              const { header, description } = task;
-              let { subheader } = task;
+      <ListGroup>
+        {responsibilities.map((task, idx) => {
+          let val = task;
+          if (typeof (task) === 'object') {
+            const { header, description } = task;
+            let { subheader } = task;
 
-              if (subheader) {
-                subheader = <small>{subheader}</small>;
-              }
-              val = (<span>
-                <h4 className={styles.taskHeader}>{header}{subheader}</h4>
-                {description}
-              </span>);
+            if (subheader) {
+              subheader = <small>{subheader}</small>;
             }
-            return (
-              <ListGroupItem key={idx} className={styles.responsibility}>{val}</ListGroupItem>
-            );
-          })}
-        </ListGroup>
-      </div>
+            val = (<span>
+              <h4 className={styles.taskHeader}>{header}{subheader}</h4>
+              {description}
+            </span>);
+          }
+          return (
+            <ListGroupItem key={idx} className={styles.responsibility}>{val}</ListGroupItem>
+          );
+        })}
+      </ListGroup>
     );
   }
 
@@ -95,8 +97,12 @@ class TimelineEvent extends Component { // eslint-disable-line react/prefer-stat
           <a><i className="glyphicon glyphicon-record"></i></a>
         </div>
         <div className={styles.panel}>
-          {this.renderHeader()}
-          {this.renderBody()}
+          <CardHeader className={styles.header}>
+            {this.getHeaderContents()}
+          </CardHeader>
+          <CardBody className={styles.body}>
+            {this.getBodyContents()}
+          </CardBody>
         </div>
       </ListGroupItem>
     );

@@ -1,0 +1,27 @@
+.cardHeader {
+  width: 100%;
+  height: auto;
+  background-color: #455A64;
+  float: left;
+  color: white;
+  padding: 15px;
+}
+
+.cardHeader h5,
+.cardHeader h2 {
+  margin: 0;
+  display: inline-block;
+}
+
+.cardHeader h2 {
+  font-size: large;
+  margin: 0px;
+}
+
+.cardHeader h5 {
+  color: #eee;
+  margin: 5px 0;
+  padding: 0;
+}
+
+/* End Heading */
