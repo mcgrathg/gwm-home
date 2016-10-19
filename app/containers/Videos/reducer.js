@@ -22,7 +22,6 @@ const initialState = fromJS({
 });
 
 function videosReducer(state = initialState, action) {
-  console.log(action.type, state, action);
   switch (action.type) {
     case CHANGE_CURRENT_VIDEO:
       return state
