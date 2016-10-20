@@ -1,0 +1,9 @@
+.navigation {
+  width: 100% !important;
+  background: #f5f5f5;
+}
+
+.navigationRow {
+  display: flex;
+  align-items: flex-end;
+}
