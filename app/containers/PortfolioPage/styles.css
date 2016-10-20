@@ -3,17 +3,13 @@
 }
 
 .demoButton {
-    /*width: 150px;*/
+    width: 250px;
 }
 
 a:hover {
   text-decoration: none;
 }
 
-.button {
-  composes: button from global;
-  font-size: larger;
-}
 
 .btnLink {
   margin-left: 5px;

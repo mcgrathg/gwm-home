@@ -55,14 +55,14 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
             </a>
             <a
               className={styles.btnLink}
-              href="http://gwmextjs.surge.sh/"
+              href="http://gwm-docs.surge.sh/"
               target="_blank"
             >
               <Button
                 className={classNames(styles.demoButton, 'center-block')}
                 bsStyle="success"
               >
-                View ExtJS Demo
+                View Demo's Documentation
               </Button>
             </a>
           </CenteredButtonToolbar>
