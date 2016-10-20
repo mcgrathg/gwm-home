@@ -1,0 +1,9 @@
+.centeredButtonToolbar { /* stylelint-disable */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centeredButtonToolbar .btn, .centeredButtonToolbar .btn-group, .centeredButtonToolbar .input-group {
+    margin-left: 5px;
+}

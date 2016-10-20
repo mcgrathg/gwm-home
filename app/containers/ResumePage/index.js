@@ -16,6 +16,7 @@ import Card from 'components/Card';
 import Skills from 'components/Skills';
 import Timeline from 'components/Timeline';
 import SocialBar from 'components/SocialBar';
+import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
 import { Button, ButtonToolbar } from 'react-bootstrap';
 
@@ -39,10 +40,10 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
           <Card className={styles.introCard}>
             <SocialBar className={styles.social} />
             <p className="lead">{header.intro}</p>
-            <ButtonToolbar className={styles.resumeButtons}>
+            <CenteredButtonToolbar>
               <Button bsStyle="success">Download Resume</Button>
               <Button bsStyle="success">Contact Me</Button>
-            </ButtonToolbar>
+            </CenteredButtonToolbar>
           </Card>
         </section>
 
