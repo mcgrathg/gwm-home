@@ -19,22 +19,21 @@ class TimelineEvent extends Component { // eslint-disable-line react/prefer-stat
     const { title, company, location, start, end } = this.props;
     const titleTag = <h2>{title}</h2>;
 
-    function getDateCol(lgWidth) {
-      return (
-        <Col
-          className={classNames(textStyle['text-right-lg'], styles.headingCol)}
-          lg={lgWidth}
-        >
-          <h5>
-            {start}{getDivider(start, end)}{end}
-          </h5>
-        </Col>
-      );
-    }
 
-    function getDivider(first, second) {
-      return (first && second) ? ' — ' : '';
-    }
+    const divider = (first, second) => (
+      (first && second) ? ' — ' : ''
+    );
+
+    const dateCol = (lgWidth) => (
+      <Col
+        className={classNames(textStyle['text-right-lg'], styles.headingCol)}
+        lg={lgWidth}
+      >
+        <h5>
+          {start}{divider(start, end)}{end}
+        </h5>
+      </Col>
+    );
 
     let heading;
     if (company || location) {
@@ -43,9 +42,9 @@ class TimelineEvent extends Component { // eslint-disable-line react/prefer-stat
           {titleTag}
           <Row className={styles.headingRow}>
             <Col lg={8} className={styles.headingCol}>
-              <h5>{company}{getDivider(company, location)}{location}</h5>
+              <h5>{company}{divider(company, location)}{location}</h5>
             </Col>
-            {getDateCol(4)}
+            {dateCol(4)}
           </Row>
         </div>
       );
@@ -53,7 +52,7 @@ class TimelineEvent extends Component { // eslint-disable-line react/prefer-stat
       heading = (
         <Row className={styles.headingRow}>
           <Col lg={11} className={styles.headingCol}>{titleTag}</Col>
-          {getDateCol(1)}
+          {dateCol(1)}
         </Row>
       );
     }
