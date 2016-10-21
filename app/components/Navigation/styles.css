@@ -11,7 +11,6 @@
   display: flex;
   align-items: flex-end;
   margin: 0 auto;
-  color: light;
 }
 
 .logoWrapper li {
@@ -28,42 +27,38 @@
   padding-right: 0;
 }
 
-:global .nav-tabs>li {
-  color: inherit;
-}
-
 :global .nav-tabs>li:hover>a {
   background: transparent;
 }
 
 :global .nav-tabs>li:not(.active):hover {
   background: transparent;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-color: watermelon;
+  border-bottom: 2px solid watermelon;
 }
 
 :global .nav-tabs>li>a,
 :global .nav-tabs>li.active>a {
   background:transparent !important;
   border: 0 !important;
-  color: inherit;
+  color: light;
 }
 :global .nav-tabs>li.active>a {
   border-bottom: 5px solid watermelon !important;
   text-transform: uppercase;
   font-weight: bold;
   background: transparent;
-}
-
-:global .nav-tabs>li.active>a:hover,
-:global .nav-tabs>li>a:hover {
-  color: inherit;
+  font-size: large;
 }
 
 :global .nav-tabs>li:not(.active)>a {
   transition: transform 0.2s;
 }
+
+:global .nav-tabs>li.active>a:hover,
+:global .nav-tabs>li>a:hover {
+  color: light;
+}
+
 :global .nav-tabs>li:not(.active)>a:hover {
   background: transparent;
   margin-bottom: 2px;
