@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { header, skills, work, education } from './messages';
@@ -21,7 +21,7 @@ import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
 import { Button } from 'react-bootstrap';
 
-export class ResumePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export class ResumePage extends Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <article className={styles.resumePage}>
