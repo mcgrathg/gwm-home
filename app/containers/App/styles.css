@@ -1,3 +1,8 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, dark, matte, fresh, watermelon, teal from colors;
+
+
 /* Global styles */
 
 html,
@@ -15,9 +20,10 @@ body.fontLoaded {
 }
 
 :global(#app) {
-  background-color: #ffffff;
   min-height: 100%;
   min-width: 100%;
+  background-color: light;
+  color: dark;
 }
 
 h1 > i,
