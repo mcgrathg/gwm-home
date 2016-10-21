@@ -20,9 +20,9 @@ body.fontLoaded {
   min-width: 100%;
 }
 
-h1 i,
-h2 i,
-h3 i {
+h1 > i,
+h2 > i,
+h3 > i {
   padding-left:2vw;
 }
 
@@ -41,23 +41,6 @@ h3 i {
     padding-left: 5px;
   }
 }
-
-.logoWrapper {
-  /*display:flex;*/
-  margin: auto 0;
-}
-
-.logoWrapper li {
-  list-style: none;
-}
-
-.logo {
-  width: 100%;
-  max-width: 25vw;
-  margin: 0 auto;
-  display: block;
-}
-
 
 :global button {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);

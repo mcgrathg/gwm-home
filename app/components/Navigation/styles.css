@@ -7,3 +7,20 @@
   display: flex;
   align-items: flex-end;
 }
+
+
+.logoWrapper {
+  /*display:flex;*/
+  margin: auto 0;
+}
+
+.logoWrapper li {
+  list-style: none;
+}
+
+.logo {
+  width: 100%;
+  max-width: 25vw;
+  margin: 0 auto;
+  display: block;
+}
