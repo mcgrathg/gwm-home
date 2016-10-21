@@ -1,12 +1,17 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, dark, matte, fresh, watermelon, tealColor from colors;
+
 .navigation {
   width: 100% !important;
-  background: black;
+  background-color: dark;
 }
 
 .navigationRow {
   display: flex;
   align-items: flex-end;
   margin: 0 auto;
+  color: light;
 }
 
 .logoWrapper li {
@@ -23,9 +28,8 @@
   padding-right: 0;
 }
 
-
 :global .nav-tabs>li {
-  color: white;
+  color: inherit;
 }
 
 :global .nav-tabs>li:hover>a {
@@ -34,9 +38,10 @@
 
 :global .nav-tabs>li:not(.active):hover {
   background: transparent;
-  border-bottom: 2px solid orange !important;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-color: watermelon;
 }
-
 
 :global .nav-tabs>li>a,
 :global .nav-tabs>li.active>a {
@@ -45,7 +50,7 @@
   color: inherit;
 }
 :global .nav-tabs>li.active>a {
-  border-bottom: 5px solid orange !important;
+  border-bottom: 5px solid watermelon !important;
   text-transform: uppercase;
   font-weight: bold;
   background: transparent;
