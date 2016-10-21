@@ -18,7 +18,7 @@ import Timeline from 'components/Timeline';
 import SocialBar from 'components/SocialBar';
 import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
-import { Button, ButtonToolbar } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 export class ResumePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
