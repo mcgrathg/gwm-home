@@ -66,6 +66,7 @@
 .panel:hover:before {
   border-left-color: matte;
   border-right-color: matte;
+  color: inherit;
 }
 
 .panel:after {
