@@ -25,7 +25,7 @@ function Navigation() {
           </IndexLinkContainer>
         </Col>
         <Col xs={8} sm={10} md={10}>
-          <Nav pullRight justified bsStyle="tabs">
+          <Nav pullRight justified bsStyle="tabs" className={styles.navlinks}>
             <IndexLinkContainer to="/">
               <NavItem eventKey={1}>Home</NavItem>
             </IndexLinkContainer>

@@ -19,8 +19,16 @@
 }
 
 .logo {
-  width: 100%;
+  width: 50%;
   max-width: 25vw;
   margin: 0 auto;
   display: block;
+}
+
+:global .nav-tabs>li>a {
+  background: blue;
+}
+
+:global .nav-tabs>li.active>a {
+  background: orange !important;
 }
