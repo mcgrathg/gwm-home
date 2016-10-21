@@ -22,7 +22,7 @@ import styles from './styles.css';
 
 function App(props) {
   return (
-    <div className={classNames('container', styles.wrapper)}>
+    <div>
       <Helmet
         titleTemplate="%s - Greg McGrath - Front End Developer"
         defaultTitle=" Greg McGrath - Front End Developer"
@@ -31,8 +31,10 @@ function App(props) {
         ]}
       />
       <Navigation />
-      {React.Children.toArray(props.children)}
-      <Footer />
+      <div className={classNames('container', styles.wrapper)}>
+        {React.Children.toArray(props.children)}
+        <Footer />
+      </div>
     </div>
   );
 }
