@@ -12,6 +12,7 @@ import styles from './styles.css';
 
 import H1 from 'components/H1';
 import H2 from 'components/H2';
+import HeaderIcon from 'components/HeaderIcon';
 import Card from 'components/Card';
 import Skills from 'components/Skills';
 import Timeline from 'components/Timeline';
@@ -48,25 +49,25 @@ export class ResumePage extends React.Component { // eslint-disable-line react/p
         </section>
 
         <section className={styles.technicalSkills}>
-          <H2 className="text-center">
+          <H2>
+            <HeaderIcon className="fa-wrench" />
             Technical Skills
-            <i className="fa fa-wrench text-muted" />
           </H2>
           <Skills columns={skills} />
         </section>
 
         <section className={styles.workExperience}>
-          <H2 className="text-center">
+          <H2>
+            <HeaderIcon className="fa-briefcase" />
             Work Experience
-            <i className="fa fa-briefcase text-muted" />
           </H2>
           <Timeline events={work} />
         </section>
 
         <section className={styles.education}>
-          <H2 className="text-center">
+          <H2>
+            <HeaderIcon className="fa-pencil" />
             Education
-            <i className="fa fa-pencil text-muted" />
           </H2>
           <Timeline events={education} />
         </section>
