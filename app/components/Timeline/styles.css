@@ -1,5 +1,6 @@
 /* import your colors... */
 @value colors: 'containers/App/colors.css';
+@value light, lightgray, dark, matte, fresh, watermelon, teal from colors;
 
 
 .timeline {
@@ -16,6 +17,7 @@
   position:absolute;
   content:" ";
   width:3px;
+  background-color: lightgray;
   left:50%;
   margin-left:-1.5px;
 }
