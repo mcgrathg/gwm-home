@@ -22,7 +22,7 @@ function VideoDetail({ video }) {
   return (
     <div className={styles.videoDetail}>
       <div className="embed-responsive embed-responsive-16by9">
-        <iframe className="embed-responsive-item" src={url}></iframe>
+        <iframe className="embed-responsive-item" src={url} allowFullScreen></iframe>
       </div>
       <div className="details">
         <H3 className={styles.header}>{video.snippet.title}</H3>
