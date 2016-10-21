@@ -1,3 +1,7 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+
+
 .skills { /* stylelint-disable */
 
 }
@@ -8,8 +12,8 @@ H3 {
 }
 
 .card {
-  background-color: #455A64;
-  color: #ffffff;
+  background-color: teal;
+  color: light;
   padding: 15px;
   height: 100%;
 }

@@ -1,3 +1,8 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, lightgray, dark, matte, fresh, watermelon, teal from colors;
+
+
 /************************************************
  *                Event Config                  *
  ************************************************/
@@ -55,14 +60,22 @@
   content: " ";
 }
 
+.panel:hover {
+    border-color: matte;
+}
+.panel:hover:before {
+  border-left-color: matte;
+  border-right-color: matte;
+}
+
 .panel:after {
   position: absolute;
   top: 14px;
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid #455A64;
-  border-right: 0 solid #455A64;
+  border-left: 14px solid matte;
+  border-right: 0 solid matte;
   border-bottom: 14px solid transparent;
   content: " ";
 }
@@ -164,7 +177,7 @@
 }
 
 .timelineEvent:hover > .badge a {
-  color: #455A64 !important;
+  color: watermelon !important;
 }
 
 /* End Event Hover Mods */

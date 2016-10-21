@@ -1,3 +1,11 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, lightgray, dark, matte, fresh, watermelon, teal from colors;
+
 .headerIcon {
     margin-right:2vw;
+}
+
+.backgroundIcon {
+  color: watermelon;
 }

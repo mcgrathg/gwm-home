@@ -31,12 +31,6 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
             { name: 'description', content: 'Greg McGrath\'s Resume' },
           ]}
         />
-
-        <H1 className="page-header">
-          Resume
-          <i className="fa fa-file-text text-muted" />
-        </H1>
-
         <section>
           <Card className={styles.introCard}>
             <SocialBar className={styles.social} />
