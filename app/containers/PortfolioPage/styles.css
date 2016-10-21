@@ -4,13 +4,14 @@
 
 .demoButton {
     width: 250px;
+    max-width: 100%;
 }
 
 a:hover {
   text-decoration: none;
 }
 
-
-.btnLink {
-  margin-left: 5px;
+.col {
+  overflow: hidden;
+  padding-bottom: 5px;
 }

@@ -8,8 +8,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import classNames from 'classnames';
-import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
-import { Button, ButtonToolbar } from 'react-bootstrap';
+import { Button, ButtonToolbar, Row, Col } from 'react-bootstrap';
 
 import H1 from 'components/H1';
 import H2 from 'components/H2';
@@ -40,31 +39,37 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
             Demo
             <i className="fa fa-video text-muted" />
           </H2>
+          <p className="lead">Some text here...</p>
           <CenteredButtonToolbar className={styles.resumeButtons}>
-            <a
-              className={styles.btnLink}
-              href="http://gwmextjs.surge.sh/"
-              target="_blank"
-            >
-              <Button
-                className={classNames(styles.demoButton, 'center-block')}
-                bsStyle="success"
-              >
-                View ExtJS Demo
-              </Button>
-            </a>
-            <a
-              className={styles.btnLink}
-              href="http://gwm-docs.surge.sh/"
-              target="_blank"
-            >
-              <Button
-                className={classNames(styles.demoButton, 'center-block')}
-                bsStyle="success"
-              >
-                View Demo's Documentation
-              </Button>
-            </a>
+            <Row>
+              <Col sm={6} className={styles.col}>
+                <a
+                  className={styles.btnLink}
+                  href="http://gwmextjs.surge.sh/"
+                  target="_blank"
+                >
+                  <Button
+                    className={classNames(styles.demoButton, 'center-block')}
+                    bsStyle="primary"
+                  >
+                    View ExtJS Demo
+                  </Button>
+                </a>
+              </Col>
+              <Col sm={6} className={styles.col}>
+                <a
+                  className={styles.btnLink}
+                  href="http://gwm-docs.surge.sh/"
+                  target="_blank"
+                >
+                  <Button
+                    className={classNames(styles.demoButton, 'center-block')}
+                  >
+                    View Demo&apos;s Documentation
+                  </Button>
+                </a>
+              </Col>
+            </Row>
           </CenteredButtonToolbar>
 
         </section>
