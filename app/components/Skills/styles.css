@@ -13,7 +13,7 @@ H3 {
 }
 
 .card {
-  background-color: teal;
+  background-color: teal !important;
   color: light;
   padding: 15px;
   height: 100%;
