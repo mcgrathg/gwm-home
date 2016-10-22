@@ -1,3 +1,6 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+
 .cardBody {
   float: left;
   width: 100%;
@@ -17,7 +20,8 @@
 
 .cardBody > ul > li {
   padding: 7px 15px;
-  /*border: 0;*/
+  background: lightgray;
+
 }
 
 .cardBody h4 small {

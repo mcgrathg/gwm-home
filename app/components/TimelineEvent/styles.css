@@ -1,6 +1,6 @@
 /* import your colors... */
 @value colors: 'containers/App/colors.css';
-@value light, lightgray, dark, matte, fresh, watermelon, teal from colors;
+@value light, lightgray, gray, dark, matte, fresh, watermelon, teal from colors;
 
 
 /************************************************
@@ -12,7 +12,7 @@
   width: 50%;
   float: left;
   clear: left;
-  background: transparent;
+  background-color: transparent;
   border: 0;
 }
 
@@ -39,35 +39,26 @@
 .panel {
   width: 95%;
   float: left;
-  border: 1px solid #d4d4d4;
+  border: 0;
   position: relative;
-
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  background-color: #fff;
-  transition: box-shadow .25s;
+  background-color: transparent;
+  transition: box-shadow .5s;
 }
 
+/* border for pointer to timeline */
 .panel:before {
   position: absolute;
   top: 13px;
   right: -15px;
   display: inline-block;
   border-top: 15px solid transparent;
-  border-left: 15px solid #d4d4d4;
-  border-right: 0 solid #d4d4d4;
+  border-left: 15px solid matte;
+  border-right: 0 solid matte;
   border-bottom: 15px solid transparent;
   content: " ";
 }
 
-.panel:hover {
-    border-color: matte;
-}
-.panel:hover:before {
-  border-left-color: matte;
-  border-right-color: matte;
-}
-
+/* pointer to timeline */
 .panel:after {
   position: absolute;
   top: 14px;
@@ -126,7 +117,7 @@
  ************************************************/
 
 .badge {
-  color: #fff;
+  color: light;
   width: 24px;
   height: 24px;
   line-height: 50px;
@@ -139,7 +130,7 @@
 }
 
 .badge > a {
-  color: #C5C7C5 !important;
+  color: gray !important;
 }
 
 @media (max-width: 767px) {
@@ -155,16 +146,16 @@
 .responsibility {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border: 0;
 }
 
-:global .list-group-item:first-child {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+.responsibility > p {
+  padding: 10px 0;
 }
-
-:global .list-group-item:last-child {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+.responsibility:not(:last-child) > p {
+  border-bottom: 1px solid gray;
 }
 
 /************************************************
@@ -172,7 +163,6 @@
  ************************************************/
 
 .timelineEvent:hover > .panel {
-  -webkit-box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.16), 0 10px 15px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.16), 0 10px 15px 0 rgba(0, 0, 0, 0.12);
 }
 
