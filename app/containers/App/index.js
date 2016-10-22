@@ -8,8 +8,7 @@
 
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import classNames from 'classnames';
-const Sticky = require('react-stickynode');
+import * as Sticky from 'react-stickynode';
 
 
 // Import the CSS reset, which HtmlWebpackPlugin transfers to the build folder
@@ -22,7 +21,7 @@ import Footer from 'components/Footer';
 
 import styles from './styles.css';
 
-const MIN_STICKY_WIDTH = 769;
+import { MIN_STICKY_WIDTH } from './constants';
 
 export class App extends Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props, context) {
@@ -65,7 +64,7 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
         >
           <Navigation />
         </Sticky>
-        <div className={classNames('container', styles.wrapper)}>
+        <div className={styles.wrapper}>
           {React.Children.toArray(this.props.children)}
           <Footer />
         </div>
