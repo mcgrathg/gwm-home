@@ -6,6 +6,7 @@
 
 import React, { PropTypes } from 'react';
 import styles from './styles.css';
+import classNames from 'classnames';
 
 function SocialButton({ ...props }) {
   const { iconClassName, href, name, ...rest } = props;
@@ -14,8 +15,8 @@ function SocialButton({ ...props }) {
       className={styles.socialButton}
       {...rest}
     >
-      <a href={href} className={styles.socialLink} target="_blank" title="link">
-        <i className={iconClassName} aria-hidden="true" title={name}></i>
+      <a href={href} className={styles.socialLink} target="_blank">
+        <i className={classNames(iconClassName, styles.icon)} aria-hidden="true" title={name}></i>
       </a>
     </li>
   );
