@@ -65,7 +65,7 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
           <Navigation />
         </Sticky>
         <div className={styles.wrapper}>
-          {React.Children.toArray(this.props.children)}
+          {React.Children.toArray(children)}
           <Footer />
         </div>
       </div>
