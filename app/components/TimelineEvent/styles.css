@@ -1,6 +1,6 @@
 /* import your colors... */
 @value colors: 'containers/App/colors.css';
-@value light, lightgray, gray, dark, matte, fresh, watermelon, teal from colors;
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
 
 
 /************************************************
@@ -130,7 +130,7 @@
 }
 
 .badge > a {
-  color: gray !important;
+  color: darkmedium !important;
 }
 
 @media (max-width: 767px) {
@@ -155,7 +155,7 @@
   padding: 10px 0;
 }
 .responsibility:not(:last-child) > p {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid darkmedium;
 }
 
 /************************************************

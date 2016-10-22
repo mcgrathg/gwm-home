@@ -1,6 +1,6 @@
 /* import your colors... */
 @value colors: 'containers/App/colors.css';
-@value light, lightgray, gray, dark, matte, fresh, watermelon, teal from colors;
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
 
 .resumePage { /* stylelint-disable */
 
@@ -8,7 +8,7 @@
 
 .introCard {
   padding: 30px 0 0;
-  background: lightgray;
+  background: medium;
 }
 
 .introCard p  {
@@ -17,7 +17,7 @@
 }
 
 .stickyButtons > div {
-  background: lightgray;
+  background: medium;
   padding: 15px 0;
 }
 .stickyButtons {
