@@ -6,9 +6,19 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import Helmet from 'react-helmet';
 import * as Sticky from 'react-stickynode';
+
+import {
+  selectIsStickyEnabled,
+} from './selectors';
+
+import {
+  setWindowWidth,
+} from './actions';
 
 
 // Import the CSS reset, which HtmlWebpackPlugin transfers to the build folder
@@ -21,33 +31,19 @@ import Footer from 'components/Footer';
 
 import styles from './styles.css';
 
-import { MIN_STICKY_WIDTH } from './constants';
-
 export class App extends Component { // eslint-disable-line react/prefer-stateless-function
-  constructor(props, context) {
-    super(props, context);
-
-    this.state = {
-      windowWidth: window.innerWidth,
-    };
-
-    this.updateDimensions = this.updateDimensions.bind(this);
-  }
   componentWillMount() {
-    this.updateDimensions();
+    this.props.onResize();
   }
   componentDidMount() {
-    window.addEventListener('resize', this.updateDimensions);
+    window.addEventListener('resize', this.props.onResize);
   }
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions);
-  }
-  updateDimensions() {
-    this.setState({ windowWidth: window.innerWidth });
+    window.removeEventListener('resize', this.props.onResize);
   }
 
   render() {
-    const { children } = this.props;
+    const { children, isStickyEnabled } = this.props;
     return (
       <div>
         <Helmet
@@ -58,7 +54,7 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
           ]}
         />
         <Sticky
-          enabled={this.state.windowWidth > MIN_STICKY_WIDTH}
+          enabled={isStickyEnabled}
           top={-92}
           innerZ={3000}
         >
@@ -74,7 +70,20 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
 }
 
 App.propTypes = {
-  children: React.PropTypes.node,
+  children: PropTypes.node,
+  onResize: PropTypes.func,
+  isStickyEnabled: PropTypes.bool,
 };
 
-export default App;
+export function mapDispatchToProps(dispatch) {
+  return {
+    onResize: () => dispatch(setWindowWidth(window.innerWidth)),
+    dispatch,
+  };
+}
+
+const mapStateToProps = createStructuredSelector({
+  isStickyEnabled: selectIsStickyEnabled(),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

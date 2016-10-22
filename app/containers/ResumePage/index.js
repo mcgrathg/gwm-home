@@ -4,13 +4,19 @@
  *
  */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import Helmet from 'react-helmet';
 import { header, skills, work, education } from './messages';
-import styles from './styles.css';
 import classNames from 'classnames';
 import * as Sticky from 'react-stickynode';
+
+import { Button } from 'react-bootstrap';
+
+import {
+  selectIsStickyEnabled,
+} from 'containers/App/selectors';
 
 import H2 from 'components/H2';
 import HeaderIcon from 'components/HeaderIcon';
@@ -19,10 +25,12 @@ import Timeline from 'components/Timeline';
 import SocialBar from 'components/SocialBar';
 import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
-import { Button } from 'react-bootstrap';
+import styles from './styles.css';
 
 export class ResumePage extends Component { // eslint-disable-line react/prefer-stateless-function
   render() {
+    const { isStickyEnabled } = this.props;
+
     return (
       <article className={styles.resumePage}>
         <Helmet
@@ -39,7 +47,7 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
             </div>
           </div>
           <Sticky
-            enabled
+            enabled={isStickyEnabled}
             top={50}
             innerZ={3000}
           >
@@ -83,4 +91,12 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
   }
 }
 
-export default connect()(ResumePage);
+ResumePage.propTypes = {
+  isStickyEnabled: PropTypes.bool,
+};
+
+const mapStateToProps = createStructuredSelector({
+  isStickyEnabled: selectIsStickyEnabled(),
+});
+
+export default connect(mapStateToProps)(ResumePage);

@@ -11,13 +11,24 @@
  */
 
 import { fromJS } from 'immutable';
+import {
+  SET_WINDOW_WIDTH,
+  MIN_STICKY_WIDTH,
+} from './constants';
 
 // The initial state of the App
-const initialState = fromJS({});
+const initialState = fromJS({
+  windowWidth: window.innerWidth,
+  isStickyEnabled: false,
+});
 
 function appReducer(state = initialState, action) {
   switch (action.type) {
 
+    case SET_WINDOW_WIDTH:
+      return state
+        .set('windowWidth', action.width)
+        .set('isStickyEnabled', action.width >= MIN_STICKY_WIDTH);
     default:
       return state;
   }
