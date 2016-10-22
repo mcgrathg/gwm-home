@@ -69,7 +69,6 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
             </H2>
             <Skills columns={skills} />
           </section>
-
           <section className={styles.workExperience}>
             <H2>
               <HeaderIcon className="fa-briefcase" />
@@ -77,7 +76,6 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
             </H2>
             <Timeline events={work} />
           </section>
-
           <section className={styles.education}>
             <H2>
               <HeaderIcon className="fa-pencil" />
