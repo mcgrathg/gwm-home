@@ -24,17 +24,13 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
 
   render() {
     return (
-      <article className={styles.portfolioPage}>
+      <article className={classNames('container', styles.portfolioPage)}>
         <Helmet
           title="Portfolio Page"
           meta={[
             { name: 'description', content: 'Description of PortfolioPage' },
           ]}
         />
-        <H1 className="page-header">
-          Portfolio
-          <i className="fa fa-file-text text-muted" />
-        </H1>
         <section className={styles.demo}>
           <H2>
             <HeaderIcon className="fa-desktop" />
