@@ -18,7 +18,7 @@ function Skills({ columns }) {
     <Grid className={styles.skillsGroup}>
       <Row className={styles.row}>
         {columns.map((col, idx) => (
-          <Col md={6} key={`skills-col-${idx}`} className={styles.col}>
+          <Col xs={12} sm={7} md={6} key={`skills-col-${idx}`} className={styles.col}>
             <Card className={styles.card}>
               <H3 className="text-center">{col.header}</H3>
               <SkillsGroup group={col.items} />
