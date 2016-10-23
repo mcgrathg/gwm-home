@@ -33,7 +33,7 @@ function VideoDetail({ video, truncateLongText }) {
 
     let description;
     if (truncateLongText) {
-      description = (<ReadMore lines={5}>{splitDescr}</ReadMore>);
+      description = (<ReadMore lines={4}>{splitDescr}</ReadMore>);
     } else {
       description = splitDescr;
     }
