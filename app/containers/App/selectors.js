@@ -32,9 +32,15 @@ const selectIsStickyEnabled = () => createSelector(
   (globalState) => globalState.get('isStickyEnabled')
 );
 
+const selectTruncateLongText = () => createSelector(
+  selectGlobal(),
+  (globalState) => globalState.get('truncateLongText')
+);
+
 export {
   selectGlobal,
   selectLocationState,
   selectWindowWidth,
   selectIsStickyEnabled,
+  selectTruncateLongText,
 };

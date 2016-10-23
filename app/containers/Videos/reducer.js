@@ -28,18 +28,18 @@ function videosReducer(state = initialState, action) {
         .set('currentVideo', action.video);
     case LOAD_VIDEOS:
       return state
-            .set('loading', true)
-            .set('error', false)
-            .setIn(['userData', 'videos'], false);
+        .set('loading', true)
+        .set('error', false)
+        .setIn(['userData', 'videos'], false);
     case LOAD_VIDEOS_SUCCESS:
       return state
-            .setIn(['userData', 'videos'], action.videos)
-            .set('loading', false)
-            .set('currentVideo', action.videos[0]);
+        .setIn(['userData', 'videos'], action.videos)
+        .set('loading', false)
+        .set('currentVideo', action.videos[0]);
     case LOAD_VIDEOS_ERROR:
       return state
-            .set('error', action.error)
-            .set('loading', false);
+        .set('error', action.error)
+        .set('loading', false);
     default:
       return state;
   }

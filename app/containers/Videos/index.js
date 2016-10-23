@@ -18,6 +18,10 @@ import {
  } from './selectors';
 
 import {
+   selectTruncateLongText,
+ } from 'containers/App/selectors';
+
+import {
   changeVideo,
   loadVideos,
 } from './actions';
@@ -36,28 +40,30 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
     this.props.onLoadVideos();
   }
   render() {
+    const { loading, error, videos, currentVideo, truncateLongText, onCurrentVideoChange } = this.props;
+
     let mainContent = null;
 
     // Show a loading indicator when we're loading
-    if (this.props.loading) {
+    if (loading) {
       mainContent = (<LoadingIndicator />);
 
     // Show an error if there is one
-    } else if (this.props.error !== false) {
+    } else if (error !== false) {
       mainContent = (<div>Something went wrong, please try again!</div>);
 
     // If we're not loading, don't have an error and there are videos, show the videos
-    } else if (this.props.videos !== false) {
+    } else if (videos !== false) {
       mainContent = (
         <Row className={styles.row}>
           <Col md={8} className={styles.col}>
-            <VideoDetail video={this.props.currentVideo} />
+            <VideoDetail video={currentVideo} truncateLongText={truncateLongText} />
           </Col>
           <Col md={4} className={styles.col}>
             <VideoList
-              videos={this.props.videos}
-              currentVideo={this.props.currentVideo}
-              onCurrentVideoChange={this.props.onCurrentVideoChange}
+              videos={videos}
+              currentVideo={currentVideo}
+              onCurrentVideoChange={onCurrentVideoChange}
             />
           </Col>
         </Row>
@@ -108,6 +114,7 @@ const mapStateToProps = createStructuredSelector({
   videos: selectVideos(),
   loading: selectLoading(),
   error: selectError(),
+  truncateLongText: selectTruncateLongText(),
 });
 
 // Wrap the component to inject dispatch and state into it
