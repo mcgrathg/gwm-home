@@ -10,7 +10,6 @@ import Helmet from 'react-helmet';
 import classNames from 'classnames';
 import { Button, ButtonToolbar, Row, Col } from 'react-bootstrap';
 
-import H1 from 'components/H1';
 import H2 from 'components/H2';
 import HeaderIcon from 'components/HeaderIcon';
 import Card from 'components/Card';

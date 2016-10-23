@@ -2,7 +2,6 @@
 @value colors: 'containers/App/colors.css';
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
 
-
 /************************************************
  *                Event Config                  *
  ************************************************/
@@ -24,14 +23,11 @@
 
 @media (max-width: 767px) {
   .timelineEvent {
-    /*margin-bottom: 20px;*/
-    /*position: relative;*/
     width: 100%;
   }
 }
 
-/*End Event */
-
+/* End Event */
 
 /************************************************
  *                Panel Config                  *
@@ -42,11 +38,11 @@
   border: 0;
   position: relative;
   background-color: transparent;
-  transition: box-shadow .5s;
+  transition: box-shadow 0.5s;
 }
 
 /* border for pointer to timeline */
-.panel:before {
+.panel::before {
   position: absolute;
   top: 13px;
   right: -15px;
@@ -55,11 +51,11 @@
   border-left: 15px solid matte;
   border-right: 0 solid matte;
   border-bottom: 15px solid transparent;
-  content: " ";
+  content: ' ';
 }
 
 /* pointer to timeline */
-.panel:after {
+.panel::after {
   position: absolute;
   top: 14px;
   right: -14px;
@@ -68,27 +64,25 @@
   border-left: 14px solid matte;
   border-right: 0 solid matte;
   border-bottom: 14px solid transparent;
-  content: " ";
+  content: ' ';
 }
 
 @media (max-width: 767px) {
-
-  .panel:before {
+  .panel::before {
     border-left-width: 0;
     border-right-width: 15px;
     left: -15px;
     right: auto;
   }
+
   .panel {
     width: calc(100% - 50px);
-    width: -moz-calc(100% - 50px);
-    width: -webkit-calc(100% - 50px);
     float: right;
   }
 
-  .panel:after {
+  .panel::after {
     border-left-width: 0 !important;
-    border-right-width: 15px !important;;
+    border-right-width: 15px !important;
     left: -14px;
     right: auto;
   }
@@ -144,16 +138,17 @@
 /* End BADGE */
 
 .responsibility {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-left: 0;
-    border-right: 0;
-    border: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border: 0;
 }
 
 .responsibility > div {
   padding: 10px 0;
 }
+
 .responsibility:not(:last-child) > div {
   border-bottom: 1px solid darkmedium;
 }
@@ -176,7 +171,7 @@
  *               Inverted Config                *
  ************************************************/
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .inverted {
     float: right;
     clear: right;
@@ -190,24 +185,18 @@
     float: right;
   }
 
-  .inverted > .panel:before {
+  .inverted > .panel::before {
     border-left-width: 0;
     border-right-width: 15px;
     left: -15px;
     right: auto;
   }
 
-  .inverted > .panel:after {
+  .inverted > .panel::after {
     border-left-width: 0;
     border-right-width: 14px;
     left: -14px;
     right: auto;
-  }
-}
-
-@media (max-width: 767px) {
-  .inverted > .badge {
-    /*left: 28px;*/
   }
 }
 

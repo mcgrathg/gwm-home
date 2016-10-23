@@ -2,7 +2,6 @@
 @value colors: 'containers/App/colors.css';
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
 
-
 /* Global styles */
 
 html,
@@ -29,7 +28,7 @@ body.fontLoaded {
 h1 > i,
 h2 > i,
 h3 > i {
-  padding-left:2vw;
+  padding-left: 2vw;
 }
 
 .wrapper {
@@ -48,10 +47,16 @@ h3 > i {
 
 :global button {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  transition: transform 0.2s, box-shadow .25s;
+  transition: transform 0.2s, box-shadow 0.25s;
 }
 
 :global button:hover {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   transform: scale(1.05);
+}
+
+:global .btn-success {
+  color: light;
+  background-color: matte;
+  border-color: dark;
 }

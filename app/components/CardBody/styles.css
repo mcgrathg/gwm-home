@@ -11,18 +11,18 @@
   padding: 0;
 }
 
-.cardBody > p, .cardBody > ul {
+.cardBody > p,
+.cardBody > ul {
   margin-bottom: 0;
 }
 
-.cardBody > p+p {
+.cardBody > p + p {
   margin-top: 5px;
 }
 
 .cardBody > ul > li {
   padding: 7px 15px;
   background: medium;
-
 }
 
 .cardBody h4 small {

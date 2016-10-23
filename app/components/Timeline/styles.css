@@ -2,28 +2,26 @@
 @value colors: 'containers/App/colors.css';
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
 
-
 .timeline {
-  list-style:none;
-  padding:20px 0 20px;
-  position:relative;
-
+  list-style: none;
+  padding: 20px 0;
+  position: relative;
   overflow: hidden;
 }
 
-.timeline:before {
-  top:0;
-  bottom:0;
-  position:absolute;
-  content:" ";
-  width:3px;
+.timeline::before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: ' ';
+  width: 3px;
   background-color: medium;
-  left:50%;
-  margin-left:-1.5px;
+  left: 50%;
+  margin-left: -1.5px;
 }
 
 @media (max-width: 767px) {
-  .timeline:before {
-    left:40px;
+  .timeline::before {
+    left: 40px;
   }
 }
