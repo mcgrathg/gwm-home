@@ -26,14 +26,6 @@ export default function createRoutes(store) {
           .catch(errorLoading);
       },
     }, {
-      path: '/features',
-      name: 'features',
-      getComponent(nextState, cb) {
-        System.import('containers/FeaturePage')
-          .then(loadModule(cb))
-          .catch(errorLoading);
-      },
-    }, {
       path: '/resume',
       name: 'resumePage',
       getComponent(location, cb) {

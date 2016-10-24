@@ -42,7 +42,7 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
   }
 
   render() {
-    const { children, isStickyEnabled } = this.props;
+    const { children, isStickyEnabled, routes } = this.props;
     return (
       <div>
         <Helmet
@@ -57,7 +57,7 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
           top={-92}
           innerZ={3000}
         >
-          <Navigation />
+          <Navigation currentRoute={routes[routes.length - 1]} />
         </Sticky>
         <div className={styles.wrapper}>
           {React.Children.toArray(children)}
@@ -72,6 +72,7 @@ App.propTypes = {
   children: PropTypes.node,
   onResize: PropTypes.func,
   isStickyEnabled: PropTypes.bool,
+  routes: PropTypes.object,
 };
 
 export function mapDispatchToProps(dispatch) {
