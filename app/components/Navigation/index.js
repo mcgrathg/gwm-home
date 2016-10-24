@@ -4,7 +4,7 @@
 *
 */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import { Image, Grid, Row, Col, Nav, NavItem } from 'react-bootstrap';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
@@ -13,7 +13,8 @@ import Logo from './gmg6.png';
 
 import styles from './styles.css';
 
-function Navigation() {
+function Navigation({ currentRoute }) {
+  const currentPath = currentRoute.path;
   return (
     <Grid className={styles.navigation}>
       <Row className={classNames('container', styles.navigationRow)}>
@@ -26,17 +27,17 @@ function Navigation() {
         </Col>
         <Col xs={8} sm={10} md={8} className={styles.navlinksCol}>
           <Nav pullRight justified bsStyle="tabs">
-            <IndexLinkContainer to="/">
-              <NavItem eventKey={1}>Home</NavItem>
+            <IndexLinkContainer to="/" active={currentPath === '/'}>
+              <NavItem>Home</NavItem>
             </IndexLinkContainer>
-            <LinkContainer to="/resume">
-              <NavItem eventKey={2}>Resume</NavItem>
+            <LinkContainer to="/resume" active={currentPath === '/resume'}>
+              <NavItem>Resume</NavItem>
             </LinkContainer>
-            <LinkContainer to="/portfolio">
-              <NavItem eventKey={2}>Portfolio</NavItem>
+            <LinkContainer to="/portfolio" active={currentPath === '/portfolio'}>
+              <NavItem>Portfolio</NavItem>
             </LinkContainer>
-            <LinkContainer to="/contact">
-              <NavItem eventKey={2}>Contact</NavItem>
+            <LinkContainer to="/contact" active={currentPath === '/contact'}>
+              <NavItem>Contact</NavItem>
             </LinkContainer>
           </Nav>
         </Col>
@@ -44,5 +45,9 @@ function Navigation() {
     </Grid>
   );
 }
+
+Navigation.propTypes = {
+  currentRoute: PropTypes.object,
+};
 
 export default Navigation;
