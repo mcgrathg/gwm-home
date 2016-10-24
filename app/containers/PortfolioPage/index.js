@@ -30,6 +30,13 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
             { name: 'description', content: 'Description of PortfolioPage' },
           ]}
         />
+        <section className={styles.videoList}>
+          <H2>
+            <HeaderIcon className="fa-video-camera" />
+            Video Examples
+          </H2>
+          <Videos />
+        </section>
         <section className={styles.demo}>
           <H2>
             <HeaderIcon className="fa-desktop" />
@@ -69,13 +76,6 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
               </Row>
             </CenteredButtonToolbar>
           </Card>
-        </section>
-        <section className={styles.videoList}>
-          <H2 className="text-center">
-            Video Examples
-            <HeaderIcon className="fa-video-camera" />
-          </H2>
-          <Videos />
         </section>
         <section>
           <Card className={styles.introCard}>
