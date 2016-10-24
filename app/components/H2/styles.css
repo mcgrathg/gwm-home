@@ -1,4 +1,8 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
 .heading2 {
   margin-bottom: 15px;
-  border-bottom: 1px solid #E2E2E2;
+  border-bottom: 2px solid lightmatte;
 }
