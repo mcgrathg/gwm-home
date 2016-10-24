@@ -6,9 +6,8 @@
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-// import { push } from 'react-router-redux';
 import { createStructuredSelector } from 'reselect';
-
+import { Row, Col } from 'react-bootstrap';
 
 import {
   selectCurrentVideo,
@@ -29,9 +28,6 @@ import {
 import LoadingIndicator from 'components/LoadingIndicator';
 import VideoDetail from 'components/VideoDetail';
 import VideoList from 'components/VideoList';
-// import Card from 'components/Card';
-
-import { Row, Col } from 'react-bootstrap';
 
 import styles from './styles.css';
 
@@ -61,6 +57,7 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
           </Col>
           <Col md={4} className={styles.col}>
             <VideoList
+              className={styles.videoList}
               videos={videos}
               currentVideo={currentVideo}
               onCurrentVideoChange={onCurrentVideoChange}
@@ -80,6 +77,7 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
 
 Videos.propTypes = {
   loading: PropTypes.bool,
+  truncateLongText: PropTypes.bool,
   error: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.bool,

@@ -1,22 +1,42 @@
-.videoListItem, { /* stylelint-disable */
-  border: 0;
-  box-shadow: none;
-  border-radius: 0;
-  transition: box-shadow 0;
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
+.videoListItem {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background-color: medium !important;
 }
 
-.videoListItem:hover {
-  box-shadow: none;
-  border-color: #ccc;
-}
-
-h5 {
+.videoListItem h5 {
   font-size: 16px;
   margin: 5px 0;
 }
 
+.isSelected {
+  color: matte;
+  background-color: fresh !important;
+}
+
+.isSelected:hover {
+  transform: scale(1);
+  cursor: default;
+  border-color: darkmedium;
+}
+
+.isSelected h5 {
+  font-weight: bold;
+}
+
+
+.videoListItem:hover {
+  box-shadow: none;
+  background-color: darkmedium;
+}
+
+
 .videoListItem:first-child:not(:last-child) {
-    border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 .heading {
@@ -32,10 +52,4 @@ h5 {
 .row {
   margin-right: 0;
   margin-left: 0;
-}
-
-
-.isSelected {
-  color: #333;
-  background-color: #f5f5f5;
 }

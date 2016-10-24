@@ -8,7 +8,10 @@ import React, { PropTypes } from 'react';
 
 import ReadMore from 'containers/ReadMore';
 import LoadingIndicator from 'components/LoadingIndicator';
-import H3 from 'components/H3';
+import H2 from 'components/H2';
+import Card from 'components/Card';
+import CardHeader from 'components/CardHeader';
+import CardBody from 'components/CardBody';
 
 import styles from './styles.css';
 
@@ -45,14 +48,18 @@ function VideoDetail({ video, truncateLongText }) {
       <div className="embed-responsive embed-responsive-16by9">
         <iframe className="embed-responsive-item" src={url} allowFullScreen></iframe>
       </div>
-      <div className="details">
-        <H3 className={styles.header}>{video.snippet.title}</H3>
-        <p className={styles.description}>
-          {getVideoDescription()}
-        </p>
-      </div>
+      <Card className={styles.card}>
+        <CardHeader>
+          <H2 className={styles.header}>{video.snippet.title}</H2>
+        </CardHeader>
+        <CardBody>
+          <p className={styles.description}>
+            {getVideoDescription()}
+          </p>
+        </CardBody>
+      </Card>
     </div>
-  );
+      );
 }
 
 VideoDetail.defaultProps = {

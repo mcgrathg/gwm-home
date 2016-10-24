@@ -1,3 +1,11 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
 .description {
   white-space: pre-line;
+}
+
+.details {
+  background: fresh;
 }

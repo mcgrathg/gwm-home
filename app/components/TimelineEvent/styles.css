@@ -48,8 +48,8 @@
   right: -15px;
   display: inline-block;
   border-top: 15px solid transparent;
-  border-left: 15px solid matte;
-  border-right: 0 solid matte;
+  border-left: 15px solid teal;
+  border-right: 0 solid teal;
   border-bottom: 15px solid transparent;
   content: ' ';
 }
@@ -61,8 +61,8 @@
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid matte;
-  border-right: 0 solid matte;
+  border-left: 14px solid teal;
+  border-right: 0 solid teal;
   border-bottom: 14px solid transparent;
   content: ' ';
 }

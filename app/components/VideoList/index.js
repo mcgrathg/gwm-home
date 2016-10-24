@@ -6,7 +6,7 @@
 
 import React, { PropTypes } from 'react';
 import styles from './styles.css';
-
+import classNames from 'classnames';
 import { ButtonGroup } from 'react-bootstrap';
 
 import CardHeader from 'components/CardHeader';
@@ -27,7 +27,7 @@ function VideoList({ videos, onCurrentVideoChange, currentVideo }) {
 
   return (
     <Card className={styles.card}>
-      <CardHeader>
+      <CardHeader className={styles.cardHeader}>
         <h4 className={styles.header}>Playlist</h4>
       </CardHeader>
       <CardBody>

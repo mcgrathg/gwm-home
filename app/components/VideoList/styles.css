@@ -1,13 +1,19 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
 .card {
-  margin: 0;
+  margin: 0 auto;
   width: 95%;
   float: left;
-  border: 1px solid #D4D4D4;
+  border: 1px solid darkmedium;
   position: relative;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  background-color: #FFF;
+  background-color: light;
   transition: box-shadow 0.25s;
+}
+
+.cardHeader {
+  background: teal;
 }
 
 .videoList {
@@ -15,7 +21,7 @@
 }
 
 .videoListItem:not(:first-child) {
-  border-top: 1px solid #D9D9D9;
+  border-top: 1px solid darkmedium;
 }
 
 .videoListItem {
