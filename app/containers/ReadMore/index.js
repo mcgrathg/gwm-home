@@ -25,7 +25,6 @@ class ReadMore extends Component {
 
   render() {
     const { children, text, lines } = this.props;
-
     return (
       <Truncate
         className={styles.readMore}
@@ -33,7 +32,7 @@ class ReadMore extends Component {
         ellipsis={(
           <span>
             ...
-            <div>
+            <span className={styles.buttonWrapper}>
               <a
                 className={classNames(styles.button)}
                 onClick={this.toggleLines}
@@ -41,7 +40,7 @@ class ReadMore extends Component {
               >
                 {text}
               </a>
-            </div>
+            </span>
           </span>
         )}
       >

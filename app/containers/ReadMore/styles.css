@@ -2,6 +2,11 @@
 
 }
 
+.buttonWrapper {
+  display: block;
+}
+
 .button {
   margin-bottom: 30px;
+
 }
