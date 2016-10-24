@@ -10,7 +10,7 @@
 .navigationRow {
   display: flex;
   align-items: flex-end;
-  margin: 0 auto;
+  margin: 0 auto !important;
 }
 
 .logoWrapper li {
