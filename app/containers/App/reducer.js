@@ -31,7 +31,8 @@ function appReducer(state = initialState, action) {
       return state
         .set('windowWidth', action.width)
         .set('isStickyEnabled', action.width >= MIN_STICKY_WIDTH)
-        .set('truncateLongText', action.width < MAX_READ_MORE_WIDTH);
+        .set('truncateLongText', true);
+        // .set('truncateLongText', action.width < MAX_READ_MORE_WIDTH);
     default:
       return state;
   }
