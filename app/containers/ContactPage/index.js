@@ -17,7 +17,8 @@ import {
 } from 'containers/App/selectors';
 
 import Map from 'components/Map';
-
+import H2 from 'components/H2';
+import HeaderIcon from 'components/HeaderIcon';
 
 import styles from './styles.css';
 
@@ -55,10 +56,17 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
               onSubmit={this.submitForm}
               ref={(c) => { this.contactForm = c; }}
             >
+              <H2>
+                <HeaderIcon className="fa-paper-plane" />
+                Send a Message
+              </H2>
+
               <Input
                 name="name"
                 value=""
                 label="Name"
+                labelClassName="col-md-6"
+                elementWrapperClassName="col-md-12"
                 type="text"
                 required
               />
@@ -66,8 +74,9 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
                 name="email"
                 value=""
                 label="Email"
+                labelClassName="col-md-6"
+                elementWrapperClassName="col-md-12"
                 type="email"
-                placeholder="email"
                 validations="isEmail"
                 validationErrors={{
                   isEmail: 'This doesn’t look like a valid email address.',
@@ -78,12 +87,16 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
                 name="subject"
                 value=""
                 label="Subject"
+                labelClassName="col-md-6"
+                elementWrapperClassName="col-md-12"
                 type="text"
               />
               <Textarea
                 name="message"
                 value=""
-                label="Message"
+                labelClassName="col-md-6"
+                elementWrapperClassName="col-md-12"label="Message"
+
                 type="text"
                 required
               />
@@ -97,9 +110,6 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
 }
 
 ContactPage.propTypes = {
-  id: PropTypes.string,
-  label: PropTypes.string,
-  help: PropTypes.string,
   windowWidth: PropTypes.number,
 };
 
