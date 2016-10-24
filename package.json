@@ -222,6 +222,7 @@
     "express": "4.14.0",
     "font-awesome": "^4.6.3",
     "fontfaceobserver": "2.0.4",
+    "google-map-react": "^0.20.1",
     "immutable": "3.8.1",
     "intl": "1.2.4",
     "invariant": "2.2.1",

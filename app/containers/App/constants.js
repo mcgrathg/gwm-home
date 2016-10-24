@@ -12,3 +12,4 @@ export const SET_WINDOW_WIDTH = 'app/App/SET_WINDOW_WIDTH';
 
 export const MIN_STICKY_WIDTH = 769;
 export const MAX_READ_MORE_WIDTH = 769;
+const GOOGLE_API_KEY = 'AIzaSyBOVFEGzo9Z52dpKnZyauD8KPlVUk1jO2M';

@@ -72,7 +72,7 @@ App.propTypes = {
   children: PropTypes.node,
   onResize: PropTypes.func,
   isStickyEnabled: PropTypes.bool,
-  routes: PropTypes.object,
+  routes: PropTypes.array,
 };
 
 export function mapDispatchToProps(dispatch) {
