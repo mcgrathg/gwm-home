@@ -8,14 +8,14 @@ import React, { PropTypes } from 'react';
 
 import styles from './styles.css';
 
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import H3 from 'components/H3';
 import Card from 'components/Card';
 import SkillsGroup from 'components/SkillsGroup';
 
 function Skills({ columns }) {
   return (
-    <Grid className={styles.skillsGroup}>
+    <div className={styles.skillsGroup}>
       <Row className={styles.row}>
         {columns.map((col, idx) => (
           <Col xs={12} sm={7} md={6} key={`skills-col-${idx}`} className={styles.col}>
@@ -26,7 +26,7 @@ function Skills({ columns }) {
           </Col>
         ))}
       </Row>
-    </Grid>
+    </div>
   );
 }
 
