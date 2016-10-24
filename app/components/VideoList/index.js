@@ -6,7 +6,6 @@
 
 import React, { PropTypes } from 'react';
 import styles from './styles.css';
-import classNames from 'classnames';
 import { ButtonGroup } from 'react-bootstrap';
 
 import CardHeader from 'components/CardHeader';

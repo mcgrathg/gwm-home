@@ -24,7 +24,8 @@ function SocialButton({ ...props }) {
         placement="bottom" overlay={tooltip}
         delayHide={150} delayShow={300}
       >
-        <a className={styles.socialLink}
+        <a
+          className={styles.socialLink}
           href={href} target="_blank"
         >
           <i className={classNames(iconClassName, styles.icon)} aria-hidden="true"></i>

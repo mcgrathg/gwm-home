@@ -14,7 +14,6 @@ import { fromJS } from 'immutable';
 import {
   SET_WINDOW_WIDTH,
   MIN_STICKY_WIDTH,
-  MAX_READ_MORE_WIDTH,
 } from './constants';
 
 // The initial state of the App

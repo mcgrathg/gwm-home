@@ -10,7 +10,8 @@
   color: light;
 }
 
-.resumeBtn, .resumeBtn:focus:not(:hover) {
+.resumeBtn,
+.resumeBtn:focus:not(:hover) {
   background: transparent;
   border-color: matte;
   color: matte;
