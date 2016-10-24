@@ -4,8 +4,6 @@
 
 .card {
   margin: 0 auto;
-  width: 95%;
-  float: left;
   border: 1px solid darkmedium;
   position: relative;
   background-color: light;

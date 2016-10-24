@@ -49,7 +49,7 @@ function VideoDetail({ video, truncateLongText }) {
         <iframe className="embed-responsive-item" src={url} allowFullScreen></iframe>
       </div>
       <Card className={styles.card}>
-        <CardHeader>
+        <CardHeader className={styles.cardHeader}>
           <H2 className={styles.header}>{video.snippet.title}</H2>
         </CardHeader>
         <CardBody>

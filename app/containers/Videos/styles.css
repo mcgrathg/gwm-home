@@ -17,9 +17,14 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .col {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .videoListCol {
+    margin: 0 auto;
+    float: none;
   }
 }

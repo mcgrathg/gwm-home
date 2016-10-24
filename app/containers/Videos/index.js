@@ -8,6 +8,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Row, Col } from 'react-bootstrap';
+import classNames from 'classnames';
 
 import {
   selectCurrentVideo,
@@ -55,7 +56,7 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
           <Col md={8} className={styles.col}>
             <VideoDetail video={currentVideo} truncateLongText={truncateLongText} />
           </Col>
-          <Col md={4} className={styles.col}>
+          <Col md={4} sm={6} className={classNames(styles.col, styles.videoListCol)}>
             <VideoList
               className={styles.videoList}
               videos={videos}
