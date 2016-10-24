@@ -59,18 +59,32 @@ h3 > i {
   border-radius: 15px !important;
   border-width: 2px !important;
   padding: 6px 20px !important;
+  font-weight: bold !important;
 }
 
 :global(.btn:focus) {
   outline-style: none !important;
-
 }
+
 :global(.btn:active),
 :global(.btn:active:hover) {
   filter: brightness(85%);
   color: light;
   outline-style: none;
 }
+
+/*
+
+a {
+  color: watermelon !important;
+}
+
+a:hover {
+  color: watermelon !important;
+  filter: brightness(85%);
+}
+
+*/
 
 ::selection {
   background-color: watermelon !important;
