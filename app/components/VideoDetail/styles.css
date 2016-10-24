@@ -4,6 +4,7 @@
 
 .description {
   white-space: pre-line;
+  padding: 15px !important;
 }
 
 .details {
@@ -11,6 +12,6 @@
 }
 
 .cardHeader {
-  background-color: watermelon;
-  color: matte;
+  background-color: teal;
+  color: light;
 }

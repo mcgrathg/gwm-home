@@ -11,7 +11,8 @@
 }
 
 .cardHeader {
-  background: teal;
+  background-color: lightmatte;
+  color: light;
 }
 
 .videoList {
