@@ -1,0 +1,34 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
+.resumeBtn:hover,
+.resumeBtn:active,
+.resumeBtn:active:hover {
+  background: matte;
+  border-color: matte;
+  color: light;
+}
+
+.resumeBtn, .resumeBtn:focus:not(:hover) {
+  background: transparent;
+  border-color: matte;
+  color: matte;
+}
+
+.contactBtn:hover,
+.contactBtn:active,
+.contactBtn:active:hover {
+  background: watermelon;
+  border-color: watermelon;
+  color: light;
+  outline-style: none;
+}
+
+.contactBtn,
+.contactBtn:focus:not(:hover) {
+  background: transparent;
+  border-color: watermelon;
+  color: watermelon;
+  margin-left: 10px !important;
+}

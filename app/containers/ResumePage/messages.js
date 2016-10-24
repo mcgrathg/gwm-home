@@ -10,7 +10,7 @@ const header = {
     Dedicated and hardworking professional with over 9 years of experience in software development.
     Strong interpersonal, communication andorganization skills,
     able to lead small teams and deliver efficient results ina timely manner in a fast-paced environment.
-    Strong relationship with clients,ensuring customer satisfaction with team’s work.
+    Strong relationship with clients, ensuring customer satisfaction with team’s work.
   `,
 };
 

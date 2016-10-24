@@ -26,6 +26,7 @@ import SocialBar from 'components/SocialBar';
 import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
 import styles from './styles.css';
+import btnStyle from './buttons.css';
 
 export class ResumePage extends Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -48,14 +49,14 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
           </div>
           <Sticky
             enabled={isStickyEnabled}
-            top={50}
-            innerZ={3000}
+            top={55}
+            innerZ={2500}
           >
             <div className={styles.stickyButtons}>
               <div>
                 <CenteredButtonToolbar>
-                  <Button bsStyle="success">Download Resume</Button>
-                  <Button bsStyle="success">Contact Me</Button>
+                  <Button className={btnStyle.resumeBtn}>Download Resume</Button>
+                  <Button className={btnStyle.contactBtn}>Contact Me</Button>
                 </CenteredButtonToolbar>
               </div>
             </div>
