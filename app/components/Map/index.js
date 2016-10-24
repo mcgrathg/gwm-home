@@ -7,24 +7,24 @@
 import React, { PropTypes } from 'react';
 import GoogleMap from 'google-map-react';
 
+
 import {
   GOOGLE_API_KEY,
 } from 'containers/App/constants';
 
 import fancyMapStyles from './fancyMapStyles.json';
 
-import styles from './styles.css';
+const DEFAULT_LAT_LONG = [42.999045, -73.867281];
 
-function Map({ center, zoom, mapStyle = fancyMapStyles }) {
+function Map({ center, zoom, styles }) {
   return (
     <GoogleMap
       bootstrapURLKeys={{
         key: GOOGLE_API_KEY,
       }}
-      className={styles.map}
       center={center}
       zoom={zoom}
-      options={{ styles: mapStyle }}
+      options={{ styles }}
     />
   );
 }
@@ -32,12 +32,13 @@ function Map({ center, zoom, mapStyle = fancyMapStyles }) {
 Map.propTypes = {
   center: PropTypes.array,
   zoom: PropTypes.number,
-  mapStyle: PropTypes.any,
+  styles: PropTypes.array,
 };
 
 Map.defaultProps = {
-  center: [42.9976638, -73.8899404],
+  center: DEFAULT_LAT_LONG,
   zoom: 9,
+  styles: fancyMapStyles,
 };
 
 export default Map;
