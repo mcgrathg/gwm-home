@@ -63,11 +63,16 @@ h3 > i {
 
 :global(.btn:focus) {
   outline-style: none !important;
-}
 
+}
 :global(.btn:active),
 :global(.btn:active:hover) {
   filter: brightness(85%);
   color: light;
   outline-style: none;
+}
+
+::selection {
+  background-color: watermelon !important;
+  color: light !important;
 }
