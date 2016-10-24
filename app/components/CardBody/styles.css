@@ -1,3 +1,7 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
 .cardBody {
   float: left;
   width: 100%;
@@ -7,17 +11,22 @@
   padding: 0;
 }
 
-.cardBody > p, .cardBody > ul {
+.cardBody > p,
+.cardBody > ul {
   margin-bottom: 0;
 }
 
-.cardBody > p+p {
+.cardBody > p {
+  padding: 10px;
+}
+
+.cardBody > p + p {
   margin-top: 5px;
 }
 
 .cardBody > ul > li {
   padding: 7px 15px;
-  /*border: 0;*/
+  background: medium;
 }
 
 .cardBody h4 small {

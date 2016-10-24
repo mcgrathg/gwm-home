@@ -80,7 +80,9 @@ class TimelineEvent extends Component { // eslint-disable-line react/prefer-stat
             </span>);
           }
           return (
-            <ListGroupItem key={idx} className={styles.responsibility}>{val}</ListGroupItem>
+            <ListGroupItem key={idx} className={styles.responsibility}>
+              <div className={styles.responsibilityText}>{val}</div>
+            </ListGroupItem>
           );
         })}
       </ListGroup>

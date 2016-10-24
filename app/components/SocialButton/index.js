@@ -6,17 +6,31 @@
 
 import React, { PropTypes } from 'react';
 import styles from './styles.css';
+import classNames from 'classnames';
+import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 
 function SocialButton({ ...props }) {
   const { iconClassName, href, name, ...rest } = props;
+  const tooltip = (
+    <Tooltip id={iconClassName}>{name}</Tooltip>
+  );
+
   return (
     <li
       className={styles.socialButton}
       {...rest}
     >
-      <a href={href} className={styles.socialLink} target="_blank" title="link">
-        <i className={iconClassName} aria-hidden="true" title={name}></i>
-      </a>
+      <OverlayTrigger
+        placement="bottom" overlay={tooltip}
+        delayHide={150} delayShow={300}
+      >
+        <a
+          className={styles.socialLink}
+          href={href} target="_blank"
+        >
+          <i className={classNames(iconClassName, styles.icon)} aria-hidden="true"></i>
+        </a>
+      </OverlayTrigger>
     </li>
   );
 }

@@ -10,7 +10,6 @@ import Helmet from 'react-helmet';
 import classNames from 'classnames';
 import { Button, ButtonToolbar, Row, Col } from 'react-bootstrap';
 
-import H1 from 'components/H1';
 import H2 from 'components/H2';
 import HeaderIcon from 'components/HeaderIcon';
 import Card from 'components/Card';
@@ -24,17 +23,20 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
 
   render() {
     return (
-      <article className={styles.portfolioPage}>
+      <article className={classNames('container', styles.portfolioPage)}>
         <Helmet
           title="Portfolio Page"
           meta={[
             { name: 'description', content: 'Description of PortfolioPage' },
           ]}
         />
-        <H1 className="page-header">
-          Portfolio
-          <i className="fa fa-file-text text-muted" />
-        </H1>
+        <section className={styles.videoList}>
+          <H2>
+            <HeaderIcon className="fa-video-camera" />
+            Video Examples
+          </H2>
+          <Videos />
+        </section>
         <section className={styles.demo}>
           <H2>
             <HeaderIcon className="fa-desktop" />
@@ -74,13 +76,6 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
               </Row>
             </CenteredButtonToolbar>
           </Card>
-        </section>
-        <section className={styles.videoList}>
-          <H2 className="text-center">
-            Video Examples
-            <HeaderIcon className="fa-video-camera" />
-          </H2>
-          <Videos />
         </section>
         <section>
           <Card className={styles.introCard}>

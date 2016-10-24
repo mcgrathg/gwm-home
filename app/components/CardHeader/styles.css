@@ -1,9 +1,13 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
 .cardHeader {
   width: 100%;
   height: auto;
-  background-color: #455A64;
+  background-color: teal;
   float: left;
-  color: white;
+  color: light;
   padding: 15px;
 }
 
@@ -15,11 +19,11 @@
 
 .cardHeader h2 {
   font-size: large;
-  margin: 0px;
+  margin: 0;
 }
 
 .cardHeader h5 {
-  color: #eee;
+  color: light;
   margin: 5px 0;
   padding: 0;
 }

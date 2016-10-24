@@ -6,9 +6,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-// import { push } from 'react-router-redux';
 import { createStructuredSelector } from 'reselect';
-
+import { Row, Col } from 'react-bootstrap';
+import classNames from 'classnames';
 
 import {
   selectCurrentVideo,
@@ -18,6 +18,10 @@ import {
  } from './selectors';
 
 import {
+   selectTruncateLongText,
+ } from 'containers/App/selectors';
+
+import {
   changeVideo,
   loadVideos,
 } from './actions';
@@ -25,9 +29,6 @@ import {
 import LoadingIndicator from 'components/LoadingIndicator';
 import VideoDetail from 'components/VideoDetail';
 import VideoList from 'components/VideoList';
-// import Card from 'components/Card';
-
-import { Row, Col } from 'react-bootstrap';
 
 import styles from './styles.css';
 
@@ -36,28 +37,31 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
     this.props.onLoadVideos();
   }
   render() {
+    const { loading, error, videos, currentVideo, truncateLongText, onCurrentVideoChange } = this.props;
+
     let mainContent = null;
 
     // Show a loading indicator when we're loading
-    if (this.props.loading) {
+    if (loading) {
       mainContent = (<LoadingIndicator />);
 
     // Show an error if there is one
-    } else if (this.props.error !== false) {
+    } else if (error !== false) {
       mainContent = (<div>Something went wrong, please try again!</div>);
 
     // If we're not loading, don't have an error and there are videos, show the videos
-    } else if (this.props.videos !== false) {
+    } else if (videos !== false) {
       mainContent = (
         <Row className={styles.row}>
           <Col md={8} className={styles.col}>
-            <VideoDetail video={this.props.currentVideo} />
+            <VideoDetail video={currentVideo} truncateLongText={truncateLongText} />
           </Col>
-          <Col md={4} className={styles.col}>
+          <Col md={4} sm={6} className={classNames(styles.col, styles.videoListCol)}>
             <VideoList
-              videos={this.props.videos}
-              currentVideo={this.props.currentVideo}
-              onCurrentVideoChange={this.props.onCurrentVideoChange}
+              className={styles.videoList}
+              videos={videos}
+              currentVideo={currentVideo}
+              onCurrentVideoChange={onCurrentVideoChange}
             />
           </Col>
         </Row>
@@ -74,6 +78,7 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
 
 Videos.propTypes = {
   loading: PropTypes.bool,
+  truncateLongText: PropTypes.bool,
   error: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.bool,
@@ -108,6 +113,7 @@ const mapStateToProps = createStructuredSelector({
   videos: selectVideos(),
   loading: selectLoading(),
   error: selectError(),
+  truncateLongText: selectTruncateLongText(),
 });
 
 // Wrap the component to inject dispatch and state into it

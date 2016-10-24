@@ -1,3 +1,7 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
 /* Global styles */
 
 html,
@@ -15,23 +19,22 @@ body.fontLoaded {
 }
 
 :global(#app) {
-  background-color: #ffffff;
   min-height: 100%;
   min-width: 100%;
+  background-color: light;
+  color: dark;
 }
 
 h1 > i,
 h2 > i,
 h3 > i {
-  padding-left:2vw;
+  padding-left: 2vw;
 }
 
 .wrapper {
-  /*max-width: calc(768px + 16px * 2);*/
   margin: 0 auto;
   display: flex;
   min-height: 100%;
-  padding: 0 16px;
   flex-direction: column;
 }
 
@@ -44,9 +47,46 @@ h3 > i {
 
 :global button {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  transition: box-shadow .25s;
+  transition: all 0.2s ease-in-out;
 }
 
 :global button:hover {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+:global(.btn) {
+  border-radius: 15px !important;
+  border-width: 2px !important;
+  padding: 6px 20px !important;
+  font-weight: bold !important;
+}
+
+:global(.btn:focus) {
+  outline-style: none !important;
+}
+
+:global(.btn:active),
+:global(.btn:active:hover) {
+  filter: brightness(85%);
+  color: light;
+  outline-style: none;
+}
+
+/*
+
+a {
+  color: watermelon !important;
+}
+
+a:hover {
+  color: watermelon !important;
+  filter: brightness(85%);
+}
+
+*/
+
+::selection {
+  background-color: watermelon !important;
+  color: light !important;
 }

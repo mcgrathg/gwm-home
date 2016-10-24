@@ -1,3 +1,8 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
+
 .skills { /* stylelint-disable */
 
 }
@@ -8,8 +13,8 @@ H3 {
 }
 
 .card {
-  background-color: #455A64;
-  color: #ffffff;
+  background-color: matte !important;
+  color: light;
   padding: 15px;
   height: 100%;
 }
@@ -22,4 +27,5 @@ H3 {
 .col {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 }

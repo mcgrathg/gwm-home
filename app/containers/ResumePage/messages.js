@@ -7,8 +7,10 @@
 const header = {
   title: 'Resume',
   intro: `
-    Dedicated and hardworking professional with over 9 years ofexperience in software development. Strong interpersonal, communication andorganization skills, able to lead small teams and deliver efficient results ina timely manner in a fast-paced environment.
-    Strong relationship with clients,ensuring customer satisfaction with team’s work.
+    Dedicated and hardworking professional with over 9 years of experience in software development.
+    Strong interpersonal, communication and organization skills,
+    able to lead small teams and deliver efficient results in a timely manner in a fast-paced environment.
+    Strong relationship with clients, ensuring customer satisfaction with team’s work.
   `,
 };
 
@@ -20,10 +22,10 @@ const skills = [
         sizes: { sm: 4, xs: 6 },
         items: ['JavaScript', 'Ext JS', 'React', 'jQuery'],
       }, {
-        sizes: { sm: 2, xs: 4 },
+        sizes: { md: 3, sm: 2, xs: 4 },
         items: ['SQL', 'HTML', 'CSS', 'Python'],
       }, {
-        sizes: { sm: 6, xs: 8 },
+        sizes: { md: 5, sm: 6, xs: 8 },
         items: ['Sencha Touch', 'Apache Ant', 'Caché ObjectScript'],
       },
     ],

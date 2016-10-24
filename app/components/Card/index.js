@@ -13,7 +13,7 @@ function Card({ ...props }) {
   const { children, className, ...rest } = props;
   return (
     <div
-      className={classNames(styles.card, className)}
+      className={classNames(className, styles.card)}
       {...rest}
     >
       { children }

@@ -1,3 +1,8 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
+
 .skillsGroup { /* stylelint-disable */
 
 }
@@ -5,6 +10,7 @@
 .item {
   border: 0;
   background-color: transparent;
+  padding: 10px 0px 10px 5px;
 }
 
 .listGroup {
@@ -12,16 +18,10 @@
 }
 
 .col {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.col:first-child {
-  padding-left: 15px;
-}
-.col:last-child {
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .item:not(:first-child) {
-  border-top: 1px solid #728690;
+  border-top: 1px solid lightmatte;
 }

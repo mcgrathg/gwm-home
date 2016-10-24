@@ -1,3 +1,17 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
 .description {
   white-space: pre-line;
+  padding: 15px !important;
+}
+
+.details {
+  background: fresh;
+}
+
+.cardHeader {
+  background-color: teal;
+  color: light;
 }

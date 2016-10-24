@@ -1,7 +1,25 @@
-.socialButton {
-
-}
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
 
 .socialLink {
-  color: #777;
+  color: lightmatte;
+  cursor: default;
+}
+
+.socialLink:hover {
+  text-decoration: none;
+  color: lightmatte;
+  cursor: default;
+}
+
+.icon {
+  font-size: larger;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icon:hover {
+  color: teal;
+  transform: scale(1.5);
 }

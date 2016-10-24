@@ -1,3 +1,7 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
 /************************************************
  *                Event Config                  *
  ************************************************/
@@ -7,7 +11,7 @@
   width: 50%;
   float: left;
   clear: left;
-  background: transparent;
+  background-color: transparent;
   border: 0;
 }
 
@@ -19,14 +23,11 @@
 
 @media (max-width: 767px) {
   .timelineEvent {
-    /*margin-bottom: 20px;*/
-    /*position: relative;*/
     width: 100%;
   }
 }
 
-/*End Event */
-
+/* End Event */
 
 /************************************************
  *                Panel Config                  *
@@ -34,57 +35,54 @@
 .panel {
   width: 95%;
   float: left;
-  border: 1px solid #d4d4d4;
+  border: 0;
   position: relative;
-
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  background-color: #fff;
-  transition: box-shadow .25s;
+  background-color: transparent;
+  transition: box-shadow 0.5s;
 }
 
-.panel:before {
+/* border for pointer to timeline */
+.panel::before {
   position: absolute;
   top: 13px;
   right: -15px;
   display: inline-block;
   border-top: 15px solid transparent;
-  border-left: 15px solid #d4d4d4;
-  border-right: 0 solid #d4d4d4;
+  border-left: 15px solid teal;
+  border-right: 0 solid teal;
   border-bottom: 15px solid transparent;
-  content: " ";
+  content: ' ';
 }
 
-.panel:after {
+/* pointer to timeline */
+.panel::after {
   position: absolute;
   top: 14px;
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid #455A64;
-  border-right: 0 solid #455A64;
+  border-left: 14px solid teal;
+  border-right: 0 solid teal;
   border-bottom: 14px solid transparent;
-  content: " ";
+  content: ' ';
 }
 
 @media (max-width: 767px) {
-
-  .panel:before {
+  .panel::before {
     border-left-width: 0;
     border-right-width: 15px;
     left: -15px;
     right: auto;
   }
+
   .panel {
     width: calc(100% - 50px);
-    width: -moz-calc(100% - 50px);
-    width: -webkit-calc(100% - 50px);
     float: right;
   }
 
-  .panel:after {
+  .panel::after {
     border-left-width: 0 !important;
-    border-right-width: 15px !important;;
+    border-right-width: 15px !important;
     left: -14px;
     right: auto;
   }
@@ -113,7 +111,7 @@
  ************************************************/
 
 .badge {
-  color: #fff;
+  color: light;
   width: 24px;
   height: 24px;
   line-height: 50px;
@@ -126,7 +124,7 @@
 }
 
 .badge > a {
-  color: #C5C7C5 !important;
+  color: darkmedium !important;
 }
 
 @media (max-width: 767px) {
@@ -140,18 +138,19 @@
 /* End BADGE */
 
 .responsibility {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border: 0;
 }
 
-:global .list-group-item:first-child {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+.responsibility > div {
+  padding: 10px 0;
 }
 
-:global .list-group-item:last-child {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+.responsibility:not(:last-child) > div {
+  border-bottom: 1px solid darkmedium;
 }
 
 /************************************************
@@ -159,12 +158,11 @@
  ************************************************/
 
 .timelineEvent:hover > .panel {
-  -webkit-box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.16), 0 10px 15px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.16), 0 10px 15px 0 rgba(0, 0, 0, 0.12);
 }
 
 .timelineEvent:hover > .badge a {
-  color: #455A64 !important;
+  color: watermelon !important;
 }
 
 /* End Event Hover Mods */
@@ -173,7 +171,7 @@
  *               Inverted Config                *
  ************************************************/
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .inverted {
     float: right;
     clear: right;
@@ -187,24 +185,18 @@
     float: right;
   }
 
-  .inverted > .panel:before {
+  .inverted > .panel::before {
     border-left-width: 0;
     border-right-width: 15px;
     left: -15px;
     right: auto;
   }
 
-  .inverted > .panel:after {
+  .inverted > .panel::after {
     border-left-width: 0;
     border-right-width: 14px;
     left: -14px;
     right: auto;
-  }
-}
-
-@media (max-width: 767px) {
-  .inverted > .badge {
-    /*left: 28px;*/
   }
 }
 

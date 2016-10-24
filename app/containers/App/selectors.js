@@ -2,6 +2,8 @@
  * The global state selectors
  */
 
+import { createSelector } from 'reselect';
+
 const selectGlobal = () => (state) => state.get('global');
 
 const selectLocationState = () => {
@@ -20,7 +22,25 @@ const selectLocationState = () => {
   };
 };
 
+const selectWindowWidth = () => createSelector(
+  selectGlobal(),
+  (globalState) => globalState.get('windowWidth')
+);
+
+const selectIsStickyEnabled = () => createSelector(
+  selectGlobal(),
+  (globalState) => globalState.get('isStickyEnabled')
+);
+
+const selectTruncateLongText = () => createSelector(
+  selectGlobal(),
+  (globalState) => globalState.get('truncateLongText')
+);
+
 export {
   selectGlobal,
   selectLocationState,
+  selectWindowWidth,
+  selectIsStickyEnabled,
+  selectTruncateLongText,
 };

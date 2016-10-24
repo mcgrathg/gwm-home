@@ -1,10 +1,10 @@
-.videos { /* stylelint-disable */
-
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.row  {
-  margin-left: 0;
-  margin-right:0;
+.col {
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -16,9 +16,15 @@
     padding-right: 0;
   }
 }
-@media (max-width: 767px) {
+
+@media (max-width: 991px) {
   .col {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .videoListCol {
+    margin: 0 auto;
+    float: none;
   }
 }

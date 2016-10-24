@@ -16,7 +16,7 @@ function VideoListItem({ video, isSelected, onVideoSelect, className }) {
   const imageUrl = video.snippet.thumbnails.medium.url;
 
   return (
-    <Button onClick={() => onVideoSelect(video)} className={classNames(styles.videoListItem, className, isSelected ? styles.isSelected : null)}>
+    <Button onClick={() => onVideoSelect(video)} className={classNames(className, styles.videoListItem, isSelected ? styles.isSelected : null)}>
       <Row className={styles.row}>
         <Col sm={5} className={styles.col}>
           <Image className={styles.image} src={imageUrl} alt="video-thumbnail" />
