@@ -1,0 +1,62 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
+.contactForm {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  padding: 50px;
+  background: matte;
+  color: light;
+}
+
+.loadingIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
+@media only screen and (max-width: 767px) {
+  .contactForm {
+    left: 0;
+    top: 64%;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .h2,
+  h2 {
+    font-size: 25px !important;
+  }
+}
+
+@media only screen and (max-width: 959px) and (min-width: 768px) {
+  .contactForm {
+    width: 60%;
+    padding: 25px;
+  }
+}
+
+.formInput {
+  margin-right: 10px;
+  width: 100%;
+}
+
+:global(.form-control) {
+  color: matte !important;
+}
+
+:global(.form-control:focus) {
+  border-color: teal !important;
+}
+
+:global(.form-control-feedback) {
+  right: 15px !important;
+}
+
+:global(.has-error .control-label) {
+  color: watermelon !important;
+}
