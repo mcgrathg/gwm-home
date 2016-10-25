@@ -13,7 +13,7 @@
 /* Embeded Google Map */
 .map > div {
   width: 100%;
-  height: 800px !important;
+  height: 650px !important;
   margin: 0;
   padding: 0;
   position: relative;
@@ -49,4 +49,25 @@
     padding: 25px;
 
   }
+}
+
+.formInput {
+  margin-right: 10px;
+  width: 100%;
+}
+
+:global(.form-control) {
+  color: matte  !important;
+}
+
+:global(.form-control:focus) {
+  border-color: teal !important;
+}
+
+:global(.form-control-feedback) {
+  right: 15px !important;
+}
+
+:global(.has-error .control-label) {
+  color: watermelon !important;
 }

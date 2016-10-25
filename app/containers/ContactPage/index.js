@@ -7,10 +7,11 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-// import classNames from 'classnames';
+import classNames from 'classnames';
 import Helmet from 'react-helmet';
 import { Form } from 'formsy-react';
 import { ParentContextMixin, Input, Textarea } from 'formsy-react-components';
+import { Button } from 'react-bootstrap';
 
 import {
   selectWindowWidth,
@@ -20,6 +21,7 @@ import Map from 'components/Map';
 import H2 from 'components/H2';
 import HeaderIcon from 'components/HeaderIcon';
 
+import btnStyle from './buttons.css';
 import styles from './styles.css';
 
 const MIN_WIN_WIDTH = 767;
@@ -27,6 +29,10 @@ const MIN_WIN_WIDTH = 767;
 export class ContactPage extends Component { // eslint-disable-line react/prefer-stateless-function
 
   mixins: [ParentContextMixin]
+
+  submitForm = (data) => {
+    console.log(data);
+  }
 
   render() {
     const { windowWidth } = this.props;
@@ -66,7 +72,7 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
                 value=""
                 label="Name"
                 labelClassName="col-md-6"
-                elementWrapperClassName="col-md-12"
+                elementWrapperClassName={classNames('col-md-12', styles.formInput)}
                 type="text"
                 required
               />
@@ -75,7 +81,7 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
                 value=""
                 label="Email"
                 labelClassName="col-md-6"
-                elementWrapperClassName="col-md-12"
+                elementWrapperClassName={classNames('col-md-12', styles.formInput)}
                 type="email"
                 validations="isEmail"
                 validationErrors={{
@@ -88,18 +94,19 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
                 value=""
                 label="Subject"
                 labelClassName="col-md-6"
-                elementWrapperClassName="col-md-12"
+                elementWrapperClassName={classNames('col-md-12', styles.formInput)}
                 type="text"
               />
               <Textarea
                 name="message"
                 value=""
+                label="Message"
                 labelClassName="col-md-6"
-                elementWrapperClassName="col-md-12"label="Message"
-
+                elementWrapperClassName={classNames('col-md-12', styles.formInput)}
                 type="text"
                 required
               />
+              <Button className={classNames('pull-right', btnStyle.submitBtn)} formNoValidate type="submit" defaultValue="Submit" >Send</Button>
             </Form>
           </div>
           <h2>test</h2>

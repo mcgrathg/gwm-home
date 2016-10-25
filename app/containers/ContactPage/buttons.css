@@ -1,0 +1,18 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
+.submitBtn:hover,
+.submitBtn:active,
+.submitBtn:active:hover {
+  color: teal;
+  border-color: teal;
+  background: light;
+}
+
+.submitBtn,
+.submitBtn:focus:not(:hover) {
+  color: light;
+  border-color: teal;
+  background: teal;
+}
