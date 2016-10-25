@@ -20,7 +20,7 @@ export function* getVideos() {
   const playlist = yield call(request, YOUTUBE_PLAYLIST_URL);
 
   if (!playlist.err) {
-    yield put(playlistLoaded(playlist.data));
+    yield put(videosLoaded(playlist.data));
   } else {
     yield put(videosLoadingError(playlist.err));
   }
