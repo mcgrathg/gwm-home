@@ -6,7 +6,7 @@
 
 import {
   GOOGLE_API_KEY,
-} from 'containers/App/constants';
+} from 'containers/App/_keys';
 
 export const CHANGE_CURRENT_VIDEO = 'app/Videos/CHANGE_VIDEO';
 export const LOAD_VIDEOS = 'app/Videos/LOAD_VIDEOS';

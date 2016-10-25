@@ -1,5 +1,5 @@
 /**
- * Gets the repositories of the user from Github
+ * Gets the videos from a Youtube playlist
  */
 
 import { take, call, put, fork, cancel } from 'redux-saga/effects';
@@ -13,16 +13,16 @@ import { videosLoaded, videosLoadingError } from './actions';
 import request from 'utils/request';
 
 /**
- * Github repos request/response handler
+ * Github videos request/response handler
  */
 export function* getVideos() {
   // Call our request helper (see 'utils/request')
-  const repos = yield call(request, YOUTUBE_PLAYLIST_URL);
+  const playlist = yield call(request, YOUTUBE_PLAYLIST_URL);
 
-  if (!repos.err) {
-    yield put(videosLoaded(repos.data));
+  if (!playlist.err) {
+    yield put(playlistLoaded(playlist.data));
   } else {
-    yield put(videosLoadingError(repos.err));
+    yield put(videosLoadingError(playlist.err));
   }
 }
 
