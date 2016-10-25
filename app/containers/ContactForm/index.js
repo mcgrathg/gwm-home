@@ -66,6 +66,7 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
 
   submitForm = (data) => {
     console.log(data);
+    this.addAlert(data);
 
     // const fromEmail = new helper.Email('greg@mcgrathg.com');
     // const toEmail = new helper.Email('hi@mcgrathg.com');
