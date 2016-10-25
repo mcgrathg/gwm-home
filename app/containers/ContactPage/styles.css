@@ -31,6 +31,12 @@
   color: light;
 }
 
+.loadingIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
 @media only screen and (max-width: 767px) {
   .contactForm {
       left: 0;
