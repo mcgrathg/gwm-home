@@ -4,11 +4,10 @@
 
 .map {
   position: relative;
-  background: blue;
 }
 
 /* Embeded Google Map */
-.map > div {
+.map > div:first-child {
   width: 100%;
   height: 650px !important;
   margin: 0;
