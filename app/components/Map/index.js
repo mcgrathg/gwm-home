@@ -14,7 +14,7 @@ import {
 
 import fancyMapStyles from './fancyMapStyles.json';
 
-const DEFAULT_LAT_LONG = [42.999045, -73.867281];
+const DEFAULT_LAT_LONG = [43.00664, -73.872088];
 
 function Map({ center, zoom, styles }) {
   return (
