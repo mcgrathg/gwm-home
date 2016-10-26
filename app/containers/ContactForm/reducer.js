@@ -10,6 +10,7 @@ import {
   SEND_MESSAGE_SUCCESS,
   SEND_MESSAGE_ERROR,
   FORM_VALIDITY,
+  MESSAGE_SENT_ACK,
 } from './constants';
 
 const initialState = fromJS({
@@ -43,6 +44,9 @@ function contactFormReducer(state = initialState, action) {
     case FORM_VALIDITY:
       return state
         .set('isFormValid', action.isFormValid);
+    case MESSAGE_SENT_ACK:
+      return state
+        .set('sent', false);
     default:
       return state;
   }

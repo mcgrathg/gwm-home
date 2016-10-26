@@ -9,6 +9,7 @@ import {
   SEND_MESSAGE_SUCCESS,
   SEND_MESSAGE_ERROR,
   FORM_VALIDITY,
+  MESSAGE_SENT_ACK,
 } from './constants';
 
 /**
@@ -55,5 +56,11 @@ export function setFormValidity(isFormValid) {
   return {
     type: FORM_VALIDITY,
     isFormValid,
+  };
+}
+
+export function messageSentAcknowledged() {
+  return {
+    type: MESSAGE_SENT_ACK,
   };
 }

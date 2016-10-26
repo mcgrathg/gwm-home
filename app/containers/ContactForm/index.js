@@ -24,6 +24,7 @@ import {
 import {
   sendMessage,
   setFormValidity,
+  messageSentAcknowledged,
 } from './actions';
 
 import H2 from 'components/H2';
@@ -37,16 +38,10 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
 
   mixins: [ParentContextMixin]
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isFormValid: false,
-    };
-  }
-
   componentWillReceiveProps({ sent }) {
     if (sent) {
       this.contactForm.reset();
+      this.props.messageSentAcknowledged();
     }
   }
 
@@ -152,8 +147,6 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
 
 ContactForm.propTypes = {
   className: PropTypes.string,
-  onFormSubmit: PropTypes.func,
-  setFormValidity: PropTypes.func,
   sending: PropTypes.bool,
   sent: PropTypes.bool,
   isFormValid: PropTypes.bool,
@@ -161,6 +154,9 @@ ContactForm.propTypes = {
     PropTypes.bool,
     PropTypes.arrayOf(PropTypes.string),
   ]),
+  onFormSubmit: PropTypes.func,
+  setFormValidity: PropTypes.func,
+  messageSentAcknowledged: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -177,6 +173,7 @@ function mapDispatchToProps(dispatch) {
       dispatch(sendMessage(formData));
     },
     setFormValidity: (isValid) => dispatch(setFormValidity(isValid)),
+    messageSentAcknowledged: () => dispatch(messageSentAcknowledged()),
     dispatch,
   };
 }
