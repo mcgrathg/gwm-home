@@ -14,8 +14,6 @@ import { fromJS } from 'immutable';
 import {
   SET_WINDOW_WIDTH,
   MIN_STICKY_WIDTH,
-  ERROR_TOAST,
-  SUCCESS_TOAST,
 } from './constants';
 
 // The initial state of the App
@@ -34,12 +32,6 @@ function appReducer(state = initialState, action) {
         .set('isStickyEnabled', action.width >= MIN_STICKY_WIDTH)
         .set('truncateLongText', true);
         // .set('truncateLongText', action.width < MAX_READ_MORE_WIDTH);
-    case ERROR_TOAST:
-      return state
-        .set('errorToast', action.message);
-    case SUCCESS_TOAST:
-      return state
-        .set('successToast', action.message);
     default:
       return state;
   }
