@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import classNames from 'classnames';
-import { Button, ButtonToolbar, Row, Col } from 'react-bootstrap';
+import { Button, ButtonToolbar } from 'react-bootstrap';
 
 import H2 from 'components/H2';
 import HeaderIcon from 'components/HeaderIcon';
@@ -25,7 +25,7 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
     return (
       <article className={classNames('container', styles.portfolioPage)}>
         <Helmet
-          title="Portfolio Page"
+          title="Portfolio"
           meta={[
             { name: 'description', content: 'Description of PortfolioPage' },
           ]}
@@ -45,35 +45,29 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
           <Card>
             <p className="lead">Some text here...</p>
             <CenteredButtonToolbar className={styles.resumeButtons}>
-              <Row>
-                <Col sm={6} className={styles.col}>
-                  <a
-                    className={styles.btnLink}
-                    href="http://gwmextjs.surge.sh/"
-                    target="_blank"
-                  >
-                    <Button
-                      className={classNames(styles.demoButton, 'center-block')}
-                      bsStyle="primary"
-                    >
-                      View ExtJS Demo
-                    </Button>
-                  </a>
-                </Col>
-                <Col sm={6} className={styles.col}>
-                  <a
-                    className={styles.btnLink}
-                    href="http://gwm-docs.surge.sh/"
-                    target="_blank"
-                  >
-                    <Button
-                      className={classNames(styles.demoButton, 'center-block')}
-                    >
-                      View Demo&apos;s Documentation
-                    </Button>
-                  </a>
-                </Col>
-              </Row>
+              <a
+                className={styles.btnLink}
+                href="http://gwmextjs.surge.sh/"
+                target="_blank"
+              >
+                <Button
+                  className={classNames(styles.demoButton, 'center-block')}
+                  bsStyle="primary"
+                >
+                  View ExtJS Demo
+                </Button>
+              </a>
+              <a
+                className={styles.btnLink}
+                href="http://gwm-docs.surge.sh/"
+                target="_blank"
+              >
+                <Button
+                  className={classNames(styles.demoButton, 'center-block')}
+                >
+                  View Demo&apos;s Documentation
+                </Button>
+              </a>
             </CenteredButtonToolbar>
           </Card>
         </section>

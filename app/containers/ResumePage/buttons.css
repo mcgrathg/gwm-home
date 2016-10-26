@@ -31,5 +31,16 @@
   background: transparent;
   border-color: watermelon;
   color: watermelon;
-  margin-left: 10px !important;
+}
+
+@media (min-width: 768px) {
+  .contactBtn,
+  .contactBtn:focus:not(:hover) {
+    margin-left: 10px !important;
+  }
+}
+
+.resumeBtn,
+.contactBtn {
+  float: none !important;
 }

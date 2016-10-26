@@ -2,16 +2,12 @@
 @value colors: 'containers/App/colors.css';
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
 
-.resumePage { /* stylelint-disable */
-
-}
-
 .introCard {
   padding: 30px 0 0;
   background: medium;
 }
 
-.introCard p  {
+.introCard p {
   padding: 0 5%;
   margin: 32px 0 0;
 }
@@ -20,6 +16,7 @@
   background: medium;
   padding: 15px 0;
 }
+
 .stickyButtons {
   background: light;
   padding-bottom: 10px;
@@ -35,4 +32,8 @@
 
 section:not(:first-child) {
   padding-top: 30px;
+}
+
+.centeredToolbarRow {
+  min-width: 30%;
 }

@@ -7,3 +7,31 @@
 .centeredButtonToolbar .btn, .centeredButtonToolbar .btn-group, .centeredButtonToolbar .input-group {
     margin-left: 5px;
 }
+
+.row {
+  min-width: 75%;
+}
+
+.col {
+  overflow: hidden;
+  text-align: center;
+  padding: 0 20px;
+}
+
+@media (max-width: 992px) {
+  .col {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .col {
+    /*padding: 10px;*/
+    margin: 5px auto;
+    float: none;
+  }
+
+  .col > .btn {
+    float: none;
+  }
+}

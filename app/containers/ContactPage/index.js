@@ -33,7 +33,7 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
     return (
       <div className={styles.contactPage}>
         <Helmet
-          title="ContactPage"
+          title="Contact"
           meta={[
             { name: 'description', content: 'Description of ContactPage' },
           ]}
