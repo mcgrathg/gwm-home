@@ -9,28 +9,40 @@ import {
   SEND_MESSAGE_URL,
  } from './constants';
 
-import {
-  ERROR_TOAST,
-  SUCCESS_TOAST,
-} from 'containers/App/constants';
-
 import { messageSent, messageSentError } from './actions';
+import { addNotification, resetNotification } from 'containers/NotificationContainer/actions';
+
 import { selectFormData } from './selectors';
 
 import { post } from 'axios';
 
 /**
- * Github videos request/response handler
+ * Email Contact Form entry to me
  */
 export function* sendMessage() {
   const formData = yield (select(selectFormData()));
-  const { data } = yield call(post, SEND_MESSAGE_URL, formData);
+  // const { data }
+  try {
+    const { data } = yield call(post, `${SEND_MESSAGE_URL}`, formData);
 
-  if (data.success) {
-    yield put(messageSent(data));
-  } else {
-    yield put(messageSentError(data.error));
-    yield put({ type: ERROR_TOAST, message: data.error.message.join('. ') });
+    // make sure that the `notification` is considered new by clearing its props
+    yield put(resetNotification());
+    const {
+      success,
+      error = { message: ['Unknown Error'] },
+    } = data;
+
+    if (success) {
+      yield put(messageSent(data));
+      yield put(addNotification('Your message was sent successfully!', 'success'));
+    } else {
+      const { message } = error;
+      yield put(messageSentError(message));
+      yield put(addNotification(`Your message failed to send because: "${message.join('. ')}"`, 'error'));
+    }
+  } catch (error) {
+    yield put(messageSentError([error]));
+    yield put(addNotification(`Your message failed to send because: "${error}"`, 'error'));
   }
 }
 
