@@ -10,10 +10,6 @@ import { createStructuredSelector } from 'reselect';
 import NotificationSystem from 'react-notification-system';
 
 import {
-  addNotification,
-} from './actions';
-
-import {
   selectNotification,
 } from './selectors';
 
@@ -44,19 +40,8 @@ NotificationContainer.propTypes = {
   notification: PropTypes.object.isRequired,
 };
 
-export function mapDispatchToProps(dispatch) {
-  return {
-    addNotification: (...rest) => {
-      debugger;
-      dispatch(addNotification(rest));
-    },
-
-    dispatch,
-  };
-}
-
 const mapStateToProps = createStructuredSelector({
   notification: selectNotification(),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NotificationContainer);
+export default connect(mapStateToProps)(NotificationContainer);
