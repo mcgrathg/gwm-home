@@ -4,27 +4,24 @@
 *
 */
 
-import React, { Children, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
-import { ButtonToolbar, Row, Col } from 'react-bootstrap';
+import { ButtonToolbar } from 'react-bootstrap';
 
 import styles from './styles.css';
 
 function CenteredButtonToolbar({ ...props }) {
-  const { children, className, rowClassName, colClassName, ...rest } = props;
-  const colCount = Children.count(children);
-  const colWidth = Math.ceil(12 / colCount);
+  const { children, className, ulClassName, liClassName, ...rest } = props;
 
   const childColumns = () => (
     children.map((child, idx) => (
-      <Col
-        sm={colWidth}
+      <li
         key={idx}
-        className={classNames(styles.col, colClassName)}
+        className={classNames(styles.li, liClassName)}
       >
         {child}
-      </Col>
+      </li>
     )
   ));
 
@@ -33,17 +30,17 @@ function CenteredButtonToolbar({ ...props }) {
       className={classNames(styles.centeredButtonToolbar, className)}
       {...rest}
     >
-      <Row className={classNames(styles.col, rowClassName)}>
+      <ul className={classNames(styles.ul, ulClassName)}>
         {childColumns()}
-      </Row>
+      </ul>
     </ButtonToolbar>
   );
 }
 
 CenteredButtonToolbar.propTypes = {
   className: PropTypes.string,
-  rowClassName: PropTypes.string,
-  colClassName: PropTypes.string,
+  ulClassName: PropTypes.string,
+  liClassName: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
