@@ -12,3 +12,4 @@ export const SET_WINDOW_WIDTH = 'app/App/SET_WINDOW_WIDTH';
 
 export const MIN_STICKY_WIDTH = 769;
 export const MAX_READ_MORE_WIDTH = 769;
+export const RESUME_DOWNLOAD_URL = 'https://drive.google.com/open?id=0B6jrk0Rt-wj3UUVFTjh4Zm5HelE';

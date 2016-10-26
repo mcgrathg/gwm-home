@@ -12,8 +12,11 @@ import { header, skills, work, education } from './messages';
 import classNames from 'classnames';
 import * as Sticky from 'react-stickynode';
 import { LinkContainer } from 'react-router-bootstrap';
-
 import { Button } from 'react-bootstrap';
+
+import {
+  RESUME_DOWNLOAD_URL,
+} from 'containers/App/constants';
 
 import {
   selectIsStickyEnabled,
@@ -56,7 +59,13 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
             <div className={styles.stickyButtons}>
               <div>
                 <CenteredButtonToolbar>
-                  <Button className={btnStyle.resumeBtn}>Download Resume</Button>
+                  <Button
+                    className={btnStyle.resumeBtn}
+                    href={RESUME_DOWNLOAD_URL}
+                    target="_blank"
+                  >
+                    Download Resume
+                  </Button>
                   <LinkContainer to="/contact">
                     <Button className={btnStyle.contactBtn}>Contact Me</Button>
                   </LinkContainer>
