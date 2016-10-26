@@ -11,6 +11,7 @@ import Helmet from 'react-helmet';
 import { header, skills, work, education } from './messages';
 import classNames from 'classnames';
 import * as Sticky from 'react-stickynode';
+import { LinkContainer } from 'react-router-bootstrap';
 
 import { Button } from 'react-bootstrap';
 
@@ -56,7 +57,10 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
               <div>
                 <CenteredButtonToolbar>
                   <Button className={btnStyle.resumeBtn}>Download Resume</Button>
-                  <Button className={btnStyle.contactBtn}>Contact Me</Button>
+                  <LinkContainer to="/contact">
+                    <Button className={btnStyle.contactBtn}>Contact Me</Button>
+                  </LinkContainer>
+
                 </CenteredButtonToolbar>
               </div>
             </div>
