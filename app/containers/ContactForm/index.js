@@ -17,6 +17,7 @@ import {
   selectEmail,
   selectError,
   selectSending,
+  selectSent,
  } from './selectors';
 
 import {
@@ -38,16 +39,14 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
     super(props);
     this.state = {
       isFormValid: false,
-      sent: false,
     };
   }
 
-  // componentWillUpdate({ email }, { sent }) {
-  //   if (sent) {
-  //     this.contactForm.reset();
-  //     this.setState({ sent: false });
-  //   }
-  // }
+  componentWillReceiveProps({ sent }) {
+    if (sent) {
+      this.contactForm.reset();
+    }
+  }
 
   setFormValid = (isFormValid) => {
     this.setState({ isFormValid });
@@ -64,12 +63,22 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
   }
 
   render() {
-    const { className, sending } = this.props;
+    const { className, sending, error } = this.props;
     const { isFormValid } = this.state;
     let submittingIndicator;
+    let errorMessage;
 
     if (sending) {
       submittingIndicator = (<div className={styles.loadingIndicator}><LoadingIndicator /></div>);
+    }
+
+    if (error && error.length) {
+      errorMessage = (
+        <div className={classNames(styles.error, 'pull-left')}>
+          <h4>Errors</h4>
+          <ul>{error.map((msg, idx) => <li key={idx}>{msg}</li>)}</ul>
+        </div>
+      );
     }
 
     return (
@@ -114,6 +123,7 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
           labelClassName="col-md-6"
           elementWrapperClassName={classNames('col-md-12', styles.formInput)}
           type="text"
+          required
         />
         <Textarea
           name="html"
@@ -124,6 +134,7 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
           type="text"
           required
         />
+        {errorMessage}
         <Button
           className={classNames('pull-right', btnStyle.submitBtn)}
           type="submit"
@@ -142,12 +153,18 @@ ContactForm.propTypes = {
   className: PropTypes.string,
   onFormSubmit: PropTypes.func,
   sending: PropTypes.bool,
+  sent: PropTypes.bool,
+  error: React.PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
 };
 
 const mapStateToProps = createStructuredSelector({
   email: selectEmail(),
   error: selectError(),
   sending: selectSending(),
+  sent: selectSent(),
 });
 
 function mapDispatchToProps(dispatch) {

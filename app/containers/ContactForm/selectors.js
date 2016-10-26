@@ -14,6 +14,11 @@ const selectSending = () => createSelector(
   (contactState) => contactState.get('sending')
 );
 
+const selectSent = () => createSelector(
+  selectContactForm(),
+  (contactState) => contactState.get('sent')
+);
+
 const selectError = () => createSelector(
   selectContactForm(),
   (contactState) => contactState.get('error')
@@ -34,5 +39,6 @@ export {
   selectEmail,
   selectError,
   selectSending,
+  selectSent,
   selectFormData,
 };

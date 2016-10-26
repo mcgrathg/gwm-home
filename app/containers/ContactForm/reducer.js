@@ -13,6 +13,7 @@ import {
 
 const initialState = fromJS({
   sending: false,
+  sent: false,
   error: false,
   formData: false,
   email: false,
@@ -23,12 +24,14 @@ function contactFormReducer(state = initialState, action) {
     case SEND_MESSAGE:
       return state
         .set('sending', true)
+        .set('sent', false)
         .set('error', false)
         .set('formData', action.formData)
         .set('email', false);
     case SEND_MESSAGE_SUCCESS:
       return state
         .set('sending', false)
+        .set('sent', true)
         .set('email', action.email)
         .set('formData', false);
     case SEND_MESSAGE_ERROR:
