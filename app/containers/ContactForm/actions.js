@@ -15,10 +15,10 @@ import {
  *
  * @return {object} An action object with a type of LOAD_VIDEOS
  */
-export function sendMessage(data) {
+export function sendMessage(formData) {
   return {
     type: SEND_MESSAGE,
-    data,
+    formData,
   };
 }
 
@@ -43,9 +43,10 @@ export function messageSent({ email }) {
  *
  * @return {object} An action object with a type of SEND_MESSAGE_ERROR passing the error
  */
-export function messageSentError(error) {
+export function messageSentError({ message }) {
+  console.log('message sent error', message);
   return {
     type: SEND_MESSAGE_ERROR,
-    error,
+    message,
   };
 }

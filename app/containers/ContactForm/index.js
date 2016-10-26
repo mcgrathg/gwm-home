@@ -8,30 +8,24 @@ import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { ToastContainer, ToastMessage } from 'react-toastr';
-import { post } from 'axios';
-
-// import sendgrid from 'sendgrid';
-// const helper = require('sendgrid').mail;
-
-
 import { Form } from 'formsy-react';
 import { ParentContextMixin, Input, Textarea } from 'formsy-react-components';
 import { Button } from 'react-bootstrap';
-// import selectContactForm from './selectors';
+
+
+import {
+  selectEmail,
+  selectError,
+  selectSending,
+ } from './selectors';
+
+import {
+  sendMessage,
+} from './actions';
 
 import H2 from 'components/H2';
 import HeaderIcon from 'components/HeaderIcon';
 import LoadingIndicator from 'components/LoadingIndicator';
-
-
-import {
-  // SENDGRID_API_KEY,
-} from 'containers/App/_keys';
-
-
-const ToastMessageFactory = React.createFactory(ToastMessage.animation);
-// const sg = sendgrid(SENDGRID_API_KEY);
 
 import btnStyle from './buttons.css';
 import styles from './styles.css';
@@ -42,17 +36,13 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
 
   constructor(props) {
     super(props);
-
-    this.addAlert = this.addAlert.bind(this);
-    this.clearAlert = this.clearAlert.bind(this);
-    this.enableButton = this.enableButton.bind(this);
-    this.disableButton = this.disableButton.bind(this);
-    this.submitForm = this.submitForm.bind(this);
-
     this.state = {
-      canSubmit: false,
-      isSubmitting: false,
+      isFormValid: false,
     };
+  }
+
+  setFormValid = (isFormValid) => {
+    this.setState({ isFormValid });
   }
 
   addAlert(msg, title = 'Success!', status = 'success') {
@@ -65,53 +55,24 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
     this.container.clear();
   }
 
-  submitForm = ({ name, email, subject = 'New Contact Message', message }) => {
-    const sendgridjsUrl = 'https://gwm-contactform.herokuapp.com/send';
-
-    post(sendgridjsUrl, {
-      from: email,
-      subject: `[GWM Contact From] ${subject}`,
-      html: `<b>From:</b><br />${name}<br /><br />
-        <b>Email:</b><br />${email}<br /><br />
-        <b>Message:</b><br />${message.split('\n').join('<br />')}`,
-    })
-    .then(() => { this.addAlert('Message Has Been Sent'); })
-    .catch((error) => {
-      this.addAlert(`Your message could not be delivered because: ${error}`, 'Error', 'error');
-    });
-  }
-
-  enableButton() {
-    this.setState({ canSubmit: true });
-  }
-
-  disableButton() {
-    this.setState({ canSubmit: false });
-  }
-
   render() {
-    const { className } = this.props;
-    const { isSubmitting } = this.state;
-
+    const { className, sending } = this.props;
+    const { isFormValid } = this.state;
     let submittingIndicator;
-    if (isSubmitting) {
+
+    if (sending) {
       submittingIndicator = (<div className={styles.loadingIndicator}><LoadingIndicator /></div>);
     }
 
     return (
       <Form
-        disabled={isSubmitting}
+        disabled={sending}
         className={classNames(styles.contactForm, className)}
-        onSubmit={this.submitForm}
-        onValid={this.enableButton}
-        onInvalid={this.disableButton}
+        onSubmit={this.props.onFormSubmit}
+        onValid={() => this.setFormValid(true)}
+        onInvalid={() => this.setFormValid(false)}
         ref={(c) => (this.contactForm = c)}
       >
-        <ToastContainer
-          toastMessageFactory={ToastMessageFactory}
-          ref={(c) => (this.container = c)}
-          className="toast-bottom-left"
-        />
         <H2>
           <HeaderIcon className="fa-paper-plane" />
           Send a Message
@@ -126,7 +87,7 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
           required
         />
         <Input
-          name="email"
+          name="from"
           value=""
           label="Email"
           labelClassName="col-md-6"
@@ -158,7 +119,7 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
         <Button
           className={classNames('pull-right', btnStyle.submitBtn)}
           type="submit"
-          disabled={!this.state.canSubmit}
+          disabled={!isFormValid || sending}
         >
           Send
         </Button>
@@ -171,14 +132,21 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
 
 ContactForm.propTypes = {
   className: PropTypes.string,
+  onFormSubmit: PropTypes.func,
+  sending: PropTypes.bool,
 };
 
 const mapStateToProps = createStructuredSelector({
-          // windowWidth: selectWindowWidth(),
+  email: selectEmail(),
+  error: selectError(),
+  sending: selectSending(),
 });
 
 function mapDispatchToProps(dispatch) {
   return {
+    onFormSubmit: (formData) => {
+      dispatch(sendMessage(formData));
+    },
     dispatch,
   };
 }
