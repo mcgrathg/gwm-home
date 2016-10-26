@@ -9,6 +9,8 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 export const SET_WINDOW_WIDTH = 'app/App/SET_WINDOW_WIDTH';
+export const ERROR_TOAST = 'app/App/ERROR_TOAST';
+export const SUCCESS_TOAST = 'app/App/SUCCESS_TOAST';
 
 export const MIN_STICKY_WIDTH = 769;
 export const MAX_READ_MORE_WIDTH = 769;

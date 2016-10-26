@@ -14,6 +14,8 @@ import * as Sticky from 'react-stickynode';
 
 import {
   selectIsStickyEnabled,
+  selectErrorToast,
+  selectSuccessToast,
 } from './selectors';
 
 import {
@@ -28,7 +30,11 @@ import 'font-awesome/css/font-awesome.css';
 import Navigation from 'components/Navigation';
 import Footer from 'components/Footer';
 
+import { ToastContainer, ToastMessage } from 'react-toastr';
+
 import styles from './styles.css';
+
+const ToastMessageFactory = React.createFactory(ToastMessage.animation);
 
 export class App extends Component { // eslint-disable-line react/prefer-stateless-function
   componentWillMount() {
@@ -41,8 +47,24 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
     window.removeEventListener('resize', this.props.onResize);
   }
 
+  componentWillUpdate({ successToast, errorToast }) {
+    if (successToast) {
+      this.addAlert(successToast, 'Success!', 'success');
+    }
+    if (errorToast) {
+      this.addAlert(errorToast, 'Error!', 'error');
+    }
+  }
+
+  addAlert(msg, title = 'Success!', status = 'success') {
+    this.container[status](msg, title, {
+      closeButton: true,
+    });
+  }
+
   render() {
     const { children, isStickyEnabled, routes } = this.props;
+
     return (
       <div>
         <Helmet
@@ -51,6 +73,11 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
           meta={[
             { name: 'description', content: 'Greg McGrath\'s Site' },
           ]}
+        />
+        <ToastContainer
+          toastMessageFactory={ToastMessageFactory}
+          ref={(c) => (this.container = c)}
+          className="toast-right"
         />
         <Sticky
           enabled={isStickyEnabled}
@@ -73,6 +100,8 @@ App.propTypes = {
   onResize: PropTypes.func,
   isStickyEnabled: PropTypes.bool,
   routes: PropTypes.array,
+  errorToast: PropTypes.string,
+  successToast: PropTypes.string,
 };
 
 export function mapDispatchToProps(dispatch) {
@@ -84,6 +113,8 @@ export function mapDispatchToProps(dispatch) {
 
 const mapStateToProps = createStructuredSelector({
   isStickyEnabled: selectIsStickyEnabled(),
+  errorToast: selectErrorToast(),
+  successToast: selectSuccessToast(),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
