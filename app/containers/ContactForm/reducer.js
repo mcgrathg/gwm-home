@@ -9,6 +9,7 @@ import {
   SEND_MESSAGE,
   SEND_MESSAGE_SUCCESS,
   SEND_MESSAGE_ERROR,
+  FORM_VALIDITY,
 } from './constants';
 
 const initialState = fromJS({
@@ -17,6 +18,7 @@ const initialState = fromJS({
   error: false,
   formData: false,
   email: false,
+  isFormValid: false,
 });
 
 function contactFormReducer(state = initialState, action) {
@@ -38,6 +40,9 @@ function contactFormReducer(state = initialState, action) {
       return state
         .set('sending', false)
         .set('error', action.error);
+    case FORM_VALIDITY:
+      return state
+        .set('isFormValid', action.isFormValid);
     default:
       return state;
   }

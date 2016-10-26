@@ -34,6 +34,11 @@ const selectFormData = () => createSelector(
   (contactState) => contactState.get('formData')
 );
 
+const selectFormValidity = () => createSelector(
+  selectContactForm(),
+  (contactState) => contactState.get('isFormValid')
+);
+
 
 export {
   selectEmail,
@@ -41,4 +46,5 @@ export {
   selectSending,
   selectSent,
   selectFormData,
+  selectFormValidity,
 };

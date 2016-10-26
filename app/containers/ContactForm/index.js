@@ -18,10 +18,12 @@ import {
   selectError,
   selectSending,
   selectSent,
+  selectFormValidity,
  } from './selectors';
 
 import {
   sendMessage,
+  setFormValidity,
 } from './actions';
 
 import H2 from 'components/H2';
@@ -63,8 +65,7 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
   }
 
   render() {
-    const { className, sending, error } = this.props;
-    const { isFormValid } = this.state;
+    const { className, sending, error, isFormValid } = this.props;
     let submittingIndicator;
     let errorMessage;
 
@@ -86,8 +87,8 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
         disabled={sending}
         className={classNames(styles.contactForm, className)}
         onSubmit={(...props) => this.props.onFormSubmit(...props)}
-        onValid={() => this.setFormValid(true)}
-        onInvalid={() => this.setFormValid(false)}
+        onValid={() => this.props.setFormValidity(true)}
+        onInvalid={() => this.props.setFormValidity(false)}
         ref={(c) => (this.contactForm = c)}
       >
         <H2>
@@ -136,7 +137,7 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
         />
         {errorMessage}
         <Button
-          className={classNames('pull-right', btnStyle.submitBtn)}
+          className={classNames('pull-right', btnStyle.submitBtn, { [btnStyle.invalidBtn]: !isFormValid })}
           type="submit"
           disabled={!isFormValid || sending}
         >
@@ -152,8 +153,10 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
 ContactForm.propTypes = {
   className: PropTypes.string,
   onFormSubmit: PropTypes.func,
+  setFormValidity: PropTypes.func,
   sending: PropTypes.bool,
   sent: PropTypes.bool,
+  isFormValid: PropTypes.bool,
   error: React.PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.arrayOf(PropTypes.string),
@@ -165,6 +168,7 @@ const mapStateToProps = createStructuredSelector({
   error: selectError(),
   sending: selectSending(),
   sent: selectSent(),
+  isFormValid: selectFormValidity(),
 });
 
 function mapDispatchToProps(dispatch) {
@@ -172,6 +176,7 @@ function mapDispatchToProps(dispatch) {
     onFormSubmit: (formData) => {
       dispatch(sendMessage(formData));
     },
+    setFormValidity: (isValid) => dispatch(setFormValidity(isValid)),
     dispatch,
   };
 }

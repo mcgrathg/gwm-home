@@ -2,16 +2,16 @@
 @value colors: 'containers/App/colors.css';
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
 
-.submitBtn:not([disabled]):hover,
-.submitBtn:not([disabled]):active,
-.submitBtn:not([disabled]):active:hover {
+.submitBtn:not(.invalidBtn):hover,
+.submitBtn:not(.invalidBtn):active,
+.submitBtn:not(.invalidBtn):active:hover {
   color: teal !important;
   border-color: teal !important;
   background: light !important;
 }
 
-.submitBtn:not([disabled]),
-.submitBtn:not([disabled]):focus:not(:hover) {
+.submitBtn:not(.invalidBtn),
+.submitBtn:not(.invalidBtn):focus:not(:hover) {
   color: light !important;
   border-color: teal !important;
   background: teal !important;
@@ -21,16 +21,20 @@
   transition: background 0.5s, border 0.5s;
 }
 
-.submitBtn[disabled] {
+.submitBtn.invalidBtn {
   background: watermelon !important;
   border-color: watermelon !important;
   color: light !important;
 }
 
-.submitBtn[disabled]:hover,
-.submitBtn[disabled]:active,
-.submitBtn[disabled]:active:hover {
+.submitBtn.invalidBtn:hover,
+.submitBtn.invalidBtn:active,
+.submitBtn.invalidBtn:active:hover {
   color: watermelon !important;
   border-color: watermelon !important;
   background: light !important;
+}
+
+.invalidBtn {
+  border: 10px solid white;
 }
