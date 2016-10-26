@@ -215,6 +215,7 @@
   },
   "dependencies": {
     "animate.css": "^3.5.2",
+    "axios": "^0.15.2",
     "babel-polyfill": "6.13.0",
     "bootstrap-css-only": "^3.3.6",
     "chalk": "1.1.3",

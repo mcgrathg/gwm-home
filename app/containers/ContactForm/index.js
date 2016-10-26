@@ -9,6 +9,7 @@ import classNames from 'classnames';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { ToastContainer, ToastMessage } from 'react-toastr';
+import { post } from 'axios';
 
 // import sendgrid from 'sendgrid';
 // const helper = require('sendgrid').mail;
@@ -54,8 +55,8 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
     };
   }
 
-  addAlert(msg) {
-    this.container.success(`${msg}`, 'Message Sent', {
+  addAlert(msg, title = 'Success!', status = 'success') {
+    this.container[status](msg, title, {
       closeButton: true,
     });
   }
@@ -64,40 +65,21 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
     this.container.clear();
   }
 
-  submitForm = (data) => {
-    console.log(data);
-    this.addAlert(data);
+  submitForm = ({ name, email, subject = 'New Contact Message', message }) => {
+    const sendgridjsUrl = 'https://gwm-contactform.herokuapp.com/send';
 
-    // const fromEmail = new helper.Email('greg@mcgrathg.com');
-    // const toEmail = new helper.Email('hi@mcgrathg.com');
-    // const subject = 'Hello World from the SendGrid Node.js Library!';
-    // const content = new helper.Content('text/plain', 'Hello, Email!');
-    // const mail = new helper.Mail(fromEmail, subject, toEmail, content);
-    //
-    // const request = sg.emptyRequest({
-    //   method: 'POST',
-    //   path: '/v3/mail/send',
-    //   body: mail.toJSON(),
-    // });
-
-    // sg.API(request, (error, response) => {
-    //   console.log(response.statusCode);
-    //   console.log(response.body);
-    //   console.log(response.headers);
-    // });
-
-    // With promise
-    // sg.API(request) // eslint-disable-line new-cap
-    //   .then((response) => {
-    //     console.log(response.statusCode);
-    //     console.log(response.body);
-    //     console.log(response.headers);
-    //   })
-    //   .catch((error) => {
-    //     // error is an instance of SendGridError
-    //     // The full response is attached to error.response
-    //     console.log(error.response.statusCode);
-    //   });
+    post(sendgridjsUrl, {
+      from: email,
+      subject: `[GWM Contact From] ${subject}`,
+      html: `<b>From:</b><br />${name}<br /><br />
+        <b>Email:</b><br />${email}<br /><br />
+        <b>Message:</b><br />${message.split('\n').join('<br />')}`,
+    })
+    .then(() => { this.addAlert('Message Has Been Sent'); })
+    .catch((error) => {
+      this.addAlert(`Your message could not be delivered because:\n${error}`, 'Error', 'error');
+      console.error('error', error);
+    });
   }
 
 
@@ -130,7 +112,7 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
         <ToastContainer
           toastMessageFactory={ToastMessageFactory}
           ref={(c) => (this.container = c)}
-          className="toast-top-right"
+          className="toast-bottom-left"
         />
         <H2>
           <HeaderIcon className="fa-paper-plane" />
