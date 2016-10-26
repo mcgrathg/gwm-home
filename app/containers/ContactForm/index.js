@@ -77,11 +77,9 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
     })
     .then(() => { this.addAlert('Message Has Been Sent'); })
     .catch((error) => {
-      this.addAlert(`Your message could not be delivered because:\n${error}`, 'Error', 'error');
-      console.error('error', error);
+      this.addAlert(`Your message could not be delivered because: ${error}`, 'Error', 'error');
     });
   }
-
 
   enableButton() {
     this.setState({ canSubmit: true });
