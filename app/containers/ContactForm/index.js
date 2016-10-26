@@ -42,12 +42,12 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
     };
   }
 
-  componentWillUpdate({ email }, { sent }) {
-    if (sent) {
-      this.contactForm.reset();
-      this.setState({ sent: false });
-    }
-  }
+  // componentWillUpdate({ email }, { sent }) {
+  //   if (sent) {
+  //     this.contactForm.reset();
+  //     this.setState({ sent: false });
+  //   }
+  // }
 
   setFormValid = (isFormValid) => {
     this.setState({ isFormValid });

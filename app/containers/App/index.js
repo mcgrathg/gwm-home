@@ -14,8 +14,6 @@ import * as Sticky from 'react-stickynode';
 
 import {
   selectIsStickyEnabled,
-  selectErrorToast,
-  selectSuccessToast,
 } from './selectors';
 
 import {
@@ -29,12 +27,9 @@ import 'font-awesome/css/font-awesome.css';
 
 import Navigation from 'components/Navigation';
 import Footer from 'components/Footer';
-
-import { ToastContainer, ToastMessage } from 'react-toastr';
+import NotificationContainer from 'containers/NotificationContainer';
 
 import styles from './styles.css';
-
-const ToastMessageFactory = React.createFactory(ToastMessage.animation);
 
 export class App extends Component { // eslint-disable-line react/prefer-stateless-function
   componentWillMount() {
@@ -42,15 +37,6 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
   }
   componentDidMount() {
     window.addEventListener('resize', this.props.onResize);
-  }
-
-  componentWillUpdate({ successToast, errorToast }) {
-    if (successToast) {
-      this.addAlert(successToast, 'Success!', 'success');
-    }
-    if (errorToast) {
-      this.addAlert(errorToast, 'Error!', 'error');
-    }
   }
 
   componentWillUnmount() {
@@ -75,11 +61,7 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
             { name: 'description', content: 'Greg McGrath\'s Site' },
           ]}
         />
-        <ToastContainer
-          toastMessageFactory={ToastMessageFactory}
-          ref={(c) => (this.container = c)}
-          className="toast-right"
-        />
+        <NotificationContainer />
         <Sticky
           enabled={isStickyEnabled}
           top={-92}
@@ -101,8 +83,6 @@ App.propTypes = {
   onResize: PropTypes.func,
   isStickyEnabled: PropTypes.bool,
   routes: PropTypes.array,
-  errorToast: PropTypes.string,
-  successToast: PropTypes.string,
 };
 
 export function mapDispatchToProps(dispatch) {
@@ -115,7 +95,6 @@ export function mapDispatchToProps(dispatch) {
 const mapStateToProps = createStructuredSelector({
   isStickyEnabled: selectIsStickyEnabled(),
   errorToast: selectErrorToast(),
-  successToast: selectSuccessToast(),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

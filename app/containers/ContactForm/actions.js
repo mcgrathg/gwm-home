@@ -39,14 +39,13 @@ export function messageSent({ email }) {
 /**
  * Dispatched when sending contact email fails
  *
- * @param  {object} error The error
+ * @param  {Array} error Array of error strings
  *
  * @return {object} An action object with a type of SEND_MESSAGE_ERROR passing the error
  */
-export function messageSentError({ message }) {
-  console.log('message sent error', message);
+export function messageSentError(error) {
   return {
     type: SEND_MESSAGE_ERROR,
-    message,
+    error,
   };
 }

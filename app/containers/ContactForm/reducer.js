@@ -29,7 +29,8 @@ function contactFormReducer(state = initialState, action) {
     case SEND_MESSAGE_SUCCESS:
       return state
         .set('sending', false)
-        .set('email', action.email);
+        .set('email', action.email)
+        .set('formData', false);
     case SEND_MESSAGE_ERROR:
       return state
         .set('sending', false)

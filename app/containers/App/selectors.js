@@ -37,22 +37,10 @@ const selectTruncateLongText = () => createSelector(
   (globalState) => globalState.get('truncateLongText')
 );
 
-const selectErrorToast = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.get('errorToast')
-);
-
-const selectSuccessToast = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.get('successToast')
-);
-
 export {
   selectGlobal,
   selectLocationState,
   selectWindowWidth,
   selectIsStickyEnabled,
   selectTruncateLongText,
-  selectErrorToast,
-  selectSuccessToast,
 };
