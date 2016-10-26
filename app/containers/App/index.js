@@ -43,9 +43,6 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
   componentDidMount() {
     window.addEventListener('resize', this.props.onResize);
   }
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.props.onResize);
-  }
 
   componentWillUpdate({ successToast, errorToast }) {
     if (successToast) {
@@ -54,6 +51,10 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
     if (errorToast) {
       this.addAlert(errorToast, 'Error!', 'error');
     }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.props.onResize);
   }
 
   addAlert(msg, title = 'Success!', status = 'success') {

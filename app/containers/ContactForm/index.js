@@ -38,7 +38,15 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
     super(props);
     this.state = {
       isFormValid: false,
+      sent: false,
     };
+  }
+
+  componentWillUpdate({ email }, { sent }) {
+    if (sent) {
+      this.contactForm.reset();
+      this.setState({ sent: false });
+    }
   }
 
   setFormValid = (isFormValid) => {
@@ -68,7 +76,7 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
       <Form
         disabled={sending}
         className={classNames(styles.contactForm, className)}
-        onSubmit={this.props.onFormSubmit}
+        onSubmit={(...props) => this.props.onFormSubmit(...props)}
         onValid={() => this.setFormValid(true)}
         onInvalid={() => this.setFormValid(false)}
         ref={(c) => (this.contactForm = c)}
@@ -108,7 +116,7 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
           type="text"
         />
         <Textarea
-          name="message"
+          name="html"
           value=""
           label="Message"
           labelClassName="col-md-6"
