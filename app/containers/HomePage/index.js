@@ -5,33 +5,12 @@
  */
 
 import React from 'react';
-// import { connect } from 'react-redux';
-// import { push } from 'react-router-redux';
 import Helmet from 'react-helmet';
+import { Image, Row, Col } from 'react-bootstrap';
 
-import messages from './messages';
-// import { createStructuredSelector } from 'reselect';
-
-// import {
-//   selectVideos,
-//   selectLoading,
-//   selectError,
-// } from 'containers/App/selectors';
-
-// import {
-//   selectUsername,
-// } from './selectors';
-
-// import { changeUsername } from './actions';
-// import { loadVideos } from '../App/actions';
-
-import { FormattedMessage } from 'react-intl';
-// import RepoListItem from 'containers/RepoListItem';
-// import Button from 'components/Button';
 import H2 from 'components/H2';
-// import List from 'components/List';
-// import ListItem from 'components/ListItem';
-// import LoadingIndicator from 'components/LoadingIndicator';
+
+import Profile from './profile.jpg';
 
 import styles from './styles.css';
 
@@ -45,13 +24,19 @@ export function HomePage() {
         ]}
       />
       <div>
+        My Test
         <section className={`${styles.textSection} ${styles.centered}`}>
           <H2>
-            <FormattedMessage {...messages.startProjectHeader} />
+            Hello!
           </H2>
-          <p>
-            <FormattedMessage {...messages.startProjectMessage} />
-          </p>
+          <Row>
+            <Col xs={6}>
+              <Image className={styles.logo} src={Profile} alt="Greg McGrath" />
+            </Col>
+            <Col xs={6}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Col>
+          </Row>
         </section>
       </div>
     </article>
@@ -59,36 +44,5 @@ export function HomePage() {
 }
 
 HomePage.propTypes = {
-  loading: React.PropTypes.bool,
-  error: React.PropTypes.oneOfType([
-    React.PropTypes.object,
-    React.PropTypes.bool,
-  ]),
-  repos: React.PropTypes.oneOfType([
-    React.PropTypes.array,
-    React.PropTypes.bool,
-  ]),
+
 };
-//
-// export function mapDispatchToProps(dispatch) {
-//   return {
-//     // onChangeUsername: (evt) => dispatch(changeUsername(evt.target.value)),
-//     // changeRoute: (url) => dispatch(push(url)),
-//     // onSubmitForm: (evt) => {
-//     //   if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-//     //   dispatch(loadRepos());
-//     // },
-//
-//     dispatch,
-//   };
-// }
-
-// const mapStateToProps = createStructuredSelector({
-//   // repos: selectRepos(),
-//   // username: selectUsername(),
-//   loading: selectLoading(),
-//   error: selectError(),
-// });
-
-// Wrap the component to inject dispatch and state into it
-// export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
