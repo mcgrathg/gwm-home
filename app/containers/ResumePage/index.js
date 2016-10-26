@@ -54,7 +54,7 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
           >
             <div className={styles.stickyButtons}>
               <div>
-                <CenteredButtonToolbar rowClassName={styles.centeredToolbarRow}>
+                <CenteredButtonToolbar>
                   <Button className={btnStyle.resumeBtn}>Download Resume</Button>
                   <Button className={btnStyle.contactBtn}>Contact Me</Button>
                 </CenteredButtonToolbar>

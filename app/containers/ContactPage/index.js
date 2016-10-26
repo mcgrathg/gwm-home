@@ -15,6 +15,7 @@ import {
 
 import Map from 'components/Map';
 import ContactForm from 'containers/ContactForm';
+import SocialBar from 'components/SocialBar';
 
 import styles from './styles.css';
 
@@ -38,7 +39,8 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
             { name: 'description', content: 'Description of ContactPage' },
           ]}
         />
-        <div className="container">
+        <SocialBar className={styles.social} />
+        <article className="container">
           <div className={styles.map} >
             <Map
               zoom={14}
@@ -46,7 +48,7 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
             />
             <ContactForm />
           </div>
-        </div>
+        </article>
       </div>
     );
   }

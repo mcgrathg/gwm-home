@@ -15,3 +15,20 @@
   position: relative;
   overflow: hidden;
 }
+
+.social {
+  padding: 30px 0;
+  background: lightmatte;
+}
+
+.social i {
+  color: light;
+}
+
+.social i:hover {
+  color: watermelon;
+}
+
+.social > ul {
+  margin: 0;
+}
