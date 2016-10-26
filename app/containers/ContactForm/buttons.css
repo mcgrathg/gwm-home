@@ -2,17 +2,35 @@
 @value colors: 'containers/App/colors.css';
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
 
-.submitBtn:hover,
-.submitBtn:active,
-.submitBtn:active:hover {
-  color: teal;
-  border-color: teal;
-  background: light;
+.submitBtn:not([disabled]):hover,
+.submitBtn:not([disabled]):active,
+.submitBtn:not([disabled]):active:hover {
+  color: teal !important;
+  border-color: teal !important;
+  background: light !important;
 }
 
-.submitBtn,
-.submitBtn:focus:not(:hover) {
-  color: light;
-  border-color: teal;
-  background: teal;
+.submitBtn:not([disabled]),
+.submitBtn:not([disabled]):focus:not(:hover) {
+  color: light !important;
+  border-color: teal !important;
+  background: teal !important;
+}
+
+.submitBtn {
+  transition: background 0.5s, border 0.5s;
+}
+
+.submitBtn[disabled] {
+  background: watermelon !important;
+  border-color: watermelon !important;
+  color: light !important;
+}
+
+.submitBtn[disabled]:hover,
+.submitBtn[disabled]:active,
+.submitBtn[disabled]:active:hover {
+  color: watermelon !important;
+  border-color: watermelon !important;
+  background: light !important;
 }
