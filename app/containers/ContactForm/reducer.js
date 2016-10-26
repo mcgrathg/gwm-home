@@ -29,8 +29,12 @@ function contactFormReducer(state = initialState, action) {
         .set('sending', true)
         .set('sent', false)
         .set('error', false)
-        .set('formData', action.formData)
-        .set('email', false);
+        .set('email', false)
+        .set('formData',
+          Object.assign(
+            {}, action.formData, { subject: `[GWM Contact Form] ${action.formData.subject}` }
+          )
+        );
     case SEND_MESSAGE_SUCCESS:
       return state
         .set('sending', false)

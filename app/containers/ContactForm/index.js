@@ -169,9 +169,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    onFormSubmit: (formData) => {
-      dispatch(sendMessage(formData));
-    },
+    onFormSubmit: (formData) => dispatch(sendMessage(formData)),
     setFormValidity: (isValid) => dispatch(setFormValidity(isValid)),
     messageSentAcknowledged: () => dispatch(messageSentAcknowledged()),
     dispatch,
