@@ -22,17 +22,17 @@
 }
 
 .submitBtn.invalidBtn {
-  background: watermelon !important;
+  color: watermelon !important;
   border-color: watermelon !important;
-  color: light !important;
+  background: light !important;
 }
 
 .submitBtn.invalidBtn:hover,
 .submitBtn.invalidBtn:active,
 .submitBtn.invalidBtn:active:hover {
-  color: watermelon !important;
+  background: watermelon !important;
   border-color: watermelon !important;
-  background: light !important;
+  color: light !important;
 }
 
 .invalidBtn {
