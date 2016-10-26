@@ -94,7 +94,6 @@ export function mapDispatchToProps(dispatch) {
 
 const mapStateToProps = createStructuredSelector({
   isStickyEnabled: selectIsStickyEnabled(),
-  errorToast: selectErrorToast(),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
