@@ -18,14 +18,6 @@ export default function createRoutes(store) {
 
   return [
     {
-      path: '/',
-      name: 'homePage',
-      getComponent(nextState, cb) {
-        System.import('containers/HomePage')
-          .then(loadModule(cb))
-          .catch(errorLoading);
-      },
-    }, {
       path: '/resume',
       name: 'resumePage',
       getComponent(location, cb) {
