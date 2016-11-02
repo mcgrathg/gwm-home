@@ -1,7 +1,19 @@
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+
 .socialBar {
   font-size: 20px;
 }
 
 .socialButton:not(:first-child) {
   padding-left: 12px !important;
+}
+
+.socialButton {
+  transition: transform 0.3s;
+}
+
+.socialGroup:hover .socialButton:not(:hover) {
+  transform: scale(0.7);
 }
