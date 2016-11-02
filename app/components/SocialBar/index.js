@@ -18,7 +18,7 @@ function SocialBar({ ...props }) {
       className={classNames(styles.socialBar, className)}
       {...rest}
     >
-      <ul className="text-center list-inline">
+      <ul className={classNames(styles.socialGroup, 'text-center list-inline')}>
         <SocialButton href="https://github.com/mcgrathg" className={styles.socialButton} iconClassName="fa fa-github" name="Github" />
         <SocialButton href="http://stackoverflow.com/users/3688026/mcgrathg" className={styles.socialButton} iconClassName="fa fa-stack-overflow" name="Stack Overflow" />
         <SocialButton href="https://www.linkedin.com/in/gregmcgrath" className={styles.socialButton} iconClassName="fa fa-linkedin-square" name="LinkedIn" />
