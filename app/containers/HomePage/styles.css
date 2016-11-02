@@ -1,3 +1,24 @@
-.homePage { /* stylelint-disable */
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
 
+.intro {
+  background: medium;
+}
+
+.social {
+  padding: 30px 0;
+  background: lightmatte;
+}
+
+.social i {
+  color: light;
+}
+
+.social i:hover {
+  color: watermelon;
+}
+
+.social > ul {
+  margin: 0;
 }
