@@ -2,24 +2,25 @@
 @value colors: 'containers/App/colors.css';
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
 
-.socialLink {
-  color: lightmatte;
-  cursor: default;
+.socialLink,
+.socialLink:hover {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }
 
-.socialLink:hover {
-  text-decoration: none;
-  color: lightmatte;
-  cursor: default;
+.socialListItem:hover .icon {
+  transform: scale(1.5);
+  color: teal;
 }
 
 .icon {
+  color: lightmatte;
   font-size: larger;
   cursor: pointer;
   transition: transform 0.2s;
-}
-
-.icon:hover {
-  color: teal;
-  transform: scale(1.5);
 }

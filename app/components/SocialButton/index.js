@@ -10,14 +10,14 @@ import classNames from 'classnames';
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 
 function SocialButton({ ...props }) {
-  const { iconClassName, href, name, ...rest } = props;
+  const { className, iconClassName, href, name, ...rest } = props;
   const tooltip = (
     <Tooltip id={iconClassName}>{name}</Tooltip>
   );
 
   return (
     <li
-      className={styles.socialButton}
+      className={classNames(className, styles.socialListItem)}
       {...rest}
     >
       <OverlayTrigger
@@ -38,6 +38,7 @@ function SocialButton({ ...props }) {
 SocialButton.propTypes = {
   iconClassName: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
+  className: PropTypes.string,
   name: PropTypes.string,
 };
 
