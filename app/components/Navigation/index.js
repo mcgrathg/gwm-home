@@ -18,14 +18,14 @@ function Navigation({ currentRoute }) {
   return (
     <Grid className={styles.navigation}>
       <Row className={classNames('container', styles.navigationRow)}>
-        <Col xs={4} sm={2} md={4} className={styles.logoWrapper}>
+        <Col xs={3} sm={4} md={3} className={styles.logoWrapper}>
           <IndexLinkContainer to="/">
             <NavItem>
-              <Image className={styles.logo} src={Logo} alt="Greg McGrath -  Logo" />
+              <Image responsive className={styles.logo} src={Logo} alt="Greg McGrath -  Logo" />
             </NavItem>
           </IndexLinkContainer>
         </Col>
-        <Col xs={8} sm={10} md={8} className={styles.navlinksCol}>
+        <Col xs={4} sm={8} md={9} className={styles.navlinksCol}>
           <Nav pullRight justified bsStyle="tabs">
             <IndexLinkContainer to="/" active={currentPath === '/'}>
               <NavItem>Home</NavItem>

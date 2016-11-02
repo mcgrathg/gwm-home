@@ -34,10 +34,10 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
                   Hello!
                 </H1>
                 <Row>
-                  <Col xs={2}>
-                    <Image circle className={styles.logo} src={Profile} alt="Greg McGrath" />
+                  <Col sm={2}>
+                    <Image responsive circle className={styles.logo} src={Profile} alt="Greg McGrath" />
                   </Col>
-                  <Col xs={10}>
+                  <Col sm={10}>
                     <p className={classNames('lead', styles.lead)}>
                       Hello! I&apos;m Greg McGrath and I am a software developer with over 9 years of professional experience specializing in the front end and web applications.
                     </p>
