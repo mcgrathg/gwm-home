@@ -4,16 +4,21 @@
 
 .socialBar {
   font-size: 20px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }
 
-.socialButton:not(:first-child) {
-  padding-left: 12px !important;
+.socialGroup {
+  display: inline-block;
 }
 
 .socialButton {
-  transition: transform 0.3s;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  transition: transform 0.5s;
 }
 
 .socialGroup:hover .socialButton:not(:hover) {
-  transform: scale(0.7);
+  transform: scale(0.8);
 }
