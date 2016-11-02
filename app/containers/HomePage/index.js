@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import classNames from 'classnames';
@@ -16,7 +16,7 @@ import SocialBar from 'components/SocialBar';
 
 import styles from './styles.css';
 
-export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export class HomePage extends Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div className={styles.homePage}>
@@ -56,7 +56,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
                   </Col>
                 </Row>
               </Grid>
-              <SocialBar className={styles.social} />
+              <SocialBar className={styles.social} liClassName={styles.socialListItem} />
             </section>
           </div>
         </article>

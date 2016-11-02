@@ -31,7 +31,7 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
             { name: 'description', content: 'Description of PortfolioPage' },
           ]}
         />
-        <SocialBar className={styles.social} />
+        <SocialBar className={styles.social} liClassName={styles.socialListItem} />
         <article className={classNames('container', styles.portfolioPage)}>
           <section className={styles.videoList}>
             <H2>

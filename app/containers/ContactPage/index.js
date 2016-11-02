@@ -39,7 +39,7 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
             { name: 'description', content: 'Description of ContactPage' },
           ]}
         />
-        <SocialBar className={styles.social} />
+        <SocialBar className={styles.social} liClassName={styles.socialListItem} />
         <article className="container">
           <div className={styles.map} >
             <Map
