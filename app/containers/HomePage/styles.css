@@ -6,7 +6,7 @@
   background: medium;
 }
 
-.rowEqualHeight {
+/*.rowEqualHeight {
   display: flex;
 }
 
@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+}*/
 
 .profile {
   margin: 0 auto;
@@ -25,7 +25,7 @@
   background: transparent;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .social ul {
     display: initial !important;
   }
