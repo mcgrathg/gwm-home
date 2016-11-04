@@ -4,5 +4,8 @@
 
 .heading2 {
   margin-bottom: 15px;
+}
+
+.hasBorder {
   border-bottom: 2px solid lightmatte;
 }

@@ -55,8 +55,8 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
     return (
       <div>
         <Helmet
-          titleTemplate="%s - Greg McGrath - Front End Developer"
-          defaultTitle=" Greg McGrath - Front End Developer"
+          titleTemplate="%s - Greg McGrath - Software Developer"
+          defaultTitle=" Greg McGrath - Software Developer"
           meta={[
             { name: 'description', content: 'Greg McGrath\'s Site' },
           ]}

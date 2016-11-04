@@ -10,6 +10,7 @@ import { ButtonGroup } from 'react-bootstrap';
 
 import CardHeader from 'components/CardHeader';
 import CardBody from 'components/CardBody';
+import H2 from 'components/H2';
 import Card from 'components/Card';
 import VideoListItem from 'components/VideoListItem';
 
@@ -27,7 +28,7 @@ function VideoList({ videos, onCurrentVideoChange, currentVideo }) {
   return (
     <Card className={styles.card}>
       <CardHeader className={styles.cardHeader}>
-        <h4 className={styles.header}>Playlist</h4>
+        <H2 disableBorder>Playlist</H2>
       </CardHeader>
       <CardBody>
         <ButtonGroup vertical className={styles.videoList}>

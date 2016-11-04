@@ -19,8 +19,8 @@ export default function createRoutes(store) {
   return [
     {
       path: '/',
-      name: 'home',
-      getComponent(nextState, cb) {
+      name: 'homePage',
+      getComponent(location, cb) {
         System.import('containers/HomePage')
           .then(loadModule(cb))
           .catch(errorLoading);

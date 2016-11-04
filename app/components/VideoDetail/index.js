@@ -50,7 +50,7 @@ function VideoDetail({ video, truncateLongText }) {
       </div>
       <Card className={styles.card}>
         <CardHeader className={styles.cardHeader}>
-          <H2 className={styles.header}>{video.snippet.title}</H2>
+          <H2 disableBorder>{video.snippet.title}</H2>
         </CardHeader>
         <CardBody>
           <p className={styles.description}>

@@ -21,12 +21,12 @@ a:hover {
   background: lightmatte;
 }
 
-.social i {
+.socialListItem i {
   color: light;
 }
 
-.social i:hover {
-  color: watermelon;
+.socialListItem:hover i {
+  color: watermelon !important;
 }
 
 .social > ul {
