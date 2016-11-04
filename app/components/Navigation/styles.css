@@ -3,8 +3,21 @@
 @value light, dark, matte, fresh, watermelon, tealColor from colors;
 
 .navigation {
-  width: 100% !important;
+  /*width: 100% !important;*/
   background-color: dark;
+}
+
+.fixedCol {
+  float: left;
+  width: 200px;
+  overflow: hidden;
+}
+
+.fluidCol {
+  display: block;
+  float: none;
+  overflow: hidden;
+  text-align: center;
 }
 
 .navigationRow {
