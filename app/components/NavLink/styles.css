@@ -1,3 +1,15 @@
-.navLink { 
+/* import your colors... */
+@value colors: 'containers/App/colors.css';
+@value light, dark, matte, fresh, watermelon, tealColor from colors;
 
+.navLink {
+  display: block;
+  position: relative;
+  padding: 2.9rem 2.5vw;
+  color: light;
+}
+
+.navListItem {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
