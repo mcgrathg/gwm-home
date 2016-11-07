@@ -13,13 +13,13 @@ import styles from './styles.css';
 function NavLink({ text, to, isIndex, className, ...rest }) {
   const link = (
     isIndex ?
-      <IndexLink to={to} className={styles.navLink}>{text}</IndexLink> :
-      <Link to={to} className={styles.navLink}>{text}</Link>
+      <IndexLink to={to} className={styles.navLink} activeClassName={styles.active}>{text}</IndexLink> :
+      <Link to={to} className={styles.navLink} activeClassName={styles.active}>{text}</Link>
   );
 
   return (
     <li
-      className={classNames(className, styles.navListItem)}
+      className={classNames(className, styles.navListItem, 'header')}
       {...rest}
     >
       {link}
