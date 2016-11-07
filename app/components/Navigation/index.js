@@ -11,6 +11,7 @@ import { Link, IndexLink } from 'react-router';
 
 import Logo from './gmg-brackets.png';
 
+import links from './links';
 import styles from './styles.css';
 
 function Navigation({ currentRoute }) {
@@ -26,26 +27,13 @@ function Navigation({ currentRoute }) {
           </Col>
           <Col sm={8}>
             <Row className={classNames(styles.fluidCol)}>
-              <Col xs={3}>
-                <IndexLink to="/" >
-                  Home
-                </IndexLink>
-              </Col>
-              <Col xs={3}>
-                <Link to="/resume" >
-                  Resume
-                </Link>
-              </Col>
-              <Col xs={3}>
-                <Link to="/portfolio" >
-                  Portfolio
-                </Link>
-              </Col>
-              <Col xs={3}>
-                <Link to="/contact" >
-                  Contact
-                </Link>
-              </Col>
+              {links.map(({ text, to, isIndex = false }, idx) => (
+                <Col key={idx} xs={3}>
+                  <Link to={to}>
+                    {text}
+                  </Link>
+                </Col>
+              ))}
             </Row>
           </Col>
         </Row>
