@@ -4,7 +4,7 @@
  *
  */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import classNames from 'classnames';
@@ -37,10 +37,8 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
                 </H1>
                 <Row className={styles.rowEqualHeight}>
                   <Col sm={3} className={styles.leftCol}>
-                    <div className={styles.centeredBlock}>
-                      <Image responsive circle className={styles.profile} src={Profile} alt="Greg McGrath" />
-                      <SocialBar className={styles.social} liClassName={styles.socialListItem} />
-                    </div>
+                    <Image responsive circle className={styles.profile} src={Profile} alt="Greg McGrath" />
+                    <SocialBar className={styles.social} liClassName={styles.socialListItem} />
                   </Col>
                   <Col sm={9}>
                     <p className={classNames('lead', styles.lead)}>
@@ -58,11 +56,11 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
                     <p className={classNames('lead', styles.lead)}>
                       If you’d like to get in touch, feel free to say hello through any of the social links below or messaging me through my website.
                     </p>
-                    <div className="text-center">
-                      <Link to="/contact"><Button className={styles.circle}>Contact Me</Button></Link>
-                    </div>
                   </Col>
                 </Row>
+                <div className="text-center">
+                  <Link to="/contact"><Button className={styles.circle}>Contact Me</Button></Link>
+                </div>
               </Grid>
             </section>
           </div>
@@ -71,7 +69,6 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
     );
   }
 }
-
 
 function mapDispatchToProps(dispatch) {
   return {
