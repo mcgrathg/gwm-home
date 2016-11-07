@@ -2,81 +2,8 @@
 @value colors: 'containers/App/colors.css';
 @value light, dark, matte, fresh, watermelon, tealColor from colors;
 
-.navigation {
-  background-color: dark;
-}
-
-.navGroup {
-  margin-bottom: 0 !important;
-}
-
 @media (min-width: 768px) {
   .navGroup {
     float: right !important;
   }
-}
-
-.logoContainer {
-  display: flex;
-}
-
-@media (max-width: 767px) {
-  .logoContainer > a {
-    margin: 0 auto;
-  }
-}
-
-.linkCol {
-  text-align: center;
-  padding-left: 5px !important;
-  padding-right: 5px !important;
-}
-
-.linkCol a {
-  color: light;
-}
-
-@media (max-width: 320px) {
-  .linkCol a {
-    font-size: 12px;
-  }
-}
-
-:global(.nav-tabs > li:hover > a) {
-  background: transparent;
-}
-
-:global(.nav-tabs > li:not(.active):hover) {
-  background: transparent;
-  border-bottom: 2px solid watermelon;
-}
-
-:global(.nav-tabs > li > a),
-:global(.nav-tabs > li.active > a) {
-  background: transparent !important;
-  border: 0 !important;
-  color: light !important;
-}
-
-:global(.nav-tabs > li.active > a) {
-  border-bottom: 5px solid watermelon !important;
-  text-transform: uppercase;
-  font-weight: bold;
-  background: transparent;
-  font-size: large;
-}
-
-:global(.nav-tabs > li:not(.active) > a) {
-  transition: transform 0.2s;
-}
-
-:global(.nav-tabs > li.active > a:hover),
-:global(.nav-tabs > li > a:hover) {
-  color: light !important;
-}
-
-:global(.nav-tabs > li:not(.active) > a:hover) {
-  background: transparent;
-  margin-bottom: 2px;
-  transform: scale(1.25);
 }
