@@ -3,37 +3,17 @@
 @value light, dark, matte, fresh, watermelon, tealColor from colors;
 
 .navigation {
-  /*width: 100% !important;*/
   background-color: dark;
 }
 
-.fixedCol {
-  float: left;
-  width: 200px;
-  overflow: hidden;
-}
-
-.fluidCol {
-  display: block;
-  float: none;
-  overflow: hidden;
-  text-align: center;
-}
-
-.navigationRow {
+.logoContainer {
   display: flex;
-  align-items: flex-end;
-  margin: 0 auto !important;
 }
 
-.logoWrapper li {
-  list-style: none;
-}
-
-
-.navlinksCol {
-  padding-left: 0;
-  padding-right: 0;
+@media (max-width: 767px) {
+  .logoContainer > a {
+    margin: 0 auto;
+  }
 }
 
 :global(.nav-tabs > li:hover > a) {
