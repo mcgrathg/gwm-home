@@ -7,7 +7,7 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import { Image, Grid, Row, Col } from 'react-bootstrap';
-import { Link, IndexLink } from 'react-router';
+import { IndexLink } from 'react-router';
 
 import Navigation from 'components/Navigation';
 import Logo from './gmg-brackets.png';
