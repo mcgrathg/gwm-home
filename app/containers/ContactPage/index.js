@@ -40,15 +40,15 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
           ]}
         />
         <SocialBar className={styles.social} liClassName={styles.socialListItem} />
-        <article className="container">
-          <div className={styles.map} >
-            <Map
-              zoom={14}
-              {...mapProps}
-            />
+        <div className={styles.map} >
+          <Map
+            zoom={14}
+            {...mapProps}
+          />
+          <article className="container">
             <ContactForm />
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     );
   }
