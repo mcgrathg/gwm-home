@@ -42,20 +42,6 @@
   }
 }
 
-.active {
-  border-bottom: 5px solid watermelon !important;
-  background: transparent;
-  font-weight: 600;
-}
-
-@media (min-width: 450px) {
-  .active {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: large;
-  }
-}
-
 :global(.nav-tabs > li:hover > a) {
   background: transparent;
 }
