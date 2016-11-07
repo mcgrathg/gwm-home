@@ -13,39 +13,30 @@ import { links } from './links';
 
 import styles from './styles.css';
 
-function Navigation({ currentRoute, className, liClassName, ...rest }) {
-  const navLinks = links.map(({ text, to, isIndex = false }) => {
-    const linkClassName = (
-      (currentRoute.path === to) ?
-      classNames(styles.navLink, styles.active, liClassName) :
-      classNames(styles.navLink, liClassName)
-    );
-
-    return (
-      <NavLink
-        key={text}
-        text={text}
-        to={to}
-        isIndex={isIndex}
-        className={linkClassName}
-      />
-    );
-  });
+function Navigation({ className, liClassName, ...rest }) {
+  const navLinks = links.map(({ text, to, isIndex = false }) => (
+    <NavLink
+      key={text}
+      text={text}
+      to={to}
+      isIndex={isIndex}
+      className={classNames(styles.navLink, liClassName)}
+    />
+  ));
 
   return (
-    <div
+    <nav
       className={classNames(styles.navigation, className)}
       {...rest}
     >
       <ul className={classNames(styles.navGroup, 'text-center', 'list-inline')}>
         {navLinks}
       </ul>
-    </div>
+    </nav>
   );
 }
 
 Navigation.propTypes = {
-  currentRoute: PropTypes.object.isRequired,
   className: PropTypes.string,
   liClassName: PropTypes.string,
 };

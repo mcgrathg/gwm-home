@@ -14,27 +14,23 @@ import Logo from './gmg-brackets.png';
 
 import styles from './styles.css';
 
-function Header({ currentRoute, ...rest }) {
+function Header() {
   return (
     <div className={classNames(styles.header)}>
       <Grid className="container">
-        <Row>
-          <Col sm={4} className={styles.logoContainer}>
+        <Row className={styles.row}>
+          <Col sm={4} className={styles.logoCol}>
             <IndexLink to="/">
               <Image responsive className={styles.logo} src={Logo} alt="Greg McGrath -  Logo" />
             </IndexLink>
           </Col>
-          <Col sm={8}>
-            <Navigation currentRoute={currentRoute} />
+          <Col sm={8} className={styles.navCol}>
+            <Navigation />
           </Col>
         </Row>
       </Grid>
     </div>
   );
 }
-
-Header.propTypes = {
-  currentRoute: PropTypes.object.isRequired,
-};
 
 export default Header;

@@ -6,17 +6,15 @@
   background-color: dark;
 }
 
-.logoContainer {
-  display: flex;
+.row {
+  display: flex !important;
 }
 
-@media (max-width: 767px) {
-  .logoContainer > a {
-    margin: 0 auto;
-  }
+.navCol {
+  flex: 1;
 }
 
-.linkCol {
+/*.linkCol {
   text-align: center;
   padding-left: 5px !important;
   padding-right: 5px !important;
@@ -82,4 +80,4 @@
   background: transparent;
   margin-bottom: 2px;
   transform: scale(1.25);
-}
+}*/
