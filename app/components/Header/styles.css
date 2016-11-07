@@ -2,7 +2,7 @@
 @value colors: 'containers/App/colors.css';
 @value light, dark, matte, fresh, watermelon, tealColor from colors;
 
-.navigation {
+.header {
   background-color: dark;
 }
 

@@ -25,7 +25,7 @@ import 'sanitize.css/sanitize.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.css';
 
-import Navigation from 'components/Navigation';
+import Header from 'components/Header';
 import Footer from 'components/Footer';
 import NotificationContainer from 'containers/NotificationContainer';
 
@@ -67,7 +67,7 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
           top={-92}
           innerZ={3000}
         >
-          <Navigation currentRoute={routes[routes.length - 1]} />
+          <Header currentRoute={routes[routes.length - 1]} />
         </Sticky>
         <div className={styles.wrapper}>
           {React.Children.toArray(children)}

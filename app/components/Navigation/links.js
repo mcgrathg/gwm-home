@@ -1,7 +1,7 @@
 /*
- * HomePage text
+ * Navigation Links
  *
- * This contains all text for the major sections of the resume.
+ * This contains all navigation links
  */
 
 export const links = [
