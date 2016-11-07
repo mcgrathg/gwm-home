@@ -8,7 +8,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import Helmet from 'react-helmet';
-import { header, skills, work, education } from './messages';
+import { header, skills, work, education } from './text';
 import classNames from 'classnames';
 import * as Sticky from 'react-stickynode';
 import { LinkContainer } from 'react-router-bootstrap';

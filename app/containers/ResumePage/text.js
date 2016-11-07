@@ -4,7 +4,7 @@
  * This contains all text for the major sections of the resume.
  */
 
-const header = {
+export const header = {
   title: 'Resume',
   intro: `
     Dedicated and hardworking professional with over 9 years of experience in software development.
@@ -14,7 +14,7 @@ const header = {
   `,
 };
 
-const skills = [
+export const skills = [
   {
     header: 'Languages & Frameworks',
     items: [
@@ -46,7 +46,7 @@ const skills = [
   },
 ];
 
-const work = [{
+export const work = [{
   title: 'Software Developer',
   company: 'Stewart\'s Shops',
   location: 'Saratoga Springs, NY',
@@ -89,7 +89,7 @@ const work = [{
   ],
 }];
 
-const education = [{
+export const education = [{
   title: 'Bachelor of Engineering in Computer Engineering',
   company: '',
   location: '',
@@ -105,5 +105,3 @@ const education = [{
     },
   ],
 }];
-
-export { header, skills, work, education };
