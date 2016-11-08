@@ -24,12 +24,14 @@ import {
 import 'sanitize.css/sanitize.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.css';
+import './globals.css';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import NotificationContainer from 'containers/NotificationContainer';
 
 import styles from './styles.css';
+
 
 export class App extends Component { // eslint-disable-line react/prefer-stateless-function
   componentWillMount() {
