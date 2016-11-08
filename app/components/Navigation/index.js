@@ -6,48 +6,39 @@
 
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import { Image, Grid, Row, Col, Nav, NavItem } from 'react-bootstrap';
-import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 
-import Logo from './gmg6.png';
+import NavLink from 'components/NavLink';
+
+import { links } from './links';
 
 import styles from './styles.css';
 
-function Navigation({ currentRoute }) {
-  const currentPath = currentRoute.path;
+function Navigation({ className, liClassName, ...rest }) {
+  const navLinks = links.map(({ text, to, isIndex = false }) => (
+    <NavLink
+      key={text}
+      text={text}
+      to={to}
+      isIndex={isIndex}
+      className={classNames(styles.navLink, liClassName)}
+    />
+  ));
+
   return (
-    <Grid className={styles.navigation}>
-      <Row className={classNames('container', styles.navigationRow)}>
-        <Col xs={3} sm={4} md={3} className={styles.logoWrapper}>
-          <IndexLinkContainer to="/">
-            <NavItem>
-              <Image responsive className={styles.logo} src={Logo} alt="Greg McGrath -  Logo" />
-            </NavItem>
-          </IndexLinkContainer>
-        </Col>
-        <Col xs={4} sm={8} md={9} className={styles.navlinksCol}>
-          <Nav pullRight justified bsStyle="tabs">
-            <IndexLinkContainer to="/" active={currentPath === '/'}>
-              <NavItem>Home</NavItem>
-            </IndexLinkContainer>
-            <LinkContainer to="/resume" active={currentPath === '/resume'}>
-              <NavItem>Resume</NavItem>
-            </LinkContainer>
-            <LinkContainer to="/portfolio" active={currentPath === '/portfolio'}>
-              <NavItem>Portfolio</NavItem>
-            </LinkContainer>
-            <LinkContainer to="/contact" active={currentPath === '/contact'}>
-              <NavItem>Contact</NavItem>
-            </LinkContainer>
-          </Nav>
-        </Col>
-      </Row>
-    </Grid>
+    <nav
+      className={classNames(styles.navigation, className)}
+      {...rest}
+    >
+      <ul className={classNames(styles.navGroup, 'text-center', 'list-inline')}>
+        {navLinks}
+      </ul>
+    </nav>
   );
 }
 
 Navigation.propTypes = {
-  currentRoute: PropTypes.object,
+  className: PropTypes.string,
+  liClassName: PropTypes.string,
 };
 
 export default Navigation;

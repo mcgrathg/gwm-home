@@ -18,6 +18,7 @@ import SocialBar from 'components/SocialBar';
 
 import { intro } from './text';
 
+import btnStyle from 'containers/App/buttons.css';
 import styles from './styles.css';
 
 export class HomePage extends Component { // eslint-disable-line react/prefer-stateless-function
@@ -47,7 +48,7 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
                   </Col>
                 </Row>
                 <div className="text-center">
-                  <Link to="/contact"><Button className={styles.circle}>Contact Me</Button></Link>
+                  <Link to="/contact"><Button className={btnStyle.contactBtn}>Contact Me</Button></Link>
                 </div>
               </Grid>
             </section>

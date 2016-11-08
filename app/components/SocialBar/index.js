@@ -31,7 +31,7 @@ function SocialBar({ ...props }) {
       className={classNames(styles.socialBar, className)}
       {...rest}
     >
-      <ul className={classNames(styles.socialGroup, 'text-center list-inline')}>
+      <ul className={classNames(styles.socialGroup, 'text-center', 'list-inline')}>
         {socialButtons}
       </ul>
     </div>

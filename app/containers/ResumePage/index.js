@@ -30,7 +30,7 @@ import SocialBar from 'components/SocialBar';
 import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
 import styles from './styles.css';
-import btnStyle from './buttons.css';
+import btnStyle from 'containers/App/buttons.css';
 
 export class ResumePage extends Component { // eslint-disable-line react/prefer-stateless-function
   render() {
