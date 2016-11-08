@@ -5,18 +5,16 @@
  */
 
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import classNames from 'classnames';
-import { Button, ButtonToolbar } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
+import Videos from 'containers/Videos';
 import H2 from 'components/H2';
 import HeaderIcon from 'components/HeaderIcon';
 import Card from 'components/Card';
 import SocialBar from 'components/SocialBar';
 import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
-import Videos from 'containers/Videos';
-
 
 import styles from './styles.css';
 
@@ -43,21 +41,29 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
           <section className={styles.demo}>
             <H2>
               <HeaderIcon className="fa-desktop" />
-              Demo
+              Demo Example
             </H2>
             <Card>
               <p className="lead">Some text here...</p>
-              <CenteredButtonToolbar className={styles.resumeButtons}>
+              <CenteredButtonToolbar>
                 <a
                   className={styles.btnLink}
                   href="http://gwmextjs.surge.sh/"
                   target="_blank"
                 >
-                  <Button
-                    className={classNames(styles.demoButton, 'center-block')}
-                    bsStyle="primary"
-                  >
-                    View ExtJS Demo
+                  <Button className={classNames('center-block')}>
+                    Live Demo
+                    <i className={classNames('fa fa-external-link', styles.icon)} />
+                  </Button>
+                </a>
+                <a
+                  className={styles.btnLink}
+                  href="https://github.com/mcgrathg/sample-extjs"
+                  target="_blank"
+                >
+                  <Button className={classNames('center-block')}>
+                    Git Repo
+                    <i className={classNames('fa fa-github-alt', styles.icon)} />
                   </Button>
                 </a>
                 <a
@@ -65,21 +71,13 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
                   href="http://gwm-docs.surge.sh/"
                   target="_blank"
                 >
-                  <Button
-                    className={classNames(styles.demoButton, 'center-block')}
-                  >
-                    View Demo&apos;s Documentation
+                  <Button className={classNames('center-block')}>
+                    Documentation
+                    <i className={classNames('fa fa-book', styles.icon)} />
                   </Button>
                 </a>
+
               </CenteredButtonToolbar>
-            </Card>
-          </section>
-          <section>
-            <Card className={styles.introCard}>
-              <ButtonToolbar className={styles.resumeButtons}>
-                <Button bsStyle="success">Download Resume</Button>
-                <Button bsStyle="success">Contact Me</Button>
-              </ButtonToolbar>
             </Card>
           </section>
         </article>
@@ -88,5 +86,4 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
   }
 }
 
-// Wrap the component to inject dispatch and state into it
-export default connect()(PortfolioPage);
+export default PortfolioPage;
