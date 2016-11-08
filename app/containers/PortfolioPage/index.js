@@ -44,7 +44,6 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
               Demo Example
             </H2>
             <Card>
-              <p className="lead">Some text here...</p>
               <CenteredButtonToolbar>
                 <a
                   className={styles.btnLink}
@@ -78,6 +77,7 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
                 </a>
 
               </CenteredButtonToolbar>
+              <p className="lead">Some text here...</p>
             </Card>
           </section>
         </article>
