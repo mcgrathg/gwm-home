@@ -66,7 +66,6 @@ export class App extends Component { // eslint-disable-line react/prefer-statele
         <NotificationContainer />
         <Sticky
           enabled={isStickyEnabled}
-          top={-92}
           innerZ={3000}
         >
           <Header />
