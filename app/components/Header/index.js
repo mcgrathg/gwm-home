@@ -4,7 +4,7 @@
 *
 */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { Image, Grid, Row, Col } from 'react-bootstrap';
 import { IndexLink } from 'react-router';
