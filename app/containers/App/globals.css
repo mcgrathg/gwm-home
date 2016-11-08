@@ -1,6 +1,29 @@
 /* import your colors... */
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
 
+:global(body) {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+:global(body.fontLoaded) {
+  font-family: 'Libre Baskerville', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+:global(.header) {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+:global(body.fontLoaded .header) {
+  font-family: 'Libre Franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+:global(#app) {
+  min-height: 100%;
+  min-width: 100%;
+  background-color: light;
+  color: dark;
+}
+
 :global(button) {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   transition: all 0.2s ease-in-out;
@@ -30,4 +53,25 @@
   filter: brightness(85%);
   color: light;
   outline-style: none;
+}
+
+:global(.form-control) {
+  color: matte !important;
+}
+
+:global(.form-control:focus) {
+  border-color: teal !important;
+}
+
+:global(.form-control-feedback) {
+  right: 15px !important;
+  color: watermelon !important;
+}
+
+:global(.has-error .control-label) {
+  color: watermelon !important;
+}
+
+:global(.validation-message) {
+  color: watermelon !important;
 }
