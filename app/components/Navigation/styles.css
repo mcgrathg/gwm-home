@@ -2,6 +2,10 @@
 @value colors: 'containers/App/colors.css';
 @value light, dark, matte, fresh, watermelon, tealColor from colors;
 
+.navGroup {
+  margin-bottom: 0 !important;
+}
+
 @media (min-width: 768px) {
   .navGroup {
     float: right !important;
