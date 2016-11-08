@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Row, Col } from 'react-bootstrap';
 import classNames from 'classnames';
+import * as Sticky from 'react-stickynode';
 
 import {
   selectCurrentVideo,
@@ -18,8 +19,10 @@ import {
  } from './selectors';
 
 import {
-   selectTruncateLongText,
+  selectIsStickyEnabled,
+  selectTruncateLongText,
  } from 'containers/App/selectors';
+
 
 import {
   changeVideo,
@@ -37,7 +40,10 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
     this.props.onLoadVideos();
   }
   render() {
-    const { loading, error, videos, currentVideo, truncateLongText, onCurrentVideoChange } = this.props;
+    const {
+      loading, error, videos, currentVideo,
+      truncateLongText, onCurrentVideoChange, isStickyEnabled,
+     } = this.props;
 
     let mainContent = null;
 
@@ -57,19 +63,25 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
             <VideoDetail video={currentVideo} truncateLongText={truncateLongText} />
           </Col>
           <Col md={4} sm={6} className={classNames(styles.col, styles.videoListCol)}>
-            <VideoList
-              className={styles.videoList}
-              videos={videos}
-              currentVideo={currentVideo}
-              onCurrentVideoChange={onCurrentVideoChange}
-            />
+            <Sticky
+              enabled={isStickyEnabled}
+              top={89}
+              innerZ={2500}
+              bottomBoundary={'.videos'}
+            >
+              <VideoList
+                videos={videos}
+                currentVideo={currentVideo}
+                onCurrentVideoChange={onCurrentVideoChange}
+              />
+            </Sticky>
           </Col>
         </Row>
       );
     }
 
     return (
-      <div className={styles.videos}>
+      <div className={classNames(styles.videos, 'videos')}>
         {mainContent}
       </div>
     );
@@ -91,6 +103,8 @@ Videos.propTypes = {
     PropTypes.object,
     PropTypes.bool,
   ]),
+
+  isStickyEnabled: PropTypes.bool,
 
   onLoadVideos: PropTypes.func,
   onCurrentVideoChange: PropTypes.func,
@@ -114,6 +128,7 @@ const mapStateToProps = createStructuredSelector({
   loading: selectLoading(),
   error: selectError(),
   truncateLongText: selectTruncateLongText(),
+  isStickyEnabled: selectIsStickyEnabled(),
 });
 
 // Wrap the component to inject dispatch and state into it
