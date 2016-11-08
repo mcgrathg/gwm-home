@@ -1,6 +1,5 @@
 /* import your colors... */
-@value colors: 'containers/App/colors.css';
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
 
 :global(button) {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);

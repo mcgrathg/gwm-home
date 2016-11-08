@@ -1,6 +1,5 @@
 /* import your colors... */
-@value colors: 'containers/App/colors.css';
-@value light, dark, matte, fresh, watermelon, tealColor from colors;
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
 
 .header {
   background-color: dark;
