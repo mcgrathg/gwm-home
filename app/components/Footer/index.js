@@ -1,32 +1,24 @@
 import React from 'react';
+import classNames from 'classnames';
 
-import messages from './messages';
-import A from 'components/A';
 import styles from './styles.css';
-import { FormattedMessage } from 'react-intl';
-import LocaleToggle from 'containers/LocaleToggle';
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
-      <section>
-        <p>
-          <FormattedMessage {...messages.licenseMessage} />
-        </p>
-      </section>
-      <section>
-        <LocaleToggle />
-      </section>
-      <section>
-        <p>
-          <FormattedMessage
-            {...messages.authorMessage}
-            values={{
-              author: <A href="https://twitter.com/mxstbr">Max Stoiber</A>,
-            }}
-          />
-        </p>
-      </section>
+    <footer className={classNames(styles.footer)}>
+      <div className={classNames(styles.columns, 'container')}>
+        <section>
+          <p>
+            All Links
+          </p>
+        </section>
+        <section>
+          Made By Greg McGrath
+        </section>
+        <section>
+          Git Repo Link
+        </section>
+      </div>
     </footer>
   );
 }

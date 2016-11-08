@@ -1,6 +1,13 @@
+/* import your colors... */
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+
 .footer {
+  /*background: darkmedium;
+  border-top: 1px solid medium;*/
+}
+
+.columns {
   display: flex;
   justify-content: space-between;
   padding: 3em 0;
-  border-top: 1px solid #666;
 }
