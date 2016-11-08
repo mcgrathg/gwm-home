@@ -53,7 +53,7 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
           </div>
           <Sticky
             enabled={isStickyEnabled}
-            top={55}
+            top={'.header'}
             innerZ={2500}
           >
             <div className={styles.stickyButtons}>

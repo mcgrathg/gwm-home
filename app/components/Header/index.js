@@ -1,5 +1,4 @@
 /**
-*
 * Header
 *
 */
@@ -16,7 +15,7 @@ import styles from './styles.css';
 
 function Header() {
   return (
-    <div className={classNames(styles.header)}>
+    <div className={classNames(styles.header, 'header')}>
       <Grid>
         <Row>
           <Col sm={5} md={4}>
