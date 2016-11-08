@@ -1,35 +1,13 @@
 /* import your colors... */
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
 
-/* Global styles */
+/* breakpoints */
+@value xs-max, sm-min, sm-max, md-min, md-max, lg-min, xs, sm, md, lg from 'containers/App/breakpoints.css';
 
 html,
 body {
   height: 100%;
   width: 100%;
-}
-
-:global(body) {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-:global(body.fontLoaded) {
-  font-family: 'Libre Baskerville', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-:global(.header) {
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-:global(body.fontLoaded .header) {
-  font-family: 'Libre Franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-:global(#app) {
-  min-height: 100%;
-  min-width: 100%;
-  background-color: light;
-  color: dark;
 }
 
 h1 > i,
@@ -45,25 +23,12 @@ h3 > i {
   flex-direction: column;
 }
 
-@media (max-width: 767px) {
+@media xs {
   .container {
     padding-right: 5px;
     padding-left: 5px;
   }
 }
-
-/*
-
-a {
-  color: watermelon !important;
-}
-
-a:hover {
-  color: watermelon !important;
-  filter: brightness(85%);
-}
-
-*/
 
 ::selection {
   background-color: watermelon !important;

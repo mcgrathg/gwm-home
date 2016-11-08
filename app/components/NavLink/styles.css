@@ -1,6 +1,9 @@
 /* import your colors... */
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
 
+/* breakpoints */
+@value xs-max, sm-min, sm-max, md-min, md-max, lg-min, xs, sm, md, lg from 'containers/App/breakpoints.css';
+
 .navListItem {
   padding-left: 0 !important;
   padding-right: 0 !important;

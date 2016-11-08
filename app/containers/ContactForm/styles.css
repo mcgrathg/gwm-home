@@ -1,6 +1,9 @@
 /* import your colors... */
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
 
+/* breakpoints */
+@value xs-max, sm-min, sm-max, md-min, md-max, lg-min, xs, sm, md, lg from 'containers/App/breakpoints.css';
+
 .contactForm {
   position: absolute;
   top: 50%;
@@ -22,7 +25,7 @@
   color: watermelon !important;
 }
 
-@media only screen and (max-width: 767px) {
+@media xs {
   .contactForm {
     left: 0;
     top: 64%;
@@ -36,7 +39,7 @@
   }
 }
 
-@media only screen and (max-width: 959px) and (min-width: 768px) {
+@media sm {
   .contactForm {
     width: 60%;
     padding: 25px;
@@ -46,25 +49,4 @@
 .formInput {
   margin-right: 10px;
   width: 100%;
-}
-
-:global(.form-control) {
-  color: matte !important;
-}
-
-:global(.form-control:focus) {
-  border-color: teal !important;
-}
-
-:global(.form-control-feedback) {
-  right: 15px !important;
-  color: watermelon !important;
-}
-
-:global(.has-error .control-label) {
-  color: watermelon !important;
-}
-
-:global(.validation-message) {
-  color: watermelon !important;
 }

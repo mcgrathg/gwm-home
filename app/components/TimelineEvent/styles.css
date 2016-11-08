@@ -1,6 +1,9 @@
 /* import your colors... */
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
 
+/* breakpoints */
+@value xs-max, sm-min, sm-max, md-min, md-max, lg-min, xs, sm, md, lg from 'containers/App/breakpoints.css';
+
 /************************************************
  *                Event Config                  *
  ************************************************/
@@ -14,13 +17,13 @@
   border: 0;
 }
 
-@media (min-width: 768px) {
+@media sm-min {
   .timelineEvent:nth-child(2) {
     margin-top: 60px;
   }
 }
 
-@media (max-width: 767px) {
+@media xs {
   .timelineEvent {
     width: 100%;
   }
@@ -66,7 +69,7 @@
   content: ' ';
 }
 
-@media (max-width: 767px) {
+@media xs {
   .panel::before {
     border-left-width: 0;
     border-right-width: 15px;
@@ -138,7 +141,7 @@
   color: darkmedium !important;
 }
 
-@media (max-width: 767px) {
+@media xs {
   .badge {
     left: 28px;
     margin-left: 0;
@@ -190,7 +193,7 @@
  *               Inverted Config                *
  ************************************************/
 
-@media (min-width: 768px) {
+@media sm-min {
   .inverted {
     float: right;
     clear: right;
