@@ -1,6 +1,5 @@
 /* import your colors... */
-@value colors: 'containers/App/colors.css';
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
 
 /************************************************
  *                Event Config                  *
@@ -107,6 +106,18 @@
 /* End Heading */
 
 /************************************************
+ *                 Body Config                  *
+ ************************************************/
+
+.body {
+  border-color: medium;
+  border-style: solid;
+  border-width: 0 3px 3px;
+}
+
+/* End Body */
+
+/************************************************
  *                 Badge Config                 *
  ************************************************/
 
@@ -159,6 +170,14 @@
 
 .timelineEvent:hover > .panel {
   box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.16), 0 10px 15px 0 rgba(0, 0, 0, 0.12);
+}
+
+.timelineEvent .body {
+  transition: border-color 0.5s;
+}
+
+.timelineEvent:hover .body {
+  border-color: teal !important;
 }
 
 .timelineEvent:hover > .badge a {
