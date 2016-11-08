@@ -1,15 +1,6 @@
 /* import your colors... */
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
 
-.demoButton {
-  width: 250px;
-  max-width: 100%;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
 .col {
   overflow: hidden;
   padding-bottom: 5px;
@@ -30,4 +21,8 @@ a:hover {
 
 .social > ul {
   margin: 0;
+}
+
+.icon {
+  padding-left: 10px;
 }
