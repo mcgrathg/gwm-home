@@ -17,6 +17,35 @@
   font-size: large;
 }
 
+@media sm {
+  .navLink {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media xs {
+  .navLink {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .navLink {
+    font-size: 5vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+}
+
+@media (max-width: 300px) {
+  .navLink {
+    font-size: 4vw;
+    /*padding-left: 1vw;
+    padding-right: 1vw;*/
+  }
+}
+
 .navLink,
 .navLink::before {
   transition: all 0.3s;
@@ -31,6 +60,11 @@
   left: 0;
   background-color: watermelon;
   transform: translateY(110%);
+}
+
+.navLink.active {
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .navLink.active::before {
@@ -48,11 +82,4 @@
 
 .navLink.active:hover {
   cursor: default;
-}
-
-@media (min-width: 450px) {
-  .navLink.active {
-    text-transform: uppercase;
-    font-weight: bold;
-  }
 }
