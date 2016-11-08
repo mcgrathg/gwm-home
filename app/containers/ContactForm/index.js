@@ -31,7 +31,7 @@ import H2 from 'components/H2';
 import HeaderIcon from 'components/HeaderIcon';
 import LoadingIndicator from 'components/LoadingIndicator';
 
-import btnStyle from './buttons.css';
+import btnStyle from 'containers/App/buttons.css';
 import styles from './styles.css';
 
 export class ContactForm extends Component { // eslint-disable-line react/prefer-stateless-function
