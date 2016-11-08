@@ -39,6 +39,9 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
                   <Col sm={3} className={styles.leftCol}>
                     <Image responsive circle className={styles.profile} src={Profile} alt="Greg McGrath" />
                     <SocialBar className={styles.social} liClassName={styles.socialListItem} />
+                    <div className="text-center">
+                      <Link to="/contact"><Button className={btnStyle.contactBtn}>Contact Me</Button></Link>
+                    </div>
                   </Col>
                   <Col sm={9}>
                     <H1 className="header">
@@ -47,9 +50,6 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
                     { intro.map((txt, idx) => <p key={idx} className={classNames('lead', styles.lead)}>{txt}</p>) }
                   </Col>
                 </Row>
-                <div className="text-center">
-                  <Link to="/contact"><Button className={btnStyle.contactBtn}>Contact Me</Button></Link>
-                </div>
               </Grid>
             </section>
           </div>
