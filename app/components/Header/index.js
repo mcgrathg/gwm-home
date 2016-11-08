@@ -17,14 +17,14 @@ import styles from './styles.css';
 function Header() {
   return (
     <div className={classNames(styles.header)}>
-      <Grid className="container">
-        <Row className={styles.row}>
-          <Col sm={4} className={styles.logoCol}>
+      <Grid>
+        <Row>
+          <Col sm={4}>
             <IndexLink to="/">
-              <Image responsive className={styles.logo} src={Logo} alt="Greg McGrath -  Logo" />
+              <Image responsive src={Logo} alt="Greg McGrath -  Logo" />
             </IndexLink>
           </Col>
-          <Col sm={8} className={styles.navCol}>
+          <Col sm={8}>
             <Navigation />
           </Col>
         </Row>
