@@ -19,12 +19,12 @@ function Header() {
     <div className={classNames(styles.header)}>
       <Grid>
         <Row>
-          <Col sm={4}>
+          <Col sm={5} md={4}>
             <IndexLink to="/">
               <Image responsive src={Logo} alt="Greg McGrath -  Logo" />
             </IndexLink>
           </Col>
-          <Col sm={8}>
+          <Col sm={7} md={8}>
             <Navigation />
           </Col>
         </Row>
