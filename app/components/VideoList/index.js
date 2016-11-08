@@ -28,7 +28,7 @@ function VideoList({ videos, onCurrentVideoChange, currentVideo }) {
   return (
     <Card className={styles.card}>
       <CardHeader className={styles.cardHeader}>
-        <H2 disableBorder>Playlist</H2>
+        <H2 disableBorder>Videos</H2>
       </CardHeader>
       <CardBody>
         <ButtonGroup vertical className={styles.videoList}>
