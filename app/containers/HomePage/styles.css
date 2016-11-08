@@ -1,6 +1,5 @@
 /* import your colors... */
-@value colors: 'containers/App/colors.css';
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
+@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
 
 .intro {
   background: medium;
@@ -36,32 +35,4 @@
 
 .social > ul {
   margin: 0;
-}
-
-.circle {
-  background-color: teal !important;
-  color: light !important;
-  height: 120px !important;
-  width: 120px !important;
-  line-height: 120px !important;
-  border-radius: 60px !important;
-  padding: 0 !important;
-  text-align: center !important;
-  font-size: 17px !important;
-  text-transform: none !important;
-  font-weight: normal !important;
-  transform: rotate(-18deg) !important;
-  transition: background-color 0.5s;
-}
-
-:global(body.fontLoaded) .circle {
-  height: 120px !important;
-  width: 120px !important;
-  font-family: Condiment, cursive !important;
-  font-size: 19px !important;
-  letter-spacing: 2px !important;
-}
-
-.circle:hover {
-  background-color: watermelon !important;
 }

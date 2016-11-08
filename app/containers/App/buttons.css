@@ -2,6 +2,37 @@
 @value colors: 'containers/App/colors.css';
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from colors;
 
+.resumeBtn,
+.resumeBtn:focus:not(:hover) {
+  background: transparent;
+  border-color: matte;
+  color: matte;
+}
+
+.resumeBtn:hover,
+.resumeBtn:active,
+.resumeBtn:active:hover {
+  background: matte;
+  border-color: matte;
+  color: light;
+}
+
+.contactBtn,
+.contactBtn:focus:not(:hover) {
+  background: transparent;
+  border-color: watermelon;
+  color: watermelon;
+}
+
+.contactBtn:hover,
+.contactBtn:active,
+.contactBtn:active:hover {
+  background: watermelon;
+  border-color: watermelon;
+  color: light;
+  outline-style: none;
+}
+
 .submitBtn:not(.invalidBtn):hover,
 .submitBtn:not(.invalidBtn):active,
 .submitBtn:not(.invalidBtn):active:hover {
@@ -17,10 +48,6 @@
   background: teal !important;
 }
 
-.submitBtn {
-  transition: background 0.5s, border 0.5s;
-}
-
 .submitBtn.invalidBtn {
   color: watermelon !important;
   border-color: watermelon !important;
@@ -33,8 +60,4 @@
   background: watermelon !important;
   border-color: watermelon !important;
   color: light !important;
-}
-
-.invalidBtn {
-  border: 10px solid white;
 }
