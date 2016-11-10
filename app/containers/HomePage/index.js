@@ -15,8 +15,15 @@ import { Link } from 'react-router';
 import H1 from 'components/H1';
 import Profile from './profile.jpg';
 import SocialBar from 'components/SocialBar';
+import Card from 'components/Card';
+import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
 import { intro } from './text';
+
+import {
+  RESUME_DOWNLOAD_URL,
+} from 'containers/App/constants';
+
 
 import btnStyle from 'containers/App/buttons.css';
 import styles from './styles.css';
@@ -31,29 +38,37 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
             { name: 'description', content: 'Description of HomePage' },
           ]}
         />
-        <article>
-          <div>
-            <section className={classNames(styles.textSection, styles.centered)}>
-              <Grid className={styles.intro}>
-                <Row className={styles.rowEqualHeight}>
-                  <Col sm={3} className={styles.leftCol}>
-                    <Image responsive circle className={styles.profile} src={Profile} alt="Greg McGrath" />
-                    <SocialBar className={styles.social} liClassName={styles.socialListItem} />
-                    <div className="text-center">
-                      <Link to="/contact"><Button className={btnStyle.contactBtn}>Contact Me</Button></Link>
-                    </div>
-                  </Col>
-                  <Col sm={9}>
-                    <H1 className="header">
-                      Hello!
-                    </H1>
-                    { intro.map((txt, idx) => <p key={idx} className={classNames('lead', styles.lead)}>{txt}</p>) }
-                  </Col>
-                </Row>
-              </Grid>
-            </section>
-          </div>
-        </article>
+        <Grid className={styles.grid}>
+          <Row>
+            <Col md={12}>
+              <div className={classNames(styles.profile, 'center-block')}>
+                <Image responsive circle className={styles.profileImg} src={Profile} alt="Greg McGrath" />
+              </div>
+              <Card className={styles.introCard}>
+                <SocialBar className={styles.social} liClassName={styles.socialListItem} />
+                <div className={classNames(styles.intro)}>
+                  <H1>
+                    Hello! I&apos;m Greg McGrath.
+                  </H1>
+                  { intro.map((txt, idx) => <p key={idx} className={classNames('lead', styles.lead)}>{txt}</p>) }
+                </div>
+                <CenteredButtonToolbar>
+                  <Button
+                    className={btnStyle.resumeBtn}
+                    href={RESUME_DOWNLOAD_URL}
+                    target="_blank"
+                  >
+                    Download Resume
+                  </Button>
+                  <Link to="/contact">
+                    <Button className={btnStyle.contactBtn}>Contact Me</Button>
+                  </Link>
+
+                </CenteredButtonToolbar>
+              </Card>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
