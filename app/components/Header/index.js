@@ -20,7 +20,7 @@ function Header() {
         <Row>
           <Col sm={5} md={4}>
             <IndexLink to="/">
-              <Image responsive src={Logo} alt="Greg McGrath -  Logo" />
+              <Image responsive className={styles.logo} src={Logo} alt="Greg McGrath -  Logo" />
             </IndexLink>
           </Col>
           <Col sm={7} md={8}>
