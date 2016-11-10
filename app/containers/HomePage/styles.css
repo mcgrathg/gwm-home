@@ -53,7 +53,13 @@
 
 .social {
   padding: 0 5px;
-  margin-top: 85px;
+  margin-top: 50px;
+}
+
+@media sm-max {
+  .social {
+    margin-top: 85px;
+  }
 }
 
 .socialListItem:hover i {
