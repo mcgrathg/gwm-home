@@ -13,8 +13,8 @@ export const links = [
     text: 'Resume',
     to: '/resume',
   }, {
-    text: 'Portfolio',
-    to: '/portfolio',
+    text: 'Examples',
+    to: '/examples',
   }, {
     text: 'Contact',
     to: '/contact',

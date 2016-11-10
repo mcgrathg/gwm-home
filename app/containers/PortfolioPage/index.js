@@ -24,12 +24,17 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
     return (
       <div className={styles.portfolioPage}>
         <Helmet
-          title="Portfolio"
+          title="Examples"
           meta={[
             { name: 'description', content: 'Description of PortfolioPage' },
           ]}
         />
-        <SocialBar className={styles.social} liClassName={styles.socialListItem} />
+        <div className={styles.introCard}>
+          <div className="container">
+            <SocialBar className={styles.social} />
+            <p className="lead">Some interesting text...</p>
+          </div>
+        </div>
         <article className={classNames('container', styles.portfolioPage)}>
           <section className={styles.videoList}>
             <H2>

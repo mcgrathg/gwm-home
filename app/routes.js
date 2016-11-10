@@ -34,7 +34,7 @@ export default function createRoutes(store) {
           .catch(errorLoading);
       },
     }, {
-      path: '/portfolio',
+      path: '/examples',
       name: 'portfolioPage',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
