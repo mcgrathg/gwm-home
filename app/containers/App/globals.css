@@ -1,5 +1,5 @@
 /* import your colors... */
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+@value appBackground, light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
 
 :global(body) {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -20,8 +20,8 @@
 :global(#app) {
   min-height: 100%;
   min-width: 100%;
-  background-color: light;
-  color: dark;
+  background-color: appBackground;
+  color: lightmatte;
 }
 
 :global(button) {
