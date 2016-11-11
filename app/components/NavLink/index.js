@@ -8,9 +8,10 @@ import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import { Link, IndexLink } from 'react-router';
 
-import styles from './styles.css';
+import defaultStyles from './styles.css';
 
-function NavLink({ text, to, isIndex, className }) {
+function NavLink({ text, to, isIndex, className, icon, styles = defaultStyles }) {
+  console.debug(styles === defaultStyles, styles);
   const linkProps = {
     to,
     className: styles.navLink,
@@ -19,8 +20,8 @@ function NavLink({ text, to, isIndex, className }) {
 
   const link = (
     isIndex ?
-      <IndexLink {...linkProps}>{text}</IndexLink> :
-      <Link {...linkProps}>{text}</Link>
+      <IndexLink {...linkProps}>{icon}{text}</IndexLink> :
+      <Link {...linkProps}>{icon}{text}</Link>
   );
 
   return (
@@ -35,6 +36,7 @@ NavLink.propTypes = {
   text: PropTypes.string.isRequired,
   className: PropTypes.string,
   isIndex: PropTypes.bool,
+  styles: PropTypes.object,
 };
 
 export default NavLink;
