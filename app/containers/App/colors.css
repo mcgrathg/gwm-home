@@ -2,8 +2,9 @@
 @value heading: #3770B2;
 @value accent: #FF6A5C;
 @value subheading: #14457F;
-@value popout: #E9FF75;
-/*@value popout: #357ACC;*/
+@value popout: #CC554A;
+/*@value popout: #14457F;*/
+@value popoutAlt: #995228;
 @value light: #FFF;
 @value medium: #f0efec;
 @value darkmedium: #e0dfdb;

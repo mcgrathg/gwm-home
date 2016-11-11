@@ -1,6 +1,10 @@
 /* import your colors... */
 @value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
+.footer {
+  margin-top: 10px;
+}
+
 .columns {
   display: flex;
   justify-content: space-between;

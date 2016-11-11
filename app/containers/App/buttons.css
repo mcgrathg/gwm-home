@@ -2,30 +2,36 @@
 @value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 .resumeBtn,
-.resumeBtn:focus:not(:hover) {
+.resumeBtn:focus:not(:hover),
+.examplesBtn,
+.examplesBtn:focus:not(:hover) {
   background: transparent;
-  border-color: matte;
-  color: matte;
+  border-color: heading;
+  color: heading;
 }
 
 .resumeBtn:hover,
 .resumeBtn:active,
-.resumeBtn:active:hover {
-  background: matte;
-  border-color: matte;
+.resumeBtn:active:hover,
+.examplesBtn:hover,
+.examplesBtn:active,
+.examplesBtn:active:hover {
+  background: heading;
+  border-color: heading;
   color: light;
 }
 
 .contactBtn,
 .contactBtn:focus:not(:hover) {
-  background: transparent;
+  background: accent;
   border-color: accent;
-  color: accent;
+  color: light;
 }
 
 .contactBtn:hover,
 .contactBtn:active,
 .contactBtn:active:hover {
+  filter: brightness(110%);
   background: accent;
   border-color: accent;
   color: light;
@@ -35,28 +41,28 @@
 .submitBtn:not(.invalidBtn):hover,
 .submitBtn:not(.invalidBtn):active,
 .submitBtn:not(.invalidBtn):active:hover {
-  color: subheading !important;
-  border-color: subheading !important;
-  background: light !important;
+  color: light !important;
+  border-color: heading !important;
+  background: heading !important;
 }
 
 .submitBtn:not(.invalidBtn),
 .submitBtn:not(.invalidBtn):focus:not(:hover) {
-  color: light !important;
-  border-color: subheading !important;
-  background: subheading !important;
+  color: heading !important;
+  border-color: heading !important;
+  background: light !important;
 }
 
 .submitBtn.invalidBtn {
-  color: accent !important;
+  background: accent !important;
   border-color: accent !important;
-  background: light !important;
+  color: light !important;
 }
 
 .submitBtn.invalidBtn:hover,
 .submitBtn.invalidBtn:active,
 .submitBtn.invalidBtn:active:hover {
-  background: accent !important;
+  color: accent !important;
   border-color: accent !important;
-  color: light !important;
+  background: light !important;
 }

@@ -11,7 +11,8 @@
   width: 50%;
   max-width: 600px;
   padding: 50px;
-  background: matte;
+  /*background: matte;*/
+  background-color: subheading;
   color: light;
 }
 

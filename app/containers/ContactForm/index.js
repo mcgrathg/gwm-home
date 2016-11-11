@@ -86,7 +86,7 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
         onInvalid={() => this.props.setFormValidity(false)}
         ref={(c) => (this.contactForm = c)}
       >
-        <H2>
+        <H2 disableBorder>
           <HeaderIcon className="fa-paper-plane" />
           Send a Message
         </H2>

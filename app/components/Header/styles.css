@@ -5,7 +5,7 @@
 @value xs-max, sm-min, sm-max, md-min, md-max, lg-min, xs, sm, md, lg from 'containers/App/breakpoints.css';
 
 .header {
-  background-color: dark;
+  background-color: heading;
   overflow: hidden;
 }
 

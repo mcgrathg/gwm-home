@@ -2,9 +2,10 @@
 @value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 .videoListItem {
+  border-width: 0 !important;
   box-shadow: none !important;
   border-radius: 0 !important;
-  background-color: medium !important;
+  background-color: light !important;
 }
 
 .videoListItem h5 {
@@ -14,7 +15,9 @@
 
 .isSelected {
   color: matte;
-  background-color: fresh !important;
+  background-color: medium !important;
+  /*filter: brightness(1.5);*/
+  /*filter: opacity(0.8);*/
 }
 
 .isSelected:hover {

@@ -1,5 +1,5 @@
 /* import your colors... */
-@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
+@value heading, accent, subheading, popout, appBackground, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 .introCard {
   padding: 30px 0 0;
@@ -17,7 +17,7 @@
 }
 
 .stickyButtons {
-  background: light;
+  background: appBackground;
   padding-bottom: 10px;
 }
 

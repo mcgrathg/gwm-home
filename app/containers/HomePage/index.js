@@ -54,7 +54,7 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
                 </div>
                 <CenteredButtonToolbar>
                   <Link to="/examples">
-                    <Button className={btnStyle.contactBtn}>View Work Examples</Button>
+                    <Button className={btnStyle.examplesBtn}>View Work Examples</Button>
                   </Link>
                   <Link to="/contact">
                     <Button className={btnStyle.contactBtn}>Send Me a Message</Button>
