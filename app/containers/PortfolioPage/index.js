@@ -16,6 +16,7 @@ import Card from 'components/Card';
 import SocialBar from 'components/SocialBar';
 import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
+import { intro } from './text';
 import styles from './styles.css';
 
 export class PortfolioPage extends Component { // eslint-disable-line react/prefer-stateless-function
@@ -32,7 +33,7 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
         <div className={styles.introCard}>
           <div className="container">
             <SocialBar className={styles.social} />
-            <p className="lead">Some interesting text...</p>
+            { intro.map((txt, idx) => <p key={idx} className={classNames('lead', styles.lead)}>{txt}</p>) }
           </div>
         </div>
         <article className={classNames('container', styles.portfolioPage)}>
