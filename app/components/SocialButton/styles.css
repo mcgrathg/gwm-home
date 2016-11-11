@@ -1,5 +1,5 @@
 /* import your colors... */
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 .socialLink,
 .socialLink:hover {
@@ -14,12 +14,12 @@
 
 .socialListItem:hover .icon {
   transform: scale(1.5);
-  color: teal;
+  color: accent;
 }
 
 .icon {
   color: lightmatte;
   font-size: larger;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: all 0.2s;
 }

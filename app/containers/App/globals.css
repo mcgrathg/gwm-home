@@ -1,5 +1,5 @@
 /* import your colors... */
-@value appBackground, light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 :global(body) {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -21,7 +21,7 @@
   min-height: 100%;
   min-width: 100%;
   background-color: appBackground;
-  color: lightmatte;
+  color: matte;
 }
 
 :global(button) {
@@ -55,23 +55,15 @@
   outline-style: none;
 }
 
-:global(.form-control) {
-  color: matte !important;
-}
-
-:global(.form-control:focus) {
-  border-color: teal !important;
-}
-
 :global(.form-control-feedback) {
   right: 15px !important;
-  color: watermelon !important;
+  color: accent !important;
 }
 
 :global(.has-error .control-label) {
-  color: watermelon !important;
+  color: accent !important;
 }
 
 :global(.validation-message) {
-  color: watermelon !important;
+  color: accent !important;
 }

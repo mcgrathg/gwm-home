@@ -1,5 +1,5 @@
 /* import your colors... */
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 .resumeBtn,
 .resumeBtn:focus:not(:hover) {
@@ -19,15 +19,15 @@
 .contactBtn,
 .contactBtn:focus:not(:hover) {
   background: transparent;
-  border-color: watermelon;
-  color: watermelon;
+  border-color: accent;
+  color: accent;
 }
 
 .contactBtn:hover,
 .contactBtn:active,
 .contactBtn:active:hover {
-  background: watermelon;
-  border-color: watermelon;
+  background: accent;
+  border-color: accent;
   color: light;
   outline-style: none;
 }
@@ -35,28 +35,28 @@
 .submitBtn:not(.invalidBtn):hover,
 .submitBtn:not(.invalidBtn):active,
 .submitBtn:not(.invalidBtn):active:hover {
-  color: teal !important;
-  border-color: teal !important;
+  color: subheading !important;
+  border-color: subheading !important;
   background: light !important;
 }
 
 .submitBtn:not(.invalidBtn),
 .submitBtn:not(.invalidBtn):focus:not(:hover) {
   color: light !important;
-  border-color: teal !important;
-  background: teal !important;
+  border-color: subheading !important;
+  background: subheading !important;
 }
 
 .submitBtn.invalidBtn {
-  color: watermelon !important;
-  border-color: watermelon !important;
+  color: accent !important;
+  border-color: accent !important;
   background: light !important;
 }
 
 .submitBtn.invalidBtn:hover,
 .submitBtn.invalidBtn:active,
 .submitBtn.invalidBtn:active:hover {
-  background: watermelon !important;
-  border-color: watermelon !important;
+  background: accent !important;
+  border-color: accent !important;
   color: light !important;
 }

@@ -1,10 +1,20 @@
 @value appBackground: #FAFAFA;
+@value heading: #3770B2;
+@value accent: #FF6A5C;
+@value subheading: #14457F;
+@value popout: #E9FF75;
+/*@value popout: #357ACC;*/
 @value light: #FFF;
 @value medium: #f0efec;
 @value darkmedium: #e0dfdb;
 @value dark: #3770B2;
 @value lightmatte: #6f6e6e;
-@value matte: #14457F;
-@value fresh: #CCDFCB;
-@value watermelon: #FF6A5C;
-@value teal: #357ACC;
+@value matte: #414141;
+
+/*
+@value light: #FFF;
+@value medium: #f0efec;
+@value darkmedium: #e0dfdb;
+@value dark: #2d2c2f;
+@value lightmatte: #6f6e6e;
+@value matte: #414141;*/

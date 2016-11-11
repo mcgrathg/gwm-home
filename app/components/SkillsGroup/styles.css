@@ -1,5 +1,5 @@
 /* import your colors... */
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 
 .skillsGroup { /* stylelint-disable */
@@ -22,5 +22,5 @@
 }
 
 .item:not(:first-child) {
-  border-top: 1px solid lightmatte;
+  border-top: 1px solid subheading;
 }
