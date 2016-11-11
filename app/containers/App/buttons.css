@@ -41,28 +41,28 @@
 .submitBtn:not(.invalidBtn):hover,
 .submitBtn:not(.invalidBtn):active,
 .submitBtn:not(.invalidBtn):active:hover {
-  color: light !important;
-  border-color: heading !important;
-  background: heading !important;
-}
-
-.submitBtn:not(.invalidBtn),
-.submitBtn:not(.invalidBtn):focus:not(:hover) {
-  color: heading !important;
-  border-color: heading !important;
-  background: light !important;
-}
-
-.submitBtn.invalidBtn {
   background: accent !important;
   border-color: accent !important;
   color: light !important;
 }
 
-.submitBtn.invalidBtn:hover,
-.submitBtn.invalidBtn:active,
-.submitBtn.invalidBtn:active:hover {
+.submitBtn:not(.invalidBtn),
+.submitBtn:not(.invalidBtn):focus:not(:hover) {
   color: accent !important;
   border-color: accent !important;
   background: light !important;
+}
+
+.submitBtn.invalidBtn {
+  color: matte !important;
+  border-color: matte !important;
+  background: light !important;
+}
+
+.submitBtn.invalidBtn:hover,
+.submitBtn.invalidBtn:active,
+.submitBtn.invalidBtn:active:hover {
+  background: matte !important;
+  border-color: matte !important;
+  color: light !important;
 }
