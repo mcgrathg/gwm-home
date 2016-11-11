@@ -10,21 +10,23 @@ import { Link, IndexLink } from 'react-router';
 
 import styles from './styles.css';
 
-function NavLink({ text, to, isIndex, className, ...rest }) {
+function NavLink({ text, to, isIndex, className }) {
+  const linkProps = {
+    to,
+    className: styles.navLink,
+    activeClassName: styles.active,
+  };
+
   const link = (
     isIndex ?
-      <IndexLink to={to} className={styles.navLink} activeClassName={styles.active}>{text}</IndexLink> :
-      <Link to={to} className={styles.navLink} activeClassName={styles.active}>{text}</Link>
+      <IndexLink {...linkProps}>{text}</IndexLink> :
+      <Link {...linkProps}>{text}</Link>
   );
 
   return (
-    <li
-      className={classNames(className, styles.navListItem, 'header')}
-      {...rest}
-    >
+    <li className={classNames(className, styles.navListItem, 'header')}>
       {link}
     </li>
-
   );
 }
 
