@@ -24,7 +24,7 @@ function Header() {
             </IndexLink>
           </Col>
           <Col sm={7} md={8}>
-            <Navigation />
+            <Navigation navGroupClass={styles.navGroup} />
           </Col>
         </Row>
       </Grid>

@@ -3,8 +3,7 @@ import classNames from 'classnames';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 import SocialBar from 'components/SocialBar';
-
-import { links } from 'components/Navigation/links';
+import FooterNavigation from 'components/FooterNavigation';
 
 import styles from './styles.css';
 
@@ -13,7 +12,9 @@ function Footer() {
     <footer className={classNames(styles.footer)}>
       <Grid>
         <Row>
-          <Col md={4} className="text-left">Page Links</Col>
+          <Col md={4} className="text-left">
+            <FooterNavigation />
+          </Col>
           <Col md={4} className="text-center">
             <SocialBar className={styles.social} iconClassName={styles.socialButton} />
             Made By Greg McGrath
@@ -21,7 +22,7 @@ function Footer() {
           <Col md={4} className="text-right">
             <a
               className={styles.btnLink}
-              href="https://github.com/mcgrathg/sample-extjs"
+              href="https://github.com/mcgrathg/home"
               target="_blank"
             >
               Site&apos;s Git Repo

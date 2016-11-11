@@ -40,9 +40,12 @@ export function* sendMessage() {
       yield put(messageSentError(message));
       yield put(addNotification(`Your message failed to send because: "${message.join('. ')}"`, 'error'));
     }
+
+    yield put(resetNotification());
   } catch (error) {
     yield put(messageSentError([error]));
     yield put(addNotification(`Your message failed to send because: "${error}"`, 'error'));
+    yield put(resetNotification());
   }
 }
 

@@ -13,23 +13,21 @@ import { links } from './links';
 
 import styles from './styles.css';
 
-function Navigation({ className, liClassName, ...rest }) {
+function Navigation({ className, navGroupClass, linkStyles, icon }) {
   const navLinks = links.map(({ text, to, isIndex = false }) => (
     <NavLink
       key={text}
       text={text}
       to={to}
       isIndex={isIndex}
-      className={classNames(styles.navLink, liClassName)}
+      styles={linkStyles}
+      icon={icon}
     />
   ));
 
   return (
-    <nav
-      className={classNames(styles.navigation, className)}
-      {...rest}
-    >
-      <ul className={classNames(styles.navGroup, 'text-center', 'list-inline')}>
+    <nav className={classNames(styles.navigation, className)}>
+      <ul className={classNames(styles.navGroup, navGroupClass, 'list-inline')}>
         {navLinks}
       </ul>
     </nav>
@@ -38,7 +36,9 @@ function Navigation({ className, liClassName, ...rest }) {
 
 Navigation.propTypes = {
   className: PropTypes.string,
-  liClassName: PropTypes.string,
+  navGroupClass: PropTypes.string,
+  linkStyles: PropTypes.object,
+  icon: PropTypes.node,
 };
 
 export default Navigation;

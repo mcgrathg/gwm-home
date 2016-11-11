@@ -1,6 +1,9 @@
 /* import your colors... */
 @value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
 
+/* breakpoints */
+@value xs-max, sm-min, sm-max, md-min, md-max, lg-min, xs, sm, md, lg from 'containers/App/breakpoints.css';
+
 .header {
   background-color: dark;
   overflow: hidden;
@@ -8,4 +11,15 @@
 
 .logo {
   margin: 5px 0;
+}
+
+.navGroup {
+  margin-bottom: 0 !important;
+  text-align: center;
+}
+
+@media sm-min {
+  .navGroup {
+    float: right !important;
+  }
 }

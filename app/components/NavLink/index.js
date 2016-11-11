@@ -8,23 +8,26 @@ import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import { Link, IndexLink } from 'react-router';
 
-import styles from './styles.css';
+import defaultStyles from './styles.css';
 
-function NavLink({ text, to, isIndex, className, ...rest }) {
+function NavLink({ text, to, isIndex, className, icon, styles = defaultStyles }) {
+  console.debug(styles === defaultStyles, styles);
+  const linkProps = {
+    to,
+    className: styles.navLink,
+    activeClassName: styles.active,
+  };
+
   const link = (
     isIndex ?
-      <IndexLink to={to} className={styles.navLink} activeClassName={styles.active}>{text}</IndexLink> :
-      <Link to={to} className={styles.navLink} activeClassName={styles.active}>{text}</Link>
+      <IndexLink {...linkProps}>{icon}{text}</IndexLink> :
+      <Link {...linkProps}>{icon}{text}</Link>
   );
 
   return (
-    <li
-      className={classNames(className, styles.navListItem, 'header')}
-      {...rest}
-    >
+    <li className={classNames(className, styles.navListItem, 'header')}>
       {link}
     </li>
-
   );
 }
 
@@ -33,6 +36,7 @@ NavLink.propTypes = {
   text: PropTypes.string.isRequired,
   className: PropTypes.string,
   isIndex: PropTypes.bool,
+  styles: PropTypes.object,
 };
 
 export default NavLink;
