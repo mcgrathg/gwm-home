@@ -11,7 +11,6 @@ import { Link, IndexLink } from 'react-router';
 import defaultStyles from './styles.css';
 
 function NavLink({ text, to, isIndex, className, icon, styles = defaultStyles }) {
-  console.debug(styles === defaultStyles, styles);
   const linkProps = {
     to,
     className: styles.navLink,
@@ -37,6 +36,7 @@ NavLink.propTypes = {
   className: PropTypes.string,
   isIndex: PropTypes.bool,
   styles: PropTypes.object,
+  icon: PropTypes.node,
 };
 
 export default NavLink;
