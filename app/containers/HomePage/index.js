@@ -53,17 +53,12 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
                   { intro.map((txt, idx) => <p key={idx} className={classNames('lead', styles.lead)}>{txt}</p>) }
                 </div>
                 <CenteredButtonToolbar>
-                  <Button
-                    className={btnStyle.resumeBtn}
-                    href={RESUME_DOWNLOAD_URL}
-                    target="_blank"
-                  >
-                    Download Resume
-                  </Button>
-                  <Link to="/contact">
-                    <Button className={btnStyle.contactBtn}>Contact Me</Button>
+                  <Link to="/examples">
+                    <Button className={btnStyle.contactBtn}>View Work Examples</Button>
                   </Link>
-
+                  <Link to="/contact">
+                    <Button className={btnStyle.contactBtn}>Send Me a Message</Button>
+                  </Link>
                 </CenteredButtonToolbar>
               </Card>
             </Col>
