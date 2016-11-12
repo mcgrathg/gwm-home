@@ -17,48 +17,42 @@ import textStyle from '../../responsive-text-formatting.css';
 
 class TimelineEvent extends Component { // eslint-disable-line react/prefer-stateless-function
   getHeaderContents() {
-    const { title, company, location, start, end } = this.props;
-    const titleTag = <H2 disableBorder>{title}</H2>;
+    const { title, company, location, start = '', end = '' } = this.props;
+    const details = [];
 
-
-    const divider = (first, second) => (
-      (first && second) ? ' — ' : ''
-    );
-
-    const dateCol = (lgWidth) => (
-      <Col
-        className={classNames(textStyle['text-right-lg'], styles.headingCol)}
-        lg={lgWidth}
-      >
-        <h5>
-          {start}{divider(start, end)}{end}
-        </h5>
-      </Col>
-    );
-
-    let heading;
-    if (company || location) {
-      heading = (
-        <div>
-          {titleTag}
-          <Row className={styles.headingRow}>
-            <Col lg={8} className={styles.headingCol}>
-              <h5>{company}{divider(company, location)}{location}</h5>
-            </Col>
-            {dateCol(4)}
-          </Row>
-        </div>
-      );
-    } else {
-      heading = (
-        <Row className={styles.headingRow}>
-          <Col lg={11} className={styles.headingCol}>{titleTag}</Col>
-          {dateCol(1)}
-        </Row>
-      );
+    if (company) {
+      details.push({
+        txt: company,
+        icon: 'building-o',
+      });
     }
 
-    return heading;
+    if (location) {
+      details.push({
+        txt: location,
+        icon: 'globe',
+      });
+    }
+
+    if (start || end) {
+      details.push({
+        txt: start + (start && end ? ' — ' : '') + end,
+        icon: 'calendar-o',
+      });
+    }
+
+    return (
+      <div>
+        <H2 disableBorder>{title}</H2>
+        <ul className={classNames(styles.subheading, 'list-inline')}>
+          {details.map(({ txt, icon }) => (
+            <li key={txt}>
+              <i className={classNames(`fa fa-${icon}`, styles.icon)} />{txt}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
   }
 
   getBodyContents() {
