@@ -1,5 +1,9 @@
 /* import your colors... */
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
+
+.footer {
+  margin-top: 10px;
+}
 
 .columns {
   display: flex;
@@ -16,10 +20,11 @@
 }
 
 .footer a {
-  color: teal !important;
+  color: subheading !important;
+  transition: all 0.2s;
 }
 
 .footer a:hover {
-  opacity: 1.2;
+  color: accent !important;
   text-decoration: none;
 }

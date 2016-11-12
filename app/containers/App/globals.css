@@ -1,8 +1,12 @@
+@value shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+@value shadowHover: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+
 /* import your colors... */
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+@value heading, accent, subheading, popout, appBackground, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 :global(body) {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: appBackground !important;
 }
 
 :global(body.fontLoaded) {
@@ -20,18 +24,17 @@
 :global(#app) {
   min-height: 100%;
   min-width: 100%;
-  background-color: light;
-  color: dark;
+  color: matte;
 }
 
 :global(button) {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: shadow;
   transition: all 0.2s ease-in-out;
 }
 
 :global(button:hover),
 :global(.btn:hover) {
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: shadowHover;
   transform: scale(1.05);
 }
 
@@ -55,23 +58,15 @@
   outline-style: none;
 }
 
-:global(.form-control) {
-  color: matte !important;
-}
-
-:global(.form-control:focus) {
-  border-color: teal !important;
-}
-
 :global(.form-control-feedback) {
   right: 15px !important;
-  color: watermelon !important;
+  color: accent !important;
 }
 
 :global(.has-error .control-label) {
-  color: watermelon !important;
+  color: accent !important;
 }
 
 :global(.validation-message) {
-  color: watermelon !important;
+  color: accent !important;
 }

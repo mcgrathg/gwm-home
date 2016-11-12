@@ -1,5 +1,5 @@
 /* import your colors... */
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 .map {
   position: relative;
@@ -25,7 +25,7 @@
 }
 
 .socialListItem:hover i {
-  color: watermelon !important;
+  color: accent !important;
 }
 
 .social > ul {

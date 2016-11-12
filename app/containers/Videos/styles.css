@@ -10,6 +10,10 @@
   overflow: hidden;
 }
 
+.videoListCol {
+  composes: cardShadow from 'components/Card/styles.css';
+}
+
 @media sm-min {
   .col {
     padding-left: 0;

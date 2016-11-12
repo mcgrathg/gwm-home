@@ -1,10 +1,11 @@
 /* import your colors... */
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 .videoListItem {
+  border-width: 0 !important;
   box-shadow: none !important;
   border-radius: 0 !important;
-  background-color: medium !important;
+  background-color: light !important;
 }
 
 .videoListItem h5 {
@@ -14,13 +15,13 @@
 
 .isSelected {
   color: matte;
-  background-color: fresh !important;
+  background-color: medium !important;
 }
 
 .isSelected:hover {
-  transform: scale(1);
-  cursor: default;
-  border-color: darkmedium;
+  cursor: default !important;
+  transform: scale(1) !important;
+  z-index: inherit !important;
 }
 
 .isSelected h5 {

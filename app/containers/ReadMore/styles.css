@@ -1,6 +1,5 @@
-.readMore { /* stylelint-disable */
-
-}
+/* import your colors... */
+@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 .buttonWrapper {
   display: block;
@@ -8,5 +7,11 @@
 
 .button {
   margin-bottom: 30px;
+  color: subheading !important;
+  transition: all 0.2s;
+}
 
+.button:hover {
+  color: accent !important;
+  text-decoration: none;
 }

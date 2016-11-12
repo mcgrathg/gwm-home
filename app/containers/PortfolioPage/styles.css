@@ -1,5 +1,5 @@
 /* import your colors... */
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 .col {
   overflow: hidden;
@@ -13,7 +13,7 @@
 
 .introCard p {
   padding: 0 5%;
-  margin: 32px 0 0;
+  margin: 32px 0;
 }
 
 .socialBar {

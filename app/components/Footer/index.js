@@ -22,7 +22,7 @@ function Footer() {
           <Col md={4} className="text-right">
             <a
               className={styles.btnLink}
-              href="https://github.com/mcgrathg/sample-extjs"
+              href="https://github.com/mcgrathg/home"
               target="_blank"
             >
               Site&apos;s Git Repo

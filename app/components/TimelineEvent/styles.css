@@ -1,5 +1,5 @@
 /* import your colors... */
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 /* breakpoints */
 @value xs-max, sm-min, sm-max, md-min, md-max, lg-min, xs, sm, md, lg from 'containers/App/breakpoints.css';
@@ -47,11 +47,11 @@
 .panel::before {
   position: absolute;
   top: 13px;
-  right: -15px;
+  right: -14px;
   display: inline-block;
   border-top: 15px solid transparent;
-  border-left: 15px solid teal;
-  border-right: 0 solid teal;
+  border-left: 15px solid subheading;
+  border-right: 0 solid subheading;
   border-bottom: 15px solid transparent;
   content: ' ';
 }
@@ -63,8 +63,8 @@
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid teal;
-  border-right: 0 solid teal;
+  border-left: 14px solid subheading;
+  border-right: 0 solid subheading;
   border-bottom: 14px solid transparent;
   content: ' ';
 }
@@ -72,7 +72,7 @@
 @media xs {
   .panel::before {
     border-left-width: 0;
-    border-right-width: 15px;
+    border-right-width: 16px;
     left: -15px;
     right: auto;
   }
@@ -182,11 +182,11 @@
 }
 
 .timelineEvent:hover .body {
-  border-color: teal !important;
+  border-color: subheading !important;
 }
 
 .timelineEvent:hover > .badge a {
-  color: watermelon !important;
+  color: accent !important;
 }
 
 /* End Event Hover Mods */
@@ -211,7 +211,7 @@
 
   .inverted > .panel::before {
     border-left-width: 0;
-    border-right-width: 15px;
+    border-right-width: 16px;
     left: -15px;
     right: auto;
   }

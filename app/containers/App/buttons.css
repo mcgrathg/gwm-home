@@ -1,33 +1,39 @@
 /* import your colors... */
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
+@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 .resumeBtn,
-.resumeBtn:focus:not(:hover) {
+.resumeBtn:focus:not(:hover),
+.examplesBtn,
+.examplesBtn:focus:not(:hover) {
   background: transparent;
-  border-color: matte;
-  color: matte;
+  border-color: heading;
+  color: heading;
 }
 
 .resumeBtn:hover,
 .resumeBtn:active,
-.resumeBtn:active:hover {
-  background: matte;
-  border-color: matte;
+.resumeBtn:active:hover,
+.examplesBtn:hover,
+.examplesBtn:active,
+.examplesBtn:active:hover {
+  background: heading;
+  border-color: heading;
   color: light;
 }
 
 .contactBtn,
 .contactBtn:focus:not(:hover) {
-  background: transparent;
-  border-color: watermelon;
-  color: watermelon;
+  background: accent;
+  border-color: accent;
+  color: light;
 }
 
 .contactBtn:hover,
 .contactBtn:active,
 .contactBtn:active:hover {
-  background: watermelon;
-  border-color: watermelon;
+  filter: brightness(110%);
+  background: accent;
+  border-color: accent;
   color: light;
   outline-style: none;
 }
@@ -35,28 +41,28 @@
 .submitBtn:not(.invalidBtn):hover,
 .submitBtn:not(.invalidBtn):active,
 .submitBtn:not(.invalidBtn):active:hover {
-  color: teal !important;
-  border-color: teal !important;
-  background: light !important;
+  background: accent !important;
+  border-color: accent !important;
+  color: light !important;
 }
 
 .submitBtn:not(.invalidBtn),
 .submitBtn:not(.invalidBtn):focus:not(:hover) {
-  color: light !important;
-  border-color: teal !important;
-  background: teal !important;
+  color: accent !important;
+  border-color: accent !important;
+  background: light !important;
 }
 
 .submitBtn.invalidBtn {
-  color: watermelon !important;
-  border-color: watermelon !important;
+  color: matte !important;
+  border-color: matte !important;
   background: light !important;
 }
 
 .submitBtn.invalidBtn:hover,
 .submitBtn.invalidBtn:active,
 .submitBtn.invalidBtn:active:hover {
-  background: watermelon !important;
-  border-color: watermelon !important;
+  background: matte !important;
+  border-color: matte !important;
   color: light !important;
 }

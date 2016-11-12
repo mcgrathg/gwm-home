@@ -1,15 +1,10 @@
 /* import your colors... */
-@value light, medium, darkmedium, dark, lightmatte, matte, fresh, watermelon, teal from 'containers/App/colors.css';
-
-
-.skillsGroup { /* stylelint-disable */
-
-}
+@value heading, accent, subheading, popout, popoutAlt, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
 .item {
   border: 0;
   background-color: transparent;
-  padding: 10px 0px 10px 5px;
+  padding: 10px 0 10px 5px;
 }
 
 .listGroup {
@@ -19,8 +14,4 @@
 .col {
   padding-left: 10px;
   padding-right: 10px;
-}
-
-.item:not(:first-child) {
-  border-top: 1px solid lightmatte;
 }
