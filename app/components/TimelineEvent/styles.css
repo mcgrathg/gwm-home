@@ -95,15 +95,17 @@
 /************************************************
  *               Heading Config                 *
  ************************************************/
-
-.headingRow {
-  padding-left: 15px;
-  padding-right: 15px;
+.subheading {
+  margin-bottom: 0;
+  margin-left: 0 !important;
 }
 
-.headingCol {
-  padding: 0;
-  margin: 5px 0;
+.subheading li {
+  padding: 10px 20px 0 0;
+}
+
+.icon {
+  padding-right: 5px;
 }
 
 /* End Heading */
