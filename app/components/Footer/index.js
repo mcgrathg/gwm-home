@@ -5,6 +5,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import SocialBar from 'components/SocialBar';
 import FooterNavigation from 'components/FooterNavigation';
 
+import textStyle from '../../responsive-text-formatting.css';
 import styles from './styles.css';
 
 function Footer() {
@@ -12,14 +13,14 @@ function Footer() {
     <footer className={classNames(styles.footer)}>
       <Grid>
         <Row>
-          <Col md={4} className="text-left">
+          <Col md={4} className={classNames(textStyle['text-left-md'], textStyle['text-center-not-md'])}>
             <FooterNavigation />
           </Col>
-          <Col md={4} className="text-center">
+          <Col md={4} className={classNames(textStyle['text-center-md'], textStyle['text-center-not-md'])}>
             <SocialBar className={styles.social} iconClassName={styles.socialButton} />
             Made By Greg McGrath
           </Col>
-          <Col md={4} className="text-right">
+          <Col md={4} className={classNames(textStyle['text-right-md'], textStyle['text-center-not-md'])}>
             <a
               className={styles.btnLink}
               href="https://github.com/mcgrathg/home"
