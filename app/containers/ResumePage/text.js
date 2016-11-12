@@ -93,7 +93,7 @@ export const education = [{
   title: 'Bachelor of Engineering in Computer Engineering',
   company: 'Union College',
   location: 'Schenectady, NY',
-  start: null,
+  start: undefined,
   end: 2008,
   responsibilities: [
     {
