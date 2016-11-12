@@ -20,11 +20,6 @@ import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
 import { intro } from './text';
 
-import {
-  RESUME_DOWNLOAD_URL,
-} from 'containers/App/constants';
-
-
 import btnStyle from 'containers/App/buttons.css';
 import styles from './styles.css';
 
