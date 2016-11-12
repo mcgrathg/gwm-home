@@ -20,45 +20,30 @@ class TimelineEvent extends Component { // eslint-disable-line react/prefer-stat
     const { title, company, location, start, end } = this.props;
     const titleTag = <H2 disableBorder>{title}</H2>;
 
+    const details = [];
 
-    const divider = (first, second) => (
-      (first && second) ? ' — ' : ''
-    );
-
-    const dateCol = (lgWidth) => (
-      <Col
-        className={classNames(textStyle['text-right-lg'], styles.headingCol)}
-        lg={lgWidth}
-      >
-        <h5>
-          {start}{divider(start, end)}{end}
-        </h5>
-      </Col>
-    );
-
-    let heading;
-    if (company || location) {
-      heading = (
-        <div>
-          {titleTag}
-          <Row className={styles.headingRow}>
-            <Col lg={8} className={styles.headingCol}>
-              <h5>{company}{divider(company, location)}{location}</h5>
-            </Col>
-            {dateCol(4)}
-          </Row>
-        </div>
-      );
-    } else {
-      heading = (
-        <Row className={styles.headingRow}>
-          <Col lg={11} className={styles.headingCol}>{titleTag}</Col>
-          {dateCol(1)}
-        </Row>
-      );
+    if (company) {
+      details.push(<span><i className={classNames('fa fa-building-o', styles.icon)} />{company}</span>);
     }
 
-    return heading;
+    if (location) {
+      details.push(<span><i className={classNames('fa fa-globe', styles.icon)} />{location}</span>);
+    }
+
+    if (start || end) {
+      details.push(<span>
+        <i className={classNames('fa fa-calendar-o', styles.icon)} />{start}{(start && end ? ' — ' : undefined)}{end}
+      </span>);
+    }
+
+    return (
+      <div>
+        {titleTag}
+        <ul className={classNames(styles.subheading, 'list-inline')}>
+          {details.map((detail, idx) => <li key={idx}>{detail}</li>)}
+        </ul>
+      </div>
+    );
   }
 
   getBodyContents() {
