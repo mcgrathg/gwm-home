@@ -45,6 +45,8 @@ class TimelineEvent extends Component { // eslint-disable-line react/prefer-stat
       <div>
         <H2 disableBorder>{title}</H2>
         <ul className={classNames(styles.subheading, 'list-inline')}>
+          {details.map(({ txt, icon }) => (
+            <li key={txt}>
               <i className={classNames(`fa fa-${icon}`, styles.icon)} />{txt}
             </li>
           ))}
