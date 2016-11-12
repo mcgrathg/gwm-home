@@ -47,7 +47,7 @@
 .panel::before {
   position: absolute;
   top: 13px;
-  right: -15px;
+  right: -14px;
   display: inline-block;
   border-top: 15px solid transparent;
   border-left: 15px solid subheading;
@@ -72,7 +72,7 @@
 @media xs {
   .panel::before {
     border-left-width: 0;
-    border-right-width: 15px;
+    border-right-width: 16px;
     left: -15px;
     right: auto;
   }
@@ -209,7 +209,7 @@
 
   .inverted > .panel::before {
     border-left-width: 0;
-    border-right-width: 15px;
+    border-right-width: 16px;
     left: -15px;
     right: auto;
   }
