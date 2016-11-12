@@ -1,11 +1,17 @@
+@value shadow from 'containers/App/globals.css';
+
 /* import your colors... */
 @value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
+.cardShadow {
+  box-shadow: shadow;
+}
+
 .card {
+  composes: cardShadow;
   position: relative;
   margin: 0.5rem 0 1rem;
   background-color: light;
   border-radius: 2px;
   overflow: hidden;
-  transition: box-shadow 0.25s;
 }
