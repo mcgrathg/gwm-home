@@ -10,10 +10,9 @@ import classNames from 'classnames';
 import CardHeader from 'components/CardHeader';
 import CardBody from 'components/CardBody';
 import H2 from 'components/H2';
-import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 import styles from './styles.css';
-import textStyle from '../../responsive-text-formatting.css';
 
 class TimelineEvent extends Component { // eslint-disable-line react/prefer-stateless-function
   getHeaderContents() {
