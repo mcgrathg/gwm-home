@@ -17,30 +17,37 @@ import textStyle from '../../responsive-text-formatting.css';
 
 class TimelineEvent extends Component { // eslint-disable-line react/prefer-stateless-function
   getHeaderContents() {
-    const { title, company, location, start, end } = this.props;
-    const titleTag = <H2 disableBorder>{title}</H2>;
-
+    const { title, company, location, start = '', end = '' } = this.props;
     const details = [];
 
     if (company) {
-      details.push(<span><i className={classNames('fa fa-building-o', styles.icon)} />{company}</span>);
+      details.push({
+        txt: company,
+        icon: 'building-o',
+      });
     }
 
     if (location) {
-      details.push(<span><i className={classNames('fa fa-globe', styles.icon)} />{location}</span>);
+      details.push({
+        txt: location,
+        icon: 'globe',
+      });
     }
 
     if (start || end) {
-      details.push(<span>
-        <i className={classNames('fa fa-calendar-o', styles.icon)} />{start}{(start && end ? ' — ' : undefined)}{end}
-      </span>);
+      details.push({
+        txt: start + (start && end ? ' — ' : '') + end,
+        icon: 'calendar-o',
+      });
     }
 
     return (
       <div>
-        {titleTag}
+        <H2 disableBorder>{title}</H2>
         <ul className={classNames(styles.subheading, 'list-inline')}>
-          {details.map((detail, idx) => <li key={idx}>{detail}</li>)}
+              <i className={classNames(`fa fa-${icon}`, styles.icon)} />{txt}
+            </li>
+          ))}
         </ul>
       </div>
     );
