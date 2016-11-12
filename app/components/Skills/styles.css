@@ -1,12 +1,7 @@
 /* import your colors... */
 @value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
 
-
-.skills {
-
-}
-
-H3 {
+.heading {
   margin-top: 10px;
   margin-bottom: 20px;
 }

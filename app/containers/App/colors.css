@@ -2,8 +2,7 @@
 @value heading: #3770B2;
 @value accent: #FF6A5C;
 @value subheading: #14457F;
-@value popout: #CC554A;
-/*@value popout: #14457F;*/
+@value popout: #14457F;
 @value popoutAlt: #995228;
 @value light: #FFF;
 @value medium: #f0efec;
@@ -11,11 +10,3 @@
 @value dark: #3770B2;
 @value lightmatte: #6f6e6e;
 @value matte: #414141;
-
-/*
-@value light: #FFF;
-@value medium: #f0efec;
-@value darkmedium: #e0dfdb;
-@value dark: #2d2c2f;
-@value lightmatte: #6f6e6e;
-@value matte: #414141;*/

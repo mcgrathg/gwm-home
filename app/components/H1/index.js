@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import classNames from 'classnames';
-import styles from './styles.css';
 
-function H1(props) {
+function H1({ className, ...rest }) {
   return (
-    <h1 className={classNames(styles.heading1, 'header')} {...props} />
+    <h1 className={classNames('header', className)} {...rest} />
   );
 }
+
+H1.propTypes = {
+  className: PropTypes.string,
+};
 
 export default H1;
