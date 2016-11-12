@@ -16,14 +16,12 @@
 .isSelected {
   color: matte;
   background-color: medium !important;
-  /*filter: brightness(1.5);*/
-  /*filter: opacity(0.8);*/
 }
 
 .isSelected:hover {
-  transform: scale(1);
-  cursor: default;
-  border-color: darkmedium;
+  cursor: default !important;
+  transform: scale(1) !important;
+  z-index: inherit !important;
 }
 
 .isSelected h5 {
