@@ -24,6 +24,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import FontFaceObserver from 'fontfaceobserver';
 import { useScroll } from 'react-router-scroll';
 import configureStore from './store';
+import ReactGA from 'react-ga';
 
 // Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider';
@@ -73,6 +74,13 @@ const rootRoute = {
   childRoutes: createRoutes(store),
 };
 
+ReactGA.initialize('UA-87400737-1');
+
+function logPageView() {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+}
+
 const render = (messages) => {
   ReactDOM.render(
     <Provider store={store}>
@@ -85,6 +93,7 @@ const render = (messages) => {
             // behaviour
             applyRouterMiddleware(useScroll())
           }
+          onUpdate={logPageView}
         />
       </LanguageProvider>
     </Provider>,
