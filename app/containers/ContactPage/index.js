@@ -45,9 +45,9 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
             zoom={14}
             {...mapProps}
           />
-          <article className="container">
+          <div className="container">
             <ContactForm />
-          </article>
+          </div>
         </div>
       </div>
     );
