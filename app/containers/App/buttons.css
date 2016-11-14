@@ -4,7 +4,9 @@
 .resumeBtn,
 .resumeBtn:focus:not(:hover),
 .examplesBtn,
-.examplesBtn:focus:not(:hover) {
+.examplesBtn:focus:not(:hover),
+.defaultBtn,
+.defaultBtn:focus:not(:hover) {
   background: transparent;
   border-color: heading;
   color: heading;
@@ -15,7 +17,10 @@
 .resumeBtn:active:hover,
 .examplesBtn:hover,
 .examplesBtn:active,
-.examplesBtn:active:hover {
+.examplesBtn:active:hover,
+.defaultBtn:hover,
+.defaultBtn:active,
+.defaultBtn:active:hover {
   background: heading;
   border-color: heading;
   color: light;
