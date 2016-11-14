@@ -17,6 +17,8 @@ import SocialBar from 'components/SocialBar';
 import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
 import { intro } from './text';
+
+import btnStyle from 'containers/App/buttons.css';
 import styles from './styles.css';
 
 export class PortfolioPage extends Component { // eslint-disable-line react/prefer-stateless-function
@@ -56,7 +58,7 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
                   href="http://gwmextjs.surge.sh/"
                   target="_blank"
                 >
-                  <Button className={classNames('center-block')}>
+                  <Button className={classNames(btnStyle.examplesBtn, 'center-block')}>
                     Live Demo
                     <i className={classNames('fa fa-external-link', styles.icon)} />
                   </Button>
@@ -66,7 +68,7 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
                   href="https://github.com/mcgrathg/sample-extjs"
                   target="_blank"
                 >
-                  <Button className={classNames('center-block')}>
+                  <Button className={classNames(btnStyle.examplesBtn, 'center-block')}>
                     Git Repo
                     <i className={classNames('fa fa-github-alt', styles.icon)} />
                   </Button>
@@ -76,14 +78,14 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
                   href="http://gwm-docs.surge.sh/"
                   target="_blank"
                 >
-                  <Button className={classNames('center-block')}>
+                  <Button className={classNames(btnStyle.examplesBtn, 'center-block')}>
                     Documentation
                     <i className={classNames('fa fa-book', styles.icon)} />
                   </Button>
                 </a>
 
               </CenteredButtonToolbar>
-              <p className="lead">Some text here...</p>
+              <p className={classNames('lead', styles.demoText)}>Some text here...</p>
             </Card>
           </section>
         </article>
