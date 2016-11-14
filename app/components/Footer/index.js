@@ -9,18 +9,19 @@ import textStyle from '../../responsive-text-formatting.css';
 import styles from './styles.css';
 
 function Footer() {
+  const colStyle = (def) => classNames(textStyle['text-center-sm'], textStyle['text-center-xs'], textStyle[`text-${def}-md`], textStyle[`text-${def}-lg`]);
   return (
     <footer className={classNames(styles.footer)}>
       <Grid>
         <Row>
-          <Col md={4} className={classNames(textStyle['text-left-md'], textStyle['text-center-not-md'])}>
+          <Col md={4} className={colStyle('left')}>
             <FooterNavigation />
           </Col>
-          <Col md={4} className={classNames(textStyle['text-center-md'], textStyle['text-center-not-md'])}>
+          <Col md={4} className={colStyle('center')}>
             <SocialBar className={styles.social} iconClassName={styles.socialButton} />
-            Made By Greg McGrath
+            Copyright &copy; {new Date().getFullYear()} Greg McGrath
           </Col>
-          <Col md={4} className={classNames(textStyle['text-right-md'], textStyle['text-center-not-md'])}>
+          <Col md={4} className={colStyle('right')}>
             <a
               className={styles.btnLink}
               href="https://github.com/mcgrathg/home"
