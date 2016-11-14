@@ -2,13 +2,14 @@
 coverage
 build
 node_modules
-stats.json
 
-tests
+stats.json
 
 # Cruft
 .DS_Store
 npm-debug.log
 .idea
+
+tests
 
 _keys.js
