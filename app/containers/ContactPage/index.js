@@ -28,7 +28,7 @@ export class ContactPage extends Component { // eslint-disable-line react/prefer
 
     if (windowWidth < MIN_WIN_WIDTH) {
       // window is too small to see town, move its center to right
-      mapProps.center = [43.000112, -73.854407];
+      mapProps.center = [43.016305, -73.852519];
     }
 
     return (
