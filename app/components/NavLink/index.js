@@ -10,11 +10,11 @@ import { Link, IndexLink } from 'react-router';
 
 import defaultStyles from './styles.css';
 
-function NavLink({ text, to, isIndex, className, icon, styles = defaultStyles }) {
+function NavLink({ text, to, isIndex, className, icon, currentPath, styles = defaultStyles }) {
+  const isActive = to === currentPath;
   const linkProps = {
+    className: classNames(styles.navLink, isActive ? styles.activeLink : styles.inactiveLink),
     to,
-    className: styles.navLink,
-    activeClassName: styles.active,
   };
 
   const link = (
@@ -33,6 +33,7 @@ function NavLink({ text, to, isIndex, className, icon, styles = defaultStyles })
 NavLink.propTypes = {
   to: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  currentPath: PropTypes.string.isRequired,
   className: PropTypes.string,
   isIndex: PropTypes.bool,
   styles: PropTypes.object,

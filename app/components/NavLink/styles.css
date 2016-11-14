@@ -54,13 +54,17 @@
   transform: translateY(110%);
 }
 
-.navLink.active {
+.activeLink {
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.navLink.active::before {
+.activeLink::before {
   transform: translateY(0);
+}
+
+.activeLink:hover {
+  cursor: default;
 }
 
 .navLink:hover {
@@ -68,10 +72,12 @@
   text-decoration: none;
 }
 
-.navLink:not(.active):hover {
+/*
+.navLink:not(.activeLink):hover {
   transform: translateY(-5%);
 }
+*/
 
-.navLink.active:hover {
-  cursor: default;
+.inactiveLink:hover {
+  transform: translateY(-5%);
 }
