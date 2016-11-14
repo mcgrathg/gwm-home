@@ -7,7 +7,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import Navigation from 'components/Navigation';
+import Navigation from 'containers/Navigation';
 
 import styles from './styles.css';
 import linkStyles from './linkStyles.css';

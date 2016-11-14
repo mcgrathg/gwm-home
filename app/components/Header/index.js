@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import { Image, Grid, Row, Col } from 'react-bootstrap';
 import { IndexLink } from 'react-router';
 
-import Navigation from 'components/Navigation';
+import Navigation from 'containers/Navigation';
 import Logo from './gmg-brackets.png';
 
 import styles from './styles.css';
