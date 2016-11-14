@@ -19,7 +19,7 @@ function Footer() {
           </Col>
           <Col md={4} className={colStyle('center')}>
             <SocialBar className={styles.social} iconClassName={styles.socialButton} />
-            Copyright &copy; {new Date().getFullYear()} Greg McGrath
+            Copyright &copy; {new Date().getFullYear()} by Greg McGrath
           </Col>
           <Col md={4} className={colStyle('right')}>
             <a
