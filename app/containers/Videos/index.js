@@ -7,7 +7,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import classNames from 'classnames';
 import * as Sticky from 'react-stickynode';
 
@@ -23,6 +23,9 @@ import {
   selectTruncateLongText,
  } from 'containers/App/selectors';
 
+import {
+    YOUTUBE_PLAYLIST,
+  } from 'containers/App/constants';
 
 import {
   changeVideo,
@@ -33,6 +36,7 @@ import LoadingIndicator from 'components/LoadingIndicator';
 import VideoDetail from 'components/VideoDetail';
 import VideoList from 'components/VideoList';
 
+import btnStyle from 'containers/App/buttons.css';
 import styles from './styles.css';
 
 export class Videos extends Component { // eslint-disable-line react/prefer-stateless-function
@@ -53,7 +57,18 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
 
     // Show an error if there is one
     } else if (error !== false) {
-      mainContent = (<div>Something went wrong, please try again!</div>);
+      mainContent = (
+        <div>
+          Something went wrong!
+          <Button
+            className={classNames(btnStyle.playlistBtn, styles.playlistBtn)}
+            href={YOUTUBE_PLAYLIST}
+            target="_blank"
+          >
+            View Playlist on YouTube
+          </Button>
+        </div>
+      );
 
     // If we're not loading, don't have an error and there are videos, show the videos
     } else if (videos !== false) {

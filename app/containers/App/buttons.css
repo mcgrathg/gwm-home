@@ -56,7 +56,9 @@
 .submitBtn.disabledBtn,
 .submitBtn.disabledBtn:hover,
 .submitBtn.disabledBtn:active,
-.submitBtn.disabledBtn:active:hover {
+.submitBtn.disabledBtn:active:hover,
+.playlistBtn,
+.playlistBtn:hover {
   color: matte !important;
   border-color: matte !important;
   background: light !important;
