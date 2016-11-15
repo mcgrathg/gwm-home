@@ -66,6 +66,7 @@ export class Videos extends Component { // eslint-disable-line react/prefer-stat
             target="_blank"
           >
             View Playlist on YouTube
+            <i className={classNames('fa fa-youtube-play', styles.icon)} />
           </Button>
         </div>
       );

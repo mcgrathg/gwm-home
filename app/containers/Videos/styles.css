@@ -18,6 +18,11 @@
   margin-left: 20px;
 }
 
+.icon {
+  margin-left: 10px;
+  font-size: larger;
+}
+
 @media sm-min {
   .col {
     padding-left: 0;
