@@ -31,4 +31,5 @@
 .warning {
   font-weight: bold;
   color: accent;
+  padding-bottom: 20px;
 }
