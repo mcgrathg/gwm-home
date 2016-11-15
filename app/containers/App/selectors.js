@@ -37,10 +37,16 @@ const selectTruncateLongText = () => createSelector(
   (globalState) => globalState.get('truncateLongText')
 );
 
+const selectIsSmallDevice = () => createSelector(
+  selectGlobal(),
+  (globalState) => globalState.get('isSmallDevice')
+);
+
 export {
   selectGlobal,
   selectLocationState,
   selectWindowWidth,
   selectIsStickyEnabled,
   selectTruncateLongText,
+  selectIsSmallDevice,
 };

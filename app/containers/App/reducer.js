@@ -14,6 +14,7 @@ import { fromJS } from 'immutable';
 import {
   SET_WINDOW_WIDTH,
   MIN_STICKY_WIDTH,
+  SMALL_DEVICE_WIDTH,
 } from './constants';
 
 // The initial state of the App
@@ -21,6 +22,7 @@ const initialState = fromJS({
   windowWidth: window.innerWidth,
   isStickyEnabled: false,
   truncateLongText: false,
+  isSmallDevice: false,
 });
 
 function appReducer(state = initialState, action) {
@@ -30,6 +32,7 @@ function appReducer(state = initialState, action) {
       return state
         .set('windowWidth', action.width)
         .set('isStickyEnabled', action.width >= MIN_STICKY_WIDTH)
+        .set('isSmallDevice', action.width < SMALL_DEVICE_WIDTH)
         .set('truncateLongText', true);
         // .set('truncateLongText', action.width < MAX_READ_MORE_WIDTH);
     default:
