@@ -1,8 +1,7 @@
 @value shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 @value shadowHover: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 
-/* import your colors... */
-@value heading, accent, subheading, popout, appBackground, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
+/* import app colors... */
 
 :global(body) {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;

@@ -1,5 +1,5 @@
-/* import your colors... */
-@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
+/* import app colors... */
+@value heading, accent, subheading, light, medium, darkmedium, lightmatte, matte, dark from 'containers/App/colors.css';
 
 .buttonWrapper {
   display: block;

@@ -1,5 +1,4 @@
-/* import your colors... */
-@value heading, accent, subheading, popout, light, medium, darkmedium, dark, lightmatte, matte from 'containers/App/colors.css';
+/* import app colors... */
 
 .resumeBtn,
 .resumeBtn:focus:not(:hover),
