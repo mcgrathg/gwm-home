@@ -24,6 +24,7 @@ import styles from './styles.css';
 export class PortfolioPage extends Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
+    console.debug('disable demo on small devices');
     return (
       <div className={styles.portfolioPage}>
         <Helmet
@@ -85,7 +86,7 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
                 </a>
 
               </CenteredButtonToolbar>
-              <p className={classNames('lead', styles.demoText)}>Some text here...</p>
+              {/* <p className={classNames('lead', styles.demoText)}>Some text here...</p> */}
             </Card>
           </section>
         </article>
