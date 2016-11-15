@@ -77,6 +77,9 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
       );
     }
 
+    const isSubmitDisabled = (!isFormValid || sending);
+    const submitIcon = isSubmitDisabled ? 'ban' : 'send-o';
+
     return (
       <Form
         disabled={sending}
@@ -132,10 +135,11 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
         />
         {errorMessage}
         <Button
-          className={classNames('pull-right', btnStyle.submitBtn, { [btnStyle.invalidBtn]: !isFormValid })}
+          className={classNames('pull-right', btnStyle.submitBtn, { [btnStyle.disabledBtn]: isSubmitDisabled })}
           type="submit"
-          disabled={!isFormValid || sending}
+          disabled={isSubmitDisabled}
         >
+          <i className={classNames(`fa fa-${submitIcon}`, styles.icon)} />
           Send
         </Button>
         {submittingIndicator}
