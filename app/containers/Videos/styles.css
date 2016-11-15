@@ -6,10 +6,6 @@
   margin-right: 0;
 }
 
-.videoListCol {
-  composes: cardShadow from 'components/Card/styles.css';
-}
-
 .playlistBtn {
   margin-left: 20px;
 }
