@@ -27,73 +27,37 @@
 }
 
 .contactBtn,
-.contactBtn:focus:not(:hover) {
+.contactBtn:focus:not(:hover),
+.submitBtn:not(.disabledBtn),
+.submitBtn:not(.disabledBtn):focus:not(:hover) {
   background: accent;
   border-color: accent;
   color: light;
 }
 
 .contactBtn:hover,
-.contactBtn:active,
-.contactBtn:active:hover {
+.submitBtn:not(.disabledBtn):hover {
   filter: brightness(110%);
   background: accent;
   border-color: accent;
   color: light;
-  outline-style: none;
 }
 
-.submitBtn:not(.invalidBtn):hover,
-.submitBtn:not(.invalidBtn):active,
-.submitBtn:not(.invalidBtn):active:hover {
-  color: accent !important;
-  border-color: accent !important;
-  background: light !important;
+.contactBtn:active,
+.contactBtn:active:hover,
+.submitBtn:not(.disabledBtn):active,
+.submitBtn:not(.disabledBtn):active:hover {
+  filter: brightness(85%);
+  background: accent;
+  border-color: accent;
+  color: light;
 }
 
-.submitBtn:not(.invalidBtn),
-.submitBtn:not(.invalidBtn):focus:not(:hover) {
-  background: accent !important;
-  border-color: accent !important;
-  color: light !important;
-  position: relative;
-}
-
-.submitBtn.invalidBtn {
+.submitBtn.disabledBtn,
+.submitBtn.disabledBtn:hover,
+.submitBtn.disabledBtn:active,
+.submitBtn.disabledBtn:active:hover {
   color: matte !important;
   border-color: matte !important;
   background: light !important;
-  position: relative;
-}
-
-/*
- * Visually indicate when user can submit with icons
- */
-
-.submitBtn {
-  width: 105px;
-}
-
-.submitBtn:not(.invalidBtn)::before {
-  content: '\f1d9';
-  font-family: FontAwesome;
-  left: 15px;
-  position: absolute;
-  top: 6px;
-}
-
-.submitBtn.invalidBtn::before {
-  content: '\f05e';
-  font-family: FontAwesome;
-  left: 15px;
-  position: absolute;
-  top: 6px;
-}
-
-.submitBtn.invalidBtn:hover,
-.submitBtn.invalidBtn:active,
-.submitBtn.invalidBtn:active:hover {
-  background: matte !important;
-  border-color: matte !important;
-  color: light !important;
 }
