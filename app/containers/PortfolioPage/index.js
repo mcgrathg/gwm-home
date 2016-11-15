@@ -4,10 +4,16 @@
  *
  */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import Helmet from 'react-helmet';
 import classNames from 'classnames';
 import { Button } from 'react-bootstrap';
+
+import {
+  selectIsSmallDevice,
+} from 'containers/App/selectors';
 
 import Videos from 'containers/Videos';
 import H2 from 'components/H2';
@@ -22,9 +28,13 @@ import btnStyle from 'containers/App/buttons.css';
 import styles from './styles.css';
 
 export class PortfolioPage extends Component { // eslint-disable-line react/prefer-stateless-function
-
   render() {
-    console.debug('disable demo on small devices');
+    const screenSizeWarning = this.props.isSmallDevice ? (
+      <p className={classNames(styles.warning, 'text-center')}>
+        Demo is not yet optimized for small devices
+      </p>
+    ) : undefined;
+
     return (
       <div className={styles.portfolioPage}>
         <Helmet
@@ -86,6 +96,7 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
                 </a>
 
               </CenteredButtonToolbar>
+              {screenSizeWarning}
               {/* <p className={classNames('lead', styles.demoText)}>Some text here...</p> */}
             </Card>
           </section>
@@ -95,4 +106,12 @@ export class PortfolioPage extends Component { // eslint-disable-line react/pref
   }
 }
 
-export default PortfolioPage;
+PortfolioPage.propTypes = {
+  isSmallDevice: PropTypes.bool,
+};
+
+const mapStateToProps = createStructuredSelector({
+  isSmallDevice: selectIsSmallDevice(),
+});
+
+export default connect(mapStateToProps)(PortfolioPage);

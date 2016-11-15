@@ -27,3 +27,8 @@
 .demoText {
   padding: 0 5%;
 }
+
+.warning {
+  font-weight: bold;
+  color: accent;
+}
