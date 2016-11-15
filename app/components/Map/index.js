@@ -10,7 +10,7 @@ import GoogleMap from 'google-map-react';
 
 import {
   GOOGLE_API_KEY,
-} from 'containers/App/_keys';
+} from 'containers/App/keys';
 
 import fancyMapStyles from './fancyMapStyles.json';
 
