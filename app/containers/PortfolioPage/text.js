@@ -19,5 +19,3 @@ export const demo = {
     'Effortless Parent/Child grid configurations to sync lower level data with Parent grid\'s selection',
   ],
 };
-
-'The demo is written in ExtJS 5 with placeholder data supplied by <a target="_blank" href="https://jsonplaceholder.typicode.com/">JSON Placeholder</a>.';
