@@ -30,7 +30,7 @@ import styles from './styles.css';
 export class PortfolioPage extends Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     const screenSizeWarning = this.props.isSmallDevice ? (
-      <p className={classNames(styles.warning, 'text-center')}>
+      <p className={classNames(styles.demoWarning, 'text-center')}>
         Demo is not yet optimized for small devices
       </p>
     ) : undefined;
