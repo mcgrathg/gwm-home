@@ -8,3 +8,7 @@
 .backgroundIcon {
   color: accent;
 }
+
+.foregroundIcon {
+  font-size: 30px !important;
+}

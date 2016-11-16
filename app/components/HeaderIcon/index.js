@@ -13,8 +13,8 @@ function HeaderIcon({ ...props }) {
   const { className, ...rest } = props;
   return (
     <span className={classNames(styles.headerIcon, 'fa-stack')} aria-hidden="true" {...rest}>
-      <i className={classNames(styles.backgroundIcon, 'fa fa-circle fa-stack-2x')} aria-hidden="true" />
-      <i className={classNames('fa fa-stack-1x fa-inverse', className)} />
+      <i className={classNames(styles.backgroundIcon, 'fa', 'fa-circle', 'fa-stack-2x')} aria-hidden="true" />
+      <i className={classNames(styles.foregroundIcon, 'fa', 'fa-stack-1x', 'fa-inverse', className)} />
     </span>
   );
 }

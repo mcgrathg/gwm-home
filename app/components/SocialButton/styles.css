@@ -19,7 +19,7 @@
 
 .icon {
   color: lightmatte;
-  font-size: larger;
+  font-size: larger !important;
   cursor: pointer;
   transition: all 0.2s;
 }
