@@ -10,7 +10,7 @@ import 'babel-polyfill';
 
 /* eslint-disable import/no-unresolved */
 // Load the favicon, the manifest.json file and the .htaccess file
-import 'file?name=[name].[ext]!./favicon.png';
+import 'file?name=[name].[ext]!./favicon.ico';
 import '!file?name=[name].[ext]!./manifest.json';
 import 'file?name=[name].[ext]!./.htaccess';
 /* eslint-enable import/no-unresolved */
@@ -66,6 +66,10 @@ const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: selectLocationState(),
 });
 
+import {
+  GOOGLE_ANALYTICS_KEY,
+} from 'containers/App/keys';
+
 // Set up the router, wrapping all Routes in the App component
 import App from 'containers/App';
 import createRoutes from './routes';
@@ -74,7 +78,7 @@ const rootRoute = {
   childRoutes: createRoutes(store),
 };
 
-ReactGA.initialize('UA-87400737-1');
+ReactGA.initialize(GOOGLE_ANALYTICS_KEY);
 
 function logPageView() {
   ReactGA.set({ page: window.location.pathname });
