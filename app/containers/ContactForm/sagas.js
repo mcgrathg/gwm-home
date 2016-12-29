@@ -1,5 +1,5 @@
 /**
- * Gets the videos from a Youtube playlist
+ * Sends Contact Form message via email
  */
 
 import { take, call, put, select, fork, cancel } from 'redux-saga/effects';
