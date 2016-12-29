@@ -50,7 +50,7 @@ export function* sendMessage() {
 }
 
 /**
- * Watches for LOAD_VIDEOS action and calls handler
+ * Watches for SEND_MESSAGE action and calls handler
  */
 export function* sendMessageWatcher() {
   while (yield take(SEND_MESSAGE)) {
