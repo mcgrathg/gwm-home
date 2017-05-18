@@ -72,9 +72,6 @@ module.exports = (app, options) => {
     publicDir = './app/public';
   }
 
-  console.log(publicDir);
-  console.log(path.resolve(process.cwd(), publicDir));
-
   // serves up static files from the public folder.  All `/public` files will be served up
   // as the file it is
   app.use(express.static(path.resolve(process.cwd(), publicDir)));
