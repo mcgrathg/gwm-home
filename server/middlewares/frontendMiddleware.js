@@ -62,12 +62,17 @@ const addProdMiddlewares = (app, options) => {
 module.exports = (app, options) => {
   const isProd = process.env.NODE_ENV === 'production';
 
+  // serves up static files from the public folder.  All `/public` files will be served up
+  // as the file it is
+  app.use(express.static(path.resolve(process.cwd(), 'public')));
+
   if (isProd) {
     addProdMiddlewares(app, options);
   } else {
     const webpackConfig = require('../../internals/webpack/webpack.dev.babel');
     addDevMiddlewares(app, webpackConfig);
   }
+
 
   return app;
 };
