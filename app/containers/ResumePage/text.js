@@ -56,8 +56,8 @@ export const work = [{
     'Led team by mentoring, setting coding standards, managing code reviews, and assessing current technologies.',
     'Improved programming foundation by learning and embracing Node, Docker, GitLab, and continuous integration.',
     'Modernized and unified legacy projects to improve stability, reduce complexity, and increase agility.',
-    'Designed and implemented autonomous invoicing for missing magazine subscriptions.'
-  ]
+    'Designed and implemented autonomous invoicing for missing magazine subscriptions.',
+  ],
 }, {
   title: 'Software Developer',
   company: 'Stewart\'s Shops',
