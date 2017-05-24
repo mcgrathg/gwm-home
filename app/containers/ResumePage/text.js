@@ -20,13 +20,13 @@ export const skills = [
     items: [
       {
         sizes: { sm: 4, xs: 6 },
-        items: ['JavaScript', 'Ext JS', 'React', 'jQuery'],
+        items: ['JavaScript', 'Node.js', 'React', 'Ext JS'],
       }, {
         sizes: { md: 3, sm: 2, xs: 4 },
-        items: ['SQL', 'HTML', 'CSS', 'Python'],
+        items: ['SQL', 'HTML', 'CSS', 'jQuery'],
       }, {
         sizes: { md: 5, sm: 6, xs: 8 },
-        items: ['Sencha Touch', 'Apache Ant', 'Caché ObjectScript'],
+        items: ['Sencha Touch', 'Apache Ant', 'Caché ObjectScript', 'Python'],
       },
     ],
   }, {
@@ -34,24 +34,37 @@ export const skills = [
     items: [
       {
         sizes: { sm: 3, xs: 5 },
-        items: ['Git', 'Perforce', 'Webpack'],
+        items: ['GitLab', 'Docker', 'NPM', 'Perforce'],
       }, {
         sizes: { md: 4, sm: 4, xs: 6 },
-        items: ['Compass', 'Atom', 'Office Suite'],
+        items: ['VS Code', 'Atom', 'Compass', 'Webpack'],
       }, {
         sizes: { md: 5, sm: 5, xs: 8 },
-        items: ['Sencha CMD', 'Sencha Architect', 'Sublime Text'],
+        items: ['Sencha CMD', 'Sencha Architect', 'Sublime Text', 'Office Suite'],
       },
     ],
   },
 ];
 
 export const work = [{
+  title: 'Senior Web Application Developer',
+  company: 'Trans World Entertainment',
+  location: 'Albany, NY',
+  start: '12/2016',
+  end: 'Present',
+  responsibilities: [
+    'Led team by mentoring, setting coding standards, managing code reviews, and assessing current technologies.',
+    'Improved programming foundation by learning and embracing Node, Docker, GitLab, and continuous integration.',
+    'Modernized and unified legacy projects to improve stability, reduce complexity, and increase agility.',
+    'Designed and implemented autonomous invoicing for missing magazine subscriptions.'
+  ]
+}, {
   title: 'Software Developer',
   company: 'Stewart\'s Shops',
   location: 'Saratoga Springs, NY',
   start: 'Apr 2010',
-  end: 'Present',
+  end: '12/2016',
+  isInverted: true,
   responsibilities: [
     'Developed enterprise web applications providing sophisticated and tailored software solutions.',
     'Participated in complete development process (requirements gathering, architecture and specs design, development, testing, training, enhancements, and QA).',
@@ -67,7 +80,6 @@ export const work = [{
   location: 'Remote',
   start: 'Mar 2013',
   end: 'Present',
-  isInverted: true,
   responsibilities: [
     'Completed independent full stack development for remote clients using languages such as PHP, MySQL, JavaScript, and Ext JS, as well as embracing new technologies and techniques to expand toolkit and abilities.',
     'Developed responsive front end for internet startup while collaborating with 8 international employees.',
