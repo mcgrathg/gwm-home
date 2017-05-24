@@ -50,7 +50,7 @@ export const work = [{
   title: 'Senior Web Application Developer',
   company: 'Trans World Entertainment',
   location: 'Albany, NY',
-  start: '12/2016',
+  start: 'Dec 2016',
   end: 'Present',
   responsibilities: [
     'Led team by mentoring, setting coding standards, managing code reviews, and assessing current technologies.',
@@ -63,7 +63,7 @@ export const work = [{
   company: 'Stewart\'s Shops',
   location: 'Saratoga Springs, NY',
   start: 'Apr 2010',
-  end: '12/2016',
+  end: 'Dec 2016',
   isInverted: true,
   responsibilities: [
     'Developed enterprise web applications providing sophisticated and tailored software solutions.',
