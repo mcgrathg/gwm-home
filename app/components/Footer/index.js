@@ -24,7 +24,7 @@ function Footer() {
           <Col md={4} className={colStyle('right')}>
             <a
               className={styles.btnLink}
-              href="https://github.com/mcgrathg/home"
+              href="https://github.com/mcgrathg/gwm-home"
               target="_blank"
             >
               Site&apos;s Git Repo
