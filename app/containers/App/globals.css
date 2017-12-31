@@ -18,7 +18,7 @@
 }
 
 :global(body.fontLoaded .header) {
-  font-family: 'Libre Franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 :global(#app) {
