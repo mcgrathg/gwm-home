@@ -23,7 +23,6 @@ import {
 // Import the CSS reset, which HtmlWebpackPlugin transfers to the build folder
 import 'sanitize.css/sanitize.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.css';
 import './globals.css';
 
 import Header from 'components/Header';
