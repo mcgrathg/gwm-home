@@ -1,2 +1,9 @@
-/* import app colors... */
-@value heading, accent, subheading, light, medium, darkmedium, lightmatte, matte, dark from 'containers/App/colors.css';
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navGroup {
+  margin-left: 0;
+  overflow: hidden;
+}

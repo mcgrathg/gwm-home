@@ -1,32 +1,36 @@
 /* import app colors... */
-@value heading, accent, subheading, light, medium, darkmedium, lightmatte, matte, dark from 'containers/App/colors.css';
+@value heading from 'containers/App/colors.css';
+@value twoRowWidth: (max-width: 670px);
 
-/* breakpoints */
-@value xs-max, sm-min, sm-max, md-min, md-max, lg-min, xs, sm, md, lg from 'containers/App/breakpoints.css';
 
 .header {
   background-color: heading;
-  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media twoRowWidth {
+    justify-content: center;
+  }
+
+  align-items: center;
 }
 
 .logo {
-  margin: 5px 0;
+  flex: 0 251px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
 }
 
-@media xs {
-  .logo {
-    display: block;
-    margin: 5px auto;
-  }
-}
+.navigation {
+  flex: 1 400px;
+  justify-content: flex-end;
 
-.navGroup {
-  margin-bottom: 0 !important;
-  text-align: center;
-}
-
-@media sm-min {
-  .navGroup {
-    float: right !important;
+  @media twoRowWidth {
+    justify-content: center;
   }
 }
