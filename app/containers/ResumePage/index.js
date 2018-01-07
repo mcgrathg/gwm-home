@@ -14,13 +14,9 @@ import * as Sticky from 'react-stickynode';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Button } from 'react-bootstrap';
 
-import {
-  RESUME_DOWNLOAD_URL,
-} from 'containers/App/constants';
+import { RESUME_DOWNLOAD_URL } from 'containers/App/constants';
 
-import {
-  selectIsStickyEnabled,
-} from 'containers/App/selectors';
+import { selectIsStickyEnabled } from 'containers/App/selectors';
 
 import H2 from 'components/H2';
 import HeaderIcon from 'components/HeaderIcon';
@@ -32,7 +28,7 @@ import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 import styles from './styles.css';
 import btnStyle from 'containers/App/buttons.css';
 
-export class ResumePage extends Component { // eslint-disable-line react/prefer-stateless-function
+export class ResumePage extends Component {
   render() {
     const { isStickyEnabled } = this.props;
 
@@ -40,9 +36,7 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
       <article className={styles.resumePage}>
         <Helmet
           title={header.title}
-          meta={[
-            { name: 'description', content: 'Greg McGrath\'s Resume' },
-          ]}
+          meta={[{ name: 'description', content: "Greg McGrath's Resume" }]}
         />
         <section>
           <div className={styles.introCard}>
@@ -51,27 +45,20 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
               <p className="lead">{header.intro}</p>
             </div>
           </div>
-          <Sticky
-            enabled={isStickyEnabled}
-            top={'.header'}
-            innerZ={2500}
-          >
+          <Sticky enabled={isStickyEnabled} top={'.header'} innerZ={2500}>
             <div className={styles.stickyButtons}>
-              <div>
-                <CenteredButtonToolbar>
-                  <Button
-                    className={btnStyle.resumeBtn}
-                    href={RESUME_DOWNLOAD_URL}
-                    target="_blank"
-                  >
-                    Download Resume
-                  </Button>
-                  <LinkContainer to="/contact">
-                    <Button className={btnStyle.contactBtn}>Contact Me</Button>
-                  </LinkContainer>
-
-                </CenteredButtonToolbar>
-              </div>
+              <CenteredButtonToolbar>
+                <Button
+                  className={btnStyle.resumeBtn}
+                  href={RESUME_DOWNLOAD_URL}
+                  target="_blank"
+                >
+                  Download Résumé
+                </Button>
+                <LinkContainer to="/contact">
+                  <Button className={btnStyle.contactBtn}>Contact Me</Button>
+                </LinkContainer>
+              </CenteredButtonToolbar>
             </div>
           </Sticky>
         </section>

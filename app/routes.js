@@ -26,7 +26,7 @@ export default function createRoutes(store) {
           .catch(errorLoading);
       },
     }, {
-      path: '/resume',
+      path: '/experience',
       name: 'resumePage',
       getComponent(location, cb) {
         System.import('containers/ResumePage')

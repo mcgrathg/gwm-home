@@ -10,8 +10,8 @@ export const links = [
     to: '/',
     isIndex: true,
   }, {
-    text: 'Resume',
-    to: '/resume',
+    text: 'Experience',
+    to: '/experience',
   }, {
     text: 'Examples',
     to: '/examples',
