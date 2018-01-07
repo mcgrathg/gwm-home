@@ -1,7 +1,6 @@
 /* import app colors... */
 @value heading from 'containers/App/colors.css';
-@value twoRowWidth: (max-width: 670px);
-
+@value twoRowWidth: (max-width: 690px);
 
 .header {
   background-color: heading;
@@ -20,14 +19,11 @@
 }
 
 .logo {
-  flex: 0 251px;
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .navigation {
-  flex: 1 400px;
+  flex: 1 420px;
   justify-content: flex-end;
 
   @media twoRowWidth {
