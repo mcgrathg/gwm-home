@@ -19,6 +19,7 @@
 
 :global(body.fontLoaded .header) {
   font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: bold;
 }
 
 :global(#app) {
