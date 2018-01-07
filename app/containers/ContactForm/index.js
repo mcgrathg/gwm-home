@@ -12,14 +12,13 @@ import { Form } from 'formsy-react';
 import { ParentContextMixin, Input, Textarea } from 'formsy-react-components';
 import { Button } from 'react-bootstrap';
 
-
 import {
   selectEmail,
   selectError,
   selectSending,
   selectSent,
   selectFormValidity,
- } from './selectors';
+} from './selectors';
 
 import {
   sendMessage,
@@ -34,7 +33,7 @@ import LoadingIndicator from 'components/LoadingIndicator';
 import btnStyle from 'containers/App/buttons.css';
 import styles from './styles.css';
 
-export class ContactForm extends Component { // eslint-disable-line react/prefer-stateless-function
+export class ContactForm extends Component {
 
   mixins: [ParentContextMixin]
 
@@ -60,12 +59,16 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
   }
 
   render() {
-    const { className, sending, error, isFormValid } = this.props;
+    const { className, isSending, error, isFormValid } = this.props;
     let submittingIndicator;
     let errorMessage;
 
-    if (sending) {
-      submittingIndicator = (<div className={styles.loadingIndicator}><LoadingIndicator /></div>);
+    if (isSending) {
+      submittingIndicator = (
+        <div className={styles.loadingIndicator}>
+          <LoadingIndicator />
+        </div>
+      );
     }
 
     if (error && error.length) {
@@ -77,12 +80,9 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
       );
     }
 
-    const isSubmitDisabled = (!isFormValid || sending);
-    const submitIcon = isSubmitDisabled ? 'ban' : 'send-o';
-
     return (
       <Form
-        disabled={sending}
+        disabled={isSending}
         className={classNames(styles.contactForm, className)}
         onSubmit={(...props) => this.props.onFormSubmit(...props)}
         onValid={() => this.props.setFormValidity(true)}
@@ -91,7 +91,7 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
       >
         <H2 disableBorder>
           <HeaderIcon className="fa-paper-plane" />
-          Send a Message
+          Contact Me
         </H2>
         <Input
           name="name"
@@ -135,11 +135,11 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
         />
         {errorMessage}
         <Button
-          className={classNames('pull-right', btnStyle.submitBtn, { [btnStyle.disabledBtn]: isSubmitDisabled })}
+          className={classNames('pull-right', btnStyle.submitBtn)}
           type="submit"
-          disabled={isSubmitDisabled}
+          disabled={isSending}
         >
-          <i className={classNames(`fa fa-${submitIcon}`, styles.icon)} />
+          <i className={classNames('fa fa-send-o', styles.icon)} />
           Send
         </Button>
         {submittingIndicator}
@@ -148,10 +148,9 @@ export class ContactForm extends Component { // eslint-disable-line react/prefer
   }
 }
 
-
 ContactForm.propTypes = {
   className: PropTypes.string,
-  sending: PropTypes.bool,
+  isSending: PropTypes.bool,
   sent: PropTypes.bool,
   isFormValid: PropTypes.bool,
   error: React.PropTypes.oneOfType([
@@ -166,7 +165,7 @@ ContactForm.propTypes = {
 const mapStateToProps = createStructuredSelector({
   email: selectEmail(),
   error: selectError(),
-  sending: selectSending(),
+  isSending: selectSending(),
   sent: selectSent(),
   isFormValid: selectFormValidity(),
 });
