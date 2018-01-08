@@ -4,24 +4,30 @@
  * This contains all my social network sites
  */
 
-export const sites = [{
-  name: 'Github',
-  href: 'https://github.com/mcgrathg',
-  icon: 'fa fa-github',
-}, {
-  name: 'Stack Overflow',
-  href: 'http://stackoverflow.com/users/3688026/mcgrathg',
-  icon: 'fa fa-stack-overflow',
-}, {
-  name: 'LinkedIn',
-  href: 'https://www.linkedin.com/in/gregmcgrath',
-  icon: 'fa fa-linkedin-square',
-}, {
-  name: 'Facebook',
-  href: 'https://www.facebook.com/greg.mcgrath',
-  icon: 'fa fa-facebook',
-}, {
-  name: 'Google',
-  href: 'https://plus.google.com/+GregMcGrath8',
-  icon: 'fa fa-google-plus',
-}];
+export const sites = [
+  {
+    name: 'Github',
+    href: 'https://github.com/mcgrathg',
+    icon: 'fab fa-github',
+  },
+  {
+    name: 'Stack Overflow',
+    href: 'https://stackoverflow.com/users/3688026/mcgrathg',
+    icon: 'fab fa-stack-overflow',
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/gregmcgrath',
+    icon: 'fab fa-linkedin',
+  },
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/greg.mcgrath',
+    icon: 'fab fa-facebook-f',
+  },
+  {
+    name: 'Google',
+    href: 'https://plus.google.com/+GregMcGrath8',
+    icon: 'fab fa-google-plus-g',
+  },
+];
