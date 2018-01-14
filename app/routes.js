@@ -21,11 +21,42 @@ export default function createRoutes(store) {
       path: '/',
       name: 'homePage',
       getComponent(location, cb) {
-        System.import('containers/HomePage')
-          .then(loadModule(cb))
-          .catch(errorLoading);
+        const importModules = Promise.all([
+          System.import('containers/Videos/reducer'),
+          System.import('containers/Videos/sagas'),
+          System.import('containers/ContactForm/reducer'),
+          System.import('containers/ContactForm/sagas'),
+          System.import('containers/PortfolioPage'),
+          System.import('containers/ContactPage'),
+          System.import('containers/ResumePage'),
+          System.import('containers/HomePage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(
+          ([
+            videoReducer,
+            videoSagas,
+            contactReducer,
+            contactSagas,
+            portComp,
+            contactComp,
+            resumeComp,
+            component,
+          ]) => {
+            injectReducer('videosContainer', videoReducer.default);
+            injectReducer('contactForm', contactReducer.default);
+            injectSagas(videoSagas.default);
+            injectSagas(contactSagas.default);
+            renderRoute(component);
+          }
+        );
+
+        importModules.catch(errorLoading);
       },
-    }, {
+    },
+    {
       path: '/experience',
       name: 'resumePage',
       getComponent(location, cb) {
@@ -33,7 +64,8 @@ export default function createRoutes(store) {
           .then(loadModule(cb))
           .catch(errorLoading);
       },
-    }, {
+    },
+    {
       path: '/examples',
       name: 'portfolioPage',
       getComponent(nextState, cb) {
@@ -53,7 +85,8 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
-    }, {
+    },
+    {
       path: '/contact',
       name: 'contactPage',
       getComponent(nextState, cb) {
@@ -73,7 +106,8 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
-    }, {
+    },
+    {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
