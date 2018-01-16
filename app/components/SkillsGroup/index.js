@@ -1,8 +1,8 @@
 /**
-*
-* SkillsGroup
-*
-*/
+ *
+ * SkillsGroup
+ *
+ */
 
 import React, { PropTypes } from 'react';
 
@@ -12,17 +12,19 @@ import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 function SkillsGroup({ group }) {
   return (
-    <Row className={styles.skillsGroup}>
+    <div className={styles.skillsGroup2}>
       {group.map(({ items, sizes }, idx) => (
-        <Col {...sizes} key={idx} className={styles.col}>
-          <ListGroup className={styles.listGroup}>
+        <div key={idx} className={styles.col}>
+          <div className={styles.listGroup}>
             {items.map((skill) => (
-              <ListGroupItem key={skill} className={styles.item}>{skill}</ListGroupItem>)
-            )}
-          </ListGroup>
-        </Col>
+              <div key={skill} className={styles.item}>
+                {skill}
+              </div>
+            ))}
+          </div>
+        </div>
       ))}
-    </Row>
+    </div>
   );
 }
 

@@ -1,9 +1,9 @@
 /* import app colors... */
-@value heading from 'containers/App/colors.css';
+@value light from 'containers/App/colors.css';
 @value twoRowWidth: (max-width: 690px);
 
 .header {
-  background-color: heading;
+  background-color: light;
 }
 
 .wrapper {

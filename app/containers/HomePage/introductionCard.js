@@ -7,7 +7,7 @@ import { intro, blurb, description } from './text';
 
 import H1 from 'components/H1';
 import H3 from 'components/H3';
-import Profile from './profile.png';
+import Profile from './profile.jpg';
 import SocialBar from 'components/SocialBar';
 import Card from 'components/Card';
 import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
@@ -39,6 +39,16 @@ class IntroductionCard extends Component {
       <div className={styles.description}>
         {description.map((txt, idx) => <p key={idx}>{txt}</p>)}
       </div>
+    );
+  }
+
+  getLinks() {
+    return (
+      <CenteredButtonToolbar>
+        <Link to="/contact">
+          <Button className={btnStyle.accentBtn}>Send Me a Message</Button>
+        </Link>
+      </CenteredButtonToolbar>
     );
   }
 
@@ -90,17 +100,12 @@ class IntroductionCard extends Component {
   render() {
     return (
       <Card className={styles.introductionCard}>
-        {MIN_WIN_WIDTH <= this.props.windowWidth
-          ? this.renderLargeCard()
-          : this.renderSmallCard()}
-        <CenteredButtonToolbar>
-          <Link to="/examples">
-            <Button className={btnStyle.examplesBtn}>View Work Examples</Button>
-          </Link>
-          <Link to="/contact">
-            <Button className={btnStyle.contactBtn}>Send Me a Message</Button>
-          </Link>
-        </CenteredButtonToolbar>
+        <div className="container">
+          {MIN_WIN_WIDTH <= this.props.windowWidth
+            ? this.renderLargeCard()
+            : this.renderSmallCard()}
+          {this.getLinks()}
+        </div>
       </Card>
     );
   }

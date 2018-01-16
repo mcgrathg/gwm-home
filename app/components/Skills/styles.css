@@ -1,25 +1,45 @@
-/* import app colors... */
-@value heading, accent, subheading, light, medium, darkmedium, lightmatte, matte, dark from 'containers/App/colors.css';
+@value colors: 'containers/App/colors.css';
+@value third from colors;
+@value light from colors;
+@value dark from colors;
 
-.heading {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.card {
-  background-color: subheading !important;
-  color: light;
-  padding: 15px;
-  height: 100%;
-}
-
-.row {
+.skills {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .col {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  justify-content: space-between;
+  margin-top: 15px;
+  background-color: third;
+  color: light;
+}
+
+.heading {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px 10px 5px;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: light;
+}
+
+.divider .iconBackground {
+  color: light;
+}
+
+.divider .icon {
+  color: third;
 }

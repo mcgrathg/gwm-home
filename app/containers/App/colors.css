@@ -1,4 +1,4 @@
-@value appBackground: #FAFAFA;
+/* @value appBackground: #FAFAFA;
 @value heading: #3770B2;
 @value accent: #FF6A5C;
 @value subheading: #14457F;
@@ -8,3 +8,24 @@
 @value lightmatte: #6F6E6E;
 @value matte: #414141;
 @value dark: #2D2C2F;
+ */
+
+@value appBackground: #ecf0f1;
+@value heading: #ecf0f1;
+@value subheading: #475F77;
+@value light: #FFF;
+@value medium: #F0EFEC;
+@value darkmedium: #7f8c8d;
+@value lightmatte: #bdc3c7;
+@value matte: #414141;
+@value dark: #2D2C2F;
+
+@value primary: #354B5E;
+@value primaryText: #FAFAFA;
+
+@value secondary: #DCDDD8;
+@value secondaryText: #2D2C2F;
+@value third: #475F77;
+
+@value accent: #D74B4B;
+@value light: rgba(250,250,250, 1);

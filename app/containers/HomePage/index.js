@@ -15,7 +15,7 @@ import styles from './styles.css';
 import IntroductionCard from './introductionCard';
 import ResumePage from 'containers/ResumePage';
 import PortfolioPage from 'containers/PortfolioPage';
-import ContactPage from 'containers/ContactPage'
+import ContactPage from 'containers/ContactPage';
 
 export class HomePage extends Component {
   render() {
@@ -25,7 +25,7 @@ export class HomePage extends Component {
           titleTemplate="Greg McGrath - Software Developer"
           meta={[{ name: 'description', content: 'Description of HomePage' }]}
         />
-        <div className={'container'}>
+        <div>
           <IntroductionCard windowWidth={this.props.windowWidth} />
           <ResumePage />
           <PortfolioPage />

@@ -1,5 +1,7 @@
-/* import app colors... */
-@value heading, accent, subheading, light, medium, darkmedium, lightmatte, matte, dark from 'containers/App/colors.css';
+@value colors: 'containers/App/colors.css';
+@value light from colors;
+@value secondaryText from colors;
+@value accent from colors;
 
 /* breakpoints */
 @value phone from 'containers/App/breakpoints.css';
@@ -12,7 +14,7 @@
   display: block;
   position: relative;
   padding: 10px;
-  color: light;
+  color: secondaryText;
   font-size: large;
   line-height: 1;
   height: 38px;
@@ -22,7 +24,7 @@
   }
 
   &:hover {
-    color: light;
+    color: secondaryText;
     text-decoration: none;
   }
 
@@ -38,7 +40,7 @@
 
   &.inactiveLink {
     border-bottom: 2px solid transparent;
-    transition: transform .3s, border-color .3s ease-in-out;
+    transition: transform 0.3s, border-color 0.3s ease-in-out;
 
     &:hover {
       border-bottom-color: accent;
