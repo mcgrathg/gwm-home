@@ -6,8 +6,6 @@
 
 import styles from './styles.css';
 
-console.log({ styles });
-
 export const header = {
   title: 'Resume',
   intro: `
