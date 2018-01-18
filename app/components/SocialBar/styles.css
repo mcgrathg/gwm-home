@@ -9,6 +9,7 @@
 
 .socialGroup {
   display: inline-block;
+  margin-bottom: 0;
 
   @media phone {
     margin-bottom: 0;
