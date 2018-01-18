@@ -14,7 +14,6 @@ import { selectWindowWidth } from 'containers/App/selectors';
 import styles from './styles.css';
 import IntroductionCard from './introductionCard';
 import ResumePage from 'containers/ResumePage';
-import PortfolioPage from 'containers/PortfolioPage';
 import ContactPage from 'containers/ContactPage';
 
 export class HomePage extends Component {
@@ -28,7 +27,6 @@ export class HomePage extends Component {
         <div>
           <IntroductionCard windowWidth={this.props.windowWidth} />
           <ResumePage />
-          <PortfolioPage />
           <ContactPage />
         </div>
       </div>
