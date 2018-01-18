@@ -11,11 +11,11 @@ export const links = [
     isIndex: true,
   },
   {
-    text: 'Examples',
-    to: '/examples',
+    text: 'Experience',
+    to: '/#experience',
   },
   {
     text: 'Contact',
-    to: '/contact',
+    to: '/#contact',
   },
 ];

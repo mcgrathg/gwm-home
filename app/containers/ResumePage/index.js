@@ -23,7 +23,7 @@ import btnStyle from 'containers/App/buttons.css';
 export class ResumePage extends Component {
   render() {
     return (
-      <article className={styles.resumePage}>
+      <article className={styles.resumePage} id="experience">
         <div className={classNames('container', styles.wrapper)}>
           <section className={styles.technicalSkills}>
             <H2>

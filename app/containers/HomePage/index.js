@@ -7,7 +7,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import Helmet from 'react-helmet';
 
 import { selectWindowWidth } from 'containers/App/selectors';
 
@@ -20,15 +19,9 @@ export class HomePage extends Component {
   render() {
     return (
       <div className={styles.homePage}>
-        <Helmet
-          titleTemplate="Greg McGrath - Software Developer"
-          meta={[{ name: 'description', content: 'Description of HomePage' }]}
-        />
-        <div>
-          <IntroductionCard windowWidth={this.props.windowWidth} />
-          <ResumePage />
-          <ContactPage />
-        </div>
+        <IntroductionCard windowWidth={this.props.windowWidth} />
+        <ResumePage />
+        <ContactPage />
       </div>
     );
   }
