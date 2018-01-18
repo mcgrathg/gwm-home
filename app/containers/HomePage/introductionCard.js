@@ -45,8 +45,8 @@ class IntroductionCard extends Component {
   getLinks() {
     return (
       <CenteredButtonToolbar>
-        <Link to="/contact">
-          <Button className={btnStyle.accentBtn}>Send Me a Message</Button>
+        <Link to="/#contact">
+          <Button className={btnStyle.accentBtn}>Message Me</Button>
         </Link>
       </CenteredButtonToolbar>
     );
