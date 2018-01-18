@@ -5,7 +5,7 @@
 @value accent from colors;
 
 .introCard {
-  padding: 30px 0 0;
+  padding: 30px 0;
   background: secondary;
 }
 
