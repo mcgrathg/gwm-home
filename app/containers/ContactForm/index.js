@@ -34,8 +34,7 @@ import btnStyle from 'containers/App/buttons.css';
 import styles from './styles.css';
 
 export class ContactForm extends Component {
-
-  mixins: [ParentContextMixin]
+  mixins: [ParentContextMixin];
 
   componentWillReceiveProps({ sent }) {
     if (sent) {
@@ -46,7 +45,7 @@ export class ContactForm extends Component {
 
   setFormValid = (isFormValid) => {
     this.setState({ isFormValid });
-  }
+  };
 
   addAlert(msg, title = 'Success!', status = 'success') {
     this.container[status](msg, title, {
@@ -59,7 +58,7 @@ export class ContactForm extends Component {
   }
 
   render() {
-    const { className, isSending, error, isFormValid } = this.props;
+    const { className, isSending, error } = this.props;
     let submittingIndicator;
     let errorMessage;
 
@@ -152,7 +151,6 @@ ContactForm.propTypes = {
   className: PropTypes.string,
   isSending: PropTypes.bool,
   sent: PropTypes.bool,
-  isFormValid: PropTypes.bool,
   error: React.PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.arrayOf(PropTypes.string),

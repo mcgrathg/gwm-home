@@ -9,34 +9,21 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import Helmet from 'react-helmet';
 import classNames from 'classnames';
-import { Button } from 'react-bootstrap';
 
 import { selectIsSmallDevice } from 'containers/App/selectors';
 
 import Videos from 'containers/Videos';
 import H2 from 'components/H2';
 import HeaderIcon from 'components/HeaderIcon';
-import Card from 'components/Card';
-import CardBody from 'components/CardBody';
 import SocialBar from 'components/SocialBar';
-import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
-import { intro, demo } from './text';
+import { intro } from './text';
 
-import btnStyle from 'containers/App/buttons.css';
 import styles from './styles.css';
 
 export class PortfolioPage extends Component {
   // eslint-disable-line react/prefer-stateless-function
   render() {
-    const screenSizeWarning = this.props.isSmallDevice ? (
-      <p className={classNames(styles.demoWarning, 'text-center')}>
-        Demo is not yet optimized for small devices
-      </p>
-    ) : (
-      undefined
-    );
-
     return (
       <div className={styles.portfolioPage}>
         <Helmet

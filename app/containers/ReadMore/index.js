@@ -46,7 +46,7 @@ class ReadMore extends Component {
       >
         {children}
       </Truncate>
-      );
+    );
   }
 }
 

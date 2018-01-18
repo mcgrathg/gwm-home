@@ -8,8 +8,6 @@ import React, { PropTypes } from 'react';
 
 import styles from './styles.css';
 
-import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
-
 function SkillsGroup({ group }) {
   return (
     <div className={styles.skillsGroup2}>

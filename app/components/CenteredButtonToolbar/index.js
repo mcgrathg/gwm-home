@@ -20,19 +20,16 @@ function CenteredButtonToolbar({ ...props }) {
     </li>
   );
 
-  const getChildColumns = () =>
-    Array.isArray(children)
-      ? children.map(getChildColumn)
-      : getChildColumn(children);
+  const childColumns = Array.isArray(children)
+    ? children.map(getChildColumn)
+    : getChildColumn(children);
 
   return (
     <ButtonToolbar
       className={classNames(styles.centeredButtonToolbar, className)}
       {...rest}
     >
-      <ul className={classNames(styles.ul, ulClassName)}>
-        {getChildColumns()}
-      </ul>
+      <ul className={classNames(styles.ul, ulClassName)}>{childColumns}</ul>
     </ButtonToolbar>
   );
 }
