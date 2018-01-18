@@ -1,8 +1,8 @@
 /**
-*
-* TimelineEvent
-*
-*/
+ *
+ * TimelineEvent
+ *
+ */
 
 import React, { PropTypes, Component } from 'react';
 import classNames from 'classnames';
@@ -14,7 +14,8 @@ import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 import styles from './styles.css';
 
-class TimelineEvent extends Component { // eslint-disable-line react/prefer-stateless-function
+class TimelineEvent extends Component {
+  // eslint-disable-line react/prefer-stateless-function
   getHeaderContents() {
     const { title, company, location, start = '', end = '' } = this.props;
     const details = [];
@@ -46,7 +47,8 @@ class TimelineEvent extends Component { // eslint-disable-line react/prefer-stat
         <ul className={classNames(styles.subheading, 'list-inline')}>
           {details.map(({ txt, icon }) => (
             <li key={txt}>
-              <i className={classNames(`fa fa-${icon}`, styles.icon)} />{txt}
+              <i className={classNames(`fa fa-${icon}`, styles.icon)} />
+              {txt}
             </li>
           ))}
         </ul>
@@ -61,17 +63,22 @@ class TimelineEvent extends Component { // eslint-disable-line react/prefer-stat
       <ListGroup>
         {responsibilities.map((task, idx) => {
           let val = task;
-          if (typeof (task) === 'object') {
+          if (typeof task === 'object') {
             const { header, description } = task;
             let { subheader } = task;
 
             if (subheader) {
               subheader = <small>{subheader}</small>;
             }
-            val = (<span>
-              <h4 className={styles.taskHeader}>{header}{subheader}</h4>
-              {description}
-            </span>);
+            val = (
+              <span>
+                <h4 className={styles.taskHeader}>
+                  {header}
+                  {subheader}
+                </h4>
+                {description}
+              </span>
+            );
           }
           return (
             <ListGroupItem key={idx} className={styles.responsibility}>
@@ -84,20 +91,26 @@ class TimelineEvent extends Component { // eslint-disable-line react/prefer-stat
   }
 
   render() {
-    const { isInverted } = this.props;
+    const { isInverted, className } = this.props;
 
     return (
-      <ListGroupItem className={classNames(styles.timelineEvent, styles[isInverted ? 'inverted' : null])}>
+      <ListGroupItem
+        className={classNames(
+          styles.timelineEvent,
+          styles[isInverted ? 'inverted' : null],
+          className
+        )}
+      >
         <div className={styles.badge}>
-          <a><i className="glyphicon glyphicon-record"></i></a>
+          <a>
+            <i className="glyphicon glyphicon-record" />
+          </a>
         </div>
         <div className={styles.panel}>
           <CardHeader className={styles.header}>
             {this.getHeaderContents()}
           </CardHeader>
-          <CardBody className={styles.body}>
-            {this.getBodyContents()}
-          </CardBody>
+          <CardBody className={styles.body}>{this.getBodyContents()}</CardBody>
         </div>
       </ListGroupItem>
     );
@@ -111,6 +124,7 @@ TimelineEvent.propTypes = {
   start: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   end: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   isInverted: PropTypes.bool,
+  className: PropTypes.string,
   responsibilities: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.string,

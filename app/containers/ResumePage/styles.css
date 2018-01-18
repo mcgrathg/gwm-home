@@ -46,3 +46,7 @@ section:not(:first-child) {
   height: 90px;
   justify-content: space-around;
 }
+
+.spacing {
+  margin-top: 50px;
+}

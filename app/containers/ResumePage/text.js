@@ -4,6 +4,10 @@
  * This contains all text for the major sections of the resume.
  */
 
+import styles from './styles.css';
+
+console.log({ styles });
+
 export const header = {
   title: 'Resume',
   intro: `
@@ -64,16 +68,31 @@ export const skills = [
 
 export const work = [
   {
+    title: 'Software Engineer',
+    company: 'Computer Technology Services',
+    location: 'Clifton Park, NY',
+    start: 'June 2017',
+    end: 'Present',
+    responsibilities: [
+      'Delivered pixel-perfect, responsive user interfaces for K-12 educational platform used by students and teachers.',
+      'Recognized and refactored common design elements into reusable, intuitive, and testable components resulting in optimized performance, partitioned complexity, and unified visual appearances.',
+      'Architected complex React components using the Render Props pattern to improve maintainability and scalability.',
+      "Translated Product Management's requirements into high-quality, timely deliverables.",
+      'Participated in agile development process, including estimating effort, designing, coding, and peer code reviews.',
+    ],
+  },
+  {
     title: 'Senior Web Application Developer',
     company: 'Trans World Entertainment',
     location: 'Albany, NY',
     start: 'Dec 2016',
-    end: 'Present',
+    end: 'June 2017',
+    isInverted: true,
     responsibilities: [
-      'Led team by mentoring, setting coding standards, managing code reviews, and assessing current technologies.',
-      'Improved programming foundation by learning and embracing Node, Docker, GitLab, and continuous integration.',
-      'Modernized and unified legacy projects to improve stability, reduce complexity, and increase agility.',
-      'Designed and implemented autonomous invoicing for missing magazine subscriptions.',
+      'Led team by encouraging functional design patterns, conducting code reviews, and introducing ECMAScript 6.',
+      'Evaluated frameworks and technology like Docker, GitLab, and Node and advised if aligned with business goals.',
+      'Interfaced with key stakeholders to create successful solutions like automated invoicing for unpaid subscriptions.',
+      'Standardized ten diverse legacy projects to improve stability, reduce complexity, and increase agility.',
     ],
   },
   {
@@ -82,15 +101,13 @@ export const work = [
     location: 'Saratoga Springs, NY',
     start: 'Apr 2010',
     end: 'Dec 2016',
-    isInverted: true,
     responsibilities: [
-      'Developed enterprise web applications providing sophisticated and tailored software solutions.',
-      'Participated in complete development process (requirements gathering, architecture and specs design, development, testing, training, enhancements, and QA).',
-      'Performed as Senior Front End Engineer within a team of 8 developers in a large company with 4,500+ employees, where the system was used by a minimum of 475 employees.',
-      'Streamlined corporate tasks by assessing needs and architecting natural software solutions.',
-      'Enhanced user experience by conforming applications’ design and behavior into familiar interface templates, resulting in decreased user support needs and improved bug-fix response times.',
-      'Spearheaded development of a shared, reactive code library (including documentation and test suite) to reduce development time by abstracting away sophisticated user interfaces and common design patterns.',
-      'Acted as mentor for 7 developers, providing training on best practices in architecture patterns, ideal framework usage, and effective strategies to algorithmic problems.',
+      'Performed as Senior Front-End Engineer in an eight-member team by providing training in best practices for architecture design patterns, ideal usage of Ext JS, and effective strategies to algorithmic problems.',
+      'Developed enterprise web applications providing sophisticated and tailored software solutions for 475 users.',
+      'Spearheaded creation of a shared, tested code library to reduce development time of robust interfaces.',
+      "Enhanced user experience by unifying applications' behavior and design into familiar interface templates, which decreased user support needs and improved bug-fix response times.",
+      'Mentored two junior developers by helping them recognize effective code and by recommending learning paths.',
+      'Streamlined corporate tasks by assessing needs, architecting solution, and developing natural software solutions.',
     ],
   },
   {
@@ -99,10 +116,11 @@ export const work = [
     location: 'Remote',
     start: 'Mar 2013',
     end: 'Present',
+    isInverted: true,
+    cardClass: styles.spacing,
     responsibilities: [
-      'Completed independent full stack development for remote clients using languages such as PHP, MySQL, JavaScript, and Ext JS, as well as embracing new technologies and techniques to expand toolkit and abilities.',
-      'Developed responsive front end for internet startup while collaborating with 8 international employees.',
-      'Built 7 applications for diverse clients like startups, Italian botanists, English print shops, and American attorneys.',
+      'Completed independent, remote projects using PHP, MySQL, and Ext JS for seven diverse clients.',
+      'Developed responsive user interface for internet startup while collaborating with eight international employees.',
       'Gained strong interpersonal skills by managing communication and workflow across simultaneous projects.',
     ],
   },
@@ -114,10 +132,7 @@ export const work = [
     end: 'Mar 2010',
     isInverted: true,
     responsibilities: [
-      'Designed and developed custom software for clients in the public and private sector.',
-      'Listened attentively to enhance understanding of clients’ requirements.',
-      'Proposed and developed significant modifications to proprietary website, improving database usability and system efficiencies using VB.NET.',
-      'Created billing reports in VB6 for custom software and wrote documentation describing all functionality.',
+      'Designed and developed custom software for clients in the public and private sector in jQuery, VB.NET, VB6.',
     ],
   },
 ];

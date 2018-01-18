@@ -1,8 +1,8 @@
 /**
-*
-* Timeline
-*
-*/
+ *
+ * Timeline
+ *
+ */
 
 import React, { PropTypes } from 'react';
 
@@ -14,8 +14,12 @@ import TimelineEvent from 'components/TimelineEvent';
 function Timeline({ events }) {
   return (
     <ListGroup className={styles.timeline}>
-      {events.map((evtDetails, idx) => (
-        <TimelineEvent key={idx} {...evtDetails} />
+      {events.map((evtDetails) => (
+        <TimelineEvent
+          key={evtDetails.title}
+          className={evtDetails.cardClass}
+          {...evtDetails}
+        />
       ))}
     </ListGroup>
   );
