@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import { header, skills, work, education } from './text';
+import { skills, work, education } from './text';
 import classNames from 'classnames';
 import { Button } from 'react-bootstrap';
 
@@ -24,24 +24,6 @@ export class ResumePage extends Component {
   render() {
     return (
       <article className={styles.resumePage}>
-        <section className={styles.introCard}>
-          <div className="container">
-            <p className="lead">{header.intro}</p>
-          </div>
-          <CenteredButtonToolbar>
-            <Button
-              className={classNames(
-                btnStyle.accentGhostBtn,
-                styles.downloadBtn
-              )}
-              href={RESUME_DOWNLOAD_URL}
-              target="_blank"
-            >
-              <i className={classNames('fa fa-download fa-2x', styles.icon)} />
-              Download Résumé
-            </Button>
-          </CenteredButtonToolbar>
-        </section>
         <div className={classNames('container', styles.wrapper)}>
           <section className={styles.technicalSkills}>
             <H2>
@@ -65,6 +47,21 @@ export class ResumePage extends Component {
             <Timeline events={education} />
           </section>
         </div>
+        <section className={styles.introCard}>
+          <CenteredButtonToolbar>
+            <Button
+              className={classNames(
+                btnStyle.accentGhostBtn,
+                styles.downloadBtn
+              )}
+              href={RESUME_DOWNLOAD_URL}
+              target="_blank"
+            >
+              <i className={classNames('fa fa-download fa-2x', styles.icon)} />
+              Download Résumé
+            </Button>
+          </CenteredButtonToolbar>
+        </section>
       </article>
     );
   }
