@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Grid, Row, Col } from 'react-bootstrap';
 
 import SocialBar from 'components/SocialBar';
 import FooterNavigation from 'components/FooterNavigation';
@@ -17,23 +16,17 @@ function Footer() {
       textStyle[`text-${def}-lg`]
     );
   return (
-    <footer className={classNames(styles.footer)}>
-      <Grid>
-        <Row className={styles.footerRow}>
-          <Col md={4} className={colStyle('left')}>
-            <FooterNavigation />
-          </Col>
-          <Col md={4} className={(colStyle('center'), styles.copyright)}>
-            Copyright &copy; {new Date().getFullYear()} by Greg McGrath
-          </Col>
-          <Col md={4} className={colStyle('right')}>
-            <SocialBar
-              className={styles.social}
-              iconClassName={styles.socialButton}
-            />
-          </Col>
-        </Row>
-      </Grid>
+    <footer className={classNames(styles.footer, 'container')}>
+      <div className={styles.footerRow}>
+        <FooterNavigation />
+        <SocialBar
+          className={styles.social}
+          iconClassName={styles.socialButton}
+        />
+        <div className={(colStyle('center'), styles.copyright)}>
+          Copyright &copy; {new Date().getFullYear()} by Greg McGrath
+        </div>
+      </div>
     </footer>
   );
 }
