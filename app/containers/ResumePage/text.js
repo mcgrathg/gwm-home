@@ -113,7 +113,7 @@ export const work = [
     company: undefined,
     location: 'Remote',
     start: 'Mar 2013',
-    end: 'Present',
+    end: 'Dec 2016',
     isInverted: true,
     cardClass: styles.spacing,
     responsibilities: [
