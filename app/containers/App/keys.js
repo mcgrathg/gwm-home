@@ -1,0 +1,2 @@
+export const GOOGLE_ANALYTICS_KEY = 'AIzaSyDYdQFbHpN-AAQfk6TPHkkLN-Hm1nG6PCw';
+export const GOOGLE_API_KEY = 'AIzaSyAE0AGFLx8U_1H2HogxNZ4-SL15wlbw2HI';

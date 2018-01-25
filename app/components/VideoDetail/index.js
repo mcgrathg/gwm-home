@@ -6,7 +6,7 @@
 
 import React, { PropTypes } from 'react';
 
-import ReadMore from 'containers/ReadMore';
+import ReadMore from 'components/ReadMore';
 import LoadingIndicator from 'components/LoadingIndicator';
 import H2 from 'components/H2';
 import Card from 'components/Card';

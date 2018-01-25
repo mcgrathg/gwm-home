@@ -1,31 +1,33 @@
 /**
  *
- * App.react.js
+ * App
  *
  * This component is the skeleton around the actual pages, and should only
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-import Helmet from 'react-helmet';
+import { compose } from 'redux';
 import * as Sticky from 'react-stickynode';
 
-import { setWindowWidth } from './actions';
+import injectReducer from 'utils/injectReducer';
 
-// Import the CSS reset, which HtmlWebpackPlugin transfers to the build folder
-import 'sanitize.css/sanitize.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
-import './globals.css';
-
+import HomePage from 'containers/HomePage/Loadable';
+import ResumePage from 'containers/ResumePage/Loadable';
+import ContactPage from 'containers/ContactPage/Loadable';
+import NotificationContainer from 'containers/NotificationContainer';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import NotificationContainer from 'containers/NotificationContainer';
+
+import { setWindowWidth } from './actions';
+import reducer from './reducer';
 
 import styles from './styles.css';
 
 export class App extends Component {
-  // eslint-disable-line react/prefer-stateless-function
   componentWillMount() {
     this.props.onResize();
   }
@@ -44,7 +46,7 @@ export class App extends Component {
   }
 
   render() {
-    const { children, isStickyEnabled } = this.props;
+    const { isStickyEnabled } = this.props;
 
     return (
       <div>
@@ -58,7 +60,9 @@ export class App extends Component {
           <Header />
         </Sticky>
         <div className={styles.wrapper}>
-          {React.Children.toArray(children)}
+          <HomePage />
+          <ResumePage />
+          <ContactPage />
           <Footer />
         </div>
       </div>
@@ -71,7 +75,6 @@ App.defaultProps = {
 };
 
 App.propTypes = {
-  children: PropTypes.node,
   onResize: PropTypes.func,
   isStickyEnabled: PropTypes.bool,
 };
@@ -79,8 +82,11 @@ App.propTypes = {
 export function mapDispatchToProps(dispatch) {
   return {
     onResize: () => dispatch(setWindowWidth(window.innerWidth)),
-    dispatch,
   };
 }
 
-export default connect(null, mapDispatchToProps)(App);
+const withConnect = connect(null, mapDispatchToProps);
+
+const withReducer = injectReducer({ key: 'app', reducer });
+
+export default compose(withReducer, withConnect)(App);

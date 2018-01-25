@@ -15,14 +15,11 @@
  *    }
  */
 
- import {
-   SET_WINDOW_WIDTH,
- } from './constants';
+import { SET_WINDOW_WIDTH } from './constants';
 
-
- export function setWindowWidth(width) {
-   return {
-     type: SET_WINDOW_WIDTH,
-     width,
-   };
- }
+export function setWindowWidth(width) {
+  return {
+    type: SET_WINDOW_WIDTH,
+    width,
+  };
+}

@@ -5,7 +5,6 @@
  */
 
 import React, { Component } from 'react';
-import { skills, work, education } from './text';
 import classNames from 'classnames';
 import { Button } from 'react-bootstrap';
 
@@ -17,8 +16,10 @@ import Skills from 'components/Skills';
 import Timeline from 'components/Timeline';
 import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
-import styles from './styles.css';
 import btnStyle from 'containers/App/buttons.css';
+
+import styles from './styles.css';
+import { skills, work, education } from './text';
 
 export class ResumePage extends Component {
   render() {

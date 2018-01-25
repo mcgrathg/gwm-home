@@ -1,39 +1,63 @@
 /**
-*
-* NavLink
-*
-*/
+ *
+ * NavLink
+ *
+ */
 
-import React, { PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link, IndexLink } from 'react-router';
 
 import defaultStyles from './styles.css';
 
-function NavLink({ text, to, isIndex, className, icon, currentPath, styles = defaultStyles }) {
-  const isActive = to === currentPath;
-  const linkProps = {
-    className: classNames(styles.navLink, isActive ? styles.activeLink : styles.inactiveLink),
-    to,
-  };
+class NavLink extends PureComponent {
+  render() {
+    const {
+      text,
+      to,
+      isIndex,
+      className,
+      icon,
+      currentPath = '',
+      styles = defaultStyles,
+    } = this.props;
 
-  const link = (
-    isIndex ?
-      <IndexLink {...linkProps}>{icon}{text}</IndexLink> :
-      <Link {...linkProps}>{icon}{text}</Link>
-  );
+    return <div>{'Nav Link'}</div>;
 
-  return (
-    <span className={classNames(className, styles.navListItem, 'header')}>
-      {link}
-    </span>
-  );
+    // const isActive = to === currentPath;
+    // const linkProps = {
+    //   className: classNames(
+    //     styles.navLink,
+    //     isActive ? styles.activeLink : styles.inactiveLink
+    //   ),
+    //   to,
+    // };
+
+    // const link = isIndex ? (
+    //   <IndexLink {...linkProps}>
+    //     {icon}
+    //     {text}
+    //   </IndexLink>
+    // ) : (
+    //   <Link {...linkProps}>
+    //     {icon}
+    //     {text}
+    //   </Link>
+    // );
+
+    // return (
+    //   <span className={classNames(className, styles.navListItem, 'header')}>
+    //     {link}
+    //   </span>
+    // );
+  }
 }
 
 NavLink.propTypes = {
   to: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  currentPath: PropTypes.string.isRequired,
+  currentPath: PropTypes.string,
   className: PropTypes.string,
   isIndex: PropTypes.bool,
   styles: PropTypes.object,

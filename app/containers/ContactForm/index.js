@@ -7,17 +7,27 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { Form } from 'formsy-react';
 import { ParentContextMixin, Input, Textarea } from 'formsy-react-components';
 import { Button } from 'react-bootstrap';
 
+import injectReducer from 'utils/injectReducer';
+import injectSaga from 'utils/injectSaga';
+
+import H2 from 'components/H2';
+import HeaderIcon from 'components/HeaderIcon';
+import LoadingIndicator from 'components/LoadingIndicator';
+
+import btnStyle from 'containers/App/buttons.css';
+
 import {
-  selectEmail,
-  selectError,
-  selectSending,
-  selectSent,
-  selectFormValidity,
+  makeSelectEmail,
+  makeSelectError,
+  makeSelectSending,
+  makeSelectSent,
+  makeSelectFormValidity,
 } from './selectors';
 
 import {
@@ -26,11 +36,8 @@ import {
   messageSentAcknowledged,
 } from './actions';
 
-import H2 from 'components/H2';
-import HeaderIcon from 'components/HeaderIcon';
-import LoadingIndicator from 'components/LoadingIndicator';
-
-import btnStyle from 'containers/App/buttons.css';
+import reducer from './reducer';
+import saga from './sagas';
 import styles from './styles.css';
 
 export class ContactForm extends Component {
@@ -74,7 +81,7 @@ export class ContactForm extends Component {
       errorMessage = (
         <div className={classNames(styles.error, 'pull-left')}>
           <h4>Errors</h4>
-          <ul>{error.map((msg, idx) => <li key={idx}>{msg}</li>)}</ul>
+          <ul>{error.map((msg) => <li key={msg}>{msg}</li>)}</ul>
         </div>
       );
     }
@@ -161,11 +168,11 @@ ContactForm.propTypes = {
 };
 
 const mapStateToProps = createStructuredSelector({
-  email: selectEmail(),
-  error: selectError(),
-  isSending: selectSending(),
-  sent: selectSent(),
-  isFormValid: selectFormValidity(),
+  email: makeSelectEmail(),
+  error: makeSelectError(),
+  isSending: makeSelectSending(),
+  sent: makeSelectSent(),
+  isFormValid: makeSelectFormValidity(),
 });
 
 function mapDispatchToProps(dispatch) {
@@ -177,4 +184,9 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+
+const withReducer = injectReducer({ key: 'contact', reducer });
+const withSaga = injectSaga({ key: 'contact', saga });
+
+export default compose(withReducer, withSaga, withConnect)(ContactForm);

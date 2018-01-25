@@ -1,13 +1,13 @@
 /**
-*
-* FooterNavigation
-*
-*/
+ *
+ * FooterNavigation
+ *
+ */
 
 import React from 'react';
 import classNames from 'classnames';
 
-import Navigation from 'containers/Navigation';
+import Navigation from 'components/Navigation';
 
 import styles from './styles.css';
 import linkStyles from './linkStyles.css';
@@ -15,7 +15,11 @@ import linkStyles from './linkStyles.css';
 function FooterNavigation() {
   const icon = <i className={classNames('fa fa-angle-right', styles.icon)} />;
   return (
-    <Navigation className={styles.footerNavigation} linkStyles={linkStyles} icon={icon} />
+    <Navigation
+      className={styles.footerNavigation}
+      linkStyles={linkStyles}
+      icon={icon}
+    />
   );
 }
 

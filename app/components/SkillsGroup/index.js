@@ -12,6 +12,7 @@ function SkillsGroup({ group }) {
   return (
     <div className={styles.skillsGroup2}>
       {group.map(({ items, sizes }, idx) => (
+        // eslint-disable-next-line react/no-array-index-key
         <div key={idx} className={styles.col}>
           <div className={styles.listGroup}>
             {items.map((skill) => (

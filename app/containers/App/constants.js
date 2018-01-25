@@ -14,4 +14,5 @@ export const SMALL_DEVICE_WIDTH = 769;
 export const MIN_STICKY_WIDTH = SMALL_DEVICE_WIDTH;
 export const MAX_READ_MORE_WIDTH = SMALL_DEVICE_WIDTH;
 export const RESUME_DOWNLOAD_URL = 'Gregory-W-McGrath-Resume.pdf';
-export const YOUTUBE_PLAYLIST = 'https://www.youtube.com/playlist?list=PL-Lb0fMOtv2Ca4fcxioO4pWeQX3V0_ZBS';
+export const YOUTUBE_PLAYLIST =
+  'https://www.youtube.com/playlist?list=PL-Lb0fMOtv2Ca4fcxioO4pWeQX3V0_ZBS';

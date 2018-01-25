@@ -4,24 +4,22 @@
  *
  */
 
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { selectWindowWidth } from 'containers/App/selectors';
+import { makeSelectWindowWidth } from 'containers/App/selectors';
+
+import IntroductionCard from './introductionCard';
 
 import styles from './styles.css';
-import IntroductionCard from './introductionCard';
-import ResumePage from 'containers/ResumePage';
-import ContactPage from 'containers/ContactPage';
 
-export class HomePage extends Component {
+export class HomePage extends PureComponent {
   render() {
     return (
       <div className={styles.homePage}>
         <IntroductionCard windowWidth={this.props.windowWidth} />
-        <ResumePage />
-        <ContactPage />
       </div>
     );
   }
@@ -32,13 +30,7 @@ HomePage.propTypes = {
 };
 
 const mapStateToProps = createStructuredSelector({
-  windowWidth: selectWindowWidth(),
+  windowWidth: makeSelectWindowWidth(),
 });
 
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps)(HomePage);

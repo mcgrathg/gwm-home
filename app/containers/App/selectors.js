@@ -4,49 +4,24 @@
 
 import { createSelector } from 'reselect';
 
-const selectGlobal = () => (state) => state.get('global');
+const selectApp = (state) => state.get('app');
 
-const selectLocationState = () => {
-  let prevRoutingState;
-  let prevRoutingStateJS;
+const makeSelectWindowWidth = () =>
+  createSelector(selectApp, (appState) => appState.get('windowWidth'));
 
-  return (state) => {
-    const routingState = state.get('route'); // or state.route
+const makeSelectIsStickyEnabled = () =>
+  createSelector(selectApp, (appState) => appState.get('isStickEnabled'));
 
-    if (!routingState.equals(prevRoutingState)) {
-      prevRoutingState = routingState;
-      prevRoutingStateJS = routingState.toJS();
-    }
+const makeSelectTruncateLongText = () =>
+  createSelector(selectApp, (appState) => appState.get('truncateLongText'));
 
-    return prevRoutingStateJS;
-  };
-};
-
-const selectWindowWidth = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.get('windowWidth')
-);
-
-const selectIsStickyEnabled = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.get('isStickyEnabled')
-);
-
-const selectTruncateLongText = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.get('truncateLongText')
-);
-
-const selectIsSmallDevice = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.get('isSmallDevice')
-);
+const makeSelectIsSmallDevice = () =>
+  createSelector(selectApp, (appState) => appState.get('isSmallDevice'));
 
 export {
-  selectGlobal,
-  selectLocationState,
-  selectWindowWidth,
-  selectIsStickyEnabled,
-  selectTruncateLongText,
-  selectIsSmallDevice,
+  selectApp,
+  makeSelectWindowWidth,
+  makeSelectIsStickyEnabled,
+  makeSelectTruncateLongText,
+  makeSelectIsSmallDevice,
 };

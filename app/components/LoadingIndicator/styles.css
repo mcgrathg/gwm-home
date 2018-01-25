@@ -25,57 +25,101 @@
 }
 
 .sk-circle2 {
-  composes: skCircle;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   transform: rotate(30deg);
 }
 
 .sk-circle3 {
-  composes: skCircle;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   transform: rotate(60deg);
 }
 
 .sk-circle4 {
-  composes: skCircle;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   transform: rotate(90deg);
 }
 
 .sk-circle5 {
-  composes: skCircle;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   transform: rotate(120deg);
 }
 
 .sk-circle6 {
-  composes: skCircle;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   transform: rotate(150deg);
 }
 
 .sk-circle7 {
-  composes: skCircle;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   transform: rotate(180deg);
 }
 
 .sk-circle8 {
-  composes: skCircle;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   transform: rotate(210deg);
 }
 
 .sk-circle9 {
-  composes: skCircle;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   transform: rotate(240deg);
 }
 
 .sk-circle10 {
-  composes: skCircle;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   transform: rotate(270deg);
 }
 
 .sk-circle11 {
-  composes: skCircle;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   transform: rotate(300deg);
 }
 
 .sk-circle12 {
-  composes: skCircle;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   transform: rotate(330deg);
 }
 

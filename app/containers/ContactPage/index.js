@@ -7,7 +7,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { selectWindowWidth } from 'containers/App/selectors';
+import { makeSelectWindowWidth } from 'containers/App/selectors';
 
 import Map from 'components/Map';
 import ContactForm from 'containers/ContactForm';
@@ -17,7 +17,6 @@ import styles from './styles.css';
 const MIN_WIN_WIDTH = 767;
 
 export class ContactPage extends Component {
-  // eslint-disable-line react/prefer-stateless-function
   render() {
     const { windowWidth } = this.props;
     const mapProps = {};
@@ -45,7 +44,7 @@ ContactPage.propTypes = {
 };
 
 const mapStateToProps = createStructuredSelector({
-  windowWidth: selectWindowWidth(),
+  windowWidth: makeSelectWindowWidth(),
 });
 
 function mapDispatchToProps(dispatch) {

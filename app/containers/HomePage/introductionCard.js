@@ -3,17 +3,16 @@ import { Image, Button } from 'react-bootstrap';
 import { Link } from 'react-router';
 import classNames from 'classnames';
 
-import { intro, blurb, description } from './text';
-
 import H1 from 'components/H1';
 import H3 from 'components/H3';
-import Profile from './profile.jpg';
 import SocialBar from 'components/SocialBar';
 import Card from 'components/Card';
 import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
-
-import styles from './styles.css';
 import btnStyle from 'containers/App/buttons.css';
+
+import { intro, blurb, description } from './text';
+import Profile from './profile.jpg';
+import styles from './styles.css';
 
 const MIN_WIN_WIDTH = 750;
 
@@ -37,7 +36,7 @@ class IntroductionCard extends Component {
   getDescription() {
     return (
       <div className={styles.description}>
-        {description.map((txt, idx) => <p key={idx}>{txt}</p>)}
+        {description.map((txt) => <p key={txt}>{txt}</p>)}
       </div>
     );
   }
@@ -99,15 +98,22 @@ class IntroductionCard extends Component {
 
   render() {
     return (
-      <Card className={styles.introductionCard}>
-        <div className="container">
-          {MIN_WIN_WIDTH <= this.props.windowWidth
-            ? this.renderLargeCard()
-            : this.renderSmallCard()}
-          {this.getLinks()}
-        </div>
+      <Card>
+        {MIN_WIN_WIDTH <= this.props.windowWidth
+          ? this.renderLargeCard()
+          : this.renderSmallCard()}
       </Card>
     );
+    // return (
+    //   <Card className={styles.introductionCard}>
+    //     <div className="container">
+    //       {MIN_WIN_WIDTH <= this.props.windowWidth
+    //         ? this.renderLargeCard()
+    //         : this.renderSmallCard()}
+    //       {this.getLinks()}
+    //     </div>
+    //   </Card>
+    // );
   }
 }
 

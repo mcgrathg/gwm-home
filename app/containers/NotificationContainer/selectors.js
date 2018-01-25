@@ -1,15 +1,13 @@
 import { createSelector } from 'reselect';
 
 /**
- * Direct selector to the videos container state domain
+ * Direct selector to the notifications state domain
  */
-const selectNotifications = () => (state) => state.get('notifications');
+const selectNotifications = (state) => state.get('notifications');
 
-const selectNotification = () => createSelector(
-  selectNotifications(),
-  (notifState) => notifState.get('notification')
-);
+const makeSelectNotification = () =>
+  createSelector(selectNotifications, (notifState) =>
+    notifState.get('notification')
+  );
 
-export {
-  selectNotification,
-};
+export { selectNotifications, makeSelectNotification };

@@ -4,17 +4,19 @@
  *
  */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import NotificationSystem from 'react-notification-system';
 
-import {
-  selectNotification,
-} from './selectors';
+import injectReducer from 'utils/injectReducer';
 
-export class NotificationContainer extends Component { // eslint-disable-line react/prefer-stateless-function
+import { makeSelectNotification } from './selectors';
+import reducer from './reducer';
 
+export class NotificationContainer extends Component {
   componentWillReceiveProps({ notification }) {
     const message = notification.get('message');
     const level = notification.get('level');
@@ -28,11 +30,7 @@ export class NotificationContainer extends Component { // eslint-disable-line re
   }
 
   render() {
-    return (
-      <NotificationSystem
-        ref={(c) => (this.notificationSystem = c)}
-      />
-    );
+    return <NotificationSystem ref={(c) => (this.notificationSystem = c)} />;
   }
 }
 
@@ -41,7 +39,11 @@ NotificationContainer.propTypes = {
 };
 
 const mapStateToProps = createStructuredSelector({
-  notification: selectNotification(),
+  notification: makeSelectNotification(),
 });
 
-export default connect(mapStateToProps)(NotificationContainer);
+const withConnect = connect(mapStateToProps);
+
+const withReducer = injectReducer({ key: 'notifications', reducer });
+
+export default compose(withReducer, withConnect)(NotificationContainer);

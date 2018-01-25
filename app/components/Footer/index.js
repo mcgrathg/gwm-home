@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import SocialBar from 'components/SocialBar';
 import FooterNavigation from 'components/FooterNavigation';
 
-import textStyle from '../../responsive-text-formatting.css';
+import textStyle from 'containers/App/responsive-text-formatting.css';
 import styles from './styles.css';
 
 function Footer() {

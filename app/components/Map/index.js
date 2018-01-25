@@ -1,16 +1,13 @@
 /**
-*
-* Map
-*
-*/
+ *
+ * Map
+ *
+ */
 
 import React, { PropTypes } from 'react';
 import GoogleMap from 'google-map-react';
 
-
-import {
-  GOOGLE_API_KEY,
-} from 'containers/App/keys';
+import { GOOGLE_API_KEY } from 'containers/App/keys';
 
 import fancyMapStyles from './fancyMapStyles.json';
 

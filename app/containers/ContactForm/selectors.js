@@ -7,44 +7,34 @@ import { createSelector } from 'reselect';
 /**
  * Direct selector to the contact form state domain
  */
-const selectContactForm = () => (state) => state.get('contactForm');
+const selectContact = (state) => state.get('contact');
 
-const selectSending = () => createSelector(
-  selectContactForm(),
-  (contactState) => contactState.get('sending')
-);
+const makeSelectSending = () =>
+  createSelector(selectContact, (contactState) => contactState.get('sending'));
 
-const selectSent = () => createSelector(
-  selectContactForm(),
-  (contactState) => contactState.get('sent')
-);
+const makeSelectSent = () =>
+  createSelector(selectContact, (contactState) => contactState.get('sent'));
 
-const selectError = () => createSelector(
-  selectContactForm(),
-  (contactState) => contactState.get('error')
-);
+const makeSelectError = () =>
+  createSelector(selectContact, (contactState) => contactState.get('error'));
 
-const selectEmail = () => createSelector(
-  selectContactForm(),
-  (contactState) => contactState.get('email')
-);
+const makeSelectEmail = () =>
+  createSelector(selectContact, (contactState) => contactState.get('email'));
 
-const selectFormData = () => createSelector(
-  selectContactForm(),
-  (contactState) => contactState.get('formData')
-);
+const makeSelectFormData = () =>
+  createSelector(selectContact, (contactState) => contactState.get('formData'));
 
-const selectFormValidity = () => createSelector(
-  selectContactForm(),
-  (contactState) => contactState.get('isFormValid')
-);
-
+const makeSelectFormValidity = () =>
+  createSelector(selectContact, (contactState) =>
+    contactState.get('isFormValid')
+  );
 
 export {
-  selectEmail,
-  selectError,
-  selectSending,
-  selectSent,
-  selectFormData,
-  selectFormValidity,
+  selectContact,
+  makeSelectEmail,
+  makeSelectError,
+  makeSelectSending,
+  makeSelectSent,
+  makeSelectFormData,
+  makeSelectFormValidity,
 };
