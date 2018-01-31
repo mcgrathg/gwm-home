@@ -18,6 +18,7 @@
   font-size: large;
   line-height: 1;
   height: 38px;
+  transition: all 0.3s ease-in-out;
 
   @media phone {
     font-size: 4vw;
@@ -38,9 +39,8 @@
     }
   }
 
-  &.inactiveLink {
+  &:not(.activeLink) {
     border-bottom: 2px solid transparent;
-    transition: transform 0.3s, border-color 0.3s ease-in-out;
 
     &:hover {
       border-bottom-color: accent;

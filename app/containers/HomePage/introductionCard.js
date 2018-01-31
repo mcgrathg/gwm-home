@@ -98,22 +98,15 @@ class IntroductionCard extends Component {
 
   render() {
     return (
-      <Card>
-        {MIN_WIN_WIDTH <= this.props.windowWidth
-          ? this.renderLargeCard()
-          : this.renderSmallCard()}
+      <Card className={styles.introductionCard}>
+        <div className="container">
+          {MIN_WIN_WIDTH <= this.props.windowWidth
+            ? this.renderLargeCard()
+            : this.renderSmallCard()}
+          {this.getLinks()}
+        </div>
       </Card>
     );
-    // return (
-    //   <Card className={styles.introductionCard}>
-    //     <div className="container">
-    //       {MIN_WIN_WIDTH <= this.props.windowWidth
-    //         ? this.renderLargeCard()
-    //         : this.renderSmallCard()}
-    //       {this.getLinks()}
-    //     </div>
-    //   </Card>
-    // );
   }
 }
 

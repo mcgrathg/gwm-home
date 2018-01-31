@@ -42,9 +42,7 @@ class NavLink extends PureComponent {
           active={styles.activeLink}
           className={classNames(styles.navLink, styles.inactiveLink)}
           to={to}
-          spy
-          smooth
-          hashSpy
+          offsetTop={85}
         >
           {text}
         </Link>

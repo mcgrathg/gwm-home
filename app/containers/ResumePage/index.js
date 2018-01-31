@@ -7,6 +7,10 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { Button } from 'react-bootstrap';
+// import { OverPack } from 'rc-scroll-anim';
+// import QueueAnim from 'rc-queue-anim';
+// import TweenOne from 'rc-tween-one';
+// import Animate from 'rc-animate';
 
 import { RESUME_DOWNLOAD_URL } from 'containers/App/constants';
 
