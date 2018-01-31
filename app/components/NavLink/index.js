@@ -7,23 +7,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Link, IndexLink } from 'react-router';
+import { Link } from 'rc-scroll-anim';
 
 import defaultStyles from './styles.css';
 
 class NavLink extends PureComponent {
   render() {
-    const {
-      text,
-      to,
-      isIndex,
-      className,
-      icon,
-      currentPath = '',
-      styles = defaultStyles,
-    } = this.props;
-
-    return <div>{'Nav Link'}</div>;
+    const { text, to, className, styles = defaultStyles } = this.props;
 
     // const isActive = to === currentPath;
     // const linkProps = {
@@ -46,11 +36,20 @@ class NavLink extends PureComponent {
     //   </Link>
     // );
 
-    // return (
-    //   <span className={classNames(className, styles.navListItem, 'header')}>
-    //     {link}
-    //   </span>
-    // );
+    return (
+      <span className={classNames(className, styles.navListItem, 'header')}>
+        <Link
+          active={styles.activeLink}
+          className={classNames(styles.navLink, styles.inactiveLink)}
+          to={to}
+          spy
+          smooth
+          hashSpy
+        >
+          {text}
+        </Link>
+      </span>
+    );
   }
 }
 

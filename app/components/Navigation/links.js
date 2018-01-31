@@ -7,15 +7,14 @@
 export const links = [
   {
     text: 'Home',
-    to: '/',
-    isIndex: true,
+    to: 'home',
   },
   {
     text: 'Experience',
-    to: '/#experience',
+    to: 'experience',
   },
   {
     text: 'Contact',
-    to: '/#contact',
+    to: 'contact',
   },
 ];

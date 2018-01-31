@@ -24,7 +24,7 @@ import { skills, work, education } from './text';
 export class ResumePage extends Component {
   render() {
     return (
-      <article className={styles.resumePage} id="experience">
+      <article className={styles.resumePage}>
         <div className={classNames('container', styles.wrapper)}>
           <section className={styles.technicalSkills}>
             <H2>

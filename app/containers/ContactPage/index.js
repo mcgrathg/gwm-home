@@ -27,7 +27,7 @@ export class ContactPage extends Component {
     }
 
     return (
-      <article className={styles.contactPage} id="contact">
+      <article className={styles.contactPage}>
         <div className={styles.map}>
           <Map zoom={14} {...mapProps} />
           <div className="container">

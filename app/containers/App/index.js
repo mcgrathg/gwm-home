@@ -8,9 +8,11 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Element } from 'rc-scroll-anim';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
 import * as Sticky from 'react-stickynode';
 
 import injectReducer from 'utils/injectReducer';
@@ -22,11 +24,11 @@ import NotificationContainer from 'containers/NotificationContainer';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
+import { makeSelectIsStickyEnabled } from './selectors';
 import { setWindowWidth } from './actions';
 import reducer from './reducer';
 
 import styles from './styles.css';
-
 export class App extends Component {
   componentWillMount() {
     this.props.onResize();
@@ -60,9 +62,15 @@ export class App extends Component {
           <Header />
         </Sticky>
         <div className={styles.wrapper}>
-          <HomePage />
-          <ResumePage />
-          <ContactPage />
+          <Element id="home">
+            <HomePage />
+          </Element>
+          <Element id="experience">
+            <ResumePage />
+          </Element>
+          <Element id="contact">
+            <ContactPage />
+          </Element>
           <Footer />
         </div>
       </div>
@@ -79,13 +87,17 @@ App.propTypes = {
   isStickyEnabled: PropTypes.bool,
 };
 
+const mapStateToProps = createStructuredSelector({
+  isStickyEnabled: makeSelectIsStickyEnabled,
+});
+
 export function mapDispatchToProps(dispatch) {
   return {
     onResize: () => dispatch(setWindowWidth(window.innerWidth)),
   };
 }
 
-const withConnect = connect(null, mapDispatchToProps);
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
 const withReducer = injectReducer({ key: 'app', reducer });
 

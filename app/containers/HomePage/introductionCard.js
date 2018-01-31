@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Image, Button } from 'react-bootstrap';
-import { Link } from 'react-router';
+import { Link } from 'rc-scroll-anim';
 import classNames from 'classnames';
 
 import H1 from 'components/H1';
@@ -44,7 +44,7 @@ class IntroductionCard extends Component {
   getLinks() {
     return (
       <CenteredButtonToolbar>
-        <Link to="/#contact">
+        <Link to="contact">
           <Button className={btnStyle.accentBtn}>Message Me</Button>
         </Link>
       </CenteredButtonToolbar>
