@@ -1,27 +1,28 @@
 # gwm-home
-Greg McGrath's Home Page (<a href="mcgrathg.com">mcgrathg.com</a>)
 
-This site is written with: 
-<ul>
-<li>React.js</li>
-<li>Redux</li>
-<li><a href="https://github.com/css-modules/css-modules">CSS Modules</a></li>
-<li><a href="https://github.com/ReactTraining/react-router">React Router</a></li>
-<li><a href="https://github.com/yelouafi/redux-saga">Redux Sagas</a></li>
-<li>Bootstrap</li>
-<li>AJAX</li>
-<li>Google Maps &amp; YouTube</li>
-</ul>
+Greg McGrath's Home Page ([mcgrathg.com](mcgrathg.com))
 
-It uses <a href=https://github.com/mxstbr/react-boilerplate>React Boilerplate</a> as its initial boilerplate giving it great features like:
-<ul>
-<li>Hot Reloading</li>
-<li>ESNext</li>
-<li>Babel</li>
-<li>PostCSS</li>
-<li>Autoprefixer</li>
-<li>Offline First</li>
-<li>ServiceWorker</li>
-<li>FontFaceObserver</li>
-<li>PageSpeed Insights</li>
-</ul>
+This site is written with:
+
+* React.js
+* Redux
+* [CSS Modules](https://github.com/css-modules/css-modules)
+* [React Router](https://github.com/ReactTraining/react-router)
+* [Redux Sagas](https://github.com/yelouafi/redux-saga)
+* Bootstrap
+* AJAX
+* Google Maps & YouTube
+
+It uses [React Boilerplate](https://github.com/mxstbr/react-boilerplate) as its initial boilerplate giving it great features like:
+
+* Hot Reloading
+* ESNext
+* Babel
+* PostCSS
+* Autoprefixer
+* Offline First
+* ServiceWorker
+* FontFaceObserver
+* PageSpeed Insights
+
+It uses a [SendGrid proxy app](https://github.com/sendgrid/sendgridjs) deployed to Heroku to allow a website visitor to contact me through email.
