@@ -2,7 +2,7 @@
 
 Greg McGrath's Home Page ([mcgrathg.com](mcgrathg.com))
 
-This site is written with: 
+This site is written with:
 
 * React.js
 * Redux
@@ -24,3 +24,5 @@ It uses [React Boilerplate](https://github.com/mxstbr/react-boilerplate) as its 
 * ServiceWorker
 * FontFaceObserver
 * PageSpeed Insights
+
+It uses a [SendGrid proxy app](https://github.com/sendgrid/sendgridjs) deployed to Heroku to allow a website visitor to contact me through email.
