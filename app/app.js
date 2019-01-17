@@ -22,10 +22,10 @@ import 'file?name=[name].[ext]!./public/Gregory-W-McGrath-Resume.pdf';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
+import {/*  applyRouterMiddleware, */ Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import FontFaceObserver from 'fontfaceobserver';
-import { useScroll } from 'react-router-scroll';
+// import { useScroll } from 'react-router-scroll';
 import configureStore from './store';
 import ReactGA from 'react-ga';
 
@@ -110,11 +110,11 @@ const render = (messages) => {
         <Router
           history={history}
           routes={rootRoute}
-          render={
+          // render={
             // Scroll to top when going to a new page, imitating default browser
             // behaviour
-            applyRouterMiddleware(useScroll())
-          }
+            // applyRouterMiddleware(useScroll())
+          // }
           onUpdate={() => {
             logPageView();
             hashLinkScroll();
