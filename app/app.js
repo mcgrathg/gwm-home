@@ -72,8 +72,6 @@ const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: selectLocationState(),
 });
 
-import { GOOGLE_ANALYTICS_KEY } from 'containers/App/keys';
-
 // Set up the router, wrapping all Routes in the App component
 import App from 'containers/App';
 import createRoutes from './routes';
@@ -82,7 +80,7 @@ const rootRoute = {
   childRoutes: createRoutes(store),
 };
 
-ReactGA.initialize(GOOGLE_ANALYTICS_KEY);
+ReactGA.initialize(process.env.GOOGLE_ANALYTICS_KEY);
 
 function logPageView() {
   ReactGA.set({ page: window.location.pathname });

@@ -67,9 +67,13 @@ module.exports = (options) => ({
     // drop any unreachable code.
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production'),
+        GOOGLE_API_KEY: JSON.stringify(process.env.GOOGLE_API_KEY),
+        GOOGLE_ANALYTICS_KEY: JSON.stringify(process.env.GOOGLE_ANALYTICS_KEY),
       },
     }),
+
+
   ]),
   postcss: () => [
     postcssFocus(), // Add a :focus to every :hover
