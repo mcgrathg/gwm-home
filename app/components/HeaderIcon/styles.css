@@ -1,8 +1,8 @@
-/* import app colors... */
-@value heading, accent, subheading, light, medium, darkmedium, lightmatte, matte, dark from 'containers/App/colors.css';
+@value colors: 'containers/App/colors.css';
+@value accent from colors;
 
 .headerIcon {
-  margin-right: 2vw;
+  margin: 10px 10px 10px 0;
 }
 
 .backgroundIcon {

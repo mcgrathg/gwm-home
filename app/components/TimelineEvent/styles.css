@@ -95,6 +95,11 @@
 /************************************************
  *               Heading Config                 *
  ************************************************/
+ .header {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+ }
+
 .subheading {
   margin-bottom: 0;
   margin-left: 0 !important;
@@ -118,6 +123,8 @@
   border-color: medium;
   border-style: solid;
   border-width: 0 3px 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 /* End Body */
@@ -183,6 +190,18 @@
 
 .timelineEvent:hover .body {
   border-color: subheading !important;
+}
+
+.timelineEvent .header {
+  transition: background-color 0.5s;
+}
+
+.timelineEvent:hover .header {
+  background-color: subheading;
+ }
+
+.timelineEvent > .badge a {
+  transition: color 0.5s;
 }
 
 .timelineEvent:hover > .badge a {

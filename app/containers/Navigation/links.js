@@ -9,14 +9,13 @@ export const links = [
     text: 'Home',
     to: '/',
     isIndex: true,
-  }, {
-    text: 'Resume',
-    to: '/resume',
-  }, {
-    text: 'Examples',
-    to: '/examples',
-  }, {
+  },
+  {
+    text: 'Experience',
+    to: '/#experience',
+  },
+  {
     text: 'Contact',
-    to: '/contact',
+    to: '/#contact',
   },
 ];

@@ -24,9 +24,9 @@ function NavLink({ text, to, isIndex, className, icon, currentPath, styles = def
   );
 
   return (
-    <li className={classNames(className, styles.navListItem, 'header')}>
+    <span className={classNames(className, styles.navListItem, 'header')}>
       {link}
-    </li>
+    </span>
   );
 }
 

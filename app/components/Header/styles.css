@@ -1,32 +1,32 @@
 /* import app colors... */
-@value heading, accent, subheading, light, medium, darkmedium, lightmatte, matte, dark from 'containers/App/colors.css';
-
-/* breakpoints */
-@value xs-max, sm-min, sm-max, md-min, md-max, lg-min, xs, sm, md, lg from 'containers/App/breakpoints.css';
+@value light from 'containers/App/colors.css';
+@value twoRowWidth: (max-width: 690px);
 
 .header {
-  background-color: heading;
-  overflow: hidden;
+  background-color: light;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media twoRowWidth {
+    justify-content: center;
+  }
+
+  align-items: center;
 }
 
 .logo {
   margin: 5px 0;
 }
 
-@media xs {
-  .logo {
-    display: block;
-    margin: 5px auto;
-  }
-}
+.navigation {
+  flex: 1 420px;
+  justify-content: flex-end;
 
-.navGroup {
-  margin-bottom: 0 !important;
-  text-align: center;
-}
-
-@media sm-min {
-  .navGroup {
-    float: right !important;
+  @media twoRowWidth {
+    justify-content: center;
   }
 }

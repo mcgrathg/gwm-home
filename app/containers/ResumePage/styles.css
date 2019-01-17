@@ -1,9 +1,12 @@
-/* import app colors... */
-@value heading, accent, subheading, light, medium, darkmedium, lightmatte, matte, dark from 'containers/App/colors.css';
+@value colors: 'containers/App/colors.css';
+@value light from colors;
+@value secondary from colors;
+@value secondaryText from colors;
+@value accent from colors;
 
 .introCard {
-  padding: 30px 0 0;
-  background: medium;
+  padding: 30px 0;
+  background: secondary;
 }
 
 .introCard p {
@@ -11,14 +14,13 @@
   margin: 32px 0 0;
 }
 
-.stickyButtons > div {
-  background: medium;
-  padding: 15px 0;
+.stickyButtons {
+  background: light;
+  padding-bottom: 10px;
 }
 
-.stickyButtons {
-  background: appBackground;
-  padding-bottom: 10px;
+.stickyButtons > div {
+  background: secondary;
 }
 
 .workExperience {
@@ -35,4 +37,16 @@ section:not(:first-child) {
 
 .centeredToolbarRow {
   min-width: 30%;
+}
+
+.downloadBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90px;
+  justify-content: space-around;
+}
+
+.spacing {
+  margin-top: 50px;
 }

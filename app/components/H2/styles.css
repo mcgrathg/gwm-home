@@ -1,10 +1,12 @@
 /* import app colors... */
-@value heading, accent, subheading, light, medium, darkmedium, lightmatte, matte, dark from 'containers/App/colors.css';
+@value dark from 'containers/App/colors.css';
 
 .heading2 {
-  margin-bottom: 15px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
 .hasBorder {
-  border-bottom: 2px solid matte;
+  border-bottom: 2px solid dark;
 }

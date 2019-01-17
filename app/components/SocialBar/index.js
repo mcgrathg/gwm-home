@@ -1,8 +1,8 @@
 /**
-*
-* SocialBar
-*
-*/
+ *
+ * SocialBar
+ *
+ */
 
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
@@ -27,11 +27,10 @@ function SocialBar({ ...props }) {
   ));
 
   return (
-    <div
-      className={classNames(styles.socialBar, className)}
-      {...rest}
-    >
-      <ul className={classNames(styles.socialGroup, 'text-center', 'list-inline')}>
+    <div className={classNames(styles.socialBar, className)} {...rest}>
+      <ul
+        className={classNames(styles.socialGroup, 'text-center', 'list-inline')}
+      >
         {socialButtons}
       </ul>
     </div>

@@ -18,7 +18,8 @@
 }
 
 :global(body.fontLoaded .header) {
-  font-family: 'Libre Franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: bold;
 }
 
 :global(#app) {
@@ -28,27 +29,19 @@
 }
 
 :global(button) {
-  box-shadow: shadow;
   transition: all 0.2s ease-in-out;
 }
 
 :global(button:hover),
 :global(.btn:hover) {
-  box-shadow: shadowHover;
   transform: scale(1.05);
 }
 
 :global(.btn) {
-  border-radius: 15px !important;
   border-width: 2px !important;
   padding: 6px 20px !important;
   font-weight: bold !important;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   transition: all 0.2s ease-in-out;
-}
-
-:global(.btn:focus) {
-  outline-style: none !important;
 }
 
 :global(.btn:active),

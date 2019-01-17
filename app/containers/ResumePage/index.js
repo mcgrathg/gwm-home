@@ -4,77 +4,26 @@
  *
  */
 
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import Helmet from 'react-helmet';
-import { header, skills, work, education } from './text';
+import React, { Component } from 'react';
+import { skills, work, education } from './text';
 import classNames from 'classnames';
-import * as Sticky from 'react-stickynode';
-import { LinkContainer } from 'react-router-bootstrap';
 import { Button } from 'react-bootstrap';
 
-import {
-  RESUME_DOWNLOAD_URL,
-} from 'containers/App/constants';
-
-import {
-  selectIsStickyEnabled,
-} from 'containers/App/selectors';
+import { RESUME_DOWNLOAD_URL } from 'containers/App/constants';
 
 import H2 from 'components/H2';
 import HeaderIcon from 'components/HeaderIcon';
 import Skills from 'components/Skills';
 import Timeline from 'components/Timeline';
-import SocialBar from 'components/SocialBar';
 import CenteredButtonToolbar from 'components/CenteredButtonToolbar';
 
 import styles from './styles.css';
 import btnStyle from 'containers/App/buttons.css';
 
-export class ResumePage extends Component { // eslint-disable-line react/prefer-stateless-function
+export class ResumePage extends Component {
   render() {
-    const { isStickyEnabled } = this.props;
-
     return (
-      <article className={styles.resumePage}>
-        <Helmet
-          title={header.title}
-          meta={[
-            { name: 'description', content: 'Greg McGrath\'s Resume' },
-          ]}
-        />
-        <section>
-          <div className={styles.introCard}>
-            <div className="container">
-              <SocialBar className={styles.social} />
-              <p className="lead">{header.intro}</p>
-            </div>
-          </div>
-          <Sticky
-            enabled={isStickyEnabled}
-            top={'.header'}
-            innerZ={2500}
-          >
-            <div className={styles.stickyButtons}>
-              <div>
-                <CenteredButtonToolbar>
-                  <Button
-                    className={btnStyle.resumeBtn}
-                    href={RESUME_DOWNLOAD_URL}
-                    target="_blank"
-                  >
-                    Download Resume
-                  </Button>
-                  <LinkContainer to="/contact">
-                    <Button className={btnStyle.contactBtn}>Contact Me</Button>
-                  </LinkContainer>
-
-                </CenteredButtonToolbar>
-              </div>
-            </div>
-          </Sticky>
-        </section>
+      <article className={styles.resumePage} id="experience">
         <div className={classNames('container', styles.wrapper)}>
           <section className={styles.technicalSkills}>
             <H2>
@@ -98,17 +47,24 @@ export class ResumePage extends Component { // eslint-disable-line react/prefer-
             <Timeline events={education} />
           </section>
         </div>
+        <section className={styles.introCard}>
+          <CenteredButtonToolbar>
+            <Button
+              className={classNames(
+                btnStyle.accentGhostBtn,
+                styles.downloadBtn
+              )}
+              href={RESUME_DOWNLOAD_URL}
+              target="_blank"
+            >
+              <i className={classNames('fa fa-download fa-2x', styles.icon)} />
+              Download Résumé
+            </Button>
+          </CenteredButtonToolbar>
+        </section>
       </article>
     );
   }
 }
 
-ResumePage.propTypes = {
-  isStickyEnabled: PropTypes.bool,
-};
-
-const mapStateToProps = createStructuredSelector({
-  isStickyEnabled: selectIsStickyEnabled(),
-});
-
-export default connect(mapStateToProps)(ResumePage);
+export default ResumePage;

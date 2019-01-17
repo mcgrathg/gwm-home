@@ -1,6 +1,10 @@
 /* breakpoints */
 @value xs-max, sm-min, sm-max, md-min, md-max, lg-min, xs, sm, md, lg from 'containers/App/breakpoints.css';
 
+.videos {
+  margin-top: 15px;
+}
+
 .row {
   margin-left: 0;
   margin-right: 0;

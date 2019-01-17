@@ -1,33 +1,9 @@
-/* import app colors... */
-@value heading, accent, subheading, light, medium, darkmedium, lightmatte, matte, dark from 'containers/App/colors.css';
+@value colors: 'containers/App/colors.css';
+@value accent from colors;
+@value light from colors;
 
-.resumeBtn,
-.resumeBtn:focus:not(:hover),
-.examplesBtn,
-.examplesBtn:focus:not(:hover),
-.defaultBtn,
-.defaultBtn:focus:not(:hover) {
-  background: transparent;
-  border-color: heading;
-  color: heading;
-}
-
-.resumeBtn:hover,
-.resumeBtn:active,
-.resumeBtn:active:hover,
-.examplesBtn:hover,
-.examplesBtn:active,
-.examplesBtn:active:hover,
-.defaultBtn:hover,
-.defaultBtn:active,
-.defaultBtn:active:hover {
-  background: heading;
-  border-color: heading;
-  color: light;
-}
-
-.contactBtn,
-.contactBtn:focus:not(:hover),
+.accentBtn,
+.accentBtn:focus:not(:hover),
 .submitBtn:not(.disabledBtn),
 .submitBtn:not(.disabledBtn):focus:not(:hover) {
   background: accent;
@@ -35,7 +11,15 @@
   color: light;
 }
 
-.contactBtn:hover,
+.accentGhostBtn,
+.accentGhostBtn:focus:not(:hover) {
+  background: transparent;
+  border-color: accent;
+  color: accent;
+}
+
+.accentBtn:hover,
+.accentGhostBtn:hover,
 .submitBtn:not(.disabledBtn):hover {
   filter: brightness(110%);
   background: accent;
@@ -43,8 +27,8 @@
   color: light;
 }
 
-.contactBtn:active,
-.contactBtn:active:hover,
+.accentBtn:active,
+.accentBtn:active:hover,
 .submitBtn:not(.disabledBtn):active,
 .submitBtn:not(.disabledBtn):active:hover {
   filter: brightness(85%);

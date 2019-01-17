@@ -22,10 +22,10 @@ import 'file?name=[name].[ext]!./public/Gregory-W-McGrath-Resume.pdf';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
+import {/*  applyRouterMiddleware, */ Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import FontFaceObserver from 'fontfaceobserver';
-import { useScroll } from 'react-router-scroll';
+// import { useScroll } from 'react-router-scroll';
 import configureStore from './store';
 import ReactGA from 'react-ga';
 
@@ -36,11 +36,14 @@ import styles from 'containers/App/styles.css';
 const googleFontObserver = new FontFaceObserver('Libre Baskerville', {});
 
 // When Google fonts are loaded, add a font-family to the body
-googleFontObserver.load().then(() => {
-  document.body.classList.add('fontLoaded');
-}, () => {
-  document.body.classList.remove(styles.fontLoaded);
-});
+googleFontObserver.load().then(
+  () => {
+    document.body.classList.add('fontLoaded');
+  },
+  () => {
+    document.body.classList.remove(styles.fontLoaded);
+  }
+);
 
 // Import i18n messages
 import { translationMessages } from './i18n';
@@ -69,9 +72,7 @@ const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: selectLocationState(),
 });
 
-import {
-  GOOGLE_ANALYTICS_KEY,
-} from 'containers/App/keys';
+import { GOOGLE_ANALYTICS_KEY } from 'containers/App/keys';
 
 // Set up the router, wrapping all Routes in the App component
 import App from 'containers/App';
@@ -88,6 +89,20 @@ function logPageView() {
   ReactGA.pageview(window.location.pathname);
 }
 
+const hashLinkScroll = () => {
+  const { hash } = window.location;
+  if (hash !== '') {
+    // Push onto callback queue so it runs after the DOM is updated,
+    // this is required when navigating from a different page so that
+    // the element is rendered on the page before trying to getElementById.
+    setTimeout(() => {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) element.scrollIntoView();
+    }, 0);
+  }
+};
+
 const render = (messages) => {
   ReactDOM.render(
     <Provider store={store}>
@@ -95,12 +110,15 @@ const render = (messages) => {
         <Router
           history={history}
           routes={rootRoute}
-          render={
+          // render={
             // Scroll to top when going to a new page, imitating default browser
             // behaviour
-            applyRouterMiddleware(useScroll())
-          }
-          onUpdate={logPageView}
+            // applyRouterMiddleware(useScroll())
+          // }
+          onUpdate={() => {
+            logPageView();
+            hashLinkScroll();
+          }}
         />
       </LanguageProvider>
     </Provider>,
@@ -119,13 +137,15 @@ if (module.hot) {
 
 // Chunked polyfill for browsers without Intl support
 if (!window.Intl) {
-  (new Promise((resolve) => {
+  new Promise((resolve) => {
     resolve(System.import('intl'));
-  }))
-    .then(() => Promise.all([
-      System.import('intl/locale-data/jsonp/en.js'),
-      System.import('intl/locale-data/jsonp/de.js'),
-    ]))
+  })
+    .then(() =>
+      Promise.all([
+        System.import('intl/locale-data/jsonp/en.js'),
+        System.import('intl/locale-data/jsonp/de.js'),
+      ])
+    )
     .then(() => render(translationMessages))
     .catch((err) => {
       throw err;

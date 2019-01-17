@@ -1,3 +1,7 @@
 .icon {
   padding-right: 2px;
 }
+
+.footerNavigation > * {
+  margin-right: 25px;
+}

@@ -1,5 +1,4 @@
-/* import app colors... */
-@value heading, accent, subheading, light, medium, darkmedium, lightmatte, matte, dark from 'containers/App/colors.css';
+@value phone from 'containers/App/breakpoints.css';
 
 .socialBar {
   font-size: 20px;
@@ -10,6 +9,11 @@
 
 .socialGroup {
   display: inline-block;
+  margin-bottom: 0;
+
+  @media phone {
+    margin-bottom: 0;
+  }
 }
 
 .socialButton {

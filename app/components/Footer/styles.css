@@ -1,8 +1,24 @@
-/* import app colors... */
-@value heading, accent, subheading, light, medium, darkmedium, lightmatte, matte, dark from 'containers/App/colors.css';
+@value colors: 'containers/App/colors.css';
+@value subheading from colors;
+@value accent from colors;
 
 .footer {
-  margin-top: 10px;
+  margin: 40px 0 25px;
+}
+
+.footerRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footerRow > * {
+  flex: 1 0 350px;
+  margin-bottom: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .columns {
@@ -27,4 +43,9 @@
 .footer a:hover {
   color: accent !important;
   text-decoration: none;
+}
+
+.socialButton,
+.copyright {
+  color: subheading;
 }

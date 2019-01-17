@@ -1,8 +1,8 @@
 /**
-*
-* CenteredButtonToolbar
-*
-*/
+ *
+ * CenteredButtonToolbar
+ *
+ */
 
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
@@ -14,25 +14,22 @@ import styles from './styles.css';
 function CenteredButtonToolbar({ ...props }) {
   const { children, className, ulClassName, liClassName, ...rest } = props;
 
-  const childColumns = () => (
-    children.map((child, idx) => (
-      <li
-        key={idx}
-        className={classNames(styles.li, liClassName)}
-      >
-        {child}
-      </li>
-    )
-  ));
+  const getChildColumn = (child) => (
+    <li key={child.props.to} className={classNames(styles.li, liClassName)}>
+      {child}
+    </li>
+  );
+
+  const childColumns = Array.isArray(children)
+    ? children.map(getChildColumn)
+    : getChildColumn(children);
 
   return (
     <ButtonToolbar
       className={classNames(styles.centeredButtonToolbar, className)}
       {...rest}
     >
-      <ul className={classNames(styles.ul, ulClassName)}>
-        {childColumns()}
-      </ul>
+      <ul className={classNames(styles.ul, ulClassName)}>{childColumns}</ul>
     </ButtonToolbar>
   );
 }
