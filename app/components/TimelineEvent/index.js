@@ -63,9 +63,15 @@ class TimelineEvent extends Component {
       <ListGroup>
         {responsibilities.map((task, idx) => {
           let val = task;
+          let role = false;
+
           if (typeof task === 'object') {
             const { header, description } = task;
-            let { subheader } = task;
+            let { subheader} = task;
+
+            if (task.role) {
+              role = task.role;
+            }
 
             if (subheader) {
               subheader = <small>{subheader}</small>;
@@ -82,7 +88,7 @@ class TimelineEvent extends Component {
           }
           return (
             <ListGroupItem key={idx} className={styles.responsibility}>
-              <div className={styles.responsibilityText}>{val}</div>
+              <div className={classNames(styles.responsibilityText, { [styles.role]: role })}>{val}</div>
             </ListGroupItem>
           );
         })}

@@ -72,7 +72,10 @@ export const work = [
     start: 'June 2017',
     end: 'Present',
     responsibilities: [
-      "Leads the front-end development of Cengage’s new Progressive Web Application (PWA) using React, Redux, Webpack, and Babel to replace legacy learning management system (LMS) for 2,500 daily ESL users. To increase student engagement I prioritized accessibility, internationalization, localization, and offline usage.",
+      {
+        role: true,
+        description: "Leads the front-end development of Cengage’s new Progressive Web Application (PWA) using React, Redux, Webpack, and Babel to replace legacy learning management system (LMS) for 2,500 daily ESL users. To increase student engagement I prioritized accessibility, internationalization, localization, and offline usage.",
+      },
       'Co-architected a scalable, secured API to transition from a monolithic application architecture into modern microservices; we delivered faster response rates, easier AWS deployments, improved data understanding, and support for multiple applications.',
       'Mentored two junior developers by conducting code reviews, helping them recognize effective code, encouraging beneficial learning paths, and teaching how to solve complex problems.',
       'Recognized and refactored common design elements into reusable, intuitive, and testable components, resulting in optimized performance, unified theme, partitioned complexity, and quicker bug-fix times.',
@@ -89,7 +92,10 @@ export const work = [
     end: 'June 2017',
     isInverted: true,
     responsibilities: [
-      'Led small team by promoting functional design patterns, requiring code reviews, and mentoring. Developed and supported essential retail applications and reporting using Node.js, JavaScript, MongoDB, Docker, and React Native.',
+      {
+        role: true,
+        description: 'Led small team by promoting functional design patterns, requiring code reviews, and mentoring. Developed and supported essential retail applications and reporting using Node.js, JavaScript, MongoDB, Docker, and React Native.'
+      },
       'Coordinated with key stakeholders to create solutions like automated invoicing for unpaid subscriptions.',
       'Researched new technologies, built prototypes, and evangelized successes like ECMAScript 6 and CI/CD.',
       'Standardized ten diverse legacy projects to improve stability, reduce complexity, and increase agility.',

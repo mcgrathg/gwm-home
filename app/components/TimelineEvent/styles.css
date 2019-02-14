@@ -182,6 +182,10 @@
   border-bottom: 1px solid darkmedium;
 }
 
+.responsibility .role {
+  font-size: larger;
+}
+
 /************************************************
  *          Event Hover Modifications           *
  ************************************************/
