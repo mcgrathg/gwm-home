@@ -15,7 +15,6 @@ import '!file?name=[name].[ext]!./manifest.json';
 import '!file?name=[name].[ext]!./sitemap.xml';
 import '!file?name=[name].[ext]!./sitemap-secure.xml';
 import 'file?name=[name].[ext]!./.htaccess';
-import 'file?name=[name].[ext]!./public/Gregory-W-McGrath-Resume.pdf';
 /* eslint-enable import/no-unresolved */
 
 // Import all the third party stuff
