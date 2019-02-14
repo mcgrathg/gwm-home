@@ -31,7 +31,7 @@ export const skills = [
       },
       {
         sizes: { md: 5, sm: 6, xs: 8 },
-        items: ['HTML5', 'CSS3', 'Python', 'jQuery'],
+        items: ['HTML5', 'CSS3', 'Express.js', 'jQuery'],
       },
       {
         sizes: { md: 5, sm: 6, xs: 8 },
@@ -66,17 +66,19 @@ export const skills = [
 
 export const work = [
   {
-    title: 'Software Engineer',
+    title: 'Senior Software Engineer',
     company: 'Computer Technology Services',
     location: 'Clifton Park, NY',
     start: 'June 2017',
     end: 'Present',
     responsibilities: [
-      'Delivered pixel-perfect, responsive user interfaces for K-12 educational platform used by students and teachers.',
-      'Recognized and refactored common design elements into reusable, intuitive, and testable components resulting in optimized performance, partitioned complexity, and unified visual appearances.',
-      'Architected complex React components using the Render Props pattern to improve maintainability and scalability.',
-      "Translated Product Management's requirements into high-quality, timely deliverables.",
-      'Participated in agile development process, including estimating effort, designing, coding, and peer code reviews.',
+      "Leads the front-end development of Cengage’s new Progressive Web Application (PWA) using React, Redux, Webpack, and Babel to replace legacy learning management system (LMS) for 2,500 daily ESL users. To increase student engagement I prioritized accessibility, internationalization, localization, and offline usage.",
+      'Co-architected a scalable, secured API to transition from a monolithic application architecture into modern microservices; we delivered faster response rates, easier AWS deployments, improved data understanding, and support for multiple applications.',
+      'Mentored two junior developers by conducting code reviews, helping them recognize effective code, encouraging beneficial learning paths, and teaching how to solve complex problems.',
+      'Recognized and refactored common design elements into reusable, intuitive, and testable components, resulting in optimized performance, unified theme, partitioned complexity, and quicker bug-fix times.',
+      'Implemented a continuous integration and continuous deployment (CI/CD) pipeline to increase deployment frequency, as well as improve consistency and confidence across multiple build environments.',
+      'Participated in agile development process, including designing user interfaces, coding solutions, reviewing team\’s code, and estimating time and effort.'
+
     ],
   },
   {
@@ -87,11 +89,12 @@ export const work = [
     end: 'June 2017',
     isInverted: true,
     responsibilities: [
-      'Led team by encouraging functional design patterns, conducting code reviews, and introducing ECMAScript 6.',
-      'Evaluated frameworks and technology like Docker, GitLab, and Node and advised if aligned with business goals.',
-      'Interfaced with key stakeholders to create successful solutions like automated invoicing for unpaid subscriptions.',
+      'Led small team by promoting functional design patterns, requiring code reviews, and mentoring. Developed and supported essential retail applications and reporting using Node.js, JavaScript, MongoDB, Docker, and React Native.',
+      'Coordinated with key stakeholders to create solutions like automated invoicing for unpaid subscriptions.',
+      'Researched new technologies, built prototypes, and evangelized successes like ECMAScript 6 and CI/CD.',
       'Standardized ten diverse legacy projects to improve stability, reduce complexity, and increase agility.',
-    ],
+      'Translated product management’s requirements into high-quality, timely deliverables.'
+    ]
   },
   {
     title: 'Software Developer',
@@ -100,26 +103,24 @@ export const work = [
     start: 'Apr 2010',
     end: 'Dec 2016',
     responsibilities: [
-      'Performed as Senior Front-End Engineer in an eight-member team by providing training in best practices for architecture design patterns, ideal usage of Ext JS, and effective strategies to algorithmic problems.',
-      'Developed enterprise web applications providing sophisticated and tailored software solutions for 475 users.',
+      'Trained eight-member team in best practices for architecture design patterns and ideal usage of Ext JS, as well as proposing new engineering productivity practices and tools.',
+      'Developed and supported single-page applications providing sophisticated, tailored, and efficient solutions for 475 users.',
       'Spearheaded creation of a shared, tested code library to reduce development time of robust interfaces.',
-      "Enhanced user experience by unifying applications' behavior and design into familiar interface templates, which decreased user support needs and improved bug-fix response times.",
-      'Mentored two junior developers by helping them recognize effective code and by recommending learning paths.',
-      'Streamlined corporate tasks by assessing needs, architecting solution, and developing natural software solutions.',
+      'Streamlined challenging corporate tasks by assessing needs, architecting solutions, and developing instinctive software solutions.'
     ],
   },
   {
-    title: 'Independent Web Application Developer',
-    company: undefined,
+    title: 'Full Stack Engineer',
+    company: 'Independent Consulting',
     location: 'Remote',
     start: 'Mar 2013',
     end: 'Dec 2016',
     isInverted: true,
     cardClass: styles.spacing,
     responsibilities: [
-      'Completed independent, remote projects using PHP, MySQL, and Ext JS for seven diverse clients.',
-      'Developed responsive user interface for internet startup while collaborating with eight international employees.',
-      'Gained strong interpersonal skills by managing communication and workflow across simultaneous projects.',
+      'Completed independent, remote projects using Ext JS, PHP, and MySQL for diverse, international clients.',
+      'Developed mobile-first user client for internet startup while collaborating with distributed team.',
+      'Gained strong interpersonal skills by managing communication and workflow across simultaneous projects.'
     ],
   },
   {

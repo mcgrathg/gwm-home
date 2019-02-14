@@ -47,7 +47,7 @@ class TimelineEvent extends Component {
         <ul className={classNames(styles.subheading, 'list-inline')}>
           {details.map(({ txt, icon }) => (
             <li key={txt}>
-              <i className={classNames(`fa fa-${icon}`, styles.icon)} />
+              <i className={classNames(`fa fa-${icon} fa-fw`, styles.icon)} />
               {txt}
             </li>
           ))}
