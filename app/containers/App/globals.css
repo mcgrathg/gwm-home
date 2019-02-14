@@ -39,9 +39,9 @@
 
 :global(.btn) {
   border-width: 2px !important;
-  padding: 6px 20px !important;
-  font-weight: bold !important;
+  padding: .8rem 1.5rem;
   transition: all 0.2s ease-in-out;
+  font-size: larger;
 }
 
 :global(.btn:active),
