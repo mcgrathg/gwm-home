@@ -47,11 +47,11 @@ export class ResumePage extends Component {
             <Timeline events={education} />
           </section>
         </div>
-        <section className={styles.introCard}>
+        <section className={styles.toolbar}>
           <CenteredButtonToolbar>
             <Button
               className={classNames(
-                btnStyle.accentGhostBtn,
+                btnStyle.accentBtn,
                 styles.downloadBtn
               )}
               href={RESUME_DOWNLOAD_URL}
