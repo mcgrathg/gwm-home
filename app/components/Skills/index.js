@@ -23,7 +23,7 @@ function Skills({ columns }) {
           <div className={styles.divider}>
             <div className={styles.line} />
             <span className="fa-layers fa-fw fa-2x">
-              <i className="fas fa-circle" />
+              <i className={classNames("fas fa-circle", styles.iconBackground)}/>
               <i
                 className={classNames(icon, styles.icon)}
                 data-fa-transform="shrink-8"

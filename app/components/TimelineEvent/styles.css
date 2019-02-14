@@ -186,6 +186,23 @@
   font-size: larger;
 }
 
+.responsibilityText {
+  display: inline-flex;
+  align-items: center;
+}
+
+.responsibilityText:hover .responsibilityIcon {
+  font-size: x-large;
+  margin-right: 4px;
+}
+
+.responsibilityIcon {
+  transition: all 0.5s;
+  margin-right: 10px;
+  font-size: large;
+  color: accent;
+}
+
 /************************************************
  *          Event Hover Modifications           *
  ************************************************/

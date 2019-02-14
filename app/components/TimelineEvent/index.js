@@ -88,7 +88,10 @@ class TimelineEvent extends Component {
           }
           return (
             <ListGroupItem key={idx} className={styles.responsibility}>
-              <div className={classNames(styles.responsibilityText, { [styles.role]: role })}>{val}</div>
+              <div className={classNames(styles.responsibilityText, { [styles.role]: role })}>
+                {!role && <i className={classNames(styles.responsibilityIcon, "fa fa-check-circle-o")} />}
+                {val}
+              </div>
             </ListGroupItem>
           );
         })}

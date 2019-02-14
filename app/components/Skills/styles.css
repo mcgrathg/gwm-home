@@ -2,6 +2,7 @@
 @value third from colors;
 @value light from colors;
 @value dark from colors;
+@value accent from colors;
 
 .skills {
   display: flex;
@@ -37,10 +38,19 @@
   background: light;
 }
 
+.divider .icon {
+  color: third;
+}
+
+.divider .icon,
 .divider .iconBackground {
+  transition: color 0.2s ease-out;
+ }
+
+.col:hover .divider .icon {
   color: light;
 }
 
-.divider .icon {
-  color: third;
+.col:hover .divider .iconBackground {
+  color: accent;
 }
