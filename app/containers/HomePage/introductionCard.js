@@ -46,10 +46,10 @@ class IntroductionCard extends Component {
     return (
       <CenteredButtonToolbar>
         <Link to="/#experience">
-          <Button className={btnStyle.accentBtn}>See My Experience</Button>
+          <Button className={classNames(btnStyle.accentGhostBtn, styles.ghostButton)}>See My Experience</Button>
         </Link>
         <Link to="/#contact">
-          <Button className={classNames(btnStyle.accentGhostBtn, styles.ghostButton)}>Message Me</Button>
+          <Button className={btnStyle.accentBtn}>Message Me</Button>
         </Link>
       </CenteredButtonToolbar>
     );
