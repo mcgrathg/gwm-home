@@ -7,7 +7,7 @@
 export const links = [
   {
     text: 'Home',
-    to: '/',
+    to: '/#home',
     isIndex: true,
   },
   {

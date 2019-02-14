@@ -12,7 +12,7 @@ import Logo from './logo.png';
 import styles from './styles.css';
 
 const Header = () => (
-  <div className={classNames('header', styles.header)}>
+  <div className={classNames('header', styles.header)} id="home">
     <div className={classNames('container', styles.wrapper)}>
       <IndexLink to="/" className={styles.logo}>
         <Image responsive src={Logo} alt="Greg McGrath -  Logo" />
