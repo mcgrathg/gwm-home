@@ -12,7 +12,7 @@
 }
 
 .icon {
-  color: lightmatte;
+  color: light;
   font-size: larger;
   transition: transform 0.2s, color 0.2s;
 }
