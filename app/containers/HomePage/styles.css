@@ -2,6 +2,7 @@
 @value primary from colors;
 @value primaryText from colors;
 @value accent from colors;
+@value light from colors;
 
 .introductionCard {
   padding: 30px 0;
@@ -83,4 +84,8 @@
 
 .socialListItem:hover i {
   color: accent !important;
+}
+
+.ghostButton {
+  color: light;
 }
