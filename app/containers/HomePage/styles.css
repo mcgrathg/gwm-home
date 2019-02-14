@@ -5,10 +5,21 @@
 
 .introductionCard {
   padding: 30px 0;
-  background: primary;
   color: primaryText;
-  /* background: light; */
-  /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); */
+  display: block;
+  position: relative;
+  
+  &:after {
+    background: url('./background.png') repeat;
+    opacity: 0.85;  
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
 }
 
 .wrapper {
