@@ -7,20 +7,7 @@
 .introductionCard {
   padding: 30px 0;
   color: primaryText;
-  display: block;
-  position: relative;
-  
-  &:after {
-    background: url('./background.png') primary repeat;
-    opacity: 0.85;  
-    content: "";
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;   
-  }
+  background: url('./background.png') primary repeat;  
 }
 
 .wrapper {
