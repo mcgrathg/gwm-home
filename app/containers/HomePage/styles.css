@@ -11,7 +11,7 @@
   position: relative;
   
   &:after {
-    background: url('./background.png') repeat;
+    background: url('./background.png') primary repeat;
     opacity: 0.85;  
     content: "";
     top: 0;

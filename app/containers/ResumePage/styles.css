@@ -3,10 +3,11 @@
 @value secondary from colors;
 @value secondaryText from colors;
 @value accent from colors;
+@value primary from colors;
 
 .toolbar {
   padding: 30px 0;
-  background: url('./background.png') repeat;
+  background: url('./background.png') primary repeat;
 }
 
 .toolbar p {
