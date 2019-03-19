@@ -74,14 +74,14 @@ export const work = [
     responsibilities: [
       {
         role: true,
-        description: "Leads the front-end development of Cengage’s new Progressive Web Application (PWA) using React, Redux, Webpack, and Babel to replace legacy learning management system (LMS) for 2,500 daily ESL users. To increase student engagement I prioritized accessibility, internationalization, localization, and offline usage.",
+        description:
+          'Leads the front-end development of Cengage’s new Progressive Web Application (PWA) using React, Redux, Webpack, and Babel to replace legacy learning management system (LMS) for 2,500 daily ESL users. To increase student engagement I prioritized accessibility, internationalization, localization, and offline usage.'
       },
       'Co-architected a scalable, secured API to transition from a monolithic application architecture into modern microservices; we delivered faster response rates, easier AWS deployments, improved data understanding, and support for multiple applications.',
       'Mentored two junior developers by conducting code reviews, helping them recognize effective code, encouraging beneficial learning paths, and teaching how to solve complex problems.',
       'Recognized and refactored common design elements into reusable, intuitive, and testable components, resulting in optimized performance, unified theme, partitioned complexity, and quicker bug-fix times.',
       'Implemented a continuous integration and continuous deployment (CI/CD) pipeline to increase deployment frequency, as well as improve consistency and confidence across multiple build environments.',
-      'Participated in agile development process, including designing user interfaces, coding solutions, reviewing team\’s code, and estimating time and effort.'
-
+      'Participated in agile development process, including designing user interfaces, coding solutions, reviewing team’s code, and estimating time and effort.'
     ],
   },
   {
@@ -94,13 +94,14 @@ export const work = [
     responsibilities: [
       {
         role: true,
-        description: 'Led small team by promoting functional design patterns, requiring code reviews, and mentoring. Developed and supported essential retail applications and reporting using Node.js, JavaScript, MongoDB, Docker, and React Native.'
+        description:
+          'Led small team by promoting functional design patterns, requiring code reviews, and mentoring. Developed and supported essential retail applications and reporting using Node.js, JavaScript, MongoDB, Docker, and React Native.',
       },
       'Coordinated with key stakeholders to create solutions like automated invoicing for unpaid subscriptions.',
       'Researched new technologies, built prototypes, and evangelized successes like ECMAScript 6 and CI/CD.',
       'Standardized ten diverse legacy projects to improve stability, reduce complexity, and increase agility.',
       'Translated product management’s requirements into high-quality, timely deliverables.'
-    ]
+    ],
   },
   {
     title: 'Software Developer',
@@ -154,10 +155,12 @@ export const education = [
         header: 'Capstone Project',
         description:
           'Created and co-designed an automated system to help consumers compare online prices of store products using a “dumb” cell phone’s camera, the product’s barcode, and text messaging. Programmed a dynamic algorithm in Python and MATLAB that located the barcode, determined the UPC, and sent the lowest online price back to the user.',
+        hideIcon: true
       },
       {
         header: 'Term Abroad',
         subheader: 'Prague, Czech Republic (Fall 2006)',
+        hideIcon: true
       },
     ],
   },

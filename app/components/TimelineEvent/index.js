@@ -64,13 +64,18 @@ class TimelineEvent extends Component {
         {responsibilities.map((task, idx) => {
           let val = task;
           let role = false;
+          let hideIcon = false;
 
           if (typeof task === 'object') {
             const { header, description } = task;
-            let { subheader} = task;
+            let { subheader } = task;
 
             if (task.role) {
               role = task.role;
+            }
+
+            if (task.hideIcon) {
+              hideIcon = task.hideIcon;
             }
 
             if (subheader) {
@@ -89,7 +94,7 @@ class TimelineEvent extends Component {
           return (
             <ListGroupItem key={idx} className={styles.responsibility}>
               <div className={classNames(styles.responsibilityText, { [styles.role]: role })}>
-                {!role && <i className={classNames(styles.responsibilityIcon, "fa fa-check-circle-o")} />}
+                {!role && !hideIcon && <i className={classNames(styles.responsibilityIcon, "fa fa-check-circle-o")} />}
                 {val}
               </div>
             </ListGroupItem>
