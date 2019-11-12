@@ -27,7 +27,7 @@ export const skills = [
       },
       {
         sizes: { md: 3, sm: 2, xs: 4 },
-        items: ['Ext JS', 'Mocha', 'Chia', 'Enzyme'],
+        items: ['Ext JS', 'Jest', 'Chia', 'Enzyme'],
       },
       {
         sizes: { md: 5, sm: 6, xs: 8 },
@@ -36,10 +36,10 @@ export const skills = [
       {
         sizes: { md: 5, sm: 6, xs: 8 },
         items: [
+          'TypeScript',
           'Immutable.js',
           'MongoDB',
-          'Sencha Touch',
-          'Caché ObjectScript',
+          'SQL'
         ],
       },
     ],
