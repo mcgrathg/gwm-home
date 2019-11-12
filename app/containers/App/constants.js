@@ -13,5 +13,5 @@ export const SET_WINDOW_WIDTH = 'app/App/SET_WINDOW_WIDTH';
 export const SMALL_DEVICE_WIDTH = 769;
 export const MIN_STICKY_WIDTH = SMALL_DEVICE_WIDTH;
 export const MAX_READ_MORE_WIDTH = SMALL_DEVICE_WIDTH;
-export const RESUME_DOWNLOAD_URL = 'https://drive.google.com/file/d/1sZ8ZNW9lur4w99n5Nk3I0tN3mqq5eTdq/view?usp=sharing';
+export const RESUME_DOWNLOAD_URL = 'https://drive.google.com/file/d/1jDy6HcgzR7oLA_zsz-61ZtKpalea5W_t/view?usp=sharing';
 export const YOUTUBE_PLAYLIST = 'https://www.youtube.com/playlist?list=PL-Lb0fMOtv2Ca4fcxioO4pWeQX3V0_ZBS';
